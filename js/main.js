@@ -135,3 +135,29 @@ function mostrarToast(msg) {
 document.getElementById('menuToggle').addEventListener('click', () => {
   document.getElementById('mainNav').classList.toggle('open');
 });
+
+/* ---------- Dropdown "Todos os Produtos" ---------- */
+const dropdown = document.getElementById('dropdownProdutos');
+const dropdownToggle = document.getElementById('dropdownToggle');
+
+dropdownToggle.addEventListener('click', (e) => {
+  e.stopPropagation();
+  const aberto = dropdown.classList.toggle('open');
+  dropdownToggle.setAttribute('aria-expanded', aberto);
+});
+
+// Fecha ao clicar fora ou ao escolher um item
+document.addEventListener('click', (e) => {
+  if (!dropdown.contains(e.target)) fecharDropdown();
+});
+document.querySelectorAll('.dropdown__item').forEach(item => {
+  item.addEventListener('click', fecharDropdown);
+});
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') fecharDropdown();
+});
+
+function fecharDropdown() {
+  dropdown.classList.remove('open');
+  dropdownToggle.setAttribute('aria-expanded', 'false');
+}
