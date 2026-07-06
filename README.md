@@ -16,9 +16,23 @@ python3 -m http.server 8000
 
 ```
 index.html      → página principal (todas as seções)
+categoria.html  → página de categoria (recebe ?cat=slug na URL)
 css/style.css   → estilos e responsividade
-js/main.js      → produtos, carrossel, carrinho e interações
+js/produtos.js  → catálogo: categorias, produtos e variações (edite aqui!)
+js/loja.js      → lógica compartilhada: cards, variações, carrinho, dropdown
+js/main.js      → específico da home: vitrines, carrossel, blog
+js/categoria.js → específico da página de categoria
 ```
+
+## Páginas de categoria
+
+Cada categoria abre em sua própria página: `categoria.html?cat=cartoes-de-visita`,
+`categoria.html?cat=panfletos`, `categoria.html?cat=adesivos`, `categoria.html?cat=brindes`,
+`categoria.html?cat=embalagens`, `categoria.html?cat=ponto-de-venda` e
+`categoria.html?cat=lancamentos`.
+
+Cada card de produto tem um seletor de variações (quantidade/tamanho) e o preço
+atualiza automaticamente conforme a opção escolhida.
 
 ## Seções da página
 
