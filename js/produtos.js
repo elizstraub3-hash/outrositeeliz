@@ -10,10 +10,8 @@ const copoCuia = {
   spec: 'Metal · tampa acrílica · gravação a laser 4x4 cm',
   nota: '5.0', avaliacoes: 18,
   variacoes: [
-    { label: '1 un', preco: 65.11 },
-    { label: '10 un', preco: 651.05 },
-    { label: '25 un', preco: 1627.63 },
-    { label: '50 un', preco: 3255.25 },
+    { label: '1 un', preco: 59.90 },
+    { label: '5 un (R$ 55,90/un)', preco: 279.50 },
   ],
 };
 
