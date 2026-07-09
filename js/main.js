@@ -2,8 +2,14 @@
 
 /* ---------- Vitrine "Os mais vendidos" (produtos em destaque de cada categoria) ---------- */
 const destaques = [];
+const jaListados = new Set();
 for (const [slug, cat] of Object.entries(CATALOGO)) {
-  cat.produtos.forEach((p) => { if (p.destaque) destaques.push([p, slug]); });
+  cat.produtos.forEach((p) => {
+    if (p.destaque && !jaListados.has(p.nome)) {
+      jaListados.add(p.nome);
+      destaques.push([p, slug]);
+    }
+  });
 }
 document.getElementById('maisVendidos').innerHTML =
   destaques.slice(0, 4).map(([p, slug]) => cardProduto(p, slug)).join('');

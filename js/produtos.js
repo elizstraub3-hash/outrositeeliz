@@ -1,6 +1,51 @@
 /* ============ GrafiPrint — catálogo de produtos ============
    Edite aqui suas categorias, produtos e variações (opção + preço). */
 
+/* Produtos que aparecem em mais de uma categoria são definidos uma única
+   vez aqui e referenciados nas categorias — sem duplicar dados. */
+
+const copoCuia = {
+  emoji: '🧉', bg: 'linear-gradient(135deg,#e2e8f0,#94a3b8)', badge: 'Novo',
+  nome: 'Copo Cuia com Tampa em Acrílico 360ml',
+  spec: 'Metal · tampa acrílica · gravação a laser 4x4 cm',
+  nota: '5.0', avaliacoes: 18,
+  variacoes: [
+    { label: '1 un', preco: 65.11 },
+    { label: '10 un', preco: 651.05 },
+    { label: '25 un', preco: 1627.63 },
+    { label: '50 un', preco: 3255.25 },
+  ],
+};
+
+const copoLongDrink = {
+  emoji: '🥤', bg: 'linear-gradient(135deg,#fbcfe8,#ec4899)', badge: 'Mais vendido', destaque: true,
+  nome: 'Copo Long Drink 350ml', spec: 'Impressão em silk · várias cores', nota: '4.7', avaliacoes: 987,
+  variacoes: [
+    { label: '50 un', preco: 149.90 },
+    { label: '100 un', preco: 249.90 },
+    { label: '200 un', preco: 429.90 },
+  ],
+};
+
+const copoTermico = {
+  emoji: '☕', bg: 'linear-gradient(135deg,#ddd6fe,#7c3aed)', badge: 'Novo',
+  nome: 'Copo Térmico Inox 500ml', spec: 'Gravação a laser · mantém a temperatura', nota: '4.9', avaliacoes: 64,
+  variacoes: [
+    { label: '25 un', preco: 549.90 },
+    { label: '50 un', preco: 999.90 },
+  ],
+};
+
+const canetaPersonalizada = {
+  emoji: '🖊️', bg: 'linear-gradient(135deg,#fce7f3,#f472b6)',
+  nome: 'Caneta Personalizada', spec: 'Gravação a laser ou silk', nota: '4.6', avaliacoes: 654,
+  variacoes: [
+    { label: '100 un', preco: 119.90 },
+    { label: '250 un', preco: 249.90 },
+    { label: '500 un', preco: 419.90 },
+  ],
+};
+
 const CATALOGO = {
   'cartoes-de-visita': {
     nome: 'Cartões de Visita',
@@ -119,20 +164,9 @@ const CATALOGO = {
     banner: 'linear-gradient(120deg,#be185d,#ec4899)',
     descricao: 'Brindes personalizados que mantêm sua marca na memória (e na mão) dos clientes.',
     produtos: [
-      { emoji: '🥤', bg: 'linear-gradient(135deg,#fbcfe8,#ec4899)', badge: 'Mais vendido', destaque: true,
-        nome: 'Copo Long Drink 350ml', spec: 'Impressão em silk · várias cores', nota: '4.7', avaliacoes: 987,
-        variacoes: [
-          { label: '50 un', preco: 149.90 },
-          { label: '100 un', preco: 249.90 },
-          { label: '200 un', preco: 429.90 },
-        ] },
-      { emoji: '🖊️', bg: 'linear-gradient(135deg,#fce7f3,#f472b6)',
-        nome: 'Caneta Personalizada', spec: 'Gravação a laser ou silk', nota: '4.6', avaliacoes: 654,
-        variacoes: [
-          { label: '100 un', preco: 119.90 },
-          { label: '250 un', preco: 249.90 },
-          { label: '500 un', preco: 419.90 },
-        ] },
+      copoCuia,
+      copoLongDrink,
+      canetaPersonalizada,
       { emoji: '🔑', bg: 'linear-gradient(135deg,#fecdd3,#fb7185)',
         nome: 'Chaveiro Acrílico', spec: 'Formato personalizado · impressão UV', nota: '4.8', avaliacoes: 388,
         variacoes: [
@@ -224,6 +258,30 @@ const CATALOGO = {
     ],
   },
 
+  'copos': {
+    nome: 'Copos',
+    emoji: '🥤',
+    banner: 'linear-gradient(120deg,#065f46,#10b981)',
+    descricao: 'Copos personalizados para brindes, eventos, bares e delivery.',
+    produtos: [
+      copoCuia,
+      copoLongDrink,
+      copoTermico,
+    ],
+  },
+
+  'gravacao-a-laser': {
+    nome: 'Gravação a Laser',
+    emoji: '🔆',
+    banner: 'linear-gradient(120deg,#334155,#64748b)',
+    descricao: 'Personalização premium com gravação a laser em metal, inox e outros materiais.',
+    produtos: [
+      copoCuia,
+      copoTermico,
+      canetaPersonalizada,
+    ],
+  },
+
   'lancamentos': {
     nome: 'Lançamentos',
     emoji: '🔥',
@@ -243,12 +301,7 @@ const CATALOGO = {
           { label: '80x120 cm', preco: 149.90 },
           { label: '100x150 cm', preco: 199.90 },
         ] },
-      { emoji: '☕', bg: 'linear-gradient(135deg,#ddd6fe,#7c3aed)', badge: 'Novo',
-        nome: 'Copo Térmico Inox 500ml', spec: 'Gravação a laser · mantém a temperatura', nota: '4.9', avaliacoes: 64,
-        variacoes: [
-          { label: '25 un', preco: 549.90 },
-          { label: '50 un', preco: 999.90 },
-        ] },
+      copoTermico,
       { emoji: '📲', bg: 'linear-gradient(135deg,#c4b5fd,#6d28d9)', badge: 'Novo',
         nome: 'Cartão de Visita NFC', spec: 'Compartilhe seu contato por aproximação', nota: '5.0', avaliacoes: 51,
         variacoes: [

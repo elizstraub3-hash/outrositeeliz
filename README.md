@@ -28,8 +28,12 @@ js/categoria.js → específico da página de categoria
 
 Cada categoria abre em sua própria página: `categoria.html?cat=cartoes-de-visita`,
 `categoria.html?cat=panfletos`, `categoria.html?cat=adesivos`, `categoria.html?cat=brindes`,
-`categoria.html?cat=embalagens`, `categoria.html?cat=ponto-de-venda` e
+`categoria.html?cat=embalagens`, `categoria.html?cat=ponto-de-venda`,
+`categoria.html?cat=copos`, `categoria.html?cat=gravacao-a-laser` e
 `categoria.html?cat=lancamentos`.
+
+Um produto pode aparecer em mais de uma categoria: defina-o uma vez como
+constante no topo de `js/produtos.js` e referencie nas categorias desejadas.
 
 Cada card de produto tem um seletor de variações (quantidade/tamanho) e o preço
 atualiza automaticamente conforme a opção escolhida.
