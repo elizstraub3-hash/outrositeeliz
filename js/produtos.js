@@ -306,6 +306,7 @@ const CATALOGO = {
           { label: '10 un', preco: 90.90 },
         ] },
       { emoji: '🍾', bg: 'linear-gradient(135deg,#d1d5db,#4b5563)', badge: 'Novo',
+        imagem: 'img/chaveiro-abridor.png',
         nome: 'Chaveiro Abridor de Metal — Garrafa',
         spec: 'Metal · abridor de garrafa · gravação a laser 3,8x0,7 cm',
         nota: '4.8', avaliacoes: 26,
