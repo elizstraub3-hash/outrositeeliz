@@ -43,6 +43,16 @@ const copoTermico = {
   ],
 };
 
+const copoInoxColorido = {
+  emoji: '🥛', bg: 'linear-gradient(135deg,#f1f5f9,#94a3b8)', badge: 'Novo',
+  nome: 'Copo Térmico Aço Inox',
+  spec: 'Aço inox · gravação a laser 4x10 cm · 10 cores',
+  nota: '4.9', avaliacoes: 41,
+  precoUnitario: 49.90,
+  minimo: 1,
+  cores: ['Laranja', 'Preto', 'Azul Marinho', 'Branco', 'Marrom', 'Pink', 'Rosa Claro', 'Tiffany', 'Verde Militar', 'Vermelho'],
+};
+
 const canetaPersonalizada = {
   emoji: '🖊️', bg: 'linear-gradient(135deg,#fce7f3,#f472b6)',
   nome: 'Caneta Personalizada', spec: 'Gravação a laser ou silk', nota: '4.6', avaliacoes: 654,
@@ -272,6 +282,7 @@ const CATALOGO = {
     descricao: 'Copos personalizados para brindes, eventos, bares e delivery.',
     produtos: [
       copoCuia,
+      copoInoxColorido,
       copoLongDrink,
       copoTermico,
     ],
@@ -294,6 +305,14 @@ const CATALOGO = {
         variacoes: [
           { label: '10 un', preco: 90.90 },
         ] },
+      { emoji: '🍾', bg: 'linear-gradient(135deg,#d1d5db,#4b5563)', badge: 'Novo',
+        nome: 'Chaveiro Abridor de Metal — Garrafa',
+        spec: 'Metal · abridor de garrafa · gravação a laser 3,8x0,7 cm',
+        nota: '4.8', avaliacoes: 26,
+        precoUnitario: 2.50,
+        minimo: 25,
+        cores: ['Preto', 'Verde', 'Vermelho', 'Rosa', 'Azul', 'Prata'] },
+      copoInoxColorido,
       copoTermico,
       canetaPersonalizada,
     ],

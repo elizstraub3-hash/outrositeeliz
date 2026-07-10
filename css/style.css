@@ -379,27 +379,6 @@ button { font-family: inherit; cursor: pointer; }
 .product-card__spec { font-size: .76rem; color: var(--gray); margin-bottom: .5rem; }
 .product-card__rating { font-size: .78rem; color: #f59e0b; margin-bottom: .6rem; }
 .product-card__rating span { color: var(--gray); }
-.product-card__var-label {
-  font-size: .72rem;
-  font-weight: 600;
-  color: var(--gray);
-  margin-bottom: .3rem;
-}
-.product-card__select {
-  width: 100%;
-  padding: .5rem .6rem;
-  border: 1.5px solid var(--border);
-  border-radius: 8px;
-  font-family: inherit;
-  font-size: .8rem;
-  color: var(--dark);
-  background: var(--white);
-  cursor: pointer;
-  margin-bottom: .8rem;
-  transition: border-color .15s;
-}
-.product-card__select:hover,
-.product-card__select:focus { border-color: var(--primary); outline: none; }
 .product-card__price { margin-top: auto; margin-bottom: .6rem; }
 .product-card__price small { display: block; font-size: .72rem; color: var(--gray); }
 .product-card__price strong { font-size: 1.25rem; color: var(--dark); }
@@ -739,6 +718,52 @@ button { font-family: inherit; cursor: pointer; }
   font-size: .85rem;
   font-weight: 700;
 }
+.modal__label {
+  display: block;
+  font-size: .78rem;
+  font-weight: 600;
+  color: var(--dark);
+  margin-bottom: .4rem;
+}
+.modal__opcao { margin-bottom: 1rem; }
+.modal__select {
+  width: 100%;
+  padding: .6rem .8rem;
+  border: 1.5px solid var(--border);
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: .88rem;
+  color: var(--dark);
+  background: var(--white);
+  cursor: pointer;
+  transition: border-color .15s;
+}
+.modal__select:hover,
+.modal__select:focus { border-color: var(--primary); outline: none; }
+.modal__stepper { margin-bottom: .3rem; }
+.modal__unitario { font-size: .72rem; color: var(--gray); }
+.var-row {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: .8rem;
+  border: 1.5px solid var(--border);
+  border-radius: 10px;
+  padding: .75rem .9rem;
+  background: var(--white);
+  font-family: inherit;
+  cursor: pointer;
+  transition: border-color .15s, background .15s;
+  text-align: left;
+}
+.var-row:hover { border-color: var(--primary); }
+.var-row--ativa {
+  border-color: var(--primary);
+  background: #fff4f0;
+}
+.var-row__label { font-size: .86rem; font-weight: 600; color: var(--dark); }
+.var-row__preco { font-size: .86rem; font-weight: 700; color: var(--primary); }
 .modal__foot {
   display: flex;
   align-items: center;

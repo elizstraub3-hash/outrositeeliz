@@ -27,34 +27,24 @@ function menorPrecoCombinacao(p) {
   return Math.min(...p.opcoesCombinacao.flatMap((o) => o.faixas.map((f) => f.preco)));
 }
 
-/* ---------- Card de produto ---------- */
+/* ---------- Card de produto (compacto: opções abrem ao clicar) ---------- */
 function cardProduto(p, slugCategoria) {
-  let areaOpcoes;
-  let areaPreco;
+  let hint = '';
+  let precoSmall;
+  let precoValor;
 
   if (p.opcoesCombinacao) {
-    // Produto com combinações: card mostra só um resumo curto;
-    // a lista completa com preços fica na janela "Escolher quantidades"
-    areaOpcoes = `
-      <p class="product-card__comb-hint">${p.opcoesCombinacao.map((o) => o.nome).join(' · ')}</p>`;
-    areaPreco = `
-      <div class="product-card__price">
-        <small>a partir de</small>
-        <strong>R$ ${formatarPreco(menorPrecoCombinacao(p))}</strong>
-      </div>`;
+    hint = `<p class="product-card__comb-hint">${p.opcoesCombinacao.map((o) => o.nome).join(' · ')}</p>`;
+    precoSmall = 'a partir de';
+    precoValor = menorPrecoCombinacao(p);
+  } else if (p.cores) {
+    hint = `<p class="product-card__comb-hint">🎨 ${p.cores.length} cores disponíveis</p>`;
+    precoSmall = p.minimo > 1 ? `por unidade · pedido mínimo ${p.minimo} un` : 'por unidade';
+    precoValor = p.precoUnitario;
   } else {
-    const opcoes = p.variacoes.map((v, i) =>
-      `<option value="${v.preco}" data-label="${v.label}" ${i === 0 ? 'selected' : ''}>${v.label} — R$ ${formatarPreco(v.preco)}</option>`
-    ).join('');
     const v0 = p.variacoes[0];
-    areaOpcoes = `
-      <label class="product-card__var-label">Escolha uma opção:</label>
-      <select class="product-card__select" aria-label="Variações de ${p.nome}">${opcoes}</select>`;
-    areaPreco = `
-      <div class="product-card__price">
-        <small>${v0.label} por</small>
-        <strong>R$ ${formatarPreco(v0.preco)}</strong>
-      </div>`;
+    precoSmall = `${v0.label} por`;
+    precoValor = v0.preco;
   }
 
   return `
@@ -67,8 +57,11 @@ function cardProduto(p, slugCategoria) {
         <h3 class="product-card__title">${p.nome}</h3>
         <p class="product-card__spec">${p.spec}</p>
         <p class="product-card__rating">★★★★★ ${p.nota} <span>(${p.avaliacoes.toLocaleString('pt-BR')} avaliações)</span></p>
-        ${areaOpcoes}
-        ${areaPreco}
+        ${hint}
+        <div class="product-card__price">
+          <small>${precoSmall}</small>
+          <strong>R$ ${formatarPreco(precoValor)}</strong>
+        </div>
         <div class="product-card__prazo">
           <span>⏱️ Previsão de produção: até 5 dias úteis</span>
           <small>* Prazo informado refere-se apenas à produção. O tempo de entrega será adicionado após a finalização.</small>
@@ -78,62 +71,179 @@ function cardProduto(p, slugCategoria) {
     </article>`;
 }
 
-/* ---------- Modal de combinações (o cliente monta o pedido) ---------- */
-function encontrarProduto(nome) {
-  for (const cat of Object.values(CATALOGO)) {
-    const p = cat.produtos.find((prod) => prod.nome === nome);
-    if (p) return p;
-  }
-  return null;
-}
-
-function abrirCombinacoes(p) {
-  const antigo = document.getElementById('modalComb');
+/* ---------- Estrutura base das janelas (modal) ---------- */
+function criarModal(rotulo, conteudo) {
+  const antigo = document.getElementById('modalProduto');
   if (antigo) antigo.remove();
 
   const modal = document.createElement('div');
   modal.className = 'modal';
-  modal.id = 'modalComb';
+  modal.id = 'modalProduto';
   modal.innerHTML = `
-    <div class="modal__panel" role="dialog" aria-modal="true" aria-label="Combinações de ${p.nome}">
+    <div class="modal__panel" role="dialog" aria-modal="true" aria-label="${rotulo}">
       <button class="modal__close" aria-label="Fechar">×</button>
-      <div class="modal__head">
-        <div class="modal__thumb" style="background:${p.bg}">${p.imagem ? `<img src="${p.imagem}" alt="${p.nome}">` : p.emoji}</div>
-        <div>
-          <h3>${p.nome}</h3>
-          <p>${p.spec}</p>
-        </div>
-      </div>
-      <div class="modal__faixas">
-        ${p.opcoesCombinacao.map((o) => `<p><strong>${o.nome}:</strong> ${resumoFaixas(o.faixas)}</p>`).join('')}
-        <small>* O preço por unidade considera a quantidade total de copos da combinação.</small>
-      </div>
-      <div class="modal__rows">
-        ${p.opcoesCombinacao.map((o, i) => `
-          <div class="comb-row" data-idx="${i}">
-            ${o.imagem ? `<img class="comb-row__foto" src="${o.imagem}" alt="${o.nome}">` : ''}
-            <div class="comb-row__nome">
-              <strong>${o.nome}</strong>
-              <small class="comb-row__unit">R$ ${formatarPreco(o.faixas[0].preco)}/un</small>
-            </div>
-            <div class="comb-row__stepper">
-              <button type="button" class="comb-row__menos" aria-label="Diminuir">−</button>
-              <input type="number" class="comb-row__qtd" min="0" value="0" inputmode="numeric" aria-label="Quantidade de ${o.nome}">
-              <button type="button" class="comb-row__mais" aria-label="Aumentar">+</button>
-            </div>
-            <div class="comb-row__subtotal">R$ 0,00</div>
-          </div>`).join('')}
-      </div>
-      <div class="modal__foot">
-        <div class="modal__total">
-          <small id="combResumo">Nenhum copo selecionado</small>
-          <strong id="combTotal">R$ 0,00</strong>
-        </div>
-        <button class="btn btn--primary modal__add" disabled>Adicionar ao carrinho</button>
-      </div>
+      ${conteudo}
     </div>`;
   document.body.appendChild(modal);
   document.body.style.overflow = 'hidden';
+
+  function fechar() {
+    modal.remove();
+    document.body.style.overflow = '';
+    document.removeEventListener('keydown', aoTeclar);
+  }
+  function aoTeclar(e) {
+    if (e.key === 'Escape') fechar();
+  }
+  modal.querySelector('.modal__close').addEventListener('click', fechar);
+  modal.addEventListener('click', (e) => { if (e.target === modal) fechar(); });
+  document.addEventListener('keydown', aoTeclar);
+
+  return { modal, fechar };
+}
+
+function cabecalhoModal(p) {
+  return `
+    <div class="modal__head">
+      <div class="modal__thumb" style="background:${p.bg}">${p.imagem ? `<img src="${p.imagem}" alt="${p.nome}">` : p.emoji}</div>
+      <div>
+        <h3>${p.nome}</h3>
+        <p>${p.spec}</p>
+      </div>
+    </div>`;
+}
+
+/* ---------- Janela de variações (pacotes fixos) ---------- */
+function abrirVariacoes(p) {
+  const { modal, fechar } = criarModal(`Opções de ${p.nome}`, `
+    ${cabecalhoModal(p)}
+    <label class="modal__label">Escolha uma opção:</label>
+    <div class="modal__rows">
+      ${p.variacoes.map((v, i) => `
+        <button type="button" class="var-row ${i === 0 ? 'var-row--ativa' : ''}" data-i="${i}">
+          <span class="var-row__label">${v.label}</span>
+          <span class="var-row__preco">R$ ${formatarPreco(v.preco)}</span>
+        </button>`).join('')}
+    </div>
+    <div class="modal__foot">
+      <div class="modal__total">
+        <small>valor da opção</small>
+        <strong id="modalTotal">R$ ${formatarPreco(p.variacoes[0].preco)}</strong>
+      </div>
+      <button class="btn btn--primary modal__add">Adicionar ao carrinho</button>
+    </div>`);
+
+  let selecionada = 0;
+  modal.querySelectorAll('.var-row').forEach((row) => {
+    row.addEventListener('click', () => {
+      selecionada = Number(row.dataset.i);
+      modal.querySelectorAll('.var-row').forEach((r) => r.classList.toggle('var-row--ativa', r === row));
+      modal.querySelector('#modalTotal').textContent = `R$ ${formatarPreco(p.variacoes[selecionada].preco)}`;
+    });
+  });
+
+  modal.querySelector('.modal__add').addEventListener('click', () => {
+    const v = p.variacoes[selecionada];
+    itensCarrinho++;
+    localStorage.setItem('grafiprint_carrinho', itensCarrinho);
+    if (cartBadge) cartBadge.textContent = itensCarrinho;
+    fechar();
+    mostrarToast(`✅ ${p.nome} (${v.label}) adicionado ao carrinho!`);
+  });
+}
+
+/* ---------- Janela de cores + quantidade (preço unitário e pedido mínimo) ---------- */
+function abrirCores(p) {
+  const min = p.minimo || 1;
+  const { modal, fechar } = criarModal(`Opções de ${p.nome}`, `
+    ${cabecalhoModal(p)}
+    <div class="modal__opcao">
+      <label class="modal__label" for="modalCor">Cor:</label>
+      <select class="modal__select" id="modalCor">
+        ${p.cores.map((c) => `<option>${c}</option>`).join('')}
+      </select>
+    </div>
+    <div class="modal__opcao">
+      <label class="modal__label">Quantidade${min > 1 ? ` (pedido mínimo: ${min} un)` : ''}:</label>
+      <div class="comb-row__stepper modal__stepper">
+        <button type="button" class="qtd-menos" aria-label="Diminuir">−</button>
+        <input type="number" class="comb-row__qtd" id="modalQtd" min="${min}" value="${min}" inputmode="numeric">
+        <button type="button" class="qtd-mais" aria-label="Aumentar">+</button>
+      </div>
+      <small class="modal__unitario">R$ ${formatarPreco(p.precoUnitario)} por unidade</small>
+    </div>
+    <div class="modal__foot">
+      <div class="modal__total">
+        <small id="modalResumo">${min} un</small>
+        <strong id="modalTotal">R$ ${formatarPreco(min * p.precoUnitario)}</strong>
+      </div>
+      <button class="btn btn--primary modal__add">Adicionar ao carrinho</button>
+    </div>`);
+
+  const input = modal.querySelector('#modalQtd');
+
+  function qtdAtual() {
+    return Math.max(min, parseInt(input.value, 10) || min);
+  }
+  function recalcular() {
+    const qtd = qtdAtual();
+    modal.querySelector('#modalResumo').textContent = `${qtd} un`;
+    modal.querySelector('#modalTotal').textContent = `R$ ${formatarPreco(qtd * p.precoUnitario)}`;
+  }
+
+  modal.querySelector('.qtd-menos').addEventListener('click', () => {
+    input.value = Math.max(min, qtdAtual() - 1);
+    recalcular();
+  });
+  modal.querySelector('.qtd-mais').addEventListener('click', () => {
+    input.value = qtdAtual() + 1;
+    recalcular();
+  });
+  input.addEventListener('input', recalcular);
+  input.addEventListener('blur', () => { input.value = qtdAtual(); recalcular(); });
+
+  modal.querySelector('.modal__add').addEventListener('click', () => {
+    const qtd = qtdAtual();
+    const cor = modal.querySelector('#modalCor').value;
+    itensCarrinho += qtd;
+    localStorage.setItem('grafiprint_carrinho', itensCarrinho);
+    if (cartBadge) cartBadge.textContent = itensCarrinho;
+    fechar();
+    mostrarToast(`✅ ${qtd}× ${p.nome} (${cor}) — R$ ${formatarPreco(qtd * p.precoUnitario)} adicionado ao carrinho!`);
+  });
+}
+
+/* ---------- Janela de combinações (quantidade de cada personalização) ---------- */
+function abrirCombinacoes(p) {
+  const { modal, fechar } = criarModal(`Combinações de ${p.nome}`, `
+    ${cabecalhoModal(p)}
+    <div class="modal__faixas">
+      ${p.opcoesCombinacao.map((o) => `<p><strong>${o.nome}:</strong> ${resumoFaixas(o.faixas)}</p>`).join('')}
+      <small>* O preço por unidade considera a quantidade total de copos da combinação.</small>
+    </div>
+    <div class="modal__rows">
+      ${p.opcoesCombinacao.map((o, i) => `
+        <div class="comb-row" data-idx="${i}">
+          ${o.imagem ? `<img class="comb-row__foto" src="${o.imagem}" alt="${o.nome}">` : ''}
+          <div class="comb-row__nome">
+            <strong>${o.nome}</strong>
+            <small class="comb-row__unit">R$ ${formatarPreco(o.faixas[0].preco)}/un</small>
+          </div>
+          <div class="comb-row__stepper">
+            <button type="button" class="comb-row__menos" aria-label="Diminuir">−</button>
+            <input type="number" class="comb-row__qtd" min="0" value="0" inputmode="numeric" aria-label="Quantidade de ${o.nome}">
+            <button type="button" class="comb-row__mais" aria-label="Aumentar">+</button>
+          </div>
+          <div class="comb-row__subtotal">R$ 0,00</div>
+        </div>`).join('')}
+    </div>
+    <div class="modal__foot">
+      <div class="modal__total">
+        <small id="modalResumo">Nenhum copo selecionado</small>
+        <strong id="modalTotal">R$ 0,00</strong>
+      </div>
+      <button class="btn btn--primary modal__add" disabled>Adicionar ao carrinho</button>
+    </div>`);
 
   const linhas = [...modal.querySelectorAll('.comb-row')];
 
@@ -148,8 +258,8 @@ function abrirCombinacoes(p) {
       linha.querySelector('.comb-row__unit').textContent = `R$ ${formatarPreco(unitario)}/un`;
       linha.querySelector('.comb-row__subtotal').textContent = `R$ ${formatarPreco(subtotal)}`;
     });
-    modal.querySelector('#combTotal').textContent = `R$ ${formatarPreco(valorTotal)}`;
-    modal.querySelector('#combResumo').textContent = total === 0
+    modal.querySelector('#modalTotal').textContent = `R$ ${formatarPreco(valorTotal)}`;
+    modal.querySelector('#modalResumo').textContent = total === 0
       ? 'Nenhum copo selecionado'
       : `${total} copo${total > 1 ? 's' : ''} no total`;
     modal.querySelector('.modal__add').disabled = total === 0;
@@ -169,18 +279,6 @@ function abrirCombinacoes(p) {
     input.addEventListener('input', recalcular);
   });
 
-  function fecharModal() {
-    modal.remove();
-    document.body.style.overflow = '';
-    document.removeEventListener('keydown', aoTeclar);
-  }
-  function aoTeclar(e) {
-    if (e.key === 'Escape') fecharModal();
-  }
-  modal.querySelector('.modal__close').addEventListener('click', fecharModal);
-  modal.addEventListener('click', (e) => { if (e.target === modal) fecharModal(); });
-  document.addEventListener('keydown', aoTeclar);
-
   modal.querySelector('.modal__add').addEventListener('click', () => {
     const { qtds, total, valorTotal } = recalcular();
     if (total === 0) return;
@@ -191,44 +289,35 @@ function abrirCombinacoes(p) {
     itensCarrinho += total;
     localStorage.setItem('grafiprint_carrinho', itensCarrinho);
     if (cartBadge) cartBadge.textContent = itensCarrinho;
-    fecharModal();
+    fechar();
     mostrarToast(`✅ ${resumo} (R$ ${formatarPreco(valorTotal)}) adicionado ao carrinho!`);
   });
 }
-
-/* ---------- Troca de variação atualiza o preço do card ---------- */
-document.addEventListener('change', (e) => {
-  const select = e.target.closest('.product-card__select');
-  if (!select) return;
-  const opcao = select.selectedOptions[0];
-  const price = select.closest('.product-card').querySelector('.product-card__price');
-  price.querySelector('small').textContent = `${opcao.dataset.label} por`;
-  price.querySelector('strong').textContent = `R$ ${formatarPreco(parseFloat(opcao.value))}`;
-});
 
 /* ---------- Carrinho (contador persiste entre as páginas) ---------- */
 let itensCarrinho = parseInt(localStorage.getItem('grafiprint_carrinho') || '0', 10);
 const cartBadge = document.getElementById('cartCount');
 if (cartBadge) cartBadge.textContent = itensCarrinho;
 
+function encontrarProduto(nome) {
+  for (const cat of Object.values(CATALOGO)) {
+    const p = cat.produtos.find((prod) => prod.nome === nome);
+    if (p) return p;
+  }
+  return null;
+}
+
+/* Botão do card abre a janela certa para o tipo de produto */
 document.addEventListener('click', (e) => {
   const btn = e.target.closest('.product-card__btn');
   if (!btn) return;
-  const card = btn.closest('.product-card');
-  const nome = card.querySelector('.product-card__title').textContent;
+  const nome = btn.closest('.product-card').querySelector('.product-card__title').textContent;
   const produto = encontrarProduto(nome);
+  if (!produto) return;
 
-  // Produto com lista de combinações abre a janela de quantidades
-  if (produto && produto.opcoesCombinacao) {
-    abrirCombinacoes(produto);
-    return;
-  }
-
-  const opcao = card.querySelector('.product-card__select').selectedOptions[0].dataset.label;
-  itensCarrinho++;
-  localStorage.setItem('grafiprint_carrinho', itensCarrinho);
-  if (cartBadge) cartBadge.textContent = itensCarrinho;
-  mostrarToast(`✅ ${nome} (${opcao}) adicionado ao carrinho!`);
+  if (produto.opcoesCombinacao) abrirCombinacoes(produto);
+  else if (produto.cores) abrirCores(produto);
+  else abrirVariacoes(produto);
 });
 
 /* ---------- Cupom ---------- */

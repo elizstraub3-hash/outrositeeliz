@@ -35,8 +35,14 @@ Cada categoria abre em sua própria página: `categoria.html?cat=cartoes-de-visi
 Um produto pode aparecer em mais de uma categoria: defina-o uma vez como
 constante no topo de `js/produtos.js` e referencie nas categorias desejadas.
 
-Cada card de produto tem um seletor de variações (quantidade/tamanho) e o preço
-atualiza automaticamente conforme a opção escolhida.
+Os cards são compactos: as opções abrem numa janela ao clicar em "Comprar".
+Há três formatos de produto no catálogo (`js/produtos.js`):
+
+- `variacoes`: pacotes fixos (ex.: 100/500/1.000 un) — a janela lista as opções;
+- `cores` + `precoUnitario` + `minimo`: dropdown de cor e quantidade com pedido
+  mínimo (ex.: chaveiro a R$ 2,50/un, mínimo 25);
+- `opcoesCombinacao`: o cliente escolhe a quantidade de cada personalização,
+  com faixas de preço por quantidade total (ex.: Copo Cuia laser/DTF).
 
 ## Seções da página
 
