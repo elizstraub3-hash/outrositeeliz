@@ -56,7 +56,6 @@ function cardProduto(p, slugCategoria) {
       <div class="product-card__body">
         <h3 class="product-card__title">${p.nome}</h3>
         <p class="product-card__spec">${p.spec}</p>
-        <p class="product-card__rating">★★★★★ ${p.nota} <span>(${p.avaliacoes.toLocaleString('pt-BR')} avaliações)</span></p>
         ${hint}
         <div class="product-card__price">
           <small>${precoSmall}</small>

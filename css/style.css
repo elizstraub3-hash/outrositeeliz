@@ -376,9 +376,7 @@ button { font-family: inherit; cursor: pointer; }
 .product-card__badge--new { background: var(--green); }
 .product-card__body { padding: 1rem 1.1rem 1.2rem; display: flex; flex-direction: column; flex: 1; }
 .product-card__title { font-size: .95rem; font-weight: 600; margin-bottom: .15rem; }
-.product-card__spec { font-size: .76rem; color: var(--gray); margin-bottom: .5rem; }
-.product-card__rating { font-size: .78rem; color: #f59e0b; margin-bottom: .6rem; }
-.product-card__rating span { color: var(--gray); }
+.product-card__spec { font-size: .76rem; color: var(--gray); margin-bottom: .6rem; }
 .product-card__price { margin-top: auto; margin-bottom: .6rem; }
 .product-card__price small { display: block; font-size: .72rem; color: var(--gray); }
 .product-card__price strong { font-size: 1.25rem; color: var(--dark); }
