@@ -283,6 +283,16 @@ const CATALOGO = {
     descricao: 'Personalização premium com gravação a laser em metal, inox e outros materiais.',
     produtos: [
       copoCuia,
+      { emoji: '🖋️', bg: 'linear-gradient(135deg,#cbd5e1,#475569)', badge: 'Novo',
+        nome: 'Caneta de Metal Touch', spec: 'Metal · ponta touch · gravação a laser 0,6x5 cm', nota: '4.9', avaliacoes: 47,
+        variacoes: [
+          { label: '10 un', preco: 98.90 },
+        ] },
+      { emoji: '✒️', bg: 'linear-gradient(135deg,#e2e8f0,#64748b)', badge: 'Novo',
+        nome: 'Caneta de Metal Slim Touch', spec: 'Metal slim · ponta touch · gravação a laser 4x0,4 cm', nota: '4.8', avaliacoes: 33,
+        variacoes: [
+          { label: '10 un', preco: 90.90 },
+        ] },
       copoTermico,
       canetaPersonalizada,
     ],

@@ -610,21 +610,16 @@ button { font-family: inherit; cursor: pointer; }
 }
 .whats-float:hover { transform: scale(1.08); }
 
-/* ============ Combinações no card ============ */
-.product-card__combs {
-  margin-bottom: .8rem;
-  display: grid;
-  gap: .35rem;
-}
-.product-card__combs li {
-  font-size: .7rem;
-  line-height: 1.4;
+/* ============ Combinações no card (resumo curto) ============ */
+.product-card__comb-hint {
+  font-size: .72rem;
+  font-weight: 600;
   color: var(--gray);
   background: var(--gray-light);
   border-radius: 6px;
   padding: .35rem .55rem;
+  margin-bottom: .8rem;
 }
-.product-card__combs li strong { color: var(--dark); }
 
 /* ============ Modal de combinações ============ */
 .modal {

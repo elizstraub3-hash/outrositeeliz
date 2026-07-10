@@ -33,12 +33,10 @@ function cardProduto(p, slugCategoria) {
   let areaPreco;
 
   if (p.opcoesCombinacao) {
-    // Produto com lista de combinações: o cliente escolhe a quantidade de cada
+    // Produto com combinações: card mostra só um resumo curto;
+    // a lista completa com preços fica na janela "Escolher quantidades"
     areaOpcoes = `
-      <label class="product-card__var-label">Combinações disponíveis:</label>
-      <ul class="product-card__combs">
-        ${p.opcoesCombinacao.map((o) => `<li><strong>${o.nome}</strong> — ${resumoFaixas(o.faixas)}</li>`).join('')}
-      </ul>`;
+      <p class="product-card__comb-hint">${p.opcoesCombinacao.map((o) => o.nome).join(' · ')}</p>`;
     areaPreco = `
       <div class="product-card__price">
         <small>a partir de</small>
