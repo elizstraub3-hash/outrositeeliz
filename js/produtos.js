@@ -6,6 +6,7 @@
 
 const copoCuia = {
   emoji: '🧉', bg: 'linear-gradient(135deg,#e2e8f0,#94a3b8)', badge: 'Novo',
+  imagem: 'img/copo-cuia-laser.png',
   nome: 'Copo Cuia com Tampa em Acrílico 360ml',
   spec: 'Metal · tampa acrílica · gravação a laser 4x4 cm ou estampa em DTF',
   nota: '5.0', avaliacoes: 18,
@@ -13,11 +14,11 @@ const copoCuia = {
      cada personalização. O preço unitário segue a faixa da quantidade
      total de copos ("min" = a partir de quantas unidades vale o preço). */
   opcoesCombinacao: [
-    { nome: 'Gravação a Laser', faixas: [
+    { nome: 'Gravação a Laser', imagem: 'img/copo-cuia-laser.png', faixas: [
       { min: 1, preco: 59.90 },
       { min: 5, preco: 55.90 },
     ] },
-    { nome: 'Estampa em DTF', faixas: [
+    { nome: 'Estampa em DTF', imagem: 'img/copo-cuia-dtf.png', faixas: [
       { min: 1, preco: 55.90 },
     ] },
   ],

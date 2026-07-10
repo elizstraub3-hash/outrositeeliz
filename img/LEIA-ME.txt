@@ -1,10 +1,9 @@
-Coloque aqui as fotos dos produtos.
+Fotos dos produtos.
 
-Nomes sugeridos para o Copo Cuia:
-  copo-cuia-laser.jpg  → foto da cuia com gravação a laser (foto principal do card)
-  copo-cuia-dtf.jpg    → foto da cuia com estampa em DTF
+copo-cuia-laser.png → cuia com gravação a laser (foto principal do card)
+copo-cuia-dtf.png   → cuia com estampa em DTF
 
-Depois, em js/produtos.js, basta preencher:
-  imagem: 'img/copo-cuia-laser.jpg'          (no produto)
-  imagem: 'img/copo-cuia-laser.jpg'          (na opção Gravação a Laser)
-  imagem: 'img/copo-cuia-dtf.jpg'            (na opção Estampa em DTF)
+Para usar uma foto em qualquer produto, adicione no js/produtos.js:
+  imagem: 'img/nome-do-arquivo.png'
+(no produto para a foto do card, e/ou em cada opção de combinação
+para a foto da linha na janela de quantidades)
