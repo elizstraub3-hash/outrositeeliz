@@ -1,4 +1,4 @@
-/* ============ GrafiPrint — página inicial ============ */
+/* ============ Print House — página inicial ============ */
 
 /* ---------- Vitrine "Os mais vendidos" (produtos em destaque de cada categoria) ---------- */
 const destaques = [];
@@ -27,23 +27,6 @@ document.getElementById('categorias').innerHTML =
         <div class="category-card__icon">${cat.emoji}</div>
         <div class="category-card__name">${cat.nome}</div>
       </a>`).join('');
-
-/* ---------- Blog ---------- */
-const posts = [
-  { emoji: '🎨', bg: 'linear-gradient(135deg,#fde68a,#fb923c)', tag: 'Dicas de design', titulo: 'Como criar um cartão de visita que impressiona', resumo: 'Confira 7 dicas práticas para o seu cartão se destacar e gerar mais contatos.' },
-  { emoji: '📈', bg: 'linear-gradient(135deg,#bfdbfe,#60a5fa)', tag: 'Marketing', titulo: 'Panfletagem ainda funciona? Veja os dados', resumo: 'Estudos mostram que o impresso continua entre os canais com melhor custo-benefício.' },
-  { emoji: '🖨️', bg: 'linear-gradient(135deg,#bbf7d0,#4ade80)', tag: 'Novidades', titulo: 'DTF UV: a nova era da personalização', resumo: 'Entenda como a impressão DTF UV permite personalizar praticamente qualquer superfície.' },
-];
-
-document.getElementById('blogPosts').innerHTML = posts.map((p) => `
-  <article class="blog-card">
-    <div class="blog-card__img" style="background:${p.bg}">${p.emoji}</div>
-    <div class="blog-card__body">
-      <span class="blog-card__tag">${p.tag}</span>
-      <h3 class="blog-card__title">${p.titulo}</h3>
-      <p class="blog-card__excerpt">${p.resumo}</p>
-    </div>
-  </article>`).join('');
 
 /* ---------- Carrossel do hero ---------- */
 const track = document.getElementById('heroTrack');

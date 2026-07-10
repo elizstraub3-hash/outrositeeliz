@@ -1,4 +1,4 @@
-/* ============ GrafiPrint — página de categoria ============ */
+/* ============ Print House — página de categoria ============ */
 
 const parametros = new URLSearchParams(window.location.search);
 const slugAtual = parametros.get('cat');
@@ -6,7 +6,7 @@ const categoria = CATALOGO[slugAtual] || CATALOGO['cartoes-de-visita'];
 const slug = CATALOGO[slugAtual] ? slugAtual : 'cartoes-de-visita';
 
 /* Cabeçalho da categoria */
-document.title = `${categoria.nome} | GrafiPrint`;
+document.title = `${categoria.nome} | Print House`;
 document.getElementById('catHero').style.background = categoria.banner;
 document.getElementById('catBreadcrumb').textContent = categoria.nome;
 document.getElementById('catTitulo').textContent = `${categoria.emoji} ${categoria.nome}`;

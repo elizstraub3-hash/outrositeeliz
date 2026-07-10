@@ -1,4 +1,4 @@
-/* ============ GrafiPrint — lógica compartilhada (home + páginas de categoria) ============ */
+/* ============ Print House — lógica compartilhada (home + páginas de categoria) ============ */
 
 /* ---------- Formatação de preço ---------- */
 function formatarPreco(valor) {
@@ -60,13 +60,13 @@ function cardProduto(p, slugCategoria) {
         ${hint}
         <div class="product-card__price">
           <small>${precoSmall}</small>
-          <strong>R$ ${formatarPreco(precoValor)}</strong>
+          <strong>R$ ${formatarPreco(precoValor)}</strong> <span class="pix">no Pix</span>
         </div>
         <div class="product-card__prazo">
           <span>⏱️ Previsão de produção: até 5 dias úteis</span>
           <small>* Prazo informado refere-se apenas à produção. O tempo de entrega será adicionado após a finalização.</small>
         </div>
-        <button class="product-card__btn">${p.opcoesCombinacao ? 'Escolher quantidades' : 'Comprar'}</button>
+        <button class="product-card__btn">Comprar</button>
       </div>
     </article>`;
 }
@@ -102,6 +102,60 @@ function criarModal(rotulo, conteudo) {
   return { modal, fechar };
 }
 
+/* Bloco "sobre a arte" exibido em todas as janelas de compra */
+function blocoArte() {
+  return `
+    <div class="modal__arte">
+      <label class="modal__label">Sobre a arte:</label>
+      <div class="arte-opcoes">
+        <label class="arte-opcao"><input type="radio" name="arteOpcao" value="Tenho a arte" checked> Tenho a arte</label>
+        <label class="arte-opcao"><input type="radio" name="arteOpcao" value="Não tenho a arte"> Não tenho a arte</label>
+      </div>
+      <p class="arte-gratis">🎨 Arte grátis para itens acima de R$ 25,00</p>
+      <button type="button" class="arte-link" onclick="abrirRegulamentoArte()">Dúvidas sobre sua arte? Leia aqui</button>
+    </div>`;
+}
+
+function arteEscolhida(modal) {
+  const marcado = modal.querySelector('input[name="arteOpcao"]:checked');
+  return marcado ? marcado.value : 'Tenho a arte';
+}
+
+/* Card fechável com o resumo do regulamento da arte */
+function abrirRegulamentoArte() {
+  const antigo = document.getElementById('modalArte');
+  if (antigo) { antigo.remove(); return; }
+
+  const card = document.createElement('div');
+  card.className = 'modal modal--arte';
+  card.id = 'modalArte';
+  card.innerHTML = `
+    <div class="modal__panel" role="dialog" aria-modal="true" aria-label="Regulamento da arte">
+      <button class="modal__close" aria-label="Fechar">×</button>
+      <h3 class="arte-titulo">🎨 Regulamento da arte</h3>
+      <ul class="arte-regras">
+        <li><strong>Arte grátis</strong> na compra de itens acima de <strong>R$ 25,00</strong> (1 arte por pedido, com até 2 revisões).</li>
+        <li>Se você <strong>já tem a arte</strong>, envie em vetor (CDR, AI ou PDF) com textos convertidos em curvas.</li>
+        <li>Se você <strong>não tem a arte</strong>, nossa equipe cria com base nas informações e no logotipo que você enviar.</li>
+        <li>A produção só começa <strong>após a aprovação da arte</strong> pelo cliente.</li>
+        <li>Confira com atenção textos e telefones: após a aprovação, a responsabilidade pela revisão é do cliente.</li>
+      </ul>
+      <a href="regulamento-arte.html" class="arte-link arte-link--pagina">Ver regulamento completo de arte e entrega →</a>
+    </div>`;
+  document.body.appendChild(card);
+
+  function fechar() {
+    card.remove();
+    document.removeEventListener('keydown', aoTeclar);
+  }
+  function aoTeclar(e) {
+    if (e.key === 'Escape') fechar();
+  }
+  card.querySelector('.modal__close').addEventListener('click', fechar);
+  card.addEventListener('click', (e) => { if (e.target === card) fechar(); });
+  document.addEventListener('keydown', aoTeclar);
+}
+
 function cabecalhoModal(p) {
   return `
     <div class="modal__head">
@@ -125,10 +179,11 @@ function abrirVariacoes(p) {
           <span class="var-row__preco">R$ ${formatarPreco(v.preco)}</span>
         </button>`).join('')}
     </div>
+    ${blocoArte()}
     <div class="modal__foot">
       <div class="modal__total">
         <small>valor da opção</small>
-        <strong id="modalTotal">R$ ${formatarPreco(p.variacoes[0].preco)}</strong>
+        <strong id="modalTotal">R$ ${formatarPreco(p.variacoes[0].preco)}</strong> <span class="pix">no Pix</span>
       </div>
       <button class="btn btn--primary modal__add">Adicionar ao carrinho</button>
     </div>`);
@@ -145,10 +200,11 @@ function abrirVariacoes(p) {
   modal.querySelector('.modal__add').addEventListener('click', () => {
     const v = p.variacoes[selecionada];
     itensCarrinho++;
-    localStorage.setItem('grafiprint_carrinho', itensCarrinho);
+    localStorage.setItem('printhouse_carrinho', itensCarrinho);
     if (cartBadge) cartBadge.textContent = itensCarrinho;
+    const arte = arteEscolhida(modal);
     fechar();
-    mostrarToast(`✅ ${p.nome} (${v.label}) adicionado ao carrinho!`);
+    mostrarToast(`✅ ${p.nome} (${v.label}) · ${arte} — adicionado ao carrinho!`);
   });
 }
 
@@ -172,10 +228,11 @@ function abrirCores(p) {
       </div>
       <small class="modal__unitario">R$ ${formatarPreco(p.precoUnitario)} por unidade</small>
     </div>
+    ${blocoArte()}
     <div class="modal__foot">
       <div class="modal__total">
         <small id="modalResumo">${min} un</small>
-        <strong id="modalTotal">R$ ${formatarPreco(min * p.precoUnitario)}</strong>
+        <strong id="modalTotal">R$ ${formatarPreco(min * p.precoUnitario)}</strong> <span class="pix">no Pix</span>
       </div>
       <button class="btn btn--primary modal__add">Adicionar ao carrinho</button>
     </div>`);
@@ -206,10 +263,11 @@ function abrirCores(p) {
     const qtd = qtdAtual();
     const cor = modal.querySelector('#modalCor').value;
     itensCarrinho += qtd;
-    localStorage.setItem('grafiprint_carrinho', itensCarrinho);
+    localStorage.setItem('printhouse_carrinho', itensCarrinho);
     if (cartBadge) cartBadge.textContent = itensCarrinho;
+    const arte = arteEscolhida(modal);
     fechar();
-    mostrarToast(`✅ ${qtd}× ${p.nome} (${cor}) — R$ ${formatarPreco(qtd * p.precoUnitario)} adicionado ao carrinho!`);
+    mostrarToast(`✅ ${qtd}× ${p.nome} (${cor}) · ${arte} — R$ ${formatarPreco(qtd * p.precoUnitario)} adicionado ao carrinho!`);
   });
 }
 
@@ -237,10 +295,11 @@ function abrirCombinacoes(p) {
           <div class="comb-row__subtotal">R$ 0,00</div>
         </div>`).join('')}
     </div>
+    ${blocoArte()}
     <div class="modal__foot">
       <div class="modal__total">
         <small id="modalResumo">Nenhum copo selecionado</small>
-        <strong id="modalTotal">R$ 0,00</strong>
+        <strong id="modalTotal">R$ 0,00</strong> <span class="pix">no Pix</span>
       </div>
       <button class="btn btn--primary modal__add" disabled>Adicionar ao carrinho</button>
     </div>`);
@@ -287,15 +346,16 @@ function abrirCombinacoes(p) {
       .filter(Boolean)
       .join(' + ');
     itensCarrinho += total;
-    localStorage.setItem('grafiprint_carrinho', itensCarrinho);
+    localStorage.setItem('printhouse_carrinho', itensCarrinho);
     if (cartBadge) cartBadge.textContent = itensCarrinho;
+    const arte = arteEscolhida(modal);
     fechar();
-    mostrarToast(`✅ ${resumo} (R$ ${formatarPreco(valorTotal)}) adicionado ao carrinho!`);
+    mostrarToast(`✅ ${resumo} · ${arte} — R$ ${formatarPreco(valorTotal)} adicionado ao carrinho!`);
   });
 }
 
 /* ---------- Carrinho (contador persiste entre as páginas) ---------- */
-let itensCarrinho = parseInt(localStorage.getItem('grafiprint_carrinho') || '0', 10);
+let itensCarrinho = parseInt(localStorage.getItem('printhouse_carrinho') || '0', 10);
 const cartBadge = document.getElementById('cartCount');
 if (cartBadge) cartBadge.textContent = itensCarrinho;
 

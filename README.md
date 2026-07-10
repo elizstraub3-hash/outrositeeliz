@@ -1,4 +1,4 @@
-# GrafiPrint — Site estilo gráfica online
+# Print House — Site estilo gráfica online
 
 Site institucional/e-commerce inspirado no layout da GIV Online (gráfica online brasileira), construído com HTML, CSS e JavaScript puros — sem dependências, sem build.
 
@@ -64,5 +64,5 @@ Há três formatos de produto no catálogo (`js/produtos.js`):
 
 - **Produtos e textos:** edite as listas no início de `js/main.js`.
 - **Cores:** altere as variáveis em `:root` no `css/style.css` (a cor principal é `--primary`).
-- **Nome/logotipo:** procure por "GrafiPrint" no `index.html`.
+- **Nome/logotipo:** procure por "Print House" no `index.html`.
 - **Imagens reais:** substitua os emojis dos cards por `<img>` com fotos dos seus produtos.

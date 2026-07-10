@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Print House | Sua Gráfica Online — Impressos Personalizados</title>
-  <meta name="description" content="Gráfica online com a melhor qualidade, entrega rápida e preços imbatíveis. Cartões de visita, panfletos, adesivos, brindes e muito mais.">
+  <title>Regulamento de Arte e Entrega | Print House</title>
+  <meta name="description" content="Regras de criação e envio de arte, prazos de produção e entrega da Print House.">
   <link rel="stylesheet" href="css/style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -25,7 +25,7 @@
         <span></span><span></span><span></span>
       </button>
 
-      <a href="#" class="logo">
+      <a href="index.html" class="logo">
         <span class="logo__icon">P</span>
         <span class="logo__text">Print<strong>House</strong></span>
       </a>
@@ -46,7 +46,7 @@
           <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-6 8-6s8 2 8 6"/></svg>
           <span>Entre ou<br>cadastre-se</span>
         </a>
-        <a href="#" class="header__action header__cart" title="Meu carrinho" id="btnCarrinho">
+        <a href="#" class="header__action header__cart" title="Meu carrinho">
           <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="20" r="1.5"/><circle cx="18" cy="20" r="1.5"/><path d="M3 3h2l2.4 12.2a1.5 1.5 0 0 0 1.5 1.2h8.6a1.5 1.5 0 0 0 1.5-1.2L21 7H6"/></svg>
           <span class="cart-badge" id="cartCount">0</span>
         </a>
@@ -63,135 +63,80 @@
             </button>
             <ul class="dropdown__menu" id="dropdownMenu"></ul>
           </li>
-          <li><a href="#produtos" class="nav__link">Mais Vendidos</a></li>
-          <li><a href="#lancamentos" class="nav__link nav__link--new">Lançamentos 🔥</a></li>
-          <li><a href="#sobre" class="nav__link">Quem Somos</a></li>
-          <li><a href="#contato" class="nav__link">Contato</a></li>
+          <li><a href="index.html#produtos" class="nav__link">Mais Vendidos</a></li>
+          <li><a href="categoria.html?cat=lancamentos" class="nav__link nav__link--new">Lançamentos 🔥</a></li>
+          <li><a href="index.html#sobre" class="nav__link">Quem Somos</a></li>
+          <li><a href="index.html#contato" class="nav__link">Contato</a></li>
         </ul>
       </div>
     </nav>
   </header>
 
-  <!-- Carrossel de banners -->
-  <section class="hero" id="hero">
-    <div class="hero__track" id="heroTrack">
-      <div class="hero__slide hero__slide--1">
-        <div class="container hero__content">
-          <span class="hero__tag">Frete grátis*</span>
-          <h1>Sua marca impressa<br>com <em>qualidade profissional</em></h1>
-          <p>Frete grátis para São Paulo em pedidos acima de R$ 199</p>
-          <a href="#produtos" class="btn btn--light">Ver produtos</a>
-        </div>
-      </div>
-      <div class="hero__slide hero__slide--2">
-        <div class="container hero__content">
-          <span class="hero__tag">Oferta especial</span>
-          <h1>Cartões de visita<br>a partir de <em>R$ 39,90</em></h1>
-          <p>1.000 unidades em papel couchê 300g com verniz total</p>
-          <a href="#produtos" class="btn btn--light">Aproveitar oferta</a>
-        </div>
-      </div>
-      <div class="hero__slide hero__slide--3">
-        <div class="container hero__content">
-          <span class="hero__tag">Novidade</span>
-          <h1>Impressão DTF UV<br><em>chegou na Print House</em></h1>
-          <p>Personalize qualquer superfície com cores vibrantes</p>
-          <a href="#lancamentos" class="btn btn--light">Conhecer</a>
-        </div>
-      </div>
-    </div>
-    <button class="hero__arrow hero__arrow--prev" id="heroPrev" aria-label="Slide anterior">‹</button>
-    <button class="hero__arrow hero__arrow--next" id="heroNext" aria-label="Próximo slide">›</button>
-    <div class="hero__dots" id="heroDots"></div>
-  </section>
-
-  <!-- Faixa de benefícios -->
-  <section class="benefits">
-    <div class="container benefits__grid">
-      <div class="benefit">
-        <div class="benefit__icon">🚚</div>
-        <div><strong>Entrega rápida</strong><span>Para todo o Brasil</span></div>
-      </div>
-      <div class="benefit">
-        <div class="benefit__icon">💳</div>
-        <div><strong>Pagamento fácil</strong><span>Pix, cartão e boleto</span></div>
-      </div>
-      <div class="benefit">
-        <div class="benefit__icon">🏆</div>
-        <div><strong>Qualidade garantida</strong><span>Ou reimprimimos grátis</span></div>
-      </div>
-      <div class="benefit">
-        <div class="benefit__icon">💬</div>
-        <div><strong>Atendimento humano</strong><span>Especialistas de verdade</span></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Mais vendidos -->
-  <section class="section" id="produtos">
+  <!-- Banner -->
+  <section class="cat-hero" style="background: linear-gradient(120deg, #1a1a1a, #4b5563);">
     <div class="container">
-      <div class="section__head">
-        <h2>Os mais vendidos</h2>
-        <a href="#" class="section__link">Ver todos →</a>
-      </div>
-      <div class="products" id="maisVendidos"></div>
+      <p class="cat-hero__breadcrumb"><a href="index.html">Início</a> / <span>Regulamento de arte e entrega</span></p>
+      <h1>🎨 Regulamento de Arte e Entrega</h1>
+      <p class="cat-hero__desc">Tudo o que você precisa saber sobre a criação e o envio da sua arte, e sobre os prazos de produção e entrega.</p>
     </div>
   </section>
 
-  <!-- Categorias -->
-  <section class="section section--alt">
-    <div class="container">
-      <div class="section__head">
-        <h2>Navegue por categoria</h2>
-      </div>
-      <div class="categories" id="categorias"></div>
-    </div>
-  </section>
+  <!-- Termos de arte -->
+  <section class="section" id="arte">
+    <div class="container regras">
+      <h2>Termos de arte</h2>
 
-  <!-- Lançamentos -->
-  <section class="section" id="lancamentos">
-    <div class="container">
-      <div class="section__head">
-        <h2>Últimos lançamentos</h2>
-        <a href="categoria.html?cat=lancamentos" class="section__link">Ver todos →</a>
-      </div>
-      <div class="products" id="produtosLancamentos"></div>
-    </div>
-  </section>
+      <h3>🎁 Arte grátis</h3>
+      <ul class="arte-regras">
+        <li><strong>Arte grátis para itens acima de R$ 25,00.</strong> Na compra de qualquer item com valor acima de R$ 25,00, a criação da arte é por nossa conta.</li>
+        <li>A cortesia inclui <strong>1 criação de arte por pedido</strong>, com direito a <strong>até 2 revisões</strong>. Revisões adicionais ou novas artes podem ser orçadas à parte.</li>
+        <li>Para itens abaixo de R$ 25,00, a criação de arte pode ser contratada à parte — consulte nosso atendimento.</li>
+      </ul>
 
-  <!-- Sobre -->
-  <section class="about" id="sobre">
-    <div class="container about__grid">
-      <div class="about__text">
-        <h2>Precisando de uma <em>gráfica online</em> com qualidade, entrega rápida e extrema confiança?</h2>
-        <p>
-          A Print House é a sua gráfica parceira! Somos especialistas em impressão digital e offset,
-          com mais de <strong>30 anos de experiência</strong> e capacidade para atender mais de
-          <strong>8.000 pedidos por mês</strong>. São mais de <strong>20.000 impressos personalizados</strong>
-          para você divulgar sua marca com profissionalismo.
-        </p>
-        <a href="#" class="btn btn--primary">Fale com nossos especialistas</a>
-      </div>
-      <div class="about__stats">
-        <div class="stat"><strong>+30</strong><span>anos de experiência</span></div>
-        <div class="stat"><strong>+8.000</strong><span>pedidos por mês</span></div>
-        <div class="stat"><strong>+20 mil</strong><span>produtos personalizados</span></div>
-        <div class="stat"><strong>4.9 ★</strong><span>avaliação dos clientes</span></div>
-      </div>
-    </div>
-  </section>
+      <h3>✅ Se você já tem a arte ("Tenho a arte")</h3>
+      <ul class="arte-regras">
+        <li>Envie o arquivo em <strong>vetor</strong>: CDR (CorelDRAW), AI (Illustrator) ou PDF vetorial.</li>
+        <li>Converta todos os <strong>textos em curvas</strong> antes de enviar, para evitar troca de fontes.</li>
+        <li>Para gravação a laser, a arte deve estar em <strong>uma cor única</strong> (traço), sem degradês ou sombras.</li>
+        <li>Imagens (JPG/PNG) devem ter no mínimo <strong>300 dpi</strong> no tamanho final de impressão.</li>
+        <li>Respeite a <strong>área de gravação/impressão</strong> indicada em cada produto (ex.: 4x4 cm no copo cuia).</li>
+      </ul>
 
-  <!-- Newsletter -->
-  <section class="newsletter" id="contato">
-    <div class="container newsletter__inner">
-      <div>
-        <h2>Receba ofertas exclusivas</h2>
-        <p>Cadastre-se e ganhe cupons de desconto direto no seu e-mail</p>
-      </div>
-      <form class="newsletter__form" onsubmit="assinarNewsletter(event)">
-        <input type="email" placeholder="Seu melhor e-mail" required>
-        <button type="submit" class="btn btn--dark">Quero receber</button>
-      </form>
+      <h3>🖌️ Se você não tem a arte ("Não tenho a arte")</h3>
+      <ul class="arte-regras">
+        <li>Nossa equipe cria a arte com base no seu <strong>logotipo, textos e referências</strong> enviados pelo WhatsApp ou e-mail após a compra.</li>
+        <li>O prazo de criação é de <strong>até 2 dias úteis</strong> após o recebimento de todo o material.</li>
+        <li>Você receberá uma <strong>prévia digital para aprovação</strong> antes da produção.</li>
+      </ul>
+
+      <h3>⚠️ Aprovação e responsabilidade</h3>
+      <ul class="arte-regras">
+        <li>A produção só começa <strong>após a aprovação da arte</strong> pelo cliente.</li>
+        <li>Confira com atenção <strong>textos, telefones, endereços e cores</strong>: após a aprovação, a responsabilidade pela revisão do conteúdo é do cliente.</li>
+        <li>Erros de nossa parte (arquivo aprovado diferente do produzido) são <strong>reimpressos gratuitamente</strong>.</li>
+        <li>Cores podem variar levemente entre a tela e o material impresso — é uma característica normal do processo gráfico.</li>
+      </ul>
+
+      <h2 id="entrega" style="margin-top:2.5rem">Termos de entrega</h2>
+
+      <h3>⏱️ Produção</h3>
+      <ul class="arte-regras">
+        <li>A previsão de produção é de <strong>até 5 dias úteis</strong>, contados a partir da <strong>aprovação da arte</strong> e da confirmação do pagamento.</li>
+        <li>O prazo informado nos produtos refere-se <strong>apenas à produção</strong>. O tempo de entrega será adicionado após a finalização.</li>
+      </ul>
+
+      <h3>🚚 Envio</h3>
+      <ul class="arte-regras">
+        <li>Enviamos para <strong>todo o Brasil</strong> por Correios e transportadoras parceiras.</li>
+        <li>O prazo e o valor do frete são calculados no fechamento do pedido, conforme o CEP.</li>
+        <li>Após a postagem, você recebe o <strong>código de rastreamento</strong>.</li>
+        <li><strong>Frete grátis para São Paulo</strong> em pedidos acima de R$ 199.</li>
+        <li>Também é possível <strong>retirar na loja</strong> sem custo, mediante agendamento.</li>
+      </ul>
+
+      <p class="regras__contato">
+        Ficou com dúvidas? <a href="#" class="arte-link">Fale com nossos especialistas no WhatsApp</a> 💬
+      </p>
     </div>
   </section>
 
@@ -199,7 +144,7 @@
   <footer class="footer">
     <div class="container footer__grid">
       <div class="footer__col footer__col--brand">
-        <a href="#" class="logo logo--light">
+        <a href="index.html" class="logo logo--light">
           <span class="logo__icon">P</span>
           <span class="logo__text">Print<strong>House</strong></span>
         </a>
@@ -214,7 +159,7 @@
       <div class="footer__col">
         <h3>Institucional</h3>
         <ul>
-          <li><a href="#">Quem somos</a></li>
+          <li><a href="index.html#sobre">Quem somos</a></li>
           <li><a href="#">Nossas lojas</a></li>
           <li><a href="#">Trabalhe conosco</a></li>
           <li><a href="#">Política de privacidade</a></li>
@@ -257,6 +202,5 @@
 
   <script src="js/produtos.js"></script>
   <script src="js/loja.js"></script>
-  <script src="js/main.js"></script>
 </body>
 </html>

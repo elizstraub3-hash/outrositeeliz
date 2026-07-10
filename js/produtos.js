@@ -1,4 +1,4 @@
-/* ============ GrafiPrint — catálogo de produtos ============
+/* ============ Print House — catálogo de produtos ============
    Edite aqui suas categorias, produtos e variações (opção + preço). */
 
 /* Produtos que aparecem em mais de uma categoria são definidos uma única
@@ -342,7 +342,7 @@ const CATALOGO = {
     nome: 'Lançamentos',
     emoji: '🔥',
     banner: 'linear-gradient(120deg,#7c3aed,#a78bfa)',
-    descricao: 'As novidades que acabaram de chegar na GrafiPrint.',
+    descricao: 'As novidades que acabaram de chegar na Print House.',
     produtos: [
       { emoji: '👕', bg: 'linear-gradient(135deg,#ddd6fe,#8b5cf6)', badge: 'Novo',
         nome: 'Camiseta DTF UV', spec: 'Algodão premium · cores vibrantes',
