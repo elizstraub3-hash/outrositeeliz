@@ -27,7 +27,11 @@ function cardProduto(p, slugCategoria) {
           <small>${v0.label} por</small>
           <strong>R$ ${formatarPreco(v0.preco)}</strong>
         </div>
-        <button class="product-card__btn">Adicionar ao carrinho</button>
+        <div class="product-card__prazo">
+          <span>⏱️ Previsão de produção: até 5 dias úteis</span>
+          <small>* Prazo informado refere-se apenas à produção. O tempo de entrega será adicionado após a finalização.</small>
+        </div>
+        <button class="product-card__btn">Comprar</button>
       </div>
     </article>`;
 }

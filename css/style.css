@@ -394,18 +394,36 @@ button { font-family: inherit; cursor: pointer; }
 }
 .product-card__select:hover,
 .product-card__select:focus { border-color: var(--primary); outline: none; }
-.product-card__price { margin-top: auto; margin-bottom: .8rem; }
+.product-card__price { margin-top: auto; margin-bottom: .6rem; }
 .product-card__price small { display: block; font-size: .72rem; color: var(--gray); }
 .product-card__price strong { font-size: 1.25rem; color: var(--dark); }
+.product-card__prazo {
+  border-top: 1px dashed var(--border);
+  padding-top: .55rem;
+  margin-bottom: .7rem;
+}
+.product-card__prazo span {
+  display: block;
+  font-size: .72rem;
+  font-weight: 600;
+  color: var(--dark);
+  margin-bottom: .2rem;
+}
+.product-card__prazo small {
+  display: block;
+  font-size: .64rem;
+  line-height: 1.45;
+  color: var(--gray);
+}
 .product-card__btn {
   width: 100%;
   border: none;
   background: var(--primary);
   color: var(--white);
-  padding: .65rem;
+  padding: .5rem;
   border-radius: 8px;
   font-weight: 600;
-  font-size: .85rem;
+  font-size: .8rem;
   transition: background .15s;
 }
 .product-card__btn:hover { background: var(--primary-dark); }

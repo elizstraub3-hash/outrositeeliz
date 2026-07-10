@@ -7,11 +7,13 @@
 const copoCuia = {
   emoji: '🧉', bg: 'linear-gradient(135deg,#e2e8f0,#94a3b8)', badge: 'Novo',
   nome: 'Copo Cuia com Tampa em Acrílico 360ml',
-  spec: 'Metal · tampa acrílica · gravação a laser 4x4 cm',
+  spec: 'Metal · tampa acrílica · gravação a laser 4x4 cm ou estampa em DTF',
   nota: '5.0', avaliacoes: 18,
   variacoes: [
-    { label: '1 un', preco: 59.90 },
-    { label: '5 un (R$ 55,90/un)', preco: 279.50 },
+    { label: '1 un · Gravação a Laser', preco: 59.90 },
+    { label: '5 un · Gravação a Laser (R$ 55,90/un)', preco: 279.50 },
+    { label: '1 un · Estampa em DTF', preco: 55.90 },
+    { label: '5 un · Estampa em DTF (R$ 55,90/un)', preco: 279.50 },
   ],
 };
 
