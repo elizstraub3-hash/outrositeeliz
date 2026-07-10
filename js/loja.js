@@ -43,6 +43,7 @@ function cardProduto(p, slugCategoria) {
     precoValor = p.precoUnitario;
   } else {
     const v0 = p.variacoes[0];
+    hint = `<p class="product-card__comb-hint">📦 ${p.variacoes.map((v) => v.label).join(' · ')}</p>`;
     precoSmall = `${v0.label} por`;
     precoValor = v0.preco;
   }

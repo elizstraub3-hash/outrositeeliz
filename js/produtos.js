@@ -44,11 +44,31 @@ const copoTermico = {
 
 const copoInoxColorido = {
   emoji: '🥛', bg: 'linear-gradient(135deg,#f1f5f9,#94a3b8)', badge: 'Novo',
+  imagem: 'img/copo-termico-inox.png',
   nome: 'Copo Térmico Aço Inox',
   spec: 'Aço inox · gravação a laser 4x0 (4x10 cm) · 10 cores',
   precoUnitario: 49.90,
   minimo: 1,
   cores: ['Laranja', 'Preto', 'Azul Marinho', 'Branco', 'Marrom', 'Pink', 'Rosa Claro', 'Tiffany', 'Verde Militar', 'Vermelho'],
+};
+
+const garrafaInox750 = {
+  emoji: '🍶', bg: 'linear-gradient(135deg,#fed7aa,#ea580c)', badge: 'Novo',
+  imagem: 'img/garrafa-inox-750.png',
+  nome: 'Garrafa de Inox 750ml Opus',
+  spec: 'Aço inox · gravação a laser 4x0 (4x10 cm) · 7 cores',
+  precoUnitario: 69.90,
+  minimo: 1,
+  cores: ['Preto', 'Laranja', 'Branco', 'Vermelho', 'Rosa', 'Azul', 'Prata'],
+};
+
+const squeezeFosca = {
+  emoji: '🧴', bg: 'linear-gradient(135deg,#bae6fd,#0369a1)', badge: 'Novo',
+  nome: 'Squeeze Fosca 600ml',
+  spec: 'Metal fosco · gravação a laser 4x0 (4x10 cm) · 6 cores',
+  precoUnitario: 49.90,
+  minimo: 1,
+  cores: ['Preto', 'Verde', 'Vermelho', 'Rosa', 'Azul', 'Prata'],
 };
 
 const canetaPersonalizada = {
@@ -311,6 +331,8 @@ const CATALOGO = {
         minimo: 25,
         cores: ['Preto', 'Verde', 'Vermelho', 'Rosa', 'Azul', 'Prata'] },
       copoInoxColorido,
+      garrafaInox750,
+      squeezeFosca,
       copoTermico,
       canetaPersonalizada,
     ],
