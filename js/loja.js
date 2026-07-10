@@ -61,7 +61,7 @@ function cardProduto(p, slugCategoria) {
     <article class="product-card">
       <a class="product-card__img" style="background:${p.bg}" href="categoria.html?cat=${slugCategoria}" title="Ver categoria ${CATALOGO[slugCategoria].nome}">
         ${p.badge ? `<span class="product-card__badge ${p.badge === 'Novo' ? 'product-card__badge--new' : ''}">${p.badge}</span>` : ''}
-        ${p.emoji}
+        ${p.imagem ? `<img src="${p.imagem}" alt="${p.nome}" loading="lazy">` : p.emoji}
       </a>
       <div class="product-card__body">
         <h3 class="product-card__title">${p.nome}</h3>
@@ -98,7 +98,7 @@ function abrirCombinacoes(p) {
     <div class="modal__panel" role="dialog" aria-modal="true" aria-label="Combinações de ${p.nome}">
       <button class="modal__close" aria-label="Fechar">×</button>
       <div class="modal__head">
-        <div class="modal__thumb" style="background:${p.bg}">${p.emoji}</div>
+        <div class="modal__thumb" style="background:${p.bg}">${p.imagem ? `<img src="${p.imagem}" alt="${p.nome}">` : p.emoji}</div>
         <div>
           <h3>${p.nome}</h3>
           <p>${p.spec}</p>
@@ -111,6 +111,7 @@ function abrirCombinacoes(p) {
       <div class="modal__rows">
         ${p.opcoesCombinacao.map((o, i) => `
           <div class="comb-row" data-idx="${i}">
+            ${o.imagem ? `<img class="comb-row__foto" src="${o.imagem}" alt="${o.nome}">` : ''}
             <div class="comb-row__nome">
               <strong>${o.nome}</strong>
               <small class="comb-row__unit">R$ ${formatarPreco(o.faixas[0].preco)}/un</small>
