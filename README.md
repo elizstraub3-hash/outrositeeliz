@@ -16,12 +16,14 @@ python3 -m http.server 8000
 
 ```
 index.html      → página principal (todas as seções)
+admin.html      → painel administrativo (senha em js/admin.js)
 categoria.html  → página de categoria (recebe ?cat=slug na URL)
 css/style.css   → estilos e responsividade
 js/produtos.js  → catálogo: categorias, produtos e variações (edite aqui!)
 js/loja.js      → lógica compartilhada: cards, variações, carrinho, dropdown
 js/main.js      → específico da home: vitrines, carrossel, blog
 js/categoria.js → específico da página de categoria
+js/admin.js     → painel administrativo (editar catálogo)
 ```
 
 ## Páginas de categoria

@@ -397,3 +397,16 @@ const CATALOGO = {
     ],
   },
 };
+
+/* Sobrescreve o catálogo com as edições feitas no painel administrativo
+   (admin.html). Sem edições salvas, vale o catálogo padrão acima. */
+try {
+  const catalogoEditado = localStorage.getItem('printhouse_catalogo');
+  if (catalogoEditado) {
+    const editado = JSON.parse(catalogoEditado);
+    if (editado && typeof editado === 'object') {
+      Object.keys(CATALOGO).forEach((k) => delete CATALOGO[k]);
+      Object.assign(CATALOGO, editado);
+    }
+  }
+} catch (e) { /* mantém o catálogo padrão */ }

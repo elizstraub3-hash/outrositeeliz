@@ -225,11 +225,9 @@ function abrirVariacoes(p) {
 
   modal.querySelector('.modal__add').addEventListener('click', () => {
     const v = p.variacoes[selecionada];
-    itensCarrinho++;
-    localStorage.setItem('printhouse_carrinho', itensCarrinho);
-    if (cartBadge) cartBadge.textContent = itensCarrinho;
     const arte = arteEscolhida(modal);
     const arquivo = arquivoArte(modal);
+    adicionarItemCarrinho({ nome: p.nome, detalhe: v.label, qtd: 1, total: v.preco, arte, arquivo });
     fechar();
     mostrarToast(`${p.nome} (${v.label}) · ${arte}${arquivo ? ` (${arquivo})` : ''} — adicionado ao carrinho!`);
   });
@@ -289,11 +287,9 @@ function abrirCores(p) {
   modal.querySelector('.modal__add').addEventListener('click', () => {
     const qtd = qtdAtual();
     const cor = modal.querySelector('#modalCor').value;
-    itensCarrinho += qtd;
-    localStorage.setItem('printhouse_carrinho', itensCarrinho);
-    if (cartBadge) cartBadge.textContent = itensCarrinho;
     const arte = arteEscolhida(modal);
     const arquivo = arquivoArte(modal);
+    adicionarItemCarrinho({ nome: p.nome, detalhe: `${qtd} un · ${cor}`, qtd, total: qtd * p.precoUnitario, arte, arquivo });
     fechar();
     mostrarToast(`${qtd}× ${p.nome} (${cor}) · ${arte}${arquivo ? ` (${arquivo})` : ''} — R$ ${formatarPreco(qtd * p.precoUnitario)} adicionado ao carrinho!`);
   });
@@ -373,20 +369,109 @@ function abrirCombinacoes(p) {
       .map((o, i) => (qtds[i] > 0 ? `${qtds[i]}× ${o.nome}` : null))
       .filter(Boolean)
       .join(' + ');
-    itensCarrinho += total;
-    localStorage.setItem('printhouse_carrinho', itensCarrinho);
-    if (cartBadge) cartBadge.textContent = itensCarrinho;
     const arte = arteEscolhida(modal);
     const arquivo = arquivoArte(modal);
+    adicionarItemCarrinho({ nome: p.nome, detalhe: resumo, qtd: total, total: valorTotal, arte, arquivo });
     fechar();
     mostrarToast(`${resumo} · ${arte}${arquivo ? ` (${arquivo})` : ''} — R$ ${formatarPreco(valorTotal)} adicionado ao carrinho!`);
   });
 }
 
-/* ---------- Carrinho (contador persiste entre as páginas) ---------- */
-let itensCarrinho = parseInt(localStorage.getItem('printhouse_carrinho') || '0', 10);
+/* ---------- Carrinho (itens persistem entre as páginas) ---------- */
+let carrinho = [];
+try {
+  carrinho = JSON.parse(localStorage.getItem('printhouse_carrinho_itens') || '[]');
+  if (!Array.isArray(carrinho)) carrinho = [];
+} catch (e) {
+  carrinho = [];
+}
 const cartBadge = document.getElementById('cartCount');
-if (cartBadge) cartBadge.textContent = itensCarrinho;
+atualizarBadgeCarrinho();
+
+function atualizarBadgeCarrinho() {
+  if (cartBadge) cartBadge.textContent = carrinho.reduce((soma, item) => soma + item.qtd, 0);
+}
+
+function salvarCarrinho() {
+  localStorage.setItem('printhouse_carrinho_itens', JSON.stringify(carrinho));
+  atualizarBadgeCarrinho();
+}
+
+function adicionarItemCarrinho(item) {
+  carrinho.push(item);
+  salvarCarrinho();
+}
+
+/* Janela do carrinho: lista, remove, limpa e finaliza no WhatsApp */
+function abrirCarrinho() {
+  const totalValor = carrinho.reduce((soma, item) => soma + item.total, 0);
+  const totalUnidades = carrinho.reduce((soma, item) => soma + item.qtd, 0);
+  const linhas = carrinho.length
+    ? carrinho.map((item, i) => `
+        <div class="cart-item">
+          <div class="cart-item__info">
+            <strong>${item.nome}</strong>
+            <small>${item.detalhe} · ${item.arte}${item.arquivo ? ` (${item.arquivo})` : ''}</small>
+          </div>
+          <span class="cart-item__preco">R$ ${formatarPreco(item.total)}</span>
+          <button type="button" class="cart-item__remover" data-i="${i}" aria-label="Remover item">×</button>
+        </div>`).join('')
+    : '<p class="cart-vazio">Seu carrinho está vazio.</p>';
+
+  const { modal, fechar } = criarModal('Meu carrinho', `
+    <h3 class="arte-titulo">Meu carrinho</h3>
+    <div class="cart-lista">${linhas}</div>
+    <div class="modal__foot">
+      <div class="modal__total">
+        <small>${totalUnidades} unidade${totalUnidades === 1 ? '' : 's'}</small>
+        <strong>R$ ${formatarPreco(totalValor)}</strong> <span class="pix">no Pix</span>
+      </div>
+      <div class="cart-acoes">
+        <button type="button" class="btn btn--claro cart-limpar" ${carrinho.length === 0 ? 'disabled' : ''}>Limpar</button>
+        <button type="button" class="btn btn--primary cart-finalizar" ${carrinho.length === 0 ? 'disabled' : ''}>Finalizar no WhatsApp</button>
+      </div>
+    </div>`);
+
+  modal.querySelectorAll('.cart-item__remover').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      carrinho.splice(Number(btn.dataset.i), 1);
+      salvarCarrinho();
+      fechar();
+      abrirCarrinho();
+    });
+  });
+
+  const btnLimpar = modal.querySelector('.cart-limpar');
+  if (btnLimpar) btnLimpar.addEventListener('click', () => {
+    carrinho = [];
+    salvarCarrinho();
+    fechar();
+    mostrarToast('Carrinho esvaziado.');
+  });
+
+  const btnFinalizar = modal.querySelector('.cart-finalizar');
+  if (btnFinalizar) btnFinalizar.addEventListener('click', () => {
+    const msg = ['Olá! Gostaria de fazer um pedido na Print House:', ''];
+    carrinho.forEach((item, i) => {
+      msg.push(`${i + 1}) ${item.nome} — ${item.detalhe} — R$ ${formatarPreco(item.total)} — ${item.arte}${item.arquivo ? ` (arquivo: ${item.arquivo})` : ''}`);
+    });
+    msg.push('', `Total: R$ ${formatarPreco(totalValor)} no Pix`);
+    if (carrinho.some((item) => item.arte === 'Tenho a arte')) {
+      msg.push('', 'Vou enviar o arquivo da arte nesta conversa.');
+    }
+    window.open(`${WHATSAPP_GRAFICA}?text=${encodeURIComponent(msg.join('\n'))}`, '_blank');
+    fechar();
+    mostrarToast('Pedido aberto no WhatsApp!');
+  });
+}
+
+/* Ícone do carrinho abre a janela em qualquer página */
+document.querySelectorAll('.header__cart').forEach((el) => {
+  el.addEventListener('click', (e) => {
+    e.preventDefault();
+    abrirCarrinho();
+  });
+});
 
 function encontrarProduto(nome) {
   for (const cat of Object.values(CATALOGO)) {

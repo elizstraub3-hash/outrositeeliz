@@ -890,6 +890,37 @@ button { font-family: inherit; cursor: pointer; }
   .modal__foot { flex-direction: column; align-items: stretch; text-align: center; }
 }
 
+/* ============ Carrinho ============ */
+.cart-lista { display: grid; gap: .6rem; margin-bottom: 1rem; max-height: 46vh; overflow-y: auto; }
+.cart-item {
+  display: flex;
+  align-items: center;
+  gap: .8rem;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: .65rem .8rem;
+}
+.cart-item__info { flex: 1; min-width: 0; }
+.cart-item__info strong { display: block; font-size: .85rem; }
+.cart-item__info small { font-size: .72rem; color: var(--gray); }
+.cart-item__preco { font-size: .85rem; font-weight: 700; white-space: nowrap; }
+.cart-item__remover {
+  width: 28px; height: 28px;
+  border: none;
+  border-radius: 50%;
+  background: var(--gray-light);
+  color: var(--dark);
+  font-size: 1rem;
+  line-height: 1;
+  flex-shrink: 0;
+}
+.cart-item__remover:hover { background: var(--border); }
+.cart-vazio { font-size: .9rem; color: var(--gray); padding: 1rem 0; }
+.cart-acoes { display: flex; gap: .6rem; flex-wrap: wrap; }
+.btn--claro { background: var(--gray-light); color: var(--dark); }
+.btn--claro:hover { background: var(--border); }
+.cart-limpar:disabled, .cart-finalizar:disabled { opacity: .5; cursor: not-allowed; transform: none; box-shadow: none; }
+
 /* ============ Toast ============ */
 .toast {
   position: fixed;
