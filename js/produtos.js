@@ -71,6 +71,25 @@ const squeezeFosca = {
   cores: ['Preto', 'Verde', 'Vermelho', 'Rosa', 'Azul', 'Prata'],
 };
 
+const kitChurrasco = {
+  bg: 'linear-gradient(135deg,#fca5a5,#7f1d1d)', badge: 'Novo',
+  nome: 'Kit Churrasco',
+  spec: 'Estojo nylon + talheres aço inox · gravação a laser + DTF rígido',
+  variacoes: [
+    { label: '1 kit', preco: 95.90 },
+  ],
+};
+
+const camisetaDtf = {
+  bg: 'linear-gradient(135deg,#ddd6fe,#8b5cf6)', badge: 'Novo',
+  nome: 'Camiseta DTF UV', spec: 'Algodão premium · cores vibrantes',
+  variacoes: [
+    { label: '10 un', preco: 349.90 },
+    { label: '25 un', preco: 824.90 },
+    { label: '50 un', preco: 1549.90 },
+  ],
+};
+
 const canetaPersonalizada = {
   emoji: '🖊️', bg: 'linear-gradient(135deg,#fce7f3,#f472b6)',
   nome: 'Caneta Personalizada', spec: 'Gravação a laser 4x0 ou silk',
@@ -313,6 +332,7 @@ const CATALOGO = {
     descricao: 'Personalização premium com gravação a laser em metal, inox e outros materiais.',
     produtos: [
       copoCuia,
+      kitChurrasco,
       { emoji: '🖋️', bg: 'linear-gradient(135deg,#cbd5e1,#475569)', badge: 'Novo',
         nome: 'Caneta de Metal Touch', spec: 'Metal · ponta touch · gravação a laser 4x0 (0,6x5 cm)',
         variacoes: [
@@ -340,19 +360,26 @@ const CATALOGO = {
     ],
   },
 
+  'dtf': {
+    nome: 'DTF',
+    emoji: '👕',
+    banner: 'linear-gradient(120deg,#6d28d9,#c026d3)',
+    descricao: 'Estampas em DTF e DTF rígido com cores vibrantes, em tecidos e superfícies rígidas.',
+    produtos: [
+      kitChurrasco,
+      copoCuia,
+      camisetaDtf,
+    ],
+  },
+
   'lancamentos': {
     nome: 'Lançamentos',
     emoji: '🔥',
     banner: 'linear-gradient(120deg,#7c3aed,#a78bfa)',
     descricao: 'As novidades que acabaram de chegar na Print House.',
     produtos: [
-      { emoji: '👕', bg: 'linear-gradient(135deg,#ddd6fe,#8b5cf6)', badge: 'Novo',
-        nome: 'Camiseta DTF UV', spec: 'Algodão premium · cores vibrantes',
-        variacoes: [
-          { label: '10 un', preco: 349.90 },
-          { label: '25 un', preco: 824.90 },
-          { label: '50 un', preco: 1549.90 },
-        ] },
+      camisetaDtf,
+      kitChurrasco,
       { emoji: '💡', bg: 'linear-gradient(135deg,#e9d5ff,#a855f7)', badge: 'Novo',
         nome: 'Banner Backlight', spec: 'Para caixa de luz · alta translucidez',
         variacoes: [
