@@ -24,7 +24,6 @@ document.getElementById('categorias').innerHTML =
     .filter(([slug]) => slug !== 'lancamentos')
     .map(([slug, cat]) => `
       <a class="category-card" href="categoria.html?cat=${slug}">
-        <div class="category-card__icon">${cat.emoji}</div>
         <div class="category-card__name">${cat.nome}</div>
       </a>`).join('');
 

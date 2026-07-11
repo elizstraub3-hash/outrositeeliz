@@ -5,6 +5,12 @@ function formatarPreco(valor) {
   return valor.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
 }
 
+/* WhatsApp da gráfica (troque pelo número real, com DDI+DDD) */
+const WHATSAPP_GRAFICA = 'https://wa.me/5511999999999';
+
+/* Ícone neutro para produtos sem foto */
+const ICONE_PRODUTO = `<svg viewBox="0 0 24 24" width="56" height="56" fill="none" stroke="rgba(255,255,255,.85)" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="9" cy="9" r="2"/><path d="M21 15l-5-5-9 9"/></svg>`;
+
 /* ---------- Faixas de preço por quantidade ---------- */
 function rotuloFaixa(faixas, i) {
   const f = faixas[i];
@@ -38,12 +44,12 @@ function cardProduto(p, slugCategoria) {
     precoSmall = 'a partir de';
     precoValor = menorPrecoCombinacao(p);
   } else if (p.cores) {
-    hint = `<p class="product-card__comb-hint">🎨 ${p.cores.length} cores disponíveis</p>`;
+    hint = `<p class="product-card__comb-hint">${p.cores.length} cores disponíveis</p>`;
     precoSmall = p.minimo > 1 ? `por unidade · pedido mínimo ${p.minimo} un` : 'por unidade';
     precoValor = p.precoUnitario;
   } else {
     const v0 = p.variacoes[0];
-    hint = `<p class="product-card__comb-hint">📦 ${p.variacoes.map((v) => v.label).join(' · ')}</p>`;
+    hint = `<p class="product-card__comb-hint">${p.variacoes.map((v) => v.label).join(' · ')}</p>`;
     precoSmall = `${v0.label} por`;
     precoValor = v0.preco;
   }
@@ -52,7 +58,7 @@ function cardProduto(p, slugCategoria) {
     <article class="product-card">
       <a class="product-card__img" style="background:${p.bg}" href="categoria.html?cat=${slugCategoria}" title="Ver categoria ${CATALOGO[slugCategoria].nome}">
         ${p.badge ? `<span class="product-card__badge ${p.badge === 'Novo' ? 'product-card__badge--new' : ''}">${p.badge}</span>` : ''}
-        ${p.imagem ? `<img src="${p.imagem}" alt="${p.nome}" loading="lazy">` : p.emoji}
+        ${p.imagem ? `<img src="${p.imagem}" alt="${p.nome}" loading="lazy">` : ICONE_PRODUTO}
       </a>
       <div class="product-card__body">
         <h3 class="product-card__title">${p.nome}</h3>
@@ -63,7 +69,7 @@ function cardProduto(p, slugCategoria) {
           <strong>R$ ${formatarPreco(precoValor)}</strong> <span class="pix">no Pix</span>
         </div>
         <div class="product-card__prazo">
-          <span>⏱️ Previsão de produção: até 5 dias úteis</span>
+          <span>Previsão de produção: até 5 dias úteis</span>
           <small>* Prazo informado refere-se apenas à produção. O tempo de entrega será adicionado após a finalização.</small>
         </div>
         <button class="product-card__btn">Comprar</button>
@@ -111,7 +117,13 @@ function blocoArte() {
         <label class="arte-opcao"><input type="radio" name="arteOpcao" value="Tenho a arte" checked> Tenho a arte</label>
         <label class="arte-opcao"><input type="radio" name="arteOpcao" value="Não tenho a arte"> Não tenho a arte</label>
       </div>
-      <p class="arte-gratis">🎨 Arte grátis para itens acima de R$ 25,00</p>
+      <div class="arte-envio" id="arteEnvio">
+        <label class="modal__label" for="arteArquivo">Envie sua arte em PDF:</label>
+        <input type="file" id="arteArquivo" class="arte-upload" accept=".pdf,.cdr,.ai">
+        <small class="arte-nota">O arquivo deve ter um nome que identifique você ou sua empresa (ex.: minha-empresa-arte.pdf).</small>
+        <small class="arte-nota">Se preferir, envie a arte pelo <a href="${WHATSAPP_GRAFICA}" target="_blank" rel="noopener" class="arte-link">WhatsApp da gráfica</a>.</small>
+      </div>
+      <p class="arte-gratis">Arte grátis para compras acima de R$ 250,00 — abaixo disso, cobramos R$ 25,00 por arte criada.</p>
       <button type="button" class="arte-link" onclick="abrirRegulamentoArte()">Dúvidas sobre sua arte? Leia aqui</button>
     </div>`;
 }
@@ -120,6 +132,19 @@ function arteEscolhida(modal) {
   const marcado = modal.querySelector('input[name="arteOpcao"]:checked');
   return marcado ? marcado.value : 'Tenho a arte';
 }
+
+function arquivoArte(modal) {
+  const input = modal.querySelector('#arteArquivo');
+  return input && input.files.length > 0 ? input.files[0].name : null;
+}
+
+/* Mostra o campo de upload só quando "Tenho a arte" está marcado */
+document.addEventListener('change', (e) => {
+  if (e.target.name !== 'arteOpcao') return;
+  const painel = e.target.closest('.modal__panel');
+  const envio = painel && painel.querySelector('#arteEnvio');
+  if (envio) envio.style.display = e.target.value === 'Tenho a arte' ? '' : 'none';
+});
 
 /* Card fechável com o resumo do regulamento da arte */
 function abrirRegulamentoArte() {
@@ -132,15 +157,16 @@ function abrirRegulamentoArte() {
   card.innerHTML = `
     <div class="modal__panel" role="dialog" aria-modal="true" aria-label="Regulamento da arte">
       <button class="modal__close" aria-label="Fechar">×</button>
-      <h3 class="arte-titulo">🎨 Regulamento da arte</h3>
+      <h3 class="arte-titulo">Regulamento da arte</h3>
       <ul class="arte-regras">
-        <li><strong>Arte grátis</strong> na compra de itens acima de <strong>R$ 25,00</strong> (1 arte por pedido, com até 2 revisões).</li>
-        <li>Se você <strong>já tem a arte</strong>, envie em vetor (CDR, AI ou PDF) com textos convertidos em curvas.</li>
-        <li>Se você <strong>não tem a arte</strong>, nossa equipe cria com base nas informações e no logotipo que você enviar.</li>
+        <li><strong>Arte grátis</strong> para compras acima de <strong>R$ 250,00</strong>. Abaixo disso, cobramos <strong>R$ 25,00 por arte criada</strong>.</li>
+        <li>Se você <strong>já tem a arte</strong>, envie em PDF (upload na compra) ou pelo <a href="${WHATSAPP_GRAFICA}" target="_blank" rel="noopener" class="arte-link">WhatsApp da gráfica</a>. O arquivo deve ter um nome que identifique você.</li>
+        <li><strong>Não criamos identidades visuais nem logotipos</strong> na criação da arte — temos pacotes exclusivos para isso. <a href="pacotes-logo.html" class="arte-link">Confira aqui</a>.</li>
+        <li>Nossa equipe <strong>não altera nenhuma arte sem a aprovação do cliente</strong>.</li>
         <li>A produção só começa <strong>após a aprovação da arte</strong> pelo cliente.</li>
-        <li>Confira com atenção textos e telefones: após a aprovação, a responsabilidade pela revisão é do cliente.</li>
+        <li><strong>Erros aprovados pelo cliente são de responsabilidade do mesmo.</strong> Confira com atenção textos, telefones e cores antes de aprovar.</li>
       </ul>
-      <a href="regulamento-arte.html" class="arte-link arte-link--pagina">Ver regulamento completo de arte e entrega →</a>
+      <a href="regulamento-arte.html" class="arte-link arte-link--pagina">Ver regulamento completo da arte →</a>
     </div>`;
   document.body.appendChild(card);
 
@@ -159,7 +185,7 @@ function abrirRegulamentoArte() {
 function cabecalhoModal(p) {
   return `
     <div class="modal__head">
-      <div class="modal__thumb" style="background:${p.bg}">${p.imagem ? `<img src="${p.imagem}" alt="${p.nome}">` : p.emoji}</div>
+      <div class="modal__thumb" style="background:${p.bg}">${p.imagem ? `<img src="${p.imagem}" alt="${p.nome}">` : ''}</div>
       <div>
         <h3>${p.nome}</h3>
         <p>${p.spec}</p>
@@ -203,8 +229,9 @@ function abrirVariacoes(p) {
     localStorage.setItem('printhouse_carrinho', itensCarrinho);
     if (cartBadge) cartBadge.textContent = itensCarrinho;
     const arte = arteEscolhida(modal);
+    const arquivo = arquivoArte(modal);
     fechar();
-    mostrarToast(`✅ ${p.nome} (${v.label}) · ${arte} — adicionado ao carrinho!`);
+    mostrarToast(`${p.nome} (${v.label}) · ${arte}${arquivo ? ` (${arquivo})` : ''} — adicionado ao carrinho!`);
   });
 }
 
@@ -266,8 +293,9 @@ function abrirCores(p) {
     localStorage.setItem('printhouse_carrinho', itensCarrinho);
     if (cartBadge) cartBadge.textContent = itensCarrinho;
     const arte = arteEscolhida(modal);
+    const arquivo = arquivoArte(modal);
     fechar();
-    mostrarToast(`✅ ${qtd}× ${p.nome} (${cor}) · ${arte} — R$ ${formatarPreco(qtd * p.precoUnitario)} adicionado ao carrinho!`);
+    mostrarToast(`${qtd}× ${p.nome} (${cor}) · ${arte}${arquivo ? ` (${arquivo})` : ''} — R$ ${formatarPreco(qtd * p.precoUnitario)} adicionado ao carrinho!`);
   });
 }
 
@@ -349,8 +377,9 @@ function abrirCombinacoes(p) {
     localStorage.setItem('printhouse_carrinho', itensCarrinho);
     if (cartBadge) cartBadge.textContent = itensCarrinho;
     const arte = arteEscolhida(modal);
+    const arquivo = arquivoArte(modal);
     fechar();
-    mostrarToast(`✅ ${resumo} · ${arte} — R$ ${formatarPreco(valorTotal)} adicionado ao carrinho!`);
+    mostrarToast(`${resumo} · ${arte}${arquivo ? ` (${arquivo})` : ''} — R$ ${formatarPreco(valorTotal)} adicionado ao carrinho!`);
   });
 }
 
@@ -383,13 +412,13 @@ document.addEventListener('click', (e) => {
 /* ---------- Cupom ---------- */
 function copiarCupom() {
   if (navigator.clipboard) navigator.clipboard.writeText('BEMVINDO10');
-  mostrarToast('🎁 Cupom BEMVINDO10 copiado!');
+  mostrarToast('Cupom BEMVINDO10 copiado!');
 }
 
 /* ---------- Newsletter ---------- */
 function assinarNewsletter(e) {
   e.preventDefault();
-  mostrarToast('📬 Cadastro realizado! Fique de olho no seu e-mail.');
+  mostrarToast('Cadastro realizado! Fique de olho no seu e-mail.');
   e.target.reset();
 }
 
@@ -420,7 +449,7 @@ if (dropdown && dropdownToggle) {
   // Monta os itens do dropdown a partir do catálogo (sem duplicar em lugar nenhum)
   const menu = document.getElementById('dropdownMenu');
   menu.innerHTML = Object.entries(CATALOGO).map(([slug, cat]) =>
-    `<li><a href="categoria.html?cat=${slug}" class="dropdown__item ${slug === 'lancamentos' ? 'dropdown__item--new' : ''}">${cat.emoji} ${cat.nome}</a></li>`
+    `<li><a href="categoria.html?cat=${slug}" class="dropdown__item ${slug === 'lancamentos' ? 'dropdown__item--new' : ''}">${cat.nome}</a></li>`
   ).join('');
 
   dropdownToggle.addEventListener('click', (e) => {

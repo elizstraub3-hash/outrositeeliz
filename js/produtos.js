@@ -316,12 +316,14 @@ const CATALOGO = {
       { emoji: '🖋️', bg: 'linear-gradient(135deg,#cbd5e1,#475569)', badge: 'Novo',
         nome: 'Caneta de Metal Touch', spec: 'Metal · ponta touch · gravação a laser 4x0 (0,6x5 cm)',
         variacoes: [
-          { label: '10 un', preco: 98.90 },
+          { label: '1 un', preco: 10.90 },
+          { label: 'Combo 10 un', preco: 98.90 },
         ] },
       { emoji: '✒️', bg: 'linear-gradient(135deg,#e2e8f0,#64748b)', badge: 'Novo',
         nome: 'Caneta de Metal Slim Touch', spec: 'Metal slim · ponta touch · gravação a laser 4x0 (4x0,4 cm)',
         variacoes: [
-          { label: '10 un', preco: 90.90 },
+          { label: '1 un', preco: 10.90 },
+          { label: 'Combo 10 un', preco: 90.90 },
         ] },
       { emoji: '🍾', bg: 'linear-gradient(135deg,#d1d5db,#4b5563)', badge: 'Novo',
         imagem: 'img/chaveiro-abridor.png',

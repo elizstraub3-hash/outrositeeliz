@@ -309,9 +309,9 @@ button { font-family: inherit; cursor: pointer; }
 }
 .benefit { display: flex; align-items: center; gap: .8rem; }
 .benefit__icon {
-  font-size: 1.6rem;
   width: 52px; height: 52px;
   background: var(--gray-light);
+  color: var(--dark);
   border-radius: 50%;
   display: grid;
   place-items: center;
@@ -583,7 +583,10 @@ button { font-family: inherit; cursor: pointer; }
   border-radius: 50%;
   display: grid;
   place-items: center;
-  font-size: 1rem;
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .02em;
+  color: var(--white);
   transition: background .15s;
 }
 .footer__social a:hover { background: var(--primary); }
@@ -815,6 +818,28 @@ button { font-family: inherit; cursor: pointer; }
   cursor: pointer;
 }
 .arte-opcao input { accent-color: var(--dark); width: 16px; height: 16px; }
+.arte-envio {
+  display: grid;
+  gap: .35rem;
+  margin: .2rem 0 .7rem;
+}
+.arte-upload {
+  width: 100%;
+  font-family: inherit;
+  font-size: .76rem;
+  color: var(--dark);
+  padding: .5rem;
+  border: 1.5px dashed var(--border);
+  border-radius: 8px;
+  background: var(--gray-light);
+  cursor: pointer;
+}
+.arte-upload:hover { border-color: var(--dark); }
+.arte-nota {
+  font-size: .68rem;
+  line-height: 1.45;
+  color: var(--gray);
+}
 .arte-gratis {
   font-size: .74rem;
   font-weight: 600;
@@ -843,7 +868,7 @@ button { font-family: inherit; cursor: pointer; }
   padding-left: 1.1rem;
   position: relative;
 }
-.arte-regras li::before { content: '✔'; position: absolute; left: 0; color: #0e9f8a; font-size: .75rem; }
+.arte-regras li::before { content: '•'; position: absolute; left: 0; color: var(--dark); font-weight: 700; }
 .arte-regras strong { color: var(--dark); }
 
 .modal__foot {
