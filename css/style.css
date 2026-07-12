@@ -208,8 +208,12 @@ button { font-family: inherit; cursor: pointer; }
   padding: .5rem 0;
   z-index: 110;
   display: none;
+  max-height: 70vh;
+  overflow-y: auto;
 }
 .dropdown.open .dropdown__menu { display: block; animation: dropdownIn .18s ease; }
+/* Dropdowns muito à direita abrem alinhados pela direita */
+.nav__list > .dropdown:nth-last-child(-n+3) .dropdown__menu { left: auto; right: 0; }
 @keyframes dropdownIn {
   from { opacity: 0; transform: translateY(-8px); }
   to { opacity: 1; transform: translateY(0); }

@@ -593,33 +593,52 @@ if (menuToggle) {
   });
 }
 
-/* ---------- Dropdown "Todos os Produtos" ---------- */
-const dropdown = document.getElementById('dropdownProdutos');
-const dropdownToggle = document.getElementById('dropdownToggle');
+/* ---------- Dropdowns do menu (Produtos, Segmentos, Eventos) ---------- */
 
-if (dropdown && dropdownToggle) {
-  // Monta os itens do dropdown a partir do catálogo (sem duplicar em lugar nenhum)
-  const menu = document.getElementById('dropdownMenu');
-  menu.innerHTML = Object.entries(CATALOGO).map(([slug, cat]) =>
+// Preenche o menu de "Todos os Produtos" a partir do catálogo
+const menuProdutos = document.getElementById('dropdownMenu');
+if (menuProdutos) {
+  menuProdutos.innerHTML = Object.entries(CATALOGO).map(([slug, cat]) =>
     `<li><a href="categoria.html?cat=${slug}" class="dropdown__item ${slug === 'lancamentos' ? 'dropdown__item--new' : ''}">${cat.nome}</a></li>`
   ).join('');
+}
 
-  dropdownToggle.addEventListener('click', (e) => {
+// Preenche os menus de Segmentos e Eventos a partir de temas.js (se carregado)
+if (typeof TEMAS !== 'undefined') {
+  const menuSeg = document.getElementById('dropdownMenuSegmentos');
+  if (menuSeg) menuSeg.innerHTML = TEMAS.segmento.lista.map((t) =>
+    `<li><a href="tema.html?tipo=segmento&id=${t.slug}" class="dropdown__item">${t.nome}</a></li>`).join('');
+  const menuEve = document.getElementById('dropdownMenuEventos');
+  if (menuEve) menuEve.innerHTML = TEMAS.evento.lista.map((t) =>
+    `<li><a href="tema.html?tipo=evento&id=${t.slug}" class="dropdown__item">${t.nome}</a></li>`).join('');
+}
+
+// Comportamento genérico: qualquer .dropdown com um .dropdown__toggle
+const dropdowns = [...document.querySelectorAll('.dropdown')];
+
+function fecharDropdowns(exceto) {
+  dropdowns.forEach((d) => {
+    if (d === exceto) return;
+    d.classList.remove('open');
+    const t = d.querySelector('.dropdown__toggle');
+    if (t) t.setAttribute('aria-expanded', 'false');
+  });
+}
+
+dropdowns.forEach((d) => {
+  const toggle = d.querySelector('.dropdown__toggle');
+  if (!toggle) return;
+  toggle.addEventListener('click', (e) => {
     e.stopPropagation();
-    const aberto = dropdown.classList.toggle('open');
-    dropdownToggle.setAttribute('aria-expanded', aberto);
+    fecharDropdowns(d);
+    const aberto = d.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', aberto);
   });
+});
 
-  document.addEventListener('click', (e) => {
-    if (!dropdown.contains(e.target)) fecharDropdown();
-  });
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') fecharDropdown();
-  });
-}
-
-function fecharDropdown() {
-  if (!dropdown) return;
-  dropdown.classList.remove('open');
-  dropdownToggle.setAttribute('aria-expanded', 'false');
-}
+document.addEventListener('click', (e) => {
+  if (!e.target.closest('.dropdown')) fecharDropdowns();
+});
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') fecharDropdowns();
+});

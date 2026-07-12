@@ -65,8 +65,14 @@
           </li>
           <li><a href="index.html#produtos" class="nav__link">Mais Vendidos</a></li>
           <li><a href="categoria.html?cat=lancamentos" class="nav__link nav__link--new">Lançamentos</a></li>
-          <li><a href="temas.html?tipo=segmento" class="nav__link">Segmentos</a></li>
-          <li><a href="temas.html?tipo=evento" class="nav__link">Eventos</a></li>
+          <li class="dropdown">
+            <button class="nav__link dropdown__toggle" aria-expanded="false" aria-haspopup="true">Segmentos <span class="dropdown__arrow">▾</span></button>
+            <ul class="dropdown__menu" id="dropdownMenuSegmentos"></ul>
+          </li>
+          <li class="dropdown">
+            <button class="nav__link dropdown__toggle" aria-expanded="false" aria-haspopup="true">Eventos <span class="dropdown__arrow">▾</span></button>
+            <ul class="dropdown__menu" id="dropdownMenuEventos"></ul>
+          </li>
           <li><a href="index.html#sobre" class="nav__link">Quem Somos</a></li>
           <li><a href="index.html#contato" class="nav__link">Contato</a></li>
         </ul>

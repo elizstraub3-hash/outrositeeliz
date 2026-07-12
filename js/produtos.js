@@ -4,7 +4,7 @@
 /* Versão do catálogo: aumente em 1 sempre que alterar este arquivo.
    Edições salvas pelo painel admin em versões antigas são descartadas
    automaticamente, para que as novidades daqui sempre apareçam. */
-const CATALOGO_VERSAO = 6;
+const CATALOGO_VERSAO = 7;
 
 /* Produtos que aparecem em mais de uma categoria são definidos uma única
    vez aqui e referenciados nas categorias — sem duplicar dados. */
@@ -118,6 +118,7 @@ const ecobagPersonalizada = {
 
 const toalhaBanho = {
   bg: 'linear-gradient(135deg,#bae6fd,#0284c7)', badge: 'Novo',
+  imagem: 'img/toalha-banho.png',
   nome: 'Toalha de Banho Personalizada',
   spec: 'Atoalhado poliéster · colorido só frente',
   variacoes: [
@@ -152,6 +153,7 @@ const toalhaRosto = {
 
 const bolsaHaste = {
   bg: 'linear-gradient(135deg,#fde68a,#d97706)', badge: 'Novo',
+  imagem: 'img/bandeira.png',
   nome: 'Bolsa para Haste (Bandeira)',
   spec: 'Tecido gabardine · colorido só frente · sem verniz · 70x100 cm',
   variacoes: [
@@ -161,6 +163,7 @@ const bolsaHaste = {
 
 const cordaoPersonalizado = {
   bg: 'linear-gradient(135deg,#fbcfe8,#9d174d)', badge: 'Novo',
+  imagem: 'img/cordao.png',
   nome: 'Cordão Personalizado',
   spec: 'Poliéster acetinado 20mm · colorido frente e verso · sem verniz · 39x2 cm · escolha o acabamento',
   variacoes: [
@@ -216,6 +219,7 @@ const CATALOGO = {
           ],
         } },
       { bg: 'linear-gradient(135deg,#fbcfe8,#be185d)', badge: 'Novo',
+        imagem: 'img/postal.png',
         nome: 'Postal Couchê 250g',
         spec: 'Couchê 250g · UV total frente · 8,8x9,94 cm · escolha a cor e a quantidade',
         grupoLabel: 'Cor', opcaoLabel: 'Quantidade',
@@ -234,8 +238,9 @@ const CATALOGO = {
           ],
         } },
       { bg: 'linear-gradient(135deg,#ddd6fe,#6d28d9)', badge: 'Novo',
-        nome: 'Postal Personalizado (3 tamanhos)',
-        spec: 'Couchê · colorido só frente · escolha o tamanho e a quantidade',
+        imagem: 'img/solapa.png',
+        nome: 'Solapa para Embalagem',
+        spec: 'Cabeçalho de embalagem (solapa) · colorido só frente · escolha o tamanho e a quantidade',
         tamanhos: {
           'Tamanho padrão': [
             { label: '50 un', preco: 44.90 },
@@ -273,6 +278,7 @@ const CATALOGO = {
     descricao: 'Flyers em couchê 80g para divulgar promoções e serviços — escolha o tamanho, a cor e a quantidade.',
     produtos: [
       { bg: 'linear-gradient(135deg,#bfdbfe,#2563eb)', badge: 'Novo', destaque: true,
+        imagem: 'img/flyer.png',
         nome: 'Flyer Couchê 80g',
         spec: 'Couchê 80g · sem verniz · escolha o tamanho, a cor e a quantidade',
         /* Produto com tamanhos: o cliente escolhe o tamanho e a opção em dropdowns */
