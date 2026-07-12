@@ -33,6 +33,10 @@ function menorPrecoCombinacao(p) {
   return Math.min(...p.opcoesCombinacao.flatMap((o) => o.faixas.map((f) => f.preco)));
 }
 
+function menorPrecoTamanhos(p) {
+  return Math.min(...Object.values(p.tamanhos).flat().map((v) => v.preco));
+}
+
 /* ---------- Card de produto (compacto: opções abrem ao clicar) ---------- */
 function cardProduto(p, slugCategoria) {
   let hint = '';
@@ -43,6 +47,10 @@ function cardProduto(p, slugCategoria) {
     hint = `<p class="product-card__comb-hint">${p.opcoesCombinacao.map((o) => o.nome).join(' · ')}</p>`;
     precoSmall = 'a partir de';
     precoValor = menorPrecoCombinacao(p);
+  } else if (p.tamanhos) {
+    hint = `<p class="product-card__comb-hint">Tamanhos: ${Object.keys(p.tamanhos).join(' · ')}</p>`;
+    precoSmall = 'a partir de';
+    precoValor = menorPrecoTamanhos(p);
   } else if (p.cores) {
     hint = `<p class="product-card__comb-hint">${p.cores.length} cores disponíveis</p>`;
     precoSmall = p.minimo > 1 ? `por unidade · pedido mínimo ${p.minimo} un` : 'por unidade';
@@ -230,6 +238,62 @@ function abrirVariacoes(p) {
     adicionarItemCarrinho({ nome: p.nome, detalhe: v.label, qtd: 1, total: v.preco, arte, arquivo });
     fechar();
     mostrarToast(`${p.nome} (${v.label}) · ${arte}${arquivo ? ` (${arquivo})` : ''} — adicionado ao carrinho!`);
+  });
+}
+
+/* ---------- Janela de tamanhos (dropdown de tamanho + quantidade) ---------- */
+function abrirTamanhos(p) {
+  const nomesTamanhos = Object.keys(p.tamanhos);
+  const { modal, fechar } = criarModal(`Opções de ${p.nome}`, `
+    ${cabecalhoModal(p)}
+    <div class="modal__opcao">
+      <label class="modal__label" for="modalTamanho">Tamanho:</label>
+      <select class="modal__select" id="modalTamanho">
+        ${nomesTamanhos.map((t) => `<option>${t}</option>`).join('')}
+      </select>
+    </div>
+    <div class="modal__opcao">
+      <label class="modal__label" for="modalQtdOpcao">Cor e quantidade:</label>
+      <select class="modal__select" id="modalQtdOpcao"></select>
+    </div>
+    ${blocoArte()}
+    <div class="modal__foot">
+      <div class="modal__total">
+        <small id="modalResumo"></small>
+        <strong id="modalTotal"></strong> <span class="pix">no Pix</span>
+      </div>
+      <button class="btn btn--primary modal__add">Adicionar ao carrinho</button>
+    </div>`);
+
+  const selTamanho = modal.querySelector('#modalTamanho');
+  const selOpcao = modal.querySelector('#modalQtdOpcao');
+
+  function opcaoAtual() {
+    return p.tamanhos[selTamanho.value][Number(selOpcao.value) || 0];
+  }
+  function atualizarTotal() {
+    const v = opcaoAtual();
+    modal.querySelector('#modalResumo').textContent = `${selTamanho.value} · ${v.label}`;
+    modal.querySelector('#modalTotal').textContent = `R$ ${formatarPreco(v.preco)}`;
+  }
+  function preencherOpcoes() {
+    selOpcao.innerHTML = p.tamanhos[selTamanho.value]
+      .map((v, i) => `<option value="${i}">${v.label} — R$ ${formatarPreco(v.preco)}</option>`)
+      .join('');
+    atualizarTotal();
+  }
+  selTamanho.addEventListener('change', preencherOpcoes);
+  selOpcao.addEventListener('change', atualizarTotal);
+  preencherOpcoes();
+
+  modal.querySelector('.modal__add').addEventListener('click', () => {
+    const v = opcaoAtual();
+    const detalhe = `${selTamanho.value} · ${v.label}`;
+    const arte = arteEscolhida(modal);
+    const arquivo = arquivoArte(modal);
+    adicionarItemCarrinho({ nome: p.nome, detalhe, qtd: 1, total: v.preco, arte, arquivo });
+    fechar();
+    mostrarToast(`${p.nome} (${detalhe}) · ${arte}${arquivo ? ` (${arquivo})` : ''} — adicionado ao carrinho!`);
   });
 }
 
@@ -490,6 +554,7 @@ document.addEventListener('click', (e) => {
   if (!produto) return;
 
   if (produto.opcoesCombinacao) abrirCombinacoes(produto);
+  else if (produto.tamanhos) abrirTamanhos(produto);
   else if (produto.cores) abrirCores(produto);
   else abrirVariacoes(produto);
 });

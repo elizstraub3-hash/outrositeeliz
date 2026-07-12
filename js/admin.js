@@ -97,10 +97,12 @@ function renderFormProduto() {
   document.getElementById('prodTipo').value = tipo;
   alternarEditor(tipo);
 
-  // aviso para produtos com lista de combinações (edição avançada)
+  // aviso para produtos com estruturas avançadas (combinações ou tamanhos)
   document.getElementById('avisoCombinacao').textContent = p.opcoesCombinacao
     ? 'Este produto usa lista de combinações (ex.: laser + DTF). As combinações e faixas de preço são mantidas como estão; para alterá-las, me peça no chat ou edite js/produtos.js.'
-    : '';
+    : (p.tamanhos
+      ? 'Este produto usa seleção de tamanhos (ex.: flyer). Os tamanhos e preços são mantidos como estão; para alterá-los, me peça no chat ou edite js/produtos.js.'
+      : '');
 
   const linhas = document.getElementById('linhasVariacoes');
   linhas.innerHTML = (p.variacoes || [{ label: '', preco: '' }]).map(linhaVariacao).join('');
@@ -190,7 +192,7 @@ document.getElementById('btnSalvarProduto').addEventListener('click', () => {
   const imagem = document.getElementById('prodImagem').value.trim();
   if (imagem) p.imagem = imagem; else delete p.imagem;
 
-  if (!p.opcoesCombinacao) {
+  if (!p.opcoesCombinacao && !p.tamanhos) {
     const tipo = document.getElementById('prodTipo').value;
     if (tipo === 'cores') {
       p.precoUnitario = parseFloat(document.getElementById('prodPrecoUnit').value) || 0;
