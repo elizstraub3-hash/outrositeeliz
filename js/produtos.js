@@ -92,6 +92,32 @@ const camisetaDtf = {
   ],
 };
 
+const ecobagPersonalizada = {
+  bg: 'linear-gradient(135deg,#d9f99d,#4d7c0f)', badge: 'Novo',
+  imagem: 'img/ecobag-personalizada.png',
+  nome: 'Ecobag Personalizada',
+  spec: 'Tecido microfibra · 4x0 · sem acabamento · 30x30 cm',
+  variacoes: [
+    { label: '5 un', preco: 97.90 },
+    { label: '10 un', preco: 179.90 },
+    { label: '25 un', preco: 412.90 },
+    { label: '50 un', preco: 749.90 },
+    { label: '100 un', preco: 1424.90 },
+  ],
+};
+
+const cordaoPersonalizado = {
+  bg: 'linear-gradient(135deg,#fbcfe8,#9d174d)', badge: 'Novo',
+  nome: 'Cordão Personalizado',
+  spec: 'Poliéster acetinado 20mm · 4x4 · sem verniz · 39x2 cm · escolha o acabamento',
+  variacoes: [
+    { label: '10 un · Argola com Jacaré', preco: 174.90 },
+    { label: '10 un · Mosquetão', preco: 198.90 },
+    { label: '10 un · Argola com Jacaré Duplo', preco: 204.90 },
+    { label: '10 un · Mosquetão Duplo', preco: 222.90 },
+  ],
+};
+
 const canetaPersonalizada = {
   emoji: '🖊️', bg: 'linear-gradient(135deg,#fce7f3,#f472b6)',
   nome: 'Caneta Personalizada', spec: 'Gravação a laser 4x0 ou silk',
@@ -398,6 +424,18 @@ const CATALOGO = {
     produtos: [
       kitChurrasco,
       copoCuia,
+      camisetaDtf,
+    ],
+  },
+
+  'textil': {
+    nome: 'Linha Têxtil',
+    emoji: '👕',
+    banner: 'linear-gradient(120deg,#9d174d,#ec4899)',
+    descricao: 'Ecobags, cordões, camisetas e outros itens em tecido personalizados.',
+    produtos: [
+      ecobagPersonalizada,
+      cordaoPersonalizado,
       camisetaDtf,
     ],
   },
