@@ -73,10 +73,12 @@ const squeezeFosca = {
 
 const kitChurrasco = {
   bg: 'linear-gradient(135deg,#fca5a5,#7f1d1d)', badge: 'Novo',
+  imagem: 'img/kit-churrasco.png',
   nome: 'Kit Churrasco',
   spec: 'Estojo nylon + talheres aço inox · gravação a laser + DTF rígido',
   variacoes: [
     { label: '1 kit', preco: 95.90 },
+    { label: '5 kits (Promoção)', preco: 335.00 },
   ],
 };
 
@@ -308,6 +310,34 @@ const CATALOGO = {
           { label: '50 un', preco: 69.90 },
           { label: '100 un', preco: 109.90 },
           { label: '250 un', preco: 199.90 },
+        ] },
+      { bg: 'linear-gradient(135deg,#a7f3d0,#059669)', badge: 'Novo',
+        nome: 'Display Pix em Acrílico',
+        spec: 'Acrílico cristal 2mm · 4x0 UV direta · 15x10 cm horizontal · arte única',
+        variacoes: [
+          { label: '1 un', preco: 39.90 },
+        ] },
+      { bg: 'linear-gradient(135deg,#fde68a,#b45309)', badge: 'Novo',
+        nome: 'Cubo de Papel',
+        spec: 'Couchê 300g · 4x0 UV total frente · 8x8 cm',
+        variacoes: [
+          { label: '50 un', preco: 867.90 },
+          { label: '100 un', preco: 1288.90 },
+          { label: '250 un', preco: 1786.90 },
+          { label: '500 un', preco: 2049.90 },
+          { label: '1.000 un', preco: 2773.90 },
+        ] },
+      { bg: 'linear-gradient(135deg,#c7d2fe,#4338ca)', badge: 'Novo',
+        nome: 'Display de Retrovisor',
+        spec: 'Couchê 300g · 4x0 UV total frente e verso · 8,5x19,88 cm',
+        variacoes: [
+          { label: '10 un', preco: 68.90 },
+          { label: '25 un', preco: 157.90 },
+          { label: '50 un', preco: 208.90 },
+          { label: '100 un', preco: 382.90 },
+          { label: '250 un', preco: 417.90 },
+          { label: '500 un', preco: 457.90 },
+          { label: '1.000 un', preco: 622.90 },
         ] },
     ],
   },
