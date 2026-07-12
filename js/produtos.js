@@ -4,7 +4,7 @@
 /* Versão do catálogo: aumente em 1 sempre que alterar este arquivo.
    Edições salvas pelo painel admin em versões antigas são descartadas
    automaticamente, para que as novidades daqui sempre apareçam. */
-const CATALOGO_VERSAO = 2;
+const CATALOGO_VERSAO = 3;
 
 /* Produtos que aparecem em mais de uma categoria são definidos uma única
    vez aqui e referenciados nas categorias — sem duplicar dados. */
@@ -101,20 +101,68 @@ const ecobagPersonalizada = {
   bg: 'linear-gradient(135deg,#d9f99d,#4d7c0f)', badge: 'Novo',
   imagem: 'img/ecobag-personalizada.png',
   nome: 'Ecobag Personalizada',
-  spec: 'Tecido microfibra · 4x0 · sem acabamento · 30x30 cm',
+  spec: 'Tecido microfibra · colorido só frente · 30x30 cm · com ou sem velcro',
   variacoes: [
-    { label: '5 un', preco: 97.90 },
-    { label: '10 un', preco: 179.90 },
-    { label: '25 un', preco: 412.90 },
-    { label: '50 un', preco: 749.90 },
-    { label: '100 un', preco: 1424.90 },
+    { label: '5 un · sem Velcro', preco: 97.90 },
+    { label: '5 un · com Velcro Total', preco: 132.90 },
+    { label: '10 un · sem Velcro', preco: 179.90 },
+    { label: '10 un · com Velcro Total', preco: 215.90 },
+    { label: '25 un · sem Velcro', preco: 412.90 },
+    { label: '25 un · com Velcro Total', preco: 447.90 },
+    { label: '50 un · sem Velcro', preco: 749.90 },
+    { label: '50 un · com Velcro Total', preco: 785.90 },
+    { label: '100 un · sem Velcro', preco: 1424.90 },
+    { label: '100 un · com Velcro Total', preco: 1460.90 },
+  ],
+};
+
+const toalhaBanho = {
+  bg: 'linear-gradient(135deg,#bae6fd,#0284c7)', badge: 'Novo',
+  nome: 'Toalha de Banho Personalizada',
+  spec: 'Atoalhado poliéster · colorido só frente',
+  variacoes: [
+    { label: '1 un', preco: 52.90 },
+    { label: '5 un', preco: 254.90 },
+    { label: '10 un', preco: 494.90 },
+    { label: '25 un', preco: 1219.90 },
+    { label: '50 un', preco: 2419.90 },
+    { label: '100 un', preco: 4838.90 },
+    { label: '200 un', preco: 9600.90 },
+    { label: '500 un', preco: 23775.90 },
+    { label: '1.000 un', preco: 47250.90 },
+  ],
+};
+
+const toalhaRosto = {
+  bg: 'linear-gradient(135deg,#a5f3fc,#0891b2)', badge: 'Novo',
+  nome: 'Toalha de Rosto Personalizada',
+  spec: 'Atoalhado poliéster 290g · colorido só frente · 40x65 cm',
+  variacoes: [
+    { label: '1 un', preco: 29.90 },
+    { label: '5 un', preco: 134.90 },
+    { label: '10 un', preco: 239.90 },
+    { label: '25 un', preco: 524.90 },
+    { label: '50 un', preco: 899.90 },
+    { label: '100 un', preco: 1785.90 },
+    { label: '200 un', preco: 3510.90 },
+    { label: '500 un', preco: 8625.90 },
+    { label: '1.000 un', preco: 17100.90 },
+  ],
+};
+
+const bolsaHaste = {
+  bg: 'linear-gradient(135deg,#fde68a,#d97706)', badge: 'Novo',
+  nome: 'Bolsa para Haste (Bandeira)',
+  spec: 'Tecido gabardine · colorido só frente · sem verniz · 70x100 cm',
+  variacoes: [
+    { label: '1 un', preco: 89.90 },
   ],
 };
 
 const cordaoPersonalizado = {
   bg: 'linear-gradient(135deg,#fbcfe8,#9d174d)', badge: 'Novo',
   nome: 'Cordão Personalizado',
-  spec: 'Poliéster acetinado 20mm · 4x4 · sem verniz · 39x2 cm · escolha o acabamento',
+  spec: 'Poliéster acetinado 20mm · colorido frente e verso · sem verniz · 39x2 cm · escolha o acabamento',
   variacoes: [
     { label: '10 un · Argola com Jacaré', preco: 174.90 },
     { label: '10 un · Mosquetão', preco: 198.90 },
@@ -141,7 +189,7 @@ const CATALOGO = {
     descricao: 'Cause uma ótima primeira impressão com cartões de alta qualidade em diversos papéis e acabamentos.',
     produtos: [
       { emoji: '💼', bg: 'linear-gradient(135deg,#fde68a,#f59e0b)', badge: 'Mais vendido', destaque: true,
-        nome: 'Cartão de Visita Couchê', spec: 'Couchê 300g · 4x4 cores · verniz total',
+        nome: 'Cartão de Visita Couchê', spec: 'Couchê 300g · colorido frente e verso · verniz total',
         variacoes: [
           { label: '100 un', preco: 19.90 },
           { label: '500 un', preco: 29.90 },
@@ -155,11 +203,31 @@ const CATALOGO = {
           { label: '1.000 un', preco: 79.90 },
         ] },
       { emoji: '🖤', bg: 'linear-gradient(135deg,#e5e7eb,#6b7280)',
-        nome: 'Cartão Laminação Fosca', spec: 'Toque aveludado · 4x4 cores',
+        nome: 'Cartão Laminação Fosca', spec: 'Toque aveludado · colorido frente e verso',
         variacoes: [
           { label: '250 un', preco: 59.90 },
           { label: '500 un', preco: 74.90 },
           { label: '1.000 un', preco: 99.90 },
+        ] },
+      { bg: 'linear-gradient(135deg,#fef08a,#ca8a04)', badge: 'Novo', prazo: 3,
+        nome: 'Cartão de Visita Couchê 250g',
+        spec: 'Couchê 250g · UV total frente · 8,8x4,8 cm · 3 opções de cor',
+        variacoes: [
+          { label: '500 un · Colorido só frente', preco: 70.90 },
+          { label: '1.000 un · Colorido só frente', preco: 99.90 },
+          { label: '3.000 un · Colorido só frente', preco: 286.90 },
+          { label: '5.000 un · Colorido só frente', preco: 459.90 },
+          { label: '10.000 un · Colorido só frente', preco: 909.90 },
+          { label: '500 un · Colorido frente e verso', preco: 100.90 },
+          { label: '1.000 un · Colorido frente e verso', preco: 114.90 },
+          { label: '3.000 un · Colorido frente e verso', preco: 336.90 },
+          { label: '5.000 un · Colorido frente e verso', preco: 546.90 },
+          { label: '10.000 un · Colorido frente e verso', preco: 1090.90 },
+          { label: '500 un · Frente colorida + verso P&B', preco: 75.90 },
+          { label: '1.000 un · Frente colorida + verso P&B', preco: 106.90 },
+          { label: '3.000 un · Frente colorida + verso P&B', preco: 304.90 },
+          { label: '5.000 un · Frente colorida + verso P&B', preco: 478.90 },
+          { label: '10.000 un · Frente colorida + verso P&B', preco: 955.90 },
         ] },
       { emoji: '📇', bg: 'linear-gradient(135deg,#fed7aa,#fb923c)',
         nome: 'Cartão Duplo (dobrado)', spec: 'Mais espaço para sua mensagem',
@@ -178,7 +246,7 @@ const CATALOGO = {
     descricao: 'Divulgue promoções e serviços com panfletos, folders e cardápios de impressão vibrante.',
     produtos: [
       { emoji: '📄', bg: 'linear-gradient(135deg,#bfdbfe,#3b82f6)', badge: 'Mais vendido', destaque: true,
-        nome: 'Panfleto A5', spec: 'Couchê 115g · 4x4 cores',
+        nome: 'Panfleto A5', spec: 'Couchê 115g · colorido frente e verso',
         variacoes: [
           { label: '1.000 un', preco: 79.90 },
           { label: '2.500 un', preco: 129.90 },
@@ -192,14 +260,14 @@ const CATALOGO = {
           { label: '5.000 un', preco: 159.90 },
         ] },
       { emoji: '📰', bg: 'linear-gradient(135deg,#c7d2fe,#6366f1)',
-        nome: 'Folder A4 (2 dobras)', spec: 'Couchê 150g · 4x4 cores',
+        nome: 'Folder A4 (2 dobras)', spec: 'Couchê 150g · colorido frente e verso',
         variacoes: [
           { label: '500 un', preco: 149.90 },
           { label: '1.000 un', preco: 219.90 },
           { label: '2.500 un', preco: 399.90 },
         ] },
       { emoji: '🍽️', bg: 'linear-gradient(135deg,#bae6fd,#0ea5e9)',
-        nome: 'Cardápio A4 Plastificado', spec: 'Resistente a líquidos · 4x4 cores',
+        nome: 'Cardápio A4 Plastificado', spec: 'Resistente a líquidos · colorido frente e verso',
         variacoes: [
           { label: '50 un', preco: 129.90 },
           { label: '100 un', preco: 199.90 },
@@ -222,7 +290,7 @@ const CATALOGO = {
           { label: '1.000 un', preco: 139.90 },
         ] },
       { emoji: '⭕', bg: 'linear-gradient(135deg,#d9f99d,#84cc16)',
-        nome: 'Adesivo Redondo 5cm', spec: 'Vinil brilho · 4x0 cores',
+        nome: 'Adesivo Redondo 5cm', spec: 'Vinil brilho · colorido só frente',
         variacoes: [
           { label: '100 un', preco: 29.90 },
           { label: '500 un', preco: 69.90 },
@@ -344,13 +412,13 @@ const CATALOGO = {
         ] },
       { bg: 'linear-gradient(135deg,#a7f3d0,#059669)', badge: 'Novo',
         nome: 'Display Pix em Acrílico',
-        spec: 'Acrílico cristal 2mm · 4x0 UV direta · 15x10 cm horizontal · arte única',
+        spec: 'Acrílico cristal 2mm · colorido só frente · UV direta · 15x10 cm horizontal · arte única',
         variacoes: [
           { label: '1 un', preco: 39.90 },
         ] },
       { bg: 'linear-gradient(135deg,#fde68a,#b45309)', badge: 'Novo',
         nome: 'Cubo de Papel',
-        spec: 'Couchê 300g · 4x0 UV total frente · 8x8 cm',
+        spec: 'Couchê 300g · colorido só frente · UV total · 8x8 cm',
         variacoes: [
           { label: '50 un', preco: 867.90 },
           { label: '100 un', preco: 1288.90 },
@@ -360,7 +428,7 @@ const CATALOGO = {
         ] },
       { bg: 'linear-gradient(135deg,#c7d2fe,#4338ca)', badge: 'Novo',
         nome: 'Display de Retrovisor',
-        spec: 'Couchê 300g · 4x0 UV total frente e verso · 8,5x19,88 cm',
+        spec: 'Couchê 300g · colorido só frente · UV total frente e verso · 8,5x19,88 cm',
         variacoes: [
           { label: '10 un', preco: 68.90 },
           { label: '25 un', preco: 157.90 },
@@ -441,6 +509,9 @@ const CATALOGO = {
     produtos: [
       ecobagPersonalizada,
       cordaoPersonalizado,
+      toalhaBanho,
+      toalhaRosto,
+      bolsaHaste,
       camisetaDtf,
     ],
   },
