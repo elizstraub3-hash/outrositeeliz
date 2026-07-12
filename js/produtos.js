@@ -1,6 +1,11 @@
 /* ============ Print House — catálogo de produtos ============
    Edite aqui suas categorias, produtos e variações (opção + preço). */
 
+/* Versão do catálogo: aumente em 1 sempre que alterar este arquivo.
+   Edições salvas pelo painel admin em versões antigas são descartadas
+   automaticamente, para que as novidades daqui sempre apareçam. */
+const CATALOGO_VERSAO = 2;
+
 /* Produtos que aparecem em mais de uma categoria são definidos uma única
    vez aqui e referenciados nas categorias — sem duplicar dados. */
 
@@ -467,14 +472,17 @@ const CATALOGO = {
 };
 
 /* Sobrescreve o catálogo com as edições feitas no painel administrativo
-   (admin.html). Sem edições salvas, vale o catálogo padrão acima. */
+   (admin.html) — apenas se forem da versão atual do catálogo. Edições de
+   versões antigas são descartadas para não esconder produtos novos. */
 try {
   const catalogoEditado = localStorage.getItem('printhouse_catalogo');
   if (catalogoEditado) {
-    const editado = JSON.parse(catalogoEditado);
-    if (editado && typeof editado === 'object') {
+    const dados = JSON.parse(catalogoEditado);
+    if (dados && dados.versao === CATALOGO_VERSAO && dados.catalogo && typeof dados.catalogo === 'object') {
       Object.keys(CATALOGO).forEach((k) => delete CATALOGO[k]);
-      Object.assign(CATALOGO, editado);
+      Object.assign(CATALOGO, dados.catalogo);
+    } else {
+      localStorage.removeItem('printhouse_catalogo');
     }
   }
 } catch (e) { /* mantém o catálogo padrão */ }

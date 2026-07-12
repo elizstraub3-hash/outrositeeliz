@@ -226,7 +226,7 @@ document.getElementById('btnExcluirProduto').addEventListener('click', () => {
 
 /* ---------- Ações globais ---------- */
 document.getElementById('btnSalvar').addEventListener('click', () => {
-  localStorage.setItem('printhouse_catalogo', JSON.stringify(catalogo));
+  localStorage.setItem('printhouse_catalogo', JSON.stringify({ versao: CATALOGO_VERSAO, catalogo }));
   mostrarToast('Edições salvas! O site já usa o novo catálogo neste navegador.');
 });
 
@@ -240,17 +240,21 @@ document.getElementById('btnBaixar').addEventListener('click', () => {
   const conteudo = `/* ============ Print House — catálogo de produtos ============
    Arquivo gerado pelo painel administrativo (admin.html). */
 
+const CATALOGO_VERSAO = ${CATALOGO_VERSAO + 1};
+
 const CATALOGO = ${JSON.stringify(catalogo, null, 2)};
 
 /* Sobrescreve o catálogo com as edições feitas no painel administrativo
-   (admin.html). Sem edições salvas, vale o catálogo padrão acima. */
+   (admin.html) — apenas se forem da versão atual do catálogo. */
 try {
   const catalogoEditado = localStorage.getItem('printhouse_catalogo');
   if (catalogoEditado) {
-    const editado = JSON.parse(catalogoEditado);
-    if (editado && typeof editado === 'object') {
+    const dados = JSON.parse(catalogoEditado);
+    if (dados && dados.versao === CATALOGO_VERSAO && dados.catalogo && typeof dados.catalogo === 'object') {
       Object.keys(CATALOGO).forEach((k) => delete CATALOGO[k]);
-      Object.assign(CATALOGO, editado);
+      Object.assign(CATALOGO, dados.catalogo);
+    } else {
+      localStorage.removeItem('printhouse_catalogo');
     }
   }
 } catch (e) { /* mantém o catálogo padrão */ }
