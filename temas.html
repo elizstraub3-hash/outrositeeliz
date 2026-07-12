@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pacotes de Logotipo e Identidade Visual | Print House</title>
-  <meta name="description" content="Pacotes exclusivos de criação de logotipo e identidade visual da Print House.">
+  <title>Segmentos e Eventos | Print House</title>
+  <meta name="description" content="Produtos personalizados com a melhor qualidade e entrega rápida.">
   <link rel="stylesheet" href="css/style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -75,31 +75,18 @@
   </header>
 
   <!-- Banner -->
-  <section class="cat-hero" style="background: linear-gradient(120deg, #1a1a1a, #4b5563);">
+  <section class="cat-hero" id="temaHero">
     <div class="container">
-      <p class="cat-hero__breadcrumb"><a href="index.html">Início</a> / <span>Pacotes de logotipo</span></p>
-      <h1>Pacotes de Logotipo e Identidade Visual</h1>
-      <p class="cat-hero__desc">Criação profissional de logotipo e identidade visual para a sua marca.</p>
+      <p class="cat-hero__breadcrumb"><a href="index.html">Início</a> / <span id="temaBreadcrumb">Temas</span></p>
+      <h1 id="temaTitulo">Temas</h1>
+      <p class="cat-hero__desc" id="temaDescricao"></p>
     </div>
   </section>
 
-  <!-- Pacotes -->
-  <section class="section" id="pacotes">
-    <div class="container regras">
-      <h2>Nossos pacotes exclusivos</h2>
-      <p style="margin-bottom:1.2rem">
-        A criação de arte gratuita não inclui logotipos nem identidades visuais.
-        Para isso, temos pacotes exclusivos criados pela nossa equipe de design.
-        Em breve, os detalhes e exemplos de logotipos estarão nesta página.
-      </p>
-      <ul class="arte-regras">
-        <li><strong>Logotipo</strong> — criação profissional do logotipo da sua marca.</li>
-        <li><strong>Identidade visual completa</strong> — logotipo, paleta de cores, tipografia e aplicações.</li>
-        <li>Consulte valores e prazos com nosso atendimento.</li>
-      </ul>
-      <p class="regras__contato">
-        Quer um orçamento? <a href="https://wa.me/5511999999999" target="_blank" rel="noopener" class="arte-link">Fale com nossos especialistas no WhatsApp</a>.
-      </p>
+  <!-- Lista -->
+  <section class="section">
+    <div class="container">
+      <div class="categories" id="temaLista"></div>
     </div>
   </section>
 
@@ -163,7 +150,9 @@
 
   <div class="toast" id="toast"></div>
 
+  <script src="js/temas.js"></script>
   <script src="js/produtos.js"></script>
   <script src="js/loja.js"></script>
+  <script src="js/temas-lista.js"></script>
 </body>
 </html>

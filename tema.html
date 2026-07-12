@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pacotes de Logotipo e Identidade Visual | Print House</title>
-  <meta name="description" content="Pacotes exclusivos de criação de logotipo e identidade visual da Print House.">
+  <title>Tema | Print House</title>
+  <meta name="description" content="Produtos personalizados com a melhor qualidade e entrega rápida.">
   <link rel="stylesheet" href="css/style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -75,31 +75,27 @@
   </header>
 
   <!-- Banner -->
-  <section class="cat-hero" style="background: linear-gradient(120deg, #1a1a1a, #4b5563);">
+  <section class="cat-hero" id="temaHero">
     <div class="container">
-      <p class="cat-hero__breadcrumb"><a href="index.html">Início</a> / <span>Pacotes de logotipo</span></p>
-      <h1>Pacotes de Logotipo e Identidade Visual</h1>
-      <p class="cat-hero__desc">Criação profissional de logotipo e identidade visual para a sua marca.</p>
+      <p class="cat-hero__breadcrumb"><a href="index.html">Início</a> / <a id="temaVoltar" href="#">Temas</a> / <span id="temaBreadcrumb">Tema</span></p>
+      <h1 id="temaTitulo">Tema</h1>
     </div>
   </section>
 
-  <!-- Pacotes -->
-  <section class="section" id="pacotes">
-    <div class="container regras">
-      <h2>Nossos pacotes exclusivos</h2>
-      <p style="margin-bottom:1.2rem">
-        A criação de arte gratuita não inclui logotipos nem identidades visuais.
-        Para isso, temos pacotes exclusivos criados pela nossa equipe de design.
-        Em breve, os detalhes e exemplos de logotipos estarão nesta página.
-      </p>
-      <ul class="arte-regras">
-        <li><strong>Logotipo</strong> — criação profissional do logotipo da sua marca.</li>
-        <li><strong>Identidade visual completa</strong> — logotipo, paleta de cores, tipografia e aplicações.</li>
-        <li>Consulte valores e prazos com nosso atendimento.</li>
-      </ul>
-      <p class="regras__contato">
-        Quer um orçamento? <a href="https://wa.me/5511999999999" target="_blank" rel="noopener" class="arte-link">Fale com nossos especialistas no WhatsApp</a>.
-      </p>
+  <!-- Em breve -->
+  <section class="section">
+    <div class="container em-breve">
+      <div class="em-breve__card">
+        <div class="em-breve__icone">
+          <svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+        </div>
+        <h2>Em breve, mais conteúdos</h2>
+        <p>Estamos preparando materiais especiais para <strong id="temaNome">este tema</strong>. Enquanto isso, fale com a gente ou confira nossos produtos.</p>
+        <div class="em-breve__acoes">
+          <a href="index.html#produtos" class="btn btn--primary">Ver produtos</a>
+          <a href="https://wa.me/5511999999999" target="_blank" rel="noopener" class="btn btn--claro">Falar no WhatsApp</a>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -163,7 +159,9 @@
 
   <div class="toast" id="toast"></div>
 
+  <script src="js/temas.js"></script>
   <script src="js/produtos.js"></script>
   <script src="js/loja.js"></script>
+  <script src="js/tema.js"></script>
 </body>
 </html>

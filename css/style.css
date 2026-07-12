@@ -454,6 +454,31 @@ button { font-family: inherit; cursor: pointer; }
 .category-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-hover); }
 .category-card__icon { font-size: 2.4rem; margin-bottom: .6rem; }
 .category-card__name { font-size: .85rem; font-weight: 600; }
+.category-card__tag {
+  display: inline-block;
+  margin-top: .5rem;
+  font-size: .68rem;
+  font-weight: 600;
+  color: var(--gray);
+  background: var(--gray-light);
+  border-radius: 999px;
+  padding: .15rem .6rem;
+}
+
+/* ============ Em breve (segmentos/eventos) ============ */
+.em-breve { display: grid; place-items: center; }
+.em-breve__card {
+  max-width: 520px;
+  text-align: center;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 2.5rem 2rem;
+  box-shadow: var(--shadow);
+}
+.em-breve__icone { color: var(--primary); display: flex; justify-content: center; margin-bottom: 1rem; }
+.em-breve__card h2 { font-size: 1.4rem; font-weight: 700; margin-bottom: .6rem; }
+.em-breve__card p { color: var(--gray); margin-bottom: 1.6rem; }
+.em-breve__acoes { display: flex; gap: .7rem; justify-content: center; flex-wrap: wrap; }
 
 /* ============ Banner da página de categoria ============ */
 .cat-hero {

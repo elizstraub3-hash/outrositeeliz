@@ -48,7 +48,7 @@ function cardProduto(p, slugCategoria) {
     precoSmall = 'a partir de';
     precoValor = menorPrecoCombinacao(p);
   } else if (p.tamanhos) {
-    hint = `<p class="product-card__comb-hint">Tamanhos: ${Object.keys(p.tamanhos).join(' · ')}</p>`;
+    hint = `<p class="product-card__comb-hint">${p.grupoLabel === 'Cor' ? 'Cores' : 'Tamanhos'}: ${Object.keys(p.tamanhos).join(' · ')}</p>`;
     precoSmall = 'a partir de';
     precoValor = menorPrecoTamanhos(p);
   } else if (p.cores) {
@@ -244,16 +244,18 @@ function abrirVariacoes(p) {
 /* ---------- Janela de tamanhos (dropdown de tamanho + quantidade) ---------- */
 function abrirTamanhos(p) {
   const nomesTamanhos = Object.keys(p.tamanhos);
+  const grupoLabel = p.grupoLabel || 'Tamanho';
+  const opcaoLabel = p.opcaoLabel || 'Cor e quantidade';
   const { modal, fechar } = criarModal(`Opções de ${p.nome}`, `
     ${cabecalhoModal(p)}
     <div class="modal__opcao">
-      <label class="modal__label" for="modalTamanho">Tamanho:</label>
+      <label class="modal__label" for="modalTamanho">${grupoLabel}:</label>
       <select class="modal__select" id="modalTamanho">
         ${nomesTamanhos.map((t) => `<option>${t}</option>`).join('')}
       </select>
     </div>
     <div class="modal__opcao">
-      <label class="modal__label" for="modalQtdOpcao">Cor e quantidade:</label>
+      <label class="modal__label" for="modalQtdOpcao">${opcaoLabel}:</label>
       <select class="modal__select" id="modalQtdOpcao"></select>
     </div>
     ${blocoArte()}

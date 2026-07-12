@@ -4,7 +4,7 @@
 /* Versão do catálogo: aumente em 1 sempre que alterar este arquivo.
    Edições salvas pelo painel admin em versões antigas são descartadas
    automaticamente, para que as novidades daqui sempre apareçam. */
-const CATALOGO_VERSAO = 5;
+const CATALOGO_VERSAO = 6;
 
 /* Produtos que aparecem em mais de uma categoria são definidos uma única
    vez aqui e referenciados nas categorias — sem duplicar dados. */
@@ -190,24 +190,79 @@ const CATALOGO = {
     produtos: [
       { bg: 'linear-gradient(135deg,#fef08a,#ca8a04)', badge: 'Novo', prazo: 3, destaque: true,
         nome: 'Cartão de Visita Couchê 250g',
-        spec: 'Couchê 250g · UV total frente · 8,8x4,8 cm · 3 opções de cor',
-        variacoes: [
-          { label: '500 un · Colorido só frente', preco: 70.90 },
-          { label: '1.000 un · Colorido só frente', preco: 99.90 },
-          { label: '3.000 un · Colorido só frente', preco: 286.90 },
-          { label: '5.000 un · Colorido só frente', preco: 459.90 },
-          { label: '10.000 un · Colorido só frente', preco: 909.90 },
-          { label: '500 un · Colorido frente e verso', preco: 100.90 },
-          { label: '1.000 un · Colorido frente e verso', preco: 114.90 },
-          { label: '3.000 un · Colorido frente e verso', preco: 336.90 },
-          { label: '5.000 un · Colorido frente e verso', preco: 546.90 },
-          { label: '10.000 un · Colorido frente e verso', preco: 1090.90 },
-          { label: '500 un · Frente colorida + verso P&B', preco: 75.90 },
-          { label: '1.000 un · Frente colorida + verso P&B', preco: 106.90 },
-          { label: '3.000 un · Frente colorida + verso P&B', preco: 304.90 },
-          { label: '5.000 un · Frente colorida + verso P&B', preco: 478.90 },
-          { label: '10.000 un · Frente colorida + verso P&B', preco: 955.90 },
-        ] },
+        spec: 'Couchê 250g · UV total frente · 8,8x4,8 cm · escolha a cor e a quantidade',
+        grupoLabel: 'Cor', opcaoLabel: 'Quantidade',
+        tamanhos: {
+          'Colorido só frente': [
+            { label: '500 un', preco: 70.90 },
+            { label: '1.000 un', preco: 99.90 },
+            { label: '3.000 un', preco: 286.90 },
+            { label: '5.000 un', preco: 459.90 },
+            { label: '10.000 un', preco: 909.90 },
+          ],
+          'Colorido frente e verso': [
+            { label: '500 un', preco: 100.90 },
+            { label: '1.000 un', preco: 114.90 },
+            { label: '3.000 un', preco: 336.90 },
+            { label: '5.000 un', preco: 546.90 },
+            { label: '10.000 un', preco: 1090.90 },
+          ],
+          'Frente colorida + verso P&B': [
+            { label: '500 un', preco: 75.90 },
+            { label: '1.000 un', preco: 106.90 },
+            { label: '3.000 un', preco: 304.90 },
+            { label: '5.000 un', preco: 478.90 },
+            { label: '10.000 un', preco: 955.90 },
+          ],
+        } },
+      { bg: 'linear-gradient(135deg,#fbcfe8,#be185d)', badge: 'Novo',
+        nome: 'Postal Couchê 250g',
+        spec: 'Couchê 250g · UV total frente · 8,8x9,94 cm · escolha a cor e a quantidade',
+        grupoLabel: 'Cor', opcaoLabel: 'Quantidade',
+        tamanhos: {
+          'Colorido só frente': [
+            { label: '100 un', preco: 76.90 },
+            { label: '250 un', preco: 84.90 },
+            { label: '500 un', preco: 106.90 },
+            { label: '1.000 un', preco: 181.90 },
+          ],
+          'Colorido frente e verso': [
+            { label: '100 un', preco: 90.90 },
+            { label: '250 un', preco: 96.90 },
+            { label: '500 un', preco: 133.90 },
+            { label: '1.000 un', preco: 217.90 },
+          ],
+        } },
+      { bg: 'linear-gradient(135deg,#ddd6fe,#6d28d9)', badge: 'Novo',
+        nome: 'Postal Personalizado (3 tamanhos)',
+        spec: 'Couchê · colorido só frente · escolha o tamanho e a quantidade',
+        tamanhos: {
+          'Tamanho padrão': [
+            { label: '50 un', preco: 44.90 },
+            { label: '100 un', preco: 82.90 },
+            { label: '250 un', preco: 187.90 },
+            { label: '500 un', preco: 243.90 },
+            { label: '1.000 un', preco: 294.90 },
+            { label: '3.000 un', preco: 822.90 },
+            { label: '5.000 un', preco: 1258.90 },
+          ],
+          '17,9 x 9,94 cm': [
+            { label: '50 un', preco: 82.90 },
+            { label: '100 un', preco: 157.90 },
+            { label: '250 un', preco: 367.90 },
+            { label: '500 un', preco: 484.90 },
+            { label: '1.000 un', preco: 588.90 },
+            { label: '3.000 un', preco: 1621.90 },
+            { label: '5.000 un', preco: 2511.90 },
+          ],
+          '18 x 20 cm': [
+            { label: '50 un', preco: 159.90 },
+            { label: '100 un', preco: 298.90 },
+            { label: '250 un', preco: 698.90 },
+            { label: '500 un', preco: 931.90 },
+            { label: '1.000 un', preco: 1137.90 },
+          ],
+        } },
     ],
   },
 
@@ -306,6 +361,20 @@ const CATALOGO = {
           { label: '250 un', preco: 79.90 },
           { label: '500 un', preco: 129.90 },
           { label: '1.000 un', preco: 199.90 },
+        ] },
+      { bg: 'linear-gradient(135deg,#bbf7d0,#15803d)', badge: 'Novo',
+        nome: 'Kit Etiquetas Escolares',
+        spec: 'Adesivo vinil 90g · colorido só frente · UV total · 28x40 cm',
+        variacoes: [
+          { label: '1 un', preco: 31.90 },
+          { label: '2 un', preco: 57.90 },
+          { label: '5 un', preco: 127.90 },
+          { label: '10 un', preco: 246.90 },
+          { label: '50 un', preco: 1068.90 },
+          { label: '100 un', preco: 2089.90 },
+          { label: '250 un', preco: 5154.90 },
+          { label: '500 un', preco: 10104.90 },
+          { label: '1.000 un', preco: 18879.90 },
         ] },
     ],
   },
