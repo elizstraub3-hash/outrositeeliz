@@ -4,7 +4,7 @@
 /* Versão do catálogo: aumente em 1 sempre que alterar este arquivo.
    Edições salvas pelo painel admin em versões antigas são descartadas
    automaticamente, para que as novidades daqui sempre apareçam. */
-const CATALOGO_VERSAO = 7;
+const CATALOGO_VERSAO = 8;
 
 /* Produtos que aparecem em mais de uma categoria são definidos uma única
    vez aqui e referenciados nas categorias — sem duplicar dados. */
@@ -455,18 +455,16 @@ const CATALOGO = {
     descricao: 'Banners, displays e materiais de PDV para destacar sua marca onde a venda acontece.',
     produtos: [
       { emoji: '🪧', bg: 'linear-gradient(135deg,#a5f3fc,#06b6d4)', badge: 'Novo', destaque: true,
-        nome: 'Banner em Lona 440g', spec: 'Com ilhós · impressão digital HD',
+        nome: 'Banner Lona Brilho 440g',
+        spec: 'Lona brilho 440g · colorido só frente · já com bastão e corda · escolha o formato',
         variacoes: [
-          { label: '60x90 cm', preco: 59.90 },
-          { label: '80x120 cm', preco: 79.90 },
-          { label: '100x150 cm', preco: 119.90 },
-        ] },
-      { emoji: '🏳️', bg: 'linear-gradient(135deg,#cffafe,#22d3ee)',
-        nome: 'Wind Banner', spec: 'Estrutura + bandeira em tecido',
-        variacoes: [
-          { label: '2,0 m', preco: 249.90 },
-          { label: '2,8 m', preco: 319.90 },
-          { label: '3,4 m', preco: 399.90 },
+          { label: '0,45 x 0,65 m', preco: 23.90 },
+          { label: '0,62 x 0,80 m', preco: 26.90 },
+          { label: '0,52 x 0,90 m', preco: 30.90 },
+          { label: '0,79 x 1,20 m', preco: 56.90 },
+          { label: '0,90 x 1,20 m', preco: 65.90 },
+          { label: '1,05 x 1,20 m', preco: 75.90 },
+          { label: '1,05 x 1,50 m', preco: 90.90 },
         ] },
       { emoji: '🖼️', bg: 'linear-gradient(135deg,#bae6fd,#38bdf8)',
         nome: 'Display de Mesa', spec: 'Papel triplex 350g · faca especial',
@@ -596,12 +594,6 @@ const CATALOGO = {
     produtos: [
       camisetaDtf,
       kitChurrasco,
-      { emoji: '💡', bg: 'linear-gradient(135deg,#e9d5ff,#a855f7)', badge: 'Novo',
-        nome: 'Banner Backlight', spec: 'Para caixa de luz · alta translucidez',
-        variacoes: [
-          { label: '80x120 cm', preco: 149.90 },
-          { label: '100x150 cm', preco: 199.90 },
-        ] },
       copoTermico,
       { emoji: '📲', bg: 'linear-gradient(135deg,#c4b5fd,#6d28d9)', badge: 'Novo',
         nome: 'Cartão de Visita NFC', spec: 'Compartilhe seu contato por aproximação',
