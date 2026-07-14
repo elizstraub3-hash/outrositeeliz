@@ -4,7 +4,7 @@
 /* Versão do catálogo: aumente em 1 sempre que alterar este arquivo.
    Edições salvas pelo painel admin em versões antigas são descartadas
    automaticamente, para que as novidades daqui sempre apareçam. */
-const CATALOGO_VERSAO = 8;
+const CATALOGO_VERSAO = 9;
 
 /* Produtos que aparecem em mais de uma categoria são definidos uma única
    vez aqui e referenciados nas categorias — sem duplicar dados. */
@@ -192,6 +192,7 @@ const CATALOGO = {
     descricao: 'Cause uma ótima primeira impressão com cartões de alta qualidade.',
     produtos: [
       { bg: 'linear-gradient(135deg,#fef08a,#ca8a04)', badge: 'Novo', prazo: 3, destaque: true,
+        imagem: 'img/cartao-visita.png',
         nome: 'Cartão de Visita Couchê 250g',
         spec: 'Couchê 250g · UV total frente · 8,8x4,8 cm · escolha a cor e a quantidade',
         grupoLabel: 'Cor', opcaoLabel: 'Quantidade',
@@ -455,6 +456,7 @@ const CATALOGO = {
     descricao: 'Banners, displays e materiais de PDV para destacar sua marca onde a venda acontece.',
     produtos: [
       { emoji: '🪧', bg: 'linear-gradient(135deg,#a5f3fc,#06b6d4)', badge: 'Novo', destaque: true,
+        imagem: 'img/banner-lona.png',
         nome: 'Banner Lona Brilho 440g',
         spec: 'Lona brilho 440g · colorido só frente · já com bastão e corda · escolha o formato',
         variacoes: [
