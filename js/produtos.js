@@ -4,7 +4,7 @@
 /* Versão do catálogo: aumente em 1 sempre que alterar este arquivo.
    Edições salvas pelo painel admin em versões antigas são descartadas
    automaticamente, para que as novidades daqui sempre apareçam. */
-const CATALOGO_VERSAO = 9;
+const CATALOGO_VERSAO = 10;
 
 /* Produtos que aparecem em mais de uma categoria são definidos uma única
    vez aqui e referenciados nas categorias — sem duplicar dados. */
@@ -25,16 +25,6 @@ const copoCuia = {
     { nome: 'Estampa em DTF', imagem: 'img/copo-cuia-dtf.png', faixas: [
       { min: 1, preco: 55.90 },
     ] },
-  ],
-};
-
-const copoLongDrink = {
-  emoji: '🥤', bg: 'linear-gradient(135deg,#fbcfe8,#ec4899)', badge: 'Mais vendido', destaque: true,
-  nome: 'Copo Long Drink 350ml', spec: 'Impressão em silk · várias cores',
-  variacoes: [
-    { label: '50 un', preco: 149.90 },
-    { label: '100 un', preco: 249.90 },
-    { label: '200 un', preco: 429.90 },
   ],
 };
 
@@ -340,50 +330,7 @@ const CATALOGO = {
     emoji: '🏷️',
     banner: 'linear-gradient(120deg,#15803d,#22c55e)',
     descricao: 'Adesivos e rótulos em vinil resistente, com recorte no formato que você quiser.',
-    produtos: [
-      { emoji: '🏷️', bg: 'linear-gradient(135deg,#bbf7d0,#22c55e)', badge: 'Oferta', destaque: true,
-        nome: 'Adesivo Vinil Recorte', spec: 'Recorte especial · resistente à água',
-        variacoes: [
-          { label: '100 un', preco: 39.90 },
-          { label: '500 un', preco: 89.90 },
-          { label: '1.000 un', preco: 139.90 },
-        ] },
-      { emoji: '⭕', bg: 'linear-gradient(135deg,#d9f99d,#84cc16)',
-        nome: 'Adesivo Redondo 5cm', spec: 'Vinil brilho · colorido só frente',
-        variacoes: [
-          { label: '100 un', preco: 29.90 },
-          { label: '500 un', preco: 69.90 },
-          { label: '1.000 un', preco: 109.90 },
-        ] },
-      { emoji: '🌈', bg: 'linear-gradient(135deg,#a7f3d0,#14b8a6)',
-        nome: 'Adesivo Holográfico', spec: 'Efeito arco-íris premium',
-        variacoes: [
-          { label: '100 un', preco: 49.90 },
-          { label: '500 un', preco: 119.90 },
-          { label: '1.000 un', preco: 189.90 },
-        ] },
-      { emoji: '🫙', bg: 'linear-gradient(135deg,#bbf7d0,#4ade80)',
-        nome: 'Rótulo para Embalagem', spec: 'Vinil fosco ou brilho · alta adesão',
-        variacoes: [
-          { label: '250 un', preco: 79.90 },
-          { label: '500 un', preco: 129.90 },
-          { label: '1.000 un', preco: 199.90 },
-        ] },
-      { bg: 'linear-gradient(135deg,#bbf7d0,#15803d)', badge: 'Novo',
-        nome: 'Kit Etiquetas Escolares',
-        spec: 'Adesivo vinil 90g · colorido só frente · UV total · 28x40 cm',
-        variacoes: [
-          { label: '1 un', preco: 31.90 },
-          { label: '2 un', preco: 57.90 },
-          { label: '5 un', preco: 127.90 },
-          { label: '10 un', preco: 246.90 },
-          { label: '50 un', preco: 1068.90 },
-          { label: '100 un', preco: 2089.90 },
-          { label: '250 un', preco: 5154.90 },
-          { label: '500 un', preco: 10104.90 },
-          { label: '1.000 un', preco: 18879.90 },
-        ] },
-    ],
+    produtos: [],
   },
 
   'brindes': {
@@ -393,7 +340,6 @@ const CATALOGO = {
     descricao: 'Brindes personalizados que mantêm sua marca na memória (e na mão) dos clientes.',
     produtos: [
       copoCuia,
-      copoLongDrink,
       canetaPersonalizada,
       { emoji: '🔑', bg: 'linear-gradient(135deg,#fecdd3,#fb7185)',
         nome: 'Chaveiro Acrílico', spec: 'Formato personalizado · impressão UV',
@@ -521,7 +467,6 @@ const CATALOGO = {
     produtos: [
       copoCuia,
       copoInoxColorido,
-      copoLongDrink,
       copoTermico,
     ],
   },
