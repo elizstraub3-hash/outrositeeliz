@@ -4,7 +4,7 @@
 /* Versão do catálogo: aumente em 1 sempre que alterar este arquivo.
    Edições salvas pelo painel admin em versões antigas são descartadas
    automaticamente, para que as novidades daqui sempre apareçam. */
-const CATALOGO_VERSAO = 16;
+const CATALOGO_VERSAO = 17;
 
 /* Produtos que aparecem em mais de uma categoria são definidos uma única
    vez aqui e referenciados nas categorias — sem duplicar dados. */
@@ -166,11 +166,12 @@ const cordaoPersonalizado = {
 
 const camisetaDryMasc = {
   bg: 'linear-gradient(135deg,#e0f2fe,#0369a1)', badge: 'Novo',
+  imagem: 'img/camiseta-masc.png',
   nome: 'Camiseta Dry Fit Masculina',
   spec: 'Dry Fit · poliéster (rústico, sem elasticidade) · estampa personalizada · do P ao XL4',
   prazo: 10,
   paginaProduto: true,
-  medidas: 'img/camiseta-medidas.png',
+  medidas: 'img/camiseta-masc-medidas.png',
   descricao: 'Camiseta Dry Fit em poliéster, com toque rústico e sem elasticidade — ideal para esportes, corridas, times, eventos e uso no dia a dia. Estampa personalizada com a sua arte. Disponível do tamanho P ao XL4.',
   detalhes: ['Material: poliéster, tecido rústico e sem elasticidade. Modelagem do P ao XL4 (medidas podem variar 2 cm para mais ou para menos).'],
   grupoLabel: 'Tamanho', opcaoLabel: 'Quantidade',
@@ -228,11 +229,12 @@ const camisetaDryMasc = {
 
 const camisetaDryFem = {
   bg: 'linear-gradient(135deg,#e0f2fe,#0369a1)', badge: 'Novo',
+  imagem: 'img/camiseta-fem.png',
   nome: 'Camiseta Dry Fit Feminina',
   spec: 'Dry Fit · poliéster (rústico, sem elasticidade) · estampa personalizada · do P ao XL4',
   prazo: 10,
   paginaProduto: true,
-  medidas: 'img/camiseta-medidas.png',
+  medidas: 'img/camiseta-fem-medidas.png',
   descricao: 'Camiseta Dry Fit em poliéster, com toque rústico e sem elasticidade — ideal para esportes, corridas, times, eventos e uso no dia a dia. Estampa personalizada com a sua arte. Disponível do tamanho P ao XL4.',
   detalhes: ['Material: poliéster, tecido rústico e sem elasticidade. Modelagem do P ao XL4 (medidas podem variar 2 cm para mais ou para menos).'],
   grupoLabel: 'Tamanho', opcaoLabel: 'Quantidade',
@@ -290,6 +292,7 @@ const camisetaDryFem = {
 
 const camisaPesca = {
   bg: 'linear-gradient(135deg,#a5f3fc,#0e7490)', badge: 'Novo',
+  imagem: 'img/camisa-pesca.png',
   nome: 'Camisa de Pesca Personalizada',
   spec: 'Manga longa · gola média com zíper · Active Ice UV 50+ · impressão Ultra HD Sublimática · do P ao XL4',
   prazo: 10,
@@ -389,6 +392,7 @@ const camisaPesca = {
 
 const moletomCanguru = {
   bg: 'linear-gradient(135deg,#cbd5e1,#334155)', badge: 'Novo',
+  imagem: 'img/moletom.png',
   nome: 'Moletom Canguru Personalizado',
   spec: 'Moletom flanelado 100% poliéster · unissex · capuz e bolso canguru · impressão Ultra HD Sublimática · do P ao XL4',
   prazo: 10,
@@ -490,6 +494,7 @@ const jaquetaMisty = {
   bg: 'linear-gradient(135deg,#e2e8f0,#334155)', badge: 'Novo',
   nome: 'Jaqueta Corta Vento Misty',
   spec: 'Tactel (92% poliéster · 8% elastano) · unissex · capuz e zíper 80 cm · do P ao XL4 · a partir de 1 un',
+  imagem: 'img/jaqueta.png',
   paginaProduto: true,
   prazo: 7,
   arteRestrita: true,
@@ -760,6 +765,7 @@ const CATALOGO = {
     descricao: 'Adesivos e rótulos em vinil resistente, com recorte no formato que você quiser.',
     produtos: [
       { bg: 'linear-gradient(135deg,#bbf7d0,#22c55e)', badge: 'Novo', destaque: true,
+        imagem: 'img/adesivos.png',
         nome: 'Adesivos Personalizados',
         spec: 'Redondos e quadrados · impressão colorida em alta qualidade · corte especial · escolha o tamanho e a quantidade',
         grupoLabel: 'Tamanho', opcaoLabel: 'Quantidade',
