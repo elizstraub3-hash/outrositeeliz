@@ -4,7 +4,7 @@
 /* Versão do catálogo: aumente em 1 sempre que alterar este arquivo.
    Edições salvas pelo painel admin em versões antigas são descartadas
    automaticamente, para que as novidades daqui sempre apareçam. */
-const CATALOGO_VERSAO = 12;
+const CATALOGO_VERSAO = 13;
 
 /* Produtos que aparecem em mais de uma categoria são definidos uma única
    vez aqui e referenciados nas categorias — sem duplicar dados. */
@@ -162,6 +162,130 @@ const cordaoPersonalizado = {
     { label: '10 un · Argola com Jacaré Duplo', preco: 204.90 },
     { label: '10 un · Mosquetão Duplo', preco: 222.90 },
   ],
+};
+
+const camisetaDryMasc = {
+  bg: 'linear-gradient(135deg,#e0f2fe,#0369a1)', badge: 'Novo',
+  nome: 'Camiseta Dry Fit Masculina',
+  spec: 'Dry Fit · poliéster (rústico, sem elasticidade) · estampa personalizada · do P ao XL4',
+  prazo: 10,
+  paginaProduto: true,
+  medidas: 'img/camiseta-medidas.png',
+  descricao: 'Camiseta Dry Fit em poliéster, com toque rústico e sem elasticidade — ideal para esportes, corridas, times, eventos e uso no dia a dia. Estampa personalizada com a sua arte. Disponível do tamanho P ao XL4.',
+  detalhes: ['Material: poliéster, tecido rústico e sem elasticidade. Modelagem do P ao XL4 (medidas podem variar 2 cm para mais ou para menos).'],
+  grupoLabel: 'Tamanho', opcaoLabel: 'Quantidade',
+  tamanhos: {
+          'P': [
+            { label: '1 un', preco: 75.90 },
+            { label: '5 un', preco: 299.90 },
+            { label: '10 un', preco: 575.90 },
+            { label: '20 un', preco: 1120.90 },
+          ],
+          'M': [
+            { label: '1 un', preco: 75.90 },
+            { label: '5 un', preco: 299.90 },
+            { label: '10 un', preco: 575.90 },
+            { label: '20 un', preco: 1120.90 },
+          ],
+          'G': [
+            { label: '1 un', preco: 75.90 },
+            { label: '5 un', preco: 299.90 },
+            { label: '10 un', preco: 575.90 },
+            { label: '20 un', preco: 1120.90 },
+          ],
+          'GG': [
+            { label: '1 un', preco: 75.90 },
+            { label: '5 un', preco: 299.90 },
+            { label: '10 un', preco: 575.90 },
+            { label: '20 un', preco: 1120.90 },
+          ],
+          'XL1': [
+            { label: '1 un', preco: 75.90 },
+            { label: '5 un', preco: 299.90 },
+            { label: '10 un', preco: 575.90 },
+            { label: '20 un', preco: 1120.90 },
+          ],
+          'XL2': [
+            { label: '1 un', preco: 75.90 },
+            { label: '5 un', preco: 299.90 },
+            { label: '10 un', preco: 575.90 },
+            { label: '20 un', preco: 1120.90 },
+          ],
+          'XL3': [
+            { label: '1 un', preco: 75.90 },
+            { label: '5 un', preco: 299.90 },
+            { label: '10 un', preco: 575.90 },
+            { label: '20 un', preco: 1120.90 },
+          ],
+          'XL4': [
+            { label: '1 un', preco: 75.90 },
+            { label: '5 un', preco: 299.90 },
+            { label: '10 un', preco: 575.90 },
+            { label: '20 un', preco: 1120.90 },
+          ],
+  },
+};
+
+const camisetaDryFem = {
+  bg: 'linear-gradient(135deg,#e0f2fe,#0369a1)', badge: 'Novo',
+  nome: 'Camiseta Dry Fit Feminina',
+  spec: 'Dry Fit · poliéster (rústico, sem elasticidade) · estampa personalizada · do P ao XL4',
+  prazo: 10,
+  paginaProduto: true,
+  medidas: 'img/camiseta-medidas.png',
+  descricao: 'Camiseta Dry Fit em poliéster, com toque rústico e sem elasticidade — ideal para esportes, corridas, times, eventos e uso no dia a dia. Estampa personalizada com a sua arte. Disponível do tamanho P ao XL4.',
+  detalhes: ['Material: poliéster, tecido rústico e sem elasticidade. Modelagem do P ao XL4 (medidas podem variar 2 cm para mais ou para menos).'],
+  grupoLabel: 'Tamanho', opcaoLabel: 'Quantidade',
+  tamanhos: {
+          'P': [
+            { label: '1 un', preco: 75.90 },
+            { label: '5 un', preco: 299.90 },
+            { label: '10 un', preco: 575.90 },
+            { label: '20 un', preco: 1120.90 },
+          ],
+          'M': [
+            { label: '1 un', preco: 75.90 },
+            { label: '5 un', preco: 299.90 },
+            { label: '10 un', preco: 575.90 },
+            { label: '20 un', preco: 1120.90 },
+          ],
+          'G': [
+            { label: '1 un', preco: 75.90 },
+            { label: '5 un', preco: 299.90 },
+            { label: '10 un', preco: 575.90 },
+            { label: '20 un', preco: 1120.90 },
+          ],
+          'GG': [
+            { label: '1 un', preco: 75.90 },
+            { label: '5 un', preco: 299.90 },
+            { label: '10 un', preco: 575.90 },
+            { label: '20 un', preco: 1120.90 },
+          ],
+          'XL1': [
+            { label: '1 un', preco: 75.90 },
+            { label: '5 un', preco: 299.90 },
+            { label: '10 un', preco: 575.90 },
+            { label: '20 un', preco: 1120.90 },
+          ],
+          'XL2': [
+            { label: '1 un', preco: 75.90 },
+            { label: '5 un', preco: 299.90 },
+            { label: '10 un', preco: 575.90 },
+            { label: '20 un', preco: 1120.90 },
+          ],
+          'XL3': [
+            { label: '1 un', preco: 75.90 },
+            { label: '5 un', preco: 299.90 },
+            { label: '10 un', preco: 575.90 },
+            { label: '20 un', preco: 1120.90 },
+          ],
+          'XL4': [
+            { label: '1 un', preco: 75.90 },
+            { label: '5 un', preco: 299.90 },
+            { label: '10 un', preco: 575.90 },
+            { label: '20 un', preco: 1120.90 },
+          ],
+  },
 };
 
 const jaquetaMisty = {
@@ -691,6 +815,8 @@ const CATALOGO = {
     descricao: 'Ecobags, cordões, camisetas e outros itens em tecido personalizados.',
     produtos: [
       jaquetaMisty,
+      camisetaDryMasc,
+      camisetaDryFem,
       ecobagPersonalizada,
       cordaoPersonalizado,
       toalhaBanho,
