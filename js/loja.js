@@ -280,6 +280,13 @@ function abrirTamanhos(p) {
   const opcaoLabel = p.opcaoLabel || 'Cor e quantidade';
   const { modal, fechar } = criarModal(`Opções de ${p.nome}`, `
     ${cabecalhoModal(p)}
+    ${p.extra ? `
+    <div class="modal__opcao">
+      <label class="modal__label" for="modalExtra">${p.extra.label}:</label>
+      <select class="modal__select" id="modalExtra">
+        ${p.extra.opcoes.map((o) => `<option>${o}</option>`).join('')}
+      </select>
+    </div>` : ''}
     <div class="modal__opcao">
       <label class="modal__label" for="modalTamanho">${grupoLabel}:</label>
       <select class="modal__select" id="modalTamanho">
@@ -322,7 +329,8 @@ function abrirTamanhos(p) {
 
   modal.querySelector('.modal__add').addEventListener('click', () => {
     const v = opcaoAtual();
-    const detalhe = `${selTamanho.value} · ${v.label}`;
+    const extraSel = modal.querySelector('#modalExtra');
+    const detalhe = `${extraSel ? extraSel.value + ' · ' : ''}${selTamanho.value} · ${v.label}`;
     const arte = arteEscolhida(modal);
     const arquivo = arquivoArte(modal);
     adicionarItemCarrinho({ nome: p.nome, detalhe, qtd: 1, total: v.preco, arte, arquivo });
