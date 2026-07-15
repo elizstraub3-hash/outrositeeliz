@@ -923,6 +923,15 @@ button { font-family: inherit; cursor: pointer; }
   line-height: 1.45;
   color: var(--gray);
 }
+.arte-restrita {
+  font-size: .8rem;
+  line-height: 1.55;
+  color: var(--gray);
+  background: var(--gray-light);
+  border-radius: 8px;
+  padding: .7rem .9rem;
+}
+.arte-restrita strong { color: var(--dark); }
 .arte-gratis {
   font-size: .74rem;
   font-weight: 600;

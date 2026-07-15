@@ -4,7 +4,7 @@
 /* Versão do catálogo: aumente em 1 sempre que alterar este arquivo.
    Edições salvas pelo painel admin em versões antigas são descartadas
    automaticamente, para que as novidades daqui sempre apareçam. */
-const CATALOGO_VERSAO = 14;
+const CATALOGO_VERSAO = 15;
 
 /* Produtos que aparecem em mais de uma categoria são definidos uma única
    vez aqui e referenciados nas categorias — sem duplicar dados. */
@@ -144,7 +144,7 @@ const toalhaRosto = {
 const bolsaHaste = {
   bg: 'linear-gradient(135deg,#fde68a,#d97706)', badge: 'Novo',
   imagem: 'img/bandeira.png',
-  nome: 'Bolsa para Haste (Bandeira)',
+  nome: 'Bandeira',
   spec: 'Tecido gabardine · colorido só frente · sem verniz · 70x100 cm',
   variacoes: [
     { label: '1 un', preco: 89.90 },
@@ -288,11 +288,112 @@ const camisetaDryFem = {
   },
 };
 
+const camisaPesca = {
+  bg: 'linear-gradient(135deg,#a5f3fc,#0e7490)', badge: 'Novo',
+  nome: 'Camisa de Pesca Personalizada',
+  spec: 'Manga longa · gola média com zíper · Active Ice UV 50+ · impressão Ultra HD Sublimática · do P ao XL4',
+  prazo: 10,
+  paginaProduto: true,
+  medidas: 'img/camisa-pesca-medidas.png',
+  descricao: 'Você gosta de pescaria? Então chegou ao lugar certo! A Print House traz uma camisa de pesca personalizada para quem curte relaxar com estilo — ideal para aquele fim de semana, feriado prolongado ou férias, na hora sagrada de descansar e se concentrar. Personalização em impressão Ultra HD Sublimática, com cores nítidas e vibrantes.',
+  detalhes: [
+    'Modelo e caimento: camisa de manga longa, gola média e com zíper, com caimento confortável para os movimentos da pesca. Tamanhos do P ao XL4 (confira a tabela de medidas). Perfeita para pesca esportiva, amadora ou profissional, torneios e competições — e ótima como presente para quem ama pescar.',
+    'Tecido: Active Ice UV 50+, resistente e refrescante, com conforto térmico, proteção UV 50+ e secagem ultra rápida. Ideal para nadar, remar e pescar com conforto.',
+    'Áreas de personalização: frente, costas, braço direito, braço esquerdo, gola interna e gola externa. Obs.: a gola interna e externa deve ser personalizada com apenas 1 cor (chapada ou pattern), sem números, nomes ou desenhos, para não cortar a imagem.',
+    'Cuidados: lave a peça separada das demais e não deixe de molho. Prefira a lavagem manual, seque no varal e à sombra, e não passe ferro nem seque a vapor — assim a camisa dura muito mais.',
+  ],
+  grupoLabel: 'Tamanho', opcaoLabel: 'Quantidade',
+  tamanhos: {
+          'P': [
+            { label: '1 un', preco: 121.90 },
+            { label: '5 un', preco: 594.90 },
+            { label: '10 un', preco: 1168.90 },
+            { label: '20 un', preco: 2286.90 },
+            { label: '30 un', preco: 3415.90 },
+            { label: '40 un', preco: 4503.90 },
+            { label: '50 un', preco: 5625.90 },
+            { label: '100 un', preco: 10978.90 },
+          ],
+          'M': [
+            { label: '1 un', preco: 121.90 },
+            { label: '5 un', preco: 594.90 },
+            { label: '10 un', preco: 1168.90 },
+            { label: '20 un', preco: 2286.90 },
+            { label: '30 un', preco: 3415.90 },
+            { label: '40 un', preco: 4503.90 },
+            { label: '50 un', preco: 5625.90 },
+            { label: '100 un', preco: 10978.90 },
+          ],
+          'G': [
+            { label: '1 un', preco: 121.90 },
+            { label: '5 un', preco: 594.90 },
+            { label: '10 un', preco: 1168.90 },
+            { label: '20 un', preco: 2286.90 },
+            { label: '30 un', preco: 3415.90 },
+            { label: '40 un', preco: 4503.90 },
+            { label: '50 un', preco: 5625.90 },
+            { label: '100 un', preco: 10978.90 },
+          ],
+          'GG': [
+            { label: '1 un', preco: 121.90 },
+            { label: '5 un', preco: 594.90 },
+            { label: '10 un', preco: 1168.90 },
+            { label: '20 un', preco: 2286.90 },
+            { label: '30 un', preco: 3415.90 },
+            { label: '40 un', preco: 4503.90 },
+            { label: '50 un', preco: 5625.90 },
+            { label: '100 un', preco: 10978.90 },
+          ],
+          'XL1': [
+            { label: '1 un', preco: 121.90 },
+            { label: '5 un', preco: 594.90 },
+            { label: '10 un', preco: 1168.90 },
+            { label: '20 un', preco: 2286.90 },
+            { label: '30 un', preco: 3415.90 },
+            { label: '40 un', preco: 4503.90 },
+            { label: '50 un', preco: 5625.90 },
+            { label: '100 un', preco: 10978.90 },
+          ],
+          'XL2': [
+            { label: '1 un', preco: 121.90 },
+            { label: '5 un', preco: 594.90 },
+            { label: '10 un', preco: 1168.90 },
+            { label: '20 un', preco: 2286.90 },
+            { label: '30 un', preco: 3415.90 },
+            { label: '40 un', preco: 4503.90 },
+            { label: '50 un', preco: 5625.90 },
+            { label: '100 un', preco: 10978.90 },
+          ],
+          'XL3': [
+            { label: '1 un', preco: 121.90 },
+            { label: '5 un', preco: 594.90 },
+            { label: '10 un', preco: 1168.90 },
+            { label: '20 un', preco: 2286.90 },
+            { label: '30 un', preco: 3415.90 },
+            { label: '40 un', preco: 4503.90 },
+            { label: '50 un', preco: 5625.90 },
+            { label: '100 un', preco: 10978.90 },
+          ],
+          'XL4': [
+            { label: '1 un', preco: 121.90 },
+            { label: '5 un', preco: 594.90 },
+            { label: '10 un', preco: 1168.90 },
+            { label: '20 un', preco: 2286.90 },
+            { label: '30 un', preco: 3415.90 },
+            { label: '40 un', preco: 4503.90 },
+            { label: '50 un', preco: 5625.90 },
+            { label: '100 un', preco: 10978.90 },
+          ],
+  },
+};
+
 const jaquetaMisty = {
   bg: 'linear-gradient(135deg,#e2e8f0,#334155)', badge: 'Novo',
   nome: 'Jaqueta Corta Vento Misty',
   spec: 'Tactel (92% poliéster · 8% elastano) · unissex · capuz e zíper 80 cm · do P ao XL4 · a partir de 1 un',
   paginaProduto: true,
+  prazo: 7,
+  arteRestrita: true,
   medidas: 'img/jaqueta-medidas.png',
   descricao: 'Buscando uma jaqueta para meia estação, que possa ser usada na academia, no pilates, no futebol de domingo ou em outros momentos do seu dia a dia? Você acabou de encontrar! Desenvolvida em tecido tactel (92% poliéster e 8% elastano) não respirável, a Jaqueta Corta Vento Misty da Print House é a opção perfeita para quem procura um casaco que proteja contra o vento e mantenha o corpo aquecido.',
   detalhes: ['A jaqueta leve corta vento tem zíper dentado jacaré de 80 cm e capuz, além de bolso frontal com forro, 8 recortes na frente, recorte em V nas costas e 3 recortes por manga. A costura é feita em máquina overloque, reta e à mão, garantindo um acabamento limpo, resistente e uniforme.', 'Uma jaqueta urbana corta vento da linha Premium, funcional para andar de moto, sair cedo pra academia ou fazer um cooper. Ideal para as mais variadas atividades físicas e do dia a dia, a Jaqueta Corta Vento Misty da Print House pode ser adquirida a partir de 1 unidade, do tamanho P ao XL4 — esse é o nosso grande diferencial. Fale com um dos nossos especialistas e faça seu orçamento!'],
@@ -823,6 +924,7 @@ const CATALOGO = {
     descricao: 'Ecobags, cordões, camisetas e outros itens em tecido personalizados.',
     produtos: [
       jaquetaMisty,
+      camisaPesca,
       camisetaDryMasc,
       camisetaDryFem,
       ecobagPersonalizada,

@@ -138,7 +138,17 @@ function criarModal(rotulo, conteudo) {
 }
 
 /* Bloco "sobre a arte" exibido em todas as janelas de compra */
-function blocoArte() {
+function blocoArte(p) {
+  // Produtos com arte restrita: a arte é desenvolvida pela gráfica (detalhes técnicos)
+  if (p && p.arteRestrita) {
+    return `
+    <div class="modal__arte">
+      <label class="modal__label">Sobre a arte:</label>
+      <p class="arte-restrita">🎨 A arte deste produto é desenvolvida pela nossa equipe, pois envolve
+      detalhes técnicos de modelagem e corte que só a gráfica domina. Você <strong>não precisa enviar
+      arquivo</strong> — nós criamos a arte com você e enviamos a prévia para aprovação antes da produção.</p>
+    </div>`;
+  }
   return `
     <div class="modal__arte">
       <label class="modal__label">Sobre a arte:</label>
@@ -159,7 +169,8 @@ function blocoArte() {
 
 function arteEscolhida(modal) {
   const marcado = modal.querySelector('input[name="arteOpcao"]:checked');
-  return marcado ? marcado.value : 'Tenho a arte';
+  if (marcado) return marcado.value;
+  return modal.querySelector('.arte-restrita') ? 'Arte pela gráfica' : 'Tenho a arte';
 }
 
 function arquivoArte(modal) {
@@ -234,7 +245,7 @@ function abrirVariacoes(p) {
           <span class="var-row__preco">R$ ${formatarPreco(v.preco)}</span>
         </button>`).join('')}
     </div>
-    ${blocoArte()}
+    ${blocoArte(p)}
     <div class="modal__foot">
       <div class="modal__total">
         <small>valor da opção</small>
@@ -279,7 +290,7 @@ function abrirTamanhos(p) {
       <label class="modal__label" for="modalQtdOpcao">${opcaoLabel}:</label>
       <select class="modal__select" id="modalQtdOpcao"></select>
     </div>
-    ${blocoArte()}
+    ${blocoArte(p)}
     <div class="modal__foot">
       <div class="modal__total">
         <small id="modalResumo"></small>
@@ -340,7 +351,7 @@ function abrirCores(p) {
       </div>
       <small class="modal__unitario">R$ ${formatarPreco(p.precoUnitario)} por unidade</small>
     </div>
-    ${blocoArte()}
+    ${blocoArte(p)}
     <div class="modal__foot">
       <div class="modal__total">
         <small id="modalResumo">${min} un</small>
@@ -406,7 +417,7 @@ function abrirCombinacoes(p) {
           <div class="comb-row__subtotal">R$ 0,00</div>
         </div>`).join('')}
     </div>
-    ${blocoArte()}
+    ${blocoArte(p)}
     <div class="modal__foot">
       <div class="modal__total">
         <small id="modalResumo">Nenhum copo selecionado</small>
