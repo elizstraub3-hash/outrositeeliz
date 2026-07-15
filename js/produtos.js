@@ -4,7 +4,7 @@
 /* Versão do catálogo: aumente em 1 sempre que alterar este arquivo.
    Edições salvas pelo painel admin em versões antigas são descartadas
    automaticamente, para que as novidades daqui sempre apareçam. */
-const CATALOGO_VERSAO = 15;
+const CATALOGO_VERSAO = 16;
 
 /* Produtos que aparecem em mais de uma categoria são definidos uma única
    vez aqui e referenciados nas categorias — sem duplicar dados. */
@@ -383,6 +383,105 @@ const camisaPesca = {
             { label: '40 un', preco: 4503.90 },
             { label: '50 un', preco: 5625.90 },
             { label: '100 un', preco: 10978.90 },
+          ],
+  },
+};
+
+const moletomCanguru = {
+  bg: 'linear-gradient(135deg,#cbd5e1,#334155)', badge: 'Novo',
+  nome: 'Moletom Canguru Personalizado',
+  spec: 'Moletom flanelado 100% poliéster · unissex · capuz e bolso canguru · impressão Ultra HD Sublimática · do P ao XL4',
+  prazo: 10,
+  paginaProduto: true,
+  medidas: 'img/moletom-medidas.png',
+  descricao: 'Encontre o moletom canguru perfeito para o seu estilo! Conforto, elegância e personalidade em uma peça casual que combina com qualquer look. A Print House traz o moletom canguru personalizado com a sua estampa, em impressão Ultra HD Sublimática, com cores nítidas e vibrantes que não desbotam.',
+  detalhes: [
+    'O que é: o moletom canguru tem o clássico bolso costurado na frente, que acomoda as mãos e aquece com o tecido flanelado. Modelo com capuz, ideal para o friozinho do outono/inverno e para regiões mais frias.',
+    'Tecido e modelagem: moletom flanelado 100% poliéster, quentinho e resistente. Unissex, do P ao XL4 (confira a tabela de medidas) — serve para vários portes e também para adolescentes.',
+    'Áreas de personalização: frente, verso, manga direita, manga esquerda, capuz (partes 1 e 2), bolso e barras (1 a 4). Obs.: as barras (1 a 4) devem ser personalizadas com apenas 1 cor.',
+    'Usos: perfeito para uniforme escolar, academia, caminhadas, eventos, shows e bandas — e ótimo de presente. Acabamento premium, com costuras bem-feitas e impressão que não desbota nem descostura com facilidade.',
+  ],
+  grupoLabel: 'Tamanho', opcaoLabel: 'Quantidade',
+  tamanhos: {
+          'P': [
+            { label: '1 un', preco: 135.90 },
+            { label: '5 un', preco: 645.90 },
+            { label: '10 un', preco: 1282.90 },
+            { label: '20 un', preco: 2559.90 },
+            { label: '30 un', preco: 3835.90 },
+            { label: '40 un', preco: 5112.90 },
+            { label: '50 un', preco: 6382.90 },
+            { label: '100 un', preco: 12762.90 },
+          ],
+          'M': [
+            { label: '1 un', preco: 135.90 },
+            { label: '5 un', preco: 645.90 },
+            { label: '10 un', preco: 1282.90 },
+            { label: '20 un', preco: 2559.90 },
+            { label: '30 un', preco: 3835.90 },
+            { label: '40 un', preco: 5112.90 },
+            { label: '50 un', preco: 6382.90 },
+            { label: '100 un', preco: 12762.90 },
+          ],
+          'G': [
+            { label: '1 un', preco: 135.90 },
+            { label: '5 un', preco: 645.90 },
+            { label: '10 un', preco: 1282.90 },
+            { label: '20 un', preco: 2559.90 },
+            { label: '30 un', preco: 3835.90 },
+            { label: '40 un', preco: 5112.90 },
+            { label: '50 un', preco: 6382.90 },
+            { label: '100 un', preco: 12762.90 },
+          ],
+          'GG': [
+            { label: '1 un', preco: 135.90 },
+            { label: '5 un', preco: 645.90 },
+            { label: '10 un', preco: 1282.90 },
+            { label: '20 un', preco: 2559.90 },
+            { label: '30 un', preco: 3835.90 },
+            { label: '40 un', preco: 5112.90 },
+            { label: '50 un', preco: 6382.90 },
+            { label: '100 un', preco: 12762.90 },
+          ],
+          'XL1': [
+            { label: '1 un', preco: 135.90 },
+            { label: '5 un', preco: 645.90 },
+            { label: '10 un', preco: 1282.90 },
+            { label: '20 un', preco: 2559.90 },
+            { label: '30 un', preco: 3835.90 },
+            { label: '40 un', preco: 5112.90 },
+            { label: '50 un', preco: 6382.90 },
+            { label: '100 un', preco: 12762.90 },
+          ],
+          'XL2': [
+            { label: '1 un', preco: 135.90 },
+            { label: '5 un', preco: 645.90 },
+            { label: '10 un', preco: 1282.90 },
+            { label: '20 un', preco: 2559.90 },
+            { label: '30 un', preco: 3835.90 },
+            { label: '40 un', preco: 5112.90 },
+            { label: '50 un', preco: 6382.90 },
+            { label: '100 un', preco: 12762.90 },
+          ],
+          'XL3': [
+            { label: '1 un', preco: 135.90 },
+            { label: '5 un', preco: 645.90 },
+            { label: '10 un', preco: 1282.90 },
+            { label: '20 un', preco: 2559.90 },
+            { label: '30 un', preco: 3835.90 },
+            { label: '40 un', preco: 5112.90 },
+            { label: '50 un', preco: 6382.90 },
+            { label: '100 un', preco: 12762.90 },
+          ],
+          'XL4': [
+            { label: '1 un', preco: 135.90 },
+            { label: '5 un', preco: 645.90 },
+            { label: '10 un', preco: 1282.90 },
+            { label: '20 un', preco: 2559.90 },
+            { label: '30 un', preco: 3835.90 },
+            { label: '40 un', preco: 5112.90 },
+            { label: '50 un', preco: 6382.90 },
+            { label: '100 un', preco: 12762.90 },
           ],
   },
 };
@@ -924,6 +1023,7 @@ const CATALOGO = {
     descricao: 'Ecobags, cordões, camisetas e outros itens em tecido personalizados.',
     produtos: [
       jaquetaMisty,
+      moletomCanguru,
       camisaPesca,
       camisetaDryMasc,
       camisetaDryFem,
