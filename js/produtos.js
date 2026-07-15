@@ -4,7 +4,7 @@
 /* Versão do catálogo: aumente em 1 sempre que alterar este arquivo.
    Edições salvas pelo painel admin em versões antigas são descartadas
    automaticamente, para que as novidades daqui sempre apareçam. */
-const CATALOGO_VERSAO = 10;
+const CATALOGO_VERSAO = 11;
 
 /* Produtos que aparecem em mais de uma categoria são definidos uma única
    vez aqui e referenciados nas categorias — sem duplicar dados. */
@@ -330,7 +330,77 @@ const CATALOGO = {
     emoji: '🏷️',
     banner: 'linear-gradient(120deg,#15803d,#22c55e)',
     descricao: 'Adesivos e rótulos em vinil resistente, com recorte no formato que você quiser.',
-    produtos: [],
+    produtos: [
+      { bg: 'linear-gradient(135deg,#bbf7d0,#22c55e)', badge: 'Novo', destaque: true,
+        nome: 'Adesivos Personalizados',
+        spec: 'Redondos e quadrados · impressão colorida em alta qualidade · corte especial · escolha o tamanho e a quantidade',
+        grupoLabel: 'Tamanho', opcaoLabel: 'Quantidade',
+        tamanhos: {
+          '2×2 cm': [
+            { label: '50 un', preco: 40.00 },
+            { label: '100 un', preco: 45.00 },
+            { label: '250 un', preco: 50.00 },
+            { label: '500 un', preco: 58.00 },
+            { label: '1.000 un', preco: 100.00 },
+          ],
+          '3×3 cm': [
+            { label: '50 un', preco: 40.00 },
+            { label: '100 un', preco: 45.00 },
+            { label: '250 un', preco: 120.00 },
+            { label: '500 un', preco: 160.00 },
+            { label: '1.000 un', preco: 166.00 },
+          ],
+          '4×4 cm': [
+            { label: '50 un', preco: 40.00 },
+            { label: '100 un', preco: 58.00 },
+            { label: '250 un', preco: 133.00 },
+            { label: '500 un', preco: 150.00 },
+            { label: '1.000 un', preco: 180.00 },
+          ],
+          '5×5 cm': [
+            { label: '50 un', preco: 55.00 },
+            { label: '100 un', preco: 60.00 },
+            { label: '250 un', preco: 120.00 },
+            { label: '500 un', preco: 130.00 },
+            { label: '1.000 un', preco: 230.00 },
+          ],
+          '6×6 cm': [
+            { label: '50 un', preco: 60.00 },
+            { label: '100 un', preco: 65.00 },
+            { label: '250 un', preco: 117.00 },
+            { label: '500 un', preco: 170.00 },
+            { label: '1.000 un', preco: 285.00 },
+          ],
+          '7×7 cm': [
+            { label: '50 un', preco: 62.00 },
+            { label: '100 un', preco: 68.00 },
+            { label: '250 un', preco: 120.00 },
+            { label: '500 un', preco: 230.00 },
+            { label: '1.000 un', preco: 390.00 },
+          ],
+          '8×8 cm': [
+            { label: '50 un', preco: 60.00 },
+            { label: '100 un', preco: 80.00 },
+            { label: '250 un', preco: 178.00 },
+            { label: '500 un', preco: 280.00 },
+            { label: '1.000 un', preco: 520.00 },
+          ],
+          '9×9 cm': [
+            { label: '50 un', preco: 65.00 },
+            { label: '100 un', preco: 98.00 },
+            { label: '250 un', preco: 110.00 },
+            { label: '500 un', preco: 340.00 },
+            { label: '1.000 un', preco: 620.00 },
+          ],
+          '10×10 cm': [
+            { label: '50 un', preco: 60.00 },
+            { label: '100 un', preco: 115.00 },
+            { label: '250 un', preco: 220.00 },
+            { label: '500 un', preco: 365.00 },
+            { label: '1.000 un', preco: 910.00 },
+          ],
+        } },
+    ],
   },
 
   'brindes': {
