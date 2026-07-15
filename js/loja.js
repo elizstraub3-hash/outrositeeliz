@@ -62,11 +62,11 @@ function cardProduto(p, slugCategoria) {
     precoValor = v0.preco;
   }
 
-  // Produtos com página própria: card leva ao detalhe em vez de abrir o modal
+  // Produtos com página própria: card compra como os outros (modal) e ganha
+  // um link "Saber mais" para a página de detalhe; a foto também leva ao detalhe
   const destino = p.paginaProduto ? `produto.html?id=${slugProduto(p.nome)}` : `categoria.html?cat=${slugCategoria}`;
-  const acao = p.paginaProduto
-    ? `<a class="product-card__btn" href="produto.html?id=${slugProduto(p.nome)}">Ver produto</a>`
-    : `<button class="product-card__btn">Comprar</button>`;
+  const acao = `<button class="product-card__btn">Comprar</button>`
+    + (p.paginaProduto ? `<a class="product-card__saibamais" href="produto.html?id=${slugProduto(p.nome)}">Saber mais sobre o produto</a>` : '');
 
   return `
     <article class="product-card">

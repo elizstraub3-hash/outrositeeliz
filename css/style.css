@@ -439,6 +439,16 @@ button { font-family: inherit; cursor: pointer; }
   transition: background .15s;
 }
 .product-card__btn:hover { background: #000; }
+.product-card__saibamais {
+  display: block;
+  text-align: center;
+  margin-top: .5rem;
+  font-size: .76rem;
+  font-weight: 600;
+  color: #1d4ed8;
+  text-decoration: underline;
+}
+.product-card__saibamais:hover { color: #1e40af; }
 
 /* ============ Categorias ============ */
 .categories {
