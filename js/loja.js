@@ -62,9 +62,15 @@ function cardProduto(p, slugCategoria) {
     precoValor = v0.preco;
   }
 
+  // Produtos com página própria: card leva ao detalhe em vez de abrir o modal
+  const destino = p.paginaProduto ? `produto.html?id=${slugProduto(p.nome)}` : `categoria.html?cat=${slugCategoria}`;
+  const acao = p.paginaProduto
+    ? `<a class="product-card__btn" href="produto.html?id=${slugProduto(p.nome)}">Ver produto</a>`
+    : `<button class="product-card__btn">Comprar</button>`;
+
   return `
     <article class="product-card">
-      <a class="product-card__img" style="background:${p.bg}" href="categoria.html?cat=${slugCategoria}" title="Ver categoria ${CATALOGO[slugCategoria].nome}">
+      <a class="product-card__img" style="background:${p.bg}" href="${destino}" title="${p.paginaProduto ? 'Ver ' + p.nome : 'Ver categoria ' + CATALOGO[slugCategoria].nome}">
         ${p.badge ? `<span class="product-card__badge ${p.badge === 'Novo' ? 'product-card__badge--new' : ''}">${p.badge}</span>` : ''}
         ${p.imagem ? `<img src="${p.imagem}" alt="${p.nome}" loading="lazy">` : ICONE_PRODUTO}
       </a>
@@ -80,9 +86,24 @@ function cardProduto(p, slugCategoria) {
           <span>Previsão de produção: até ${p.prazo || 5} dias úteis</span>
           <small>* Prazo informado refere-se apenas à produção. O tempo de entrega será adicionado após a finalização.</small>
         </div>
-        <button class="product-card__btn">Comprar</button>
+        ${acao}
       </div>
     </article>`;
+}
+
+/* Slug estável a partir do nome do produto (para a página de produto) */
+function slugProduto(nome) {
+  return nome.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '')
+    .replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
+}
+
+/* Localiza um produto pelo slug do nome (usado em produto.html) */
+function encontrarProdutoPorSlug(slug) {
+  for (const cat of Object.values(CATALOGO)) {
+    const p = cat.produtos.find((prod) => slugProduto(prod.nome) === slug);
+    if (p) return p;
+  }
+  return null;
 }
 
 /* ---------- Estrutura base das janelas (modal) ---------- */
@@ -550,7 +571,7 @@ function encontrarProduto(nome) {
 /* Botão do card abre a janela certa para o tipo de produto */
 document.addEventListener('click', (e) => {
   const btn = e.target.closest('.product-card__btn');
-  if (!btn) return;
+  if (!btn || btn.tagName === 'A') return; // links (Ver produto) navegam normalmente
   const nome = btn.closest('.product-card').querySelector('.product-card__title').textContent;
   const produto = encontrarProduto(nome);
   if (!produto) return;
