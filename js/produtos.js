@@ -4,7 +4,7 @@
 /* Versão do catálogo: aumente em 1 sempre que alterar este arquivo.
    Edições salvas pelo painel admin em versões antigas são descartadas
    automaticamente, para que as novidades daqui sempre apareçam. */
-const CATALOGO_VERSAO = 13;
+const CATALOGO_VERSAO = 14;
 
 /* Produtos que aparecem em mais de uma categoria são definidos uma única
    vez aqui e referenciados nas categorias — sem duplicar dados. */
@@ -291,11 +291,11 @@ const camisetaDryFem = {
 const jaquetaMisty = {
   bg: 'linear-gradient(135deg,#e2e8f0,#334155)', badge: 'Novo',
   nome: 'Jaqueta Corta Vento Misty',
-  spec: 'Tactel (92% poliéster · 8% elastano) · capuz e zíper 80 cm · do P ao XL4 · a partir de 5 un',
+  spec: 'Tactel (92% poliéster · 8% elastano) · unissex · capuz e zíper 80 cm · do P ao XL4 · a partir de 1 un',
   paginaProduto: true,
   medidas: 'img/jaqueta-medidas.png',
   descricao: 'Buscando uma jaqueta para meia estação, que possa ser usada na academia, no pilates, no futebol de domingo ou em outros momentos do seu dia a dia? Você acabou de encontrar! Desenvolvida em tecido tactel (92% poliéster e 8% elastano) não respirável, a Jaqueta Corta Vento Misty da Print House é a opção perfeita para quem procura um casaco que proteja contra o vento e mantenha o corpo aquecido.',
-  detalhes: ['A jaqueta leve corta vento tem zíper dentado jacaré de 80 cm e capuz, além de bolso frontal com forro, 8 recortes na frente, recorte em V nas costas e 3 recortes por manga. A costura é feita em máquina overloque, reta e à mão, garantindo um acabamento limpo, resistente e uniforme.', 'Uma jaqueta urbana corta vento da linha Premium, funcional para andar de moto, sair cedo pra academia ou fazer um cooper. Ideal para as mais variadas atividades físicas e do dia a dia, a Jaqueta Corta Vento Misty da Print House pode ser adquirida a partir de 5 unidades, do tamanho P ao XL4 — esse é o nosso grande diferencial. Fale com um dos nossos especialistas e faça seu orçamento!'],
+  detalhes: ['A jaqueta leve corta vento tem zíper dentado jacaré de 80 cm e capuz, além de bolso frontal com forro, 8 recortes na frente, recorte em V nas costas e 3 recortes por manga. A costura é feita em máquina overloque, reta e à mão, garantindo um acabamento limpo, resistente e uniforme.', 'Uma jaqueta urbana corta vento da linha Premium, funcional para andar de moto, sair cedo pra academia ou fazer um cooper. Ideal para as mais variadas atividades físicas e do dia a dia, a Jaqueta Corta Vento Misty da Print House pode ser adquirida a partir de 1 unidade, do tamanho P ao XL4 — esse é o nosso grande diferencial. Fale com um dos nossos especialistas e faça seu orçamento!'],
   faq: [
           { p: 'A jaqueta é impermeável?', r: 'A jaqueta corta vento da Print House é feita em tactel (92% poliéster e 8% elastano), o que faz com que ela seque rápido e seja altamente resistente à água. Contudo, não é considerada totalmente impermeável.' },
           { p: 'Dá para usar o corta vento em dias frios?', r: 'Sim. É uma excelente opção para dias frios, sobretudo com vento, já que sua função é bloquear a brisa fria e evitar a perda de calor corporal.' },
@@ -310,6 +310,7 @@ const jaquetaMisty = {
   grupoLabel: 'Tamanho', opcaoLabel: 'Quantidade',
   tamanhos: {
           'P': [
+            { label: '1 un', preco: 162.90 },
             { label: '5 un', preco: 799.90 },
             { label: '10 un', preco: 1584.90 },
             { label: '20 un', preco: 3136.90 },
@@ -319,6 +320,7 @@ const jaquetaMisty = {
             { label: '100 un', preco: 15067.90 },
           ],
           'M': [
+            { label: '1 un', preco: 162.90 },
             { label: '5 un', preco: 799.90 },
             { label: '10 un', preco: 1584.90 },
             { label: '20 un', preco: 3136.90 },
@@ -328,6 +330,7 @@ const jaquetaMisty = {
             { label: '100 un', preco: 15067.90 },
           ],
           'G': [
+            { label: '1 un', preco: 162.90 },
             { label: '5 un', preco: 799.90 },
             { label: '10 un', preco: 1584.90 },
             { label: '20 un', preco: 3136.90 },
@@ -337,6 +340,7 @@ const jaquetaMisty = {
             { label: '100 un', preco: 15067.90 },
           ],
           'GG': [
+            { label: '1 un', preco: 162.90 },
             { label: '5 un', preco: 799.90 },
             { label: '10 un', preco: 1584.90 },
             { label: '20 un', preco: 3136.90 },
@@ -346,6 +350,7 @@ const jaquetaMisty = {
             { label: '100 un', preco: 15067.90 },
           ],
           'XL1': [
+            { label: '1 un', preco: 162.90 },
             { label: '5 un', preco: 799.90 },
             { label: '10 un', preco: 1584.90 },
             { label: '20 un', preco: 3136.90 },
@@ -355,6 +360,7 @@ const jaquetaMisty = {
             { label: '100 un', preco: 15067.90 },
           ],
           'XL2': [
+            { label: '1 un', preco: 162.90 },
             { label: '5 un', preco: 799.90 },
             { label: '10 un', preco: 1584.90 },
             { label: '20 un', preco: 3136.90 },
@@ -364,6 +370,7 @@ const jaquetaMisty = {
             { label: '100 un', preco: 15067.90 },
           ],
           'XL3': [
+            { label: '1 un', preco: 162.90 },
             { label: '5 un', preco: 799.90 },
             { label: '10 un', preco: 1584.90 },
             { label: '20 un', preco: 3136.90 },
@@ -373,6 +380,7 @@ const jaquetaMisty = {
             { label: '100 un', preco: 15067.90 },
           ],
           'XL4': [
+            { label: '1 un', preco: 162.90 },
             { label: '5 un', preco: 799.90 },
             { label: '10 un', preco: 1584.90 },
             { label: '20 un', preco: 3136.90 },
