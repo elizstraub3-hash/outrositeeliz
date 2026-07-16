@@ -4,7 +4,7 @@
 /* Versão do catálogo: aumente em 1 sempre que alterar este arquivo.
    Edições salvas pelo painel admin em versões antigas são descartadas
    automaticamente, para que as novidades daqui sempre apareçam. */
-const CATALOGO_VERSAO = 18;
+const CATALOGO_VERSAO = 19;
 
 /* Produtos que aparecem em mais de uma categoria são definidos uma única
    vez aqui e referenciados nas categorias — sem duplicar dados. */
@@ -1072,13 +1072,6 @@ const CATALOGO = {
     banner: 'linear-gradient(120deg,#9a3412,#f97316)',
     descricao: 'Embalagens personalizadas que valorizam seu produto do delivery à prateleira.',
     produtos: [
-      { emoji: '📦', bg: 'linear-gradient(135deg,#fed7aa,#f97316)', badge: 'Novo', destaque: true,
-        nome: 'Caixa Delivery Kraft', spec: 'Papel kraft · impressão 1 cor',
-        variacoes: [
-          { label: '100 un', preco: 189.90 },
-          { label: '250 un', preco: 399.90 },
-          { label: '500 un', preco: 699.90 },
-        ] },
       { emoji: '🛍️', bg: 'linear-gradient(135deg,#ffedd5,#fb923c)',
         nome: 'Sacola de Papel', spec: 'Alça torcida · impressão 4x0',
         variacoes: [

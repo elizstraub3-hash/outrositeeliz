@@ -57,7 +57,28 @@ const EVENTOS = [
   'Volta às Aulas',
 ].map((nome) => ({ nome, slug: slugTema(nome) }));
 
+/* Produtos associados a um segmento/evento (por slug). Quem não estiver
+   aqui exibe "Em breve, mais conteúdos". Use os nomes exatos dos produtos. */
+const PRODUTOS_TEMA = {
+  'dia-dos-pais': ['Kit Churrasco', 'Jaqueta Corta Vento Misty'],
+};
+
+// anexa a lista de produtos ao item do tema correspondente
+[...SEGMENTOS, ...EVENTOS].forEach((t) => {
+  if (PRODUTOS_TEMA[t.slug]) t.produtos = PRODUTOS_TEMA[t.slug];
+});
+
 const TEMAS = {
   segmento: { titulo: 'Segmentos', descricao: 'Soluções de impressão pensadas para o seu ramo de atuação.', banner: 'linear-gradient(120deg,#1e3a5f,#2563eb)', lista: SEGMENTOS },
   evento: { titulo: 'Eventos', descricao: 'Materiais personalizados para cada data e ocasião especial.', banner: 'linear-gradient(120deg,#7c2d12,#ea580c)', lista: EVENTOS },
+};
+
+/* Coleções extras (não são categorias): "Ver todos" da home aponta para cá */
+const COLECOES = {
+  'mais-vendidos': {
+    titulo: 'Os mais vendidos',
+    descricao: 'Os produtos que mais saem na Print House.',
+    banner: 'linear-gradient(120deg,#b45309,#f59e0b)',
+    filtro: (p) => p.destaque,
+  },
 };

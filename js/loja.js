@@ -106,6 +106,21 @@ function encontrarProdutoPorSlug(slug) {
   return null;
 }
 
+/* Slug da categoria a que um produto pertence */
+function categoriaDoProduto(p) {
+  for (const [s, c] of Object.entries(CATALOGO)) if (c.produtos.includes(p)) return s;
+  return Object.keys(CATALOGO)[0];
+}
+
+/* Renderiza cards de uma lista de nomes de produtos (para coleções/temas/home) */
+function cardsPorNomes(nomes) {
+  return nomes
+    .map((nome) => encontrarProduto(nome))
+    .filter(Boolean)
+    .map((p) => cardProduto(p, categoriaDoProduto(p)))
+    .join('');
+}
+
 /* ---------- Estrutura base das janelas (modal) ---------- */
 function criarModal(rotulo, conteudo) {
   const antigo = document.getElementById('modalProduto');
