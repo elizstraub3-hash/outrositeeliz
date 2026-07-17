@@ -73,12 +73,24 @@ const TEMAS = {
   evento: { titulo: 'Eventos', descricao: 'Materiais personalizados para cada data e ocasião especial.', banner: 'linear-gradient(120deg,#7c2d12,#ea580c)', lista: EVENTOS },
 };
 
-/* Coleções extras (não são categorias): "Ver todos" da home aponta para cá */
+/* Coleções extras (não são categorias): "Ver todos" da home aponta para cá.
+   A home mostra os primeiros itens; "Ver todos" abre a lista completa. */
 const COLECOES = {
   'mais-vendidos': {
     titulo: 'Os mais vendidos',
     descricao: 'Os produtos que mais saem na Print House.',
     banner: 'linear-gradient(120deg,#b45309,#f59e0b)',
-    filtro: (p) => p.destaque,
+    produtos: [
+      'Cartão de Visita Couchê 250g',
+      'Flyer Couchê 80g',
+      'Adesivos Personalizados',
+      'Banner Lona Brilho 440g',
+      'Copo Cuia com Tampa em Acrílico 360ml',
+      'Kit Churrasco',
+      'Camiseta DTF UV',
+      'Jaqueta Corta Vento Misty',
+      'Caneta de Metal Touch',
+      'Ecobag Personalizada',
+    ],
   },
 };

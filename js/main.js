@@ -1,18 +1,8 @@
 /* ============ Print House — página inicial ============ */
 
-/* ---------- Vitrine "Os mais vendidos" (produtos em destaque de cada categoria) ---------- */
-const destaques = [];
-const jaListados = new Set();
-for (const [slug, cat] of Object.entries(CATALOGO)) {
-  cat.produtos.forEach((p) => {
-    if (p.destaque && !jaListados.has(p.nome)) {
-      jaListados.add(p.nome);
-      destaques.push([p, slug]);
-    }
-  });
-}
-document.getElementById('maisVendidos').innerHTML =
-  destaques.slice(0, 4).map(([p, slug]) => cardProduto(p, slug)).join('');
+/* ---------- Vitrine "Os mais vendidos" (mesma lista curada do "Ver todos") ---------- */
+const nomesMaisVendidos = (typeof COLECOES !== 'undefined' && COLECOES['mais-vendidos'].produtos) || [];
+document.getElementById('maisVendidos').innerHTML = cardsPorNomes(nomesMaisVendidos.slice(0, 4));
 
 /* ---------- Vitrine "Últimos lançamentos" ---------- */
 document.getElementById('produtosLancamentos').innerHTML =
