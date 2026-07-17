@@ -4,7 +4,7 @@
 /* Versão do catálogo: aumente em 1 sempre que alterar este arquivo.
    Edições salvas pelo painel admin em versões antigas são descartadas
    automaticamente, para que as novidades daqui sempre apareçam. */
-const CATALOGO_VERSAO = 20;
+const CATALOGO_VERSAO = 21;
 
 /* Produtos que aparecem em mais de uma categoria são definidos uma única
    vez aqui e referenciados nas categorias — sem duplicar dados. */
@@ -1037,6 +1037,9 @@ const CATALOGO = {
             { label: '500 un', preco: 365.00 },
             { label: '1.000 un', preco: 910.00 },
           ],
+          'Medida personalizada': [
+            { label: 'A combinar', preco: null },
+          ],
         } },
     ],
   },
@@ -1096,6 +1099,26 @@ const CATALOGO = {
     ],
   },
 
+  'cardapios': {
+    nome: 'Cardápios',
+    emoji: '📖',
+    banner: 'linear-gradient(120deg,#7c2d12,#f97316)',
+    descricao: 'Cardápios personalizados para o seu restaurante, bar ou delivery.',
+    produtos: [
+      { bg: 'linear-gradient(135deg,#fed7aa,#c2410c)', badge: 'Novo', prazo: 3, destaque: true,
+        nome: 'Cardápio Mini com Wire-o 14,4x14,4 cm',
+        spec: 'PVC 0,3mm branco · 4x4 brilho/UV total frente e verso · 14,4x14,4 cm · 4 páginas · acabamento wire-o (duplo anel)',
+        arteNota: 'Criação da arte do cardápio: R$ 45,00.',
+        variacoes: [
+          { label: '5 un', preco: 186.90 },
+          { label: '10 un', preco: 228.90 },
+          { label: '25 un', preco: 379.90 },
+          { label: '50 un', preco: 651.90 },
+          { label: '100 un', preco: 1179.90 },
+        ] },
+    ],
+  },
+
   'ponto-de-venda': {
     nome: 'Ponto de Venda',
     emoji: '🪧',
@@ -1114,6 +1137,7 @@ const CATALOGO = {
           { label: '0,90 x 1,20 m', preco: 65.90 },
           { label: '1,05 x 1,20 m', preco: 75.90 },
           { label: '1,05 x 1,50 m', preco: 90.90 },
+          { label: 'Medida personalizada', preco: null },
         ] },
       { emoji: '🖼️', bg: 'linear-gradient(135deg,#bae6fd,#38bdf8)',
         nome: 'Display de Mesa', spec: 'Papel triplex 350g · faca especial',

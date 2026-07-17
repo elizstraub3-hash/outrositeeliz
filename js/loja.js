@@ -5,6 +5,11 @@ function formatarPreco(valor) {
   return valor.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
 }
 
+/* Rótulo de preço: null/undefined = medida personalizada (a combinar) */
+function precoLabel(preco) {
+  return (preco == null) ? 'Sob consulta' : `R$ ${formatarPreco(preco)}`;
+}
+
 /* WhatsApp da gráfica (troque pelo número real, com DDI+DDD) */
 const WHATSAPP_GRAFICA = 'https://wa.me/5511999999999';
 
@@ -34,7 +39,8 @@ function menorPrecoCombinacao(p) {
 }
 
 function menorPrecoTamanhos(p) {
-  return Math.min(...Object.values(p.tamanhos).flat().map((v) => v.preco));
+  const precos = Object.values(p.tamanhos).flat().map((v) => v.preco).filter((x) => x != null);
+  return precos.length ? Math.min(...precos) : null;
 }
 
 /* ---------- Card de produto (compacto: opções abrem ao clicar) ---------- */
@@ -80,7 +86,7 @@ function cardProduto(p, slugCategoria) {
         ${hint}
         <div class="product-card__price">
           <small>${precoSmall}</small>
-          <strong>R$ ${formatarPreco(precoValor)}</strong> <span class="pix">no Pix</span>
+          <strong>${precoValor == null ? 'Sob consulta' : 'R$ ' + formatarPreco(precoValor)}</strong> ${precoValor == null ? '' : '<span class="pix">no Pix</span>'}
         </div>
         <div class="product-card__prazo">
           <span>Previsão de produção: até ${p.prazo || 5} dias úteis</span>
@@ -177,7 +183,7 @@ function blocoArte(p) {
         <small class="arte-nota">O arquivo deve ter um nome que identifique você ou sua empresa (ex.: minha-empresa-arte.pdf).</small>
         <small class="arte-nota">Se preferir, envie a arte pelo <a href="${WHATSAPP_GRAFICA}" target="_blank" rel="noopener" class="arte-link">WhatsApp da gráfica</a>.</small>
       </div>
-      <p class="arte-gratis">Arte grátis para compras acima de R$ 250,00 — abaixo disso, cobramos R$ 25,00 por arte criada.</p>
+      <p class="arte-gratis">${p && p.arteNota ? p.arteNota : 'Arte grátis para compras acima de R$ 250,00 — abaixo disso, cobramos R$ 25,00 por arte criada.'}</p>
       <button type="button" class="arte-link" onclick="abrirRegulamentoArte()">Dúvidas sobre sua arte? Leia aqui</button>
     </div>`;
 }
@@ -257,14 +263,14 @@ function abrirVariacoes(p) {
       ${p.variacoes.map((v, i) => `
         <button type="button" class="var-row ${i === 0 ? 'var-row--ativa' : ''}" data-i="${i}">
           <span class="var-row__label">${v.label}</span>
-          <span class="var-row__preco">R$ ${formatarPreco(v.preco)}</span>
+          <span class="var-row__preco">${precoLabel(v.preco)}</span>
         </button>`).join('')}
     </div>
     ${blocoArte(p)}
     <div class="modal__foot">
       <div class="modal__total">
         <small>valor da opção</small>
-        <strong id="modalTotal">R$ ${formatarPreco(p.variacoes[0].preco)}</strong> <span class="pix">no Pix</span>
+        <strong id="modalTotal">${precoLabel(p.variacoes[0].preco)}</strong> <span class="pix"></span>
       </div>
       <button class="btn btn--primary modal__add">Adicionar ao carrinho</button>
     </div>`);
@@ -274,7 +280,7 @@ function abrirVariacoes(p) {
     row.addEventListener('click', () => {
       selecionada = Number(row.dataset.i);
       modal.querySelectorAll('.var-row').forEach((r) => r.classList.toggle('var-row--ativa', r === row));
-      modal.querySelector('#modalTotal').textContent = `R$ ${formatarPreco(p.variacoes[selecionada].preco)}`;
+      modal.querySelector('#modalTotal').textContent = precoLabel(p.variacoes[selecionada].preco);
     });
   });
 
@@ -330,11 +336,11 @@ function abrirTamanhos(p) {
   function atualizarTotal() {
     const v = opcaoAtual();
     modal.querySelector('#modalResumo').textContent = `${selTamanho.value} · ${v.label}`;
-    modal.querySelector('#modalTotal').textContent = `R$ ${formatarPreco(v.preco)}`;
+    modal.querySelector('#modalTotal').textContent = precoLabel(v.preco);
   }
   function preencherOpcoes() {
     selOpcao.innerHTML = p.tamanhos[selTamanho.value]
-      .map((v, i) => `<option value="${i}">${v.label} — R$ ${formatarPreco(v.preco)}</option>`)
+      .map((v, i) => `<option value="${i}">${v.label} — ${precoLabel(v.preco)}</option>`)
       .join('');
     atualizarTotal();
   }
@@ -525,8 +531,9 @@ function adicionarItemCarrinho(item) {
 
 /* Janela do carrinho: lista, remove, limpa e finaliza no WhatsApp */
 function abrirCarrinho() {
-  const totalValor = carrinho.reduce((soma, item) => soma + item.total, 0);
+  const totalValor = carrinho.reduce((soma, item) => soma + (item.total || 0), 0);
   const totalUnidades = carrinho.reduce((soma, item) => soma + item.qtd, 0);
+  const temSobConsulta = carrinho.some((item) => item.total == null);
   const linhas = carrinho.length
     ? carrinho.map((item, i) => `
         <div class="cart-item">
@@ -534,7 +541,7 @@ function abrirCarrinho() {
             <strong>${item.nome}</strong>
             <small>${item.detalhe} · ${item.arte}${item.arquivo ? ` (${item.arquivo})` : ''}</small>
           </div>
-          <span class="cart-item__preco">R$ ${formatarPreco(item.total)}</span>
+          <span class="cart-item__preco">${item.total == null ? 'a combinar' : 'R$ ' + formatarPreco(item.total)}</span>
           <button type="button" class="cart-item__remover" data-i="${i}" aria-label="Remover item">×</button>
         </div>`).join('')
     : '<p class="cart-vazio">Seu carrinho está vazio.</p>';
@@ -544,7 +551,7 @@ function abrirCarrinho() {
     <div class="cart-lista">${linhas}</div>
     <div class="modal__foot">
       <div class="modal__total">
-        <small>${totalUnidades} unidade${totalUnidades === 1 ? '' : 's'}</small>
+        <small>${totalUnidades} unidade${totalUnidades === 1 ? '' : 's'}${temSobConsulta ? ' · + itens a combinar' : ''}</small>
         <strong>R$ ${formatarPreco(totalValor)}</strong> <span class="pix">no Pix</span>
       </div>
       <div class="cart-acoes">
@@ -574,9 +581,9 @@ function abrirCarrinho() {
   if (btnFinalizar) btnFinalizar.addEventListener('click', () => {
     const msg = ['Olá! Gostaria de fazer um pedido na Print House:', ''];
     carrinho.forEach((item, i) => {
-      msg.push(`${i + 1}) ${item.nome} — ${item.detalhe} — R$ ${formatarPreco(item.total)} — ${item.arte}${item.arquivo ? ` (arquivo: ${item.arquivo})` : ''}`);
+      msg.push(`${i + 1}) ${item.nome} — ${item.detalhe} — ${item.total == null ? 'valor a combinar' : 'R$ ' + formatarPreco(item.total)} — ${item.arte}${item.arquivo ? ` (arquivo: ${item.arquivo})` : ''}`);
     });
-    msg.push('', `Total: R$ ${formatarPreco(totalValor)} no Pix`);
+    msg.push('', `Total: R$ ${formatarPreco(totalValor)} no Pix${temSobConsulta ? ' (+ itens com medida personalizada a combinar)' : ''}`);
     if (carrinho.some((item) => item.arte === 'Tenho a arte')) {
       msg.push('', 'Vou enviar o arquivo da arte nesta conversa.');
     }
