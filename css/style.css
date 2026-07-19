@@ -24,6 +24,7 @@ body {
   color: var(--dark);
   background: var(--white);
   line-height: 1.6;
+  overflow-x: hidden; /* evita deslize horizontal no celular */
 }
 
 img, svg { display: block; max-width: 100%; }
@@ -586,9 +587,10 @@ button { font-family: inherit; cursor: pointer; }
 }
 .newsletter h2 { font-size: 1.5rem; font-weight: 700; }
 .newsletter p { opacity: .92; font-size: .92rem; }
-.newsletter__form { display: flex; gap: .6rem; flex: 1; max-width: 480px; }
+.newsletter__form { display: flex; gap: .6rem; flex: 1; max-width: 480px; width: 100%; }
 .newsletter__form input {
   flex: 1;
+  min-width: 0;
   border: none;
   outline: none;
   padding: .8rem 1.2rem;
@@ -1080,4 +1082,11 @@ button { font-family: inherit; cursor: pointer; }
   .hero__arrow { display: none; }
   .newsletter__inner { flex-direction: column; text-align: center; }
   .footer__grid { grid-template-columns: 1fr; gap: 1.8rem; }
+}
+
+/* ============ Telas bem estreitas (<=420px): evita estouro horizontal ============ */
+@media (max-width: 420px) {
+  .benefits__grid { grid-template-columns: 1fr; }
+  .about__stats { grid-template-columns: 1fr 1fr; }
+  .about { padding: 2.5rem 0; }
 }

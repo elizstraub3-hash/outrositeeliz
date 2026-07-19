@@ -4,7 +4,7 @@
 /* Versão do catálogo: aumente em 1 sempre que alterar este arquivo.
    Edições salvas pelo painel admin em versões antigas são descartadas
    automaticamente, para que as novidades daqui sempre apareçam. */
-const CATALOGO_VERSAO = 21;
+const CATALOGO_VERSAO = 22;
 
 /* Produtos que aparecem em mais de uma categoria são definidos uma única
    vez aqui e referenciados nas categorias — sem duplicar dados. */
@@ -1116,6 +1116,37 @@ const CATALOGO = {
           { label: '50 un', preco: 651.90 },
           { label: '100 un', preco: 1179.90 },
         ] },
+    ],
+  },
+
+  'quadros': {
+    nome: 'Quadros',
+    emoji: '🖼️',
+    banner: 'linear-gradient(120deg,#78350f,#b45309)',
+    descricao: 'Quadros decorativos personalizados com a sua arte.',
+    produtos: [
+      { bg: 'linear-gradient(135deg,#fde68a,#92400e)', badge: 'Novo', destaque: true,
+        nome: 'Quadro MDF 3mm 20x30 cm',
+        spec: 'MDF 3mm com adesivo · colorido só frente · laminação fosca · 20x30 cm · escolha a fixação',
+        grupoLabel: 'Fixação', opcaoLabel: 'Quantidade',
+        tamanhos: {
+          'Presilha para Pendurar': [
+            { label: '1 un', preco: 30.90 },
+            { label: '5 un', preco: 142.90 },
+            { label: '10 un', preco: 268.90 },
+            { label: '20 un', preco: 504.90 },
+            { label: '30 un', preco: 756.90 },
+            { label: '50 un', preco: 1102.90 },
+          ],
+          'Fita Dupla Face (4 cantos)': [
+            { label: '1 un', preco: 30.90 },
+            { label: '5 un', preco: 142.90 },
+            { label: '10 un', preco: 268.90 },
+            { label: '20 un', preco: 504.90 },
+            { label: '30 un', preco: 756.90 },
+            { label: '50 un', preco: 1102.90 },
+          ],
+        } },
     ],
   },
 
