@@ -1059,7 +1059,22 @@ button { font-family: inherit; cursor: pointer; }
     box-shadow: none;
     background: var(--gray-light);
   }
-  .products { grid-template-columns: 1fr 1fr; gap: .8rem; }
+  .products { grid-template-columns: 1fr 1fr; gap: .7rem; }
+  /* Cards mais compactos no celular */
+  .product-card__img { height: 120px; font-size: 2.6rem; }
+  .product-card__body { padding: .6rem .6rem .7rem; }
+  .product-card__title { font-size: .82rem; line-height: 1.25; min-height: calc(1.25em * 2); }
+  .product-card__spec { font-size: .68rem; line-height: 1.35; min-height: calc(1.35em * 2); margin-bottom: .4rem; }
+  .product-card__comb-hint { font-size: .64rem; padding: .3rem .45rem; margin-bottom: .5rem; }
+  .product-card__price { margin-bottom: .4rem; }
+  .product-card__price small { font-size: .64rem; }
+  .product-card__price strong { font-size: 1rem; }
+  .pix { font-size: .58rem; }
+  .product-card__prazo { padding-top: .4rem; margin-bottom: .5rem; }
+  .product-card__prazo span { font-size: .64rem; }
+  .product-card__prazo small { display: none; } /* esconde a nota longa no celular */
+  .product-card__btn { padding: .45rem; font-size: .74rem; }
+  .product-card__saibamais { font-size: .68rem; margin-top: .4rem; }
   .categories { grid-template-columns: repeat(2, 1fr); }
   .hero__slide { min-height: 360px; }
   .hero__arrow { display: none; }
