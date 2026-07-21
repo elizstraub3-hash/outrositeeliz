@@ -4,7 +4,7 @@
 /* Versão do catálogo: aumente em 1 sempre que alterar este arquivo.
    Edições salvas pelo painel admin em versões antigas são descartadas
    automaticamente, para que as novidades daqui sempre apareçam. */
-const CATALOGO_VERSAO = 24;
+const CATALOGO_VERSAO = 25;
 
 /* Produtos que aparecem em mais de uma categoria são definidos uma única
    vez aqui e referenciados nas categorias — sem duplicar dados. */
@@ -821,18 +821,26 @@ const CATALOGO = {
       { bg: 'linear-gradient(135deg,#ede9fe,#7c3aed)', badge: 'Novo', destaque: true,
         imagem: 'img/kit-basico-3.png',
         nome: 'Kit Básico – 3 Itens',
-        spec: '01 sacola P (papel offset fosco 180g · ~19x15x6 cm) + 01 bloquinho de anotações P (capa dura · 8x11 cm) + 01 caneta Slim Touch personalizada com gravação a laser',
+        spec: '01 sacola P (papel offset fosco 180g · ~19x15x6 cm) + 01 bloquinho de anotações P (capa dura · 8x11 cm) + 01 caneta Slim Touch personalizada com gravação a laser · Consultar as cores das canetas e dos copos.',
         variacoes: [
           { label: 'Kit completo', preco: 55.90 },
         ] },
       { bg: 'linear-gradient(135deg,#fce7f3,#db2777)', badge: 'Novo', destaque: true,
         imagem: 'img/kit-basico-plus.png',
         nome: 'Kit Básico Plus – 4 Itens',
-        spec: '01 sacola P (papel offset fosco 180g · ~19x15x6 cm) + 01 bloquinho de anotações P (capa dura · 8x11 cm) + 01 caneta Slim Touch personalizada com gravação a laser + 01 certificado (papel fosco 180g)',
+        spec: '01 sacola P (papel offset fosco 180g · ~19x15x6 cm) + 01 bloquinho de anotações P (capa dura · 8x11 cm) + 01 caneta Slim Touch personalizada com gravação a laser + 01 certificado (papel fosco 180g) · Consultar as cores das canetas e dos copos.',
         arteNota: 'A arte do certificado é enviada pelo cliente.',
         variacoes: [
           { label: 'Com laço', preco: 65.00 },
           { label: 'Sem laço', preco: 65.00 },
+        ] },
+      { bg: 'linear-gradient(135deg,#fef9c3,#ca8a04)', badge: 'Novo', destaque: true,
+        imagem: 'img/kit-luxo.png',
+        nome: 'Kit Luxo – 4 Itens',
+        spec: '01 sacola personalizada M (papel offset fosco 180g · ~24x17x10 cm) + 01 bloquinho de anotações P (capa dura · 8x11 cm) + 01 caneta Slim Touch com gravação a laser + 01 taça de gin · Consultar as cores das canetas e dos copos.',
+        variacoes: [
+          { label: 'Com laço', preco: null },
+          { label: 'Sem laço', preco: null },
         ] },
     ],
   },
@@ -1266,11 +1274,18 @@ const CATALOGO = {
           { label: '1 un', preco: 10.90 },
           { label: 'Combo 10 un', preco: 98.90 },
         ] },
-      { emoji: '✒️', bg: 'linear-gradient(135deg,#e2e8f0,#64748b)', badge: 'Novo',
-        nome: 'Caneta de Metal Slim Touch', spec: 'Metal slim · ponta touch · gravação a laser 4x0 (4x0,4 cm)',
+      { bg: 'linear-gradient(135deg,#e2e8f0,#64748b)', badge: 'Novo',
+        imagem: 'img/caneta-slim-touch.png',
+        nome: 'Caneta de Metal Slim Touch',
+        spec: 'Metal slim · ponta touch · gravação a laser 4x0 (4x0,4 cm) · 5 cores · Consultar as cores disponíveis.',
         variacoes: [
-          { label: '1 un', preco: 10.90 },
-          { label: 'Combo 10 un', preco: 90.90 },
+          { label: '10 un', preco: 97.90 },
+          { label: '20 un', preco: 179.90 },
+          { label: '50 un', preco: 412.90 },
+          { label: '100 un', preco: 809.90 },
+          { label: '250 un', preco: 2024.90 },
+          { label: '500 un', preco: 4012.90 },
+          { label: '1.000 un', preco: 7949.90 },
         ] },
       { emoji: '🍾', bg: 'linear-gradient(135deg,#d1d5db,#4b5563)', badge: 'Novo',
         imagem: 'img/chaveiro-abridor.png',
