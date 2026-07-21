@@ -819,12 +819,14 @@ const CATALOGO = {
     descricao: 'Kits personalizados prontos para presentear, divulgar sua marca ou compor brindes corporativos.',
     produtos: [
       { bg: 'linear-gradient(135deg,#ede9fe,#7c3aed)', badge: 'Novo', destaque: true,
+        imagem: 'img/kit-basico-3.png',
         nome: 'Kit Básico – 3 Itens',
         spec: '01 sacola P (papel offset fosco 180g · ~19x15x6 cm) + 01 bloquinho de anotações P (capa dura · 8x11 cm) + 01 caneta Slim Touch personalizada com gravação a laser',
         variacoes: [
           { label: 'Kit completo', preco: 55.90 },
         ] },
       { bg: 'linear-gradient(135deg,#fce7f3,#db2777)', badge: 'Novo', destaque: true,
+        imagem: 'img/kit-basico-plus.png',
         nome: 'Kit Básico Plus – 4 Itens',
         spec: '01 sacola P (papel offset fosco 180g · ~19x15x6 cm) + 01 bloquinho de anotações P (capa dura · 8x11 cm) + 01 caneta Slim Touch personalizada com gravação a laser + 01 certificado (papel fosco 180g)',
         arteNota: 'A arte do certificado é enviada pelo cliente.',
