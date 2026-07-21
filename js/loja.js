@@ -11,7 +11,7 @@ function precoLabel(preco) {
 }
 
 /* WhatsApp da gráfica (troque pelo número real, com DDI+DDD) */
-const WHATSAPP_GRAFICA = 'https://wa.me/5511999999999';
+const WHATSAPP_GRAFICA = 'https://wa.me/5541995282807';
 
 /* Ícone neutro para produtos sem foto */
 const ICONE_PRODUTO = `<svg viewBox="0 0 24 24" width="56" height="56" fill="none" stroke="rgba(255,255,255,.85)" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="9" cy="9" r="2"/><path d="M21 15l-5-5-9 9"/></svg>`;

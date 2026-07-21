@@ -15,6 +15,7 @@ const SEGMENTOS = [
   'Automotivo',
   'Beleza e Bem-Estar',
   'Cabeleireiro e Manicure',
+  'Educação',
   'Escritórios',
   'Imobiliária',
   'Brindes e Kit Boas-Vindas',
@@ -61,6 +62,7 @@ const EVENTOS = [
    aqui exibe "Em breve, mais conteúdos". Use os nomes exatos dos produtos. */
 const PRODUTOS_TEMA = {
   'dia-dos-pais': ['Kit Churrasco', 'Jaqueta Corta Vento Misty'],
+  'educacao': ['Kit Básico – 3 Itens', 'Kit Básico Plus – 4 Itens'],
 };
 
 // anexa a lista de produtos ao item do tema correspondente

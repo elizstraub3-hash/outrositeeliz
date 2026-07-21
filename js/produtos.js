@@ -4,7 +4,7 @@
 /* Versão do catálogo: aumente em 1 sempre que alterar este arquivo.
    Edições salvas pelo painel admin em versões antigas são descartadas
    automaticamente, para que as novidades daqui sempre apareçam. */
-const CATALOGO_VERSAO = 23;
+const CATALOGO_VERSAO = 24;
 
 /* Produtos que aparecem em mais de uma categoria são definidos uma única
    vez aqui e referenciados nas categorias — sem duplicar dados. */
@@ -819,10 +819,18 @@ const CATALOGO = {
     descricao: 'Kits personalizados prontos para presentear, divulgar sua marca ou compor brindes corporativos.',
     produtos: [
       { bg: 'linear-gradient(135deg,#ede9fe,#7c3aed)', badge: 'Novo', destaque: true,
-        nome: 'Kit Básico – 2 Itens',
-        spec: '01 sacola tamanho P (papel offset fosco 180g · ~19x15x6 cm) + 01 bloquinho de anotações tamanho P (capa dura · 8x11 cm)',
+        nome: 'Kit Básico – 3 Itens',
+        spec: '01 sacola P (papel offset fosco 180g · ~19x15x6 cm) + 01 bloquinho de anotações P (capa dura · 8x11 cm) + 01 caneta Slim Touch personalizada com gravação a laser',
         variacoes: [
-          { label: 'Kit completo', preco: null },
+          { label: 'Kit completo', preco: 55.90 },
+        ] },
+      { bg: 'linear-gradient(135deg,#fce7f3,#db2777)', badge: 'Novo', destaque: true,
+        nome: 'Kit Básico Plus – 4 Itens',
+        spec: '01 sacola P (papel offset fosco 180g · ~19x15x6 cm) + 01 bloquinho de anotações P (capa dura · 8x11 cm) + 01 caneta Slim Touch personalizada com gravação a laser + 01 certificado (papel fosco 180g)',
+        arteNota: 'A arte do certificado é enviada pelo cliente.',
+        variacoes: [
+          { label: 'Com laço', preco: 65.00 },
+          { label: 'Sem laço', preco: 65.00 },
         ] },
     ],
   },
