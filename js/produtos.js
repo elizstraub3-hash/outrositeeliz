@@ -4,7 +4,7 @@
 /* Versão do catálogo: aumente em 1 sempre que alterar este arquivo.
    Edições salvas pelo painel admin em versões antigas são descartadas
    automaticamente, para que as novidades daqui sempre apareçam. */
-const CATALOGO_VERSAO = 22;
+const CATALOGO_VERSAO = 23;
 
 /* Produtos que aparecem em mais de uma categoria são definidos uma única
    vez aqui e referenciados nas categorias — sem duplicar dados. */
@@ -812,6 +812,21 @@ const canetaPersonalizada = {
 };
 
 const CATALOGO = {
+  'kits': {
+    nome: 'Kits',
+    emoji: '🎁',
+    banner: 'linear-gradient(120deg,#7c3aed,#db2777)',
+    descricao: 'Kits personalizados prontos para presentear, divulgar sua marca ou compor brindes corporativos.',
+    produtos: [
+      { bg: 'linear-gradient(135deg,#ede9fe,#7c3aed)', badge: 'Novo', destaque: true,
+        nome: 'Kit Básico – 2 Itens',
+        spec: '01 sacola tamanho P (papel offset fosco 180g · ~19x15x6 cm) + 01 bloquinho de anotações tamanho P (capa dura · 8x11 cm)',
+        variacoes: [
+          { label: 'Kit completo', preco: null },
+        ] },
+    ],
+  },
+
   'cartoes-de-visita': {
     nome: 'Cartões de Visita',
     emoji: '💼',
