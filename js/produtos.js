@@ -4,7 +4,7 @@
 /* Versão do catálogo: aumente em 1 sempre que alterar este arquivo.
    Edições salvas pelo painel admin em versões antigas são descartadas
    automaticamente, para que as novidades daqui sempre apareçam. */
-const CATALOGO_VERSAO = 26;
+const CATALOGO_VERSAO = 27;
 
 /* Produtos que aparecem em mais de uma categoria são definidos uma única
    vez aqui e referenciados nas categorias — sem duplicar dados. */
@@ -853,7 +853,7 @@ const CATALOGO = {
     produtos: [
       { bg: 'linear-gradient(135deg,#fbcfe8,#be185d)', badge: 'Novo', destaque: true,
         nome: 'Sacola em Papel Silk Premium',
-        spec: 'Papel offset 150g · impressão silk 1 cor só frente · alça de gorgurão · cores: Azul, Branco, Creme, Lilás, Preto (consultar) · escolha o tamanho e a quantidade',
+        spec: 'Papel offset 150g · impressão silk 1 cor só frente · alça de gorgurão · cores da estampa: Azul, Branco, Kraft/Dourado, Prata/Cinza, Rosa, Verde, Vermelho · cor da sacola — P: Lilás, Creme, Branco, Preto, Azul; M: Creme, Azul, Branco, Preto · escolha o tamanho e a quantidade',
         prazo: 20,
         grupoLabel: 'Tamanho', opcaoLabel: 'Quantidade',
         tamanhos: {
