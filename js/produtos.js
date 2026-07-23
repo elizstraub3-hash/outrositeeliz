@@ -4,7 +4,7 @@
 /* Versão do catálogo: aumente em 1 sempre que alterar este arquivo.
    Edições salvas pelo painel admin em versões antigas são descartadas
    automaticamente, para que as novidades daqui sempre apareçam. */
-const CATALOGO_VERSAO = 30;
+const CATALOGO_VERSAO = 31;
 
 /* Produtos que aparecem em mais de uma categoria são definidos uma única
    vez aqui e referenciados nas categorias — sem duplicar dados. */
@@ -880,6 +880,7 @@ const CATALOGO = {
           ],
         } },
       { bg: 'linear-gradient(135deg,#bfdbfe,#1d4ed8)', badge: 'Novo', destaque: true,
+        imagem: 'img/sacola-plastica.png',
         nome: 'Sacola Plástica com Alça Vazada',
         spec: 'Plástico resistente · alça vazada · impressão personalizada · escolha o tamanho, a cor da sacola, a cor da impressão e a quantidade',
         prazoTexto: 'de 3 a 7 dias úteis',
