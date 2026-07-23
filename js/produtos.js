@@ -4,7 +4,7 @@
 /* Versão do catálogo: aumente em 1 sempre que alterar este arquivo.
    Edições salvas pelo painel admin em versões antigas são descartadas
    automaticamente, para que as novidades daqui sempre apareçam. */
-const CATALOGO_VERSAO = 25;
+const CATALOGO_VERSAO = 26;
 
 /* Produtos que aparecem em mais de uma categoria são definidos uma única
    vez aqui e referenciados nas categorias — sem duplicar dados. */
@@ -845,6 +845,34 @@ const CATALOGO = {
     ],
   },
 
+  'sacolas': {
+    nome: 'Sacolas',
+    emoji: '🛍️',
+    banner: 'linear-gradient(120deg,#9d174d,#f472b6)',
+    descricao: 'Sacolas de papel personalizadas para valorizar a entrega da sua marca.',
+    produtos: [
+      { bg: 'linear-gradient(135deg,#fbcfe8,#be185d)', badge: 'Novo', destaque: true,
+        nome: 'Sacola em Papel Silk Premium',
+        spec: 'Papel offset 150g · impressão silk 1 cor só frente · alça de gorgurão · cores: Azul, Branco, Creme, Lilás, Preto (consultar) · escolha o tamanho e a quantidade',
+        prazo: 20,
+        grupoLabel: 'Tamanho', opcaoLabel: 'Quantidade',
+        tamanhos: {
+          'P (15x8x14 cm)': [
+            { label: '10 un', preco: 274.90 },
+            { label: '25 un', preco: 412.90 },
+            { label: '50 un', preco: 645.90 },
+            { label: '100 un', preco: 1105.90 },
+          ],
+          'M (34x9x23 cm)': [
+            { label: '10 un', preco: 361.90 },
+            { label: '25 un', preco: 603.90 },
+            { label: '50 un', preco: 1077.90 },
+            { label: '100 un', preco: 1939.90 },
+          ],
+        } },
+    ],
+  },
+
   'cartoes-de-visita': {
     nome: 'Cartões de Visita',
     emoji: '💼',
@@ -929,6 +957,12 @@ const CATALOGO = {
             { label: '1.000 un', preco: 1137.90 },
           ],
         } },
+      { bg: 'linear-gradient(135deg,#e2e8f0,#475569)', badge: 'Novo',
+        nome: 'Cartão de Visita Dois Cantos Arredondados 300g',
+        spec: 'Couchê 300g · colorido frente e verso · laminação fosca · dois cantos arredondados · 8,8x5,08 cm',
+        variacoes: [
+          { label: '1.000 un', preco: null },
+        ] },
     ],
   },
 
