@@ -35,7 +35,7 @@ if (!prod) {
   document.getElementById('prodPreco').textContent = `R$ ${formatarPreco(menor)}`;
 
   document.getElementById('prodPrazo').innerHTML =
-    `<span>Previsão de produção: até ${prod.prazo || 5} dias úteis</span>
+    `<span>Previsão de produção: ${prod.prazoTexto || `até ${prod.prazo || 5} dias úteis`}</span>
      <small>* Prazo informado refere-se apenas à produção. O tempo de entrega será adicionado após a finalização.</small>`;
 
   if (prod.descricao) document.getElementById('prodDesc').textContent = prod.descricao;

@@ -4,7 +4,7 @@
 /* Versão do catálogo: aumente em 1 sempre que alterar este arquivo.
    Edições salvas pelo painel admin em versões antigas são descartadas
    automaticamente, para que as novidades daqui sempre apareçam. */
-const CATALOGO_VERSAO = 29;
+const CATALOGO_VERSAO = 30;
 
 /* Produtos que aparecem em mais de uma categoria são definidos uma única
    vez aqui e referenciados nas categorias — sem duplicar dados. */
@@ -811,6 +811,9 @@ const canetaPersonalizada = {
   ],
 };
 
+/* Cores das sacolas plásticas com alça vazada (mesmas cores para todos os tamanhos) */
+const CORES_SACOLA_PLASTICA = ['Amarelo', 'Azul', 'Azul Royal Transparente', 'Branco', 'Cobre', 'Laranja', 'Pink', 'Prata', 'Preto', 'Roxo', 'Transparente', 'Verde', 'Vermelho', 'Verde Tiffany'];
+
 const CATALOGO = {
   'kits': {
     nome: 'Kits',
@@ -852,6 +855,7 @@ const CATALOGO = {
     descricao: 'Sacolas de papel personalizadas para valorizar a entrega da sua marca.',
     produtos: [
       { bg: 'linear-gradient(135deg,#fbcfe8,#be185d)', badge: 'Novo', destaque: true,
+        imagem: 'img/sacola-silk.png',
         nome: 'Sacola em Papel Silk Premium',
         spec: 'Papel offset 150g · impressão silk 1 cor só frente · alça de gorgurão · escolha o tamanho, a cor da sacola, a cor da estampa e a quantidade',
         prazo: 20,
@@ -873,6 +877,40 @@ const CATALOGO = {
             { label: '25 un', preco: 603.90 },
             { label: '50 un', preco: 1077.90 },
             { label: '100 un', preco: 1939.90 },
+          ],
+        } },
+      { bg: 'linear-gradient(135deg,#bfdbfe,#1d4ed8)', badge: 'Novo', destaque: true,
+        nome: 'Sacola Plástica com Alça Vazada',
+        spec: 'Plástico resistente · alça vazada · impressão personalizada · escolha o tamanho, a cor da sacola, a cor da impressão e a quantidade',
+        prazoTexto: 'de 3 a 7 dias úteis',
+        grupoLabel: 'Tamanho', opcaoLabel: 'Quantidade',
+        coresEstampa: ['Azul Claro', 'Branco', 'Dourado', 'Cinza', 'Preto', 'Rosa Pink', 'Verde', 'Vermelho'],
+        coresPorTamanho: {
+          'P': CORES_SACOLA_PLASTICA,
+          'M': CORES_SACOLA_PLASTICA,
+          'G': CORES_SACOLA_PLASTICA,
+        },
+        tamanhos: {
+          'P': [
+            { label: '50 un', preco: 192.90 },
+            { label: '100 un', preco: 237.90 },
+            { label: '250 un', preco: 379.90 },
+            { label: '500 un', preco: 613.90 },
+            { label: '1.000 un', preco: 1110.90 },
+          ],
+          'M': [
+            { label: '50 un', preco: 210.90 },
+            { label: '100 un', preco: 283.90 },
+            { label: '250 un', preco: 508.90 },
+            { label: '500 un', preco: 880.90 },
+            { label: '1.000 un', preco: 1645.90 },
+          ],
+          'G': [
+            { label: '50 un', preco: 294.90 },
+            { label: '100 un', preco: 433.90 },
+            { label: '250 un', preco: 885.90 },
+            { label: '500 un', preco: 1645.90 },
+            { label: '1.000 un', preco: 3258.90 },
           ],
         } },
     ],

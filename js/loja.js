@@ -89,7 +89,7 @@ function cardProduto(p, slugCategoria) {
           <strong>${precoValor == null ? 'Sob consulta' : 'R$ ' + formatarPreco(precoValor)}</strong> ${precoValor == null ? '' : '<span class="pix">no Pix</span>'}
         </div>
         <div class="product-card__prazo">
-          <span>Previsão de produção: até ${p.prazo || 5} dias úteis</span>
+          <span>Previsão de produção: ${p.prazoTexto || `até ${p.prazo || 5} dias úteis`}</span>
           <small>* Prazo informado refere-se apenas à produção. O tempo de entrega será adicionado após a finalização.</small>
         </div>
         ${acao}
