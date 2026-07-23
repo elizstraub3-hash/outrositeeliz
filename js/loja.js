@@ -314,6 +314,18 @@ function abrirTamanhos(p) {
         ${nomesTamanhos.map((t) => `<option>${t}</option>`).join('')}
       </select>
     </div>
+    ${p.coresPorTamanho ? `
+    <div class="modal__opcao">
+      <label class="modal__label" for="modalCorSacola">Cor da sacola:</label>
+      <select class="modal__select" id="modalCorSacola"></select>
+    </div>` : ''}
+    ${p.coresEstampa ? `
+    <div class="modal__opcao">
+      <label class="modal__label" for="modalCorEstampa">Cor da estampa:</label>
+      <select class="modal__select" id="modalCorEstampa">
+        ${p.coresEstampa.map((c) => `<option>${c}</option>`).join('')}
+      </select>
+    </div>` : ''}
     <div class="modal__opcao">
       <label class="modal__label" for="modalQtdOpcao">${opcaoLabel}:</label>
       <select class="modal__select" id="modalQtdOpcao"></select>
@@ -329,6 +341,7 @@ function abrirTamanhos(p) {
 
   const selTamanho = modal.querySelector('#modalTamanho');
   const selOpcao = modal.querySelector('#modalQtdOpcao');
+  const selCorSacola = modal.querySelector('#modalCorSacola');
 
   function opcaoAtual() {
     return p.tamanhos[selTamanho.value][Number(selOpcao.value) || 0];
@@ -338,10 +351,16 @@ function abrirTamanhos(p) {
     modal.querySelector('#modalResumo').textContent = `${selTamanho.value} · ${v.label}`;
     modal.querySelector('#modalTotal').textContent = precoLabel(v.preco);
   }
+  function preencherCoresSacola() {
+    if (!selCorSacola) return;
+    const cores = p.coresPorTamanho[selTamanho.value] || [];
+    selCorSacola.innerHTML = cores.map((c) => `<option>${c}</option>`).join('');
+  }
   function preencherOpcoes() {
     selOpcao.innerHTML = p.tamanhos[selTamanho.value]
       .map((v, i) => `<option value="${i}">${v.label} — ${precoLabel(v.preco)}</option>`)
       .join('');
+    preencherCoresSacola();
     atualizarTotal();
   }
   selTamanho.addEventListener('change', preencherOpcoes);
@@ -351,7 +370,13 @@ function abrirTamanhos(p) {
   modal.querySelector('.modal__add').addEventListener('click', () => {
     const v = opcaoAtual();
     const extraSel = modal.querySelector('#modalExtra');
-    const detalhe = `${extraSel ? extraSel.value + ' · ' : ''}${selTamanho.value} · ${v.label}`;
+    const corEstampaSel = modal.querySelector('#modalCorEstampa');
+    const partes = [];
+    if (extraSel) partes.push(extraSel.value);
+    partes.push(selTamanho.value, v.label);
+    if (selCorSacola && selCorSacola.value) partes.push(`Sacola: ${selCorSacola.value}`);
+    if (corEstampaSel) partes.push(`Estampa: ${corEstampaSel.value}`);
+    const detalhe = partes.join(' · ');
     const arte = arteEscolhida(modal);
     const arquivo = arquivoArte(modal);
     adicionarItemCarrinho({ nome: p.nome, detalhe, qtd: 1, total: v.preco, arte, arquivo });
