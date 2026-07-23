@@ -4,7 +4,7 @@
 /* Versão do catálogo: aumente em 1 sempre que alterar este arquivo.
    Edições salvas pelo painel admin em versões antigas são descartadas
    automaticamente, para que as novidades daqui sempre apareçam. */
-const CATALOGO_VERSAO = 28;
+const CATALOGO_VERSAO = 29;
 
 /* Produtos que aparecem em mais de uma categoria são definidos uma única
    vez aqui e referenciados nas categorias — sem duplicar dados. */
@@ -962,11 +962,12 @@ const CATALOGO = {
             { label: '1.000 un', preco: 1137.90 },
           ],
         } },
-      { bg: 'linear-gradient(135deg,#e2e8f0,#475569)', badge: 'Novo',
+      { bg: 'linear-gradient(135deg,#e2e8f0,#475569)', badge: 'Novo', prazo: 25,
         nome: 'Cartão de Visita Dois Cantos Arredondados 300g',
         spec: 'Couchê 300g · colorido frente e verso · laminação fosca · dois cantos arredondados · 8,8x5,08 cm',
         variacoes: [
-          { label: '1.000 un', preco: null },
+          { label: '1.000 un · com furos', preco: 345.90 },
+          { label: '1.000 un · sem furos', preco: 300.90 },
         ] },
     ],
   },
