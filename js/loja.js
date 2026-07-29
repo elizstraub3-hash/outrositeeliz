@@ -449,11 +449,13 @@ function abrirCores(p) {
 
 /* ---------- Janela de combinações (quantidade de cada personalização) ---------- */
 function abrirCombinacoes(p) {
+  const un = p.unidade || 'copo';
+  const unp = p.unidadePlural || 'copos';
   const { modal, fechar } = criarModal(`Combinações de ${p.nome}`, `
     ${cabecalhoModal(p)}
     <div class="modal__faixas">
       ${p.opcoesCombinacao.map((o) => `<p><strong>${o.nome}:</strong> ${resumoFaixas(o.faixas)}</p>`).join('')}
-      <small>* O preço por unidade considera a quantidade total de copos da combinação.</small>
+      <small>* O preço por unidade considera a quantidade total de ${unp} da combinação.</small>
     </div>
     <div class="modal__rows">
       ${p.opcoesCombinacao.map((o, i) => `
@@ -474,7 +476,7 @@ function abrirCombinacoes(p) {
     ${blocoArte(p)}
     <div class="modal__foot">
       <div class="modal__total">
-        <small id="modalResumo">Nenhum copo selecionado</small>
+        <small id="modalResumo">Nenhum ${un} selecionado</small>
         <strong id="modalTotal">R$ 0,00</strong> <span class="pix">no Pix</span>
       </div>
       <button class="btn btn--primary modal__add" disabled>Adicionar ao carrinho</button>
@@ -495,8 +497,8 @@ function abrirCombinacoes(p) {
     });
     modal.querySelector('#modalTotal').textContent = `R$ ${formatarPreco(valorTotal)}`;
     modal.querySelector('#modalResumo').textContent = total === 0
-      ? 'Nenhum copo selecionado'
-      : `${total} copo${total > 1 ? 's' : ''} no total`;
+      ? `Nenhum ${un} selecionado`
+      : `${total} ${total > 1 ? unp : un} no total`;
     modal.querySelector('.modal__add').disabled = total === 0;
     return { qtds, total, valorTotal };
   }

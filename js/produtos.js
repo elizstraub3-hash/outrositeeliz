@@ -4,7 +4,7 @@
 /* Versão do catálogo: aumente em 1 sempre que alterar este arquivo.
    Edições salvas pelo painel admin em versões antigas são descartadas
    automaticamente, para que as novidades daqui sempre apareçam. */
-const CATALOGO_VERSAO = 31;
+const CATALOGO_VERSAO = 32;
 
 /* Produtos que aparecem em mais de uma categoria são definidos uma única
    vez aqui e referenciados nas categorias — sem duplicar dados. */
@@ -917,6 +917,39 @@ const CATALOGO = {
     ],
   },
 
+  'apostilas': {
+    nome: 'Apostilas',
+    emoji: '📚',
+    banner: 'linear-gradient(120deg,#1e3a8a,#3b82f6)',
+    descricao: 'Apostilas e materiais didáticos personalizados para cursos, treinamentos e escolas.',
+    produtos: [
+      { bg: 'linear-gradient(135deg,#dbeafe,#1d4ed8)', badge: 'Novo', destaque: true,
+        nome: 'Apostila Personalizada',
+        spec: 'Apostila impressa personalizada · miolo em folha matte 170g (Black) ou sulfite branca (Colorida) · escolha o acabamento',
+        prazoTexto: 'de 1 a 3 dias úteis',
+        arteNota: 'Criação da arte da apostila: R$ 65,00.',
+        variacoes: [
+          { label: 'Totalmente Black · até 15 páginas · matte 170g', preco: 35.00 },
+          { label: 'Colorida · folha branca sulfite', preco: 25.00 },
+        ] },
+    ],
+  },
+
+  'papelaria': {
+    nome: 'Papelaria',
+    emoji: '📓',
+    banner: 'linear-gradient(120deg,#4338ca,#818cf8)',
+    descricao: 'Cadernos, blocos e itens de papelaria personalizados para a sua marca.',
+    produtos: [
+      { bg: 'linear-gradient(135deg,#e0e7ff,#4338ca)', badge: 'Novo', destaque: true,
+        nome: 'Caderninho 7x10 cm',
+        spec: 'Capa personalizada (só a capa) · 64 folhas · 7x10 cm · Mais quantidades: consultar valor no atacado.',
+        variacoes: [
+          { label: '1 un', preco: 12.90 },
+        ] },
+    ],
+  },
+
   'cartoes-de-visita': {
     nome: 'Cartões de Visita',
     emoji: '💼',
@@ -1334,6 +1367,12 @@ const CATALOGO = {
     descricao: 'Copos personalizados para brindes, eventos, bares e delivery.',
     produtos: [
       copoCuia,
+      { bg: 'linear-gradient(135deg,#e0f2fe,#0ea5e9)', badge: 'Novo', destaque: true,
+        nome: 'Taça de Gin Personalizada',
+        spec: 'Taça de gin · personalização em DTF UV só frente · Mais quantidades: consultar valor no atacado.',
+        variacoes: [
+          { label: '1 un', preco: 10.00 },
+        ] },
       copoInoxColorido,
       copoTermico,
     ],
@@ -1347,6 +1386,17 @@ const CATALOGO = {
     produtos: [
       copoCuia,
       kitChurrasco,
+      { bg: 'linear-gradient(135deg,#d6d3d1,#78716c)', badge: 'Novo', destaque: true,
+        nome: 'Gravação a Laser em MDF (item do cliente)',
+        spec: 'Gravação a laser 4x0 em item de MDF trazido pelo cliente · até 30 cm · 10+ itens R$ 15,90/un · menos de 10 itens R$ 25,00/un',
+        prazoTexto: 'de 3 a 5 dias úteis',
+        unidade: 'item', unidadePlural: 'itens',
+        opcoesCombinacao: [
+          { nome: 'Gravação a Laser', faixas: [
+            { min: 1, preco: 25.00 },
+            { min: 10, preco: 15.90 },
+          ] },
+        ] },
       { emoji: '🖋️', bg: 'linear-gradient(135deg,#cbd5e1,#475569)', badge: 'Novo',
         nome: 'Caneta de Metal Touch', spec: 'Metal · ponta touch · gravação a laser 4x0 (0,6x5 cm)',
         variacoes: [
