@@ -4,7 +4,7 @@
 /* Versão do catálogo: aumente em 1 sempre que alterar este arquivo.
    Edições salvas pelo painel admin em versões antigas são descartadas
    automaticamente, para que as novidades daqui sempre apareçam. */
-const CATALOGO_VERSAO = 35;
+const CATALOGO_VERSAO = 36;
 
 /* Produtos que aparecem em mais de uma categoria são definidos uma única
    vez aqui e referenciados nas categorias — sem duplicar dados. */
@@ -959,6 +959,31 @@ const CATALOGO = {
         spec: 'Capa personalizada (só a capa) · 64 folhas · 7x10 cm · Mais quantidades: consultar valor no atacado.',
         variacoes: [
           { label: '1 un', preco: 12.90 },
+        ] },
+    ],
+  },
+
+  'comunicacao-visual': {
+    nome: 'Comunicação Visual',
+    emoji: '🖥️',
+    banner: 'linear-gradient(120deg,#0f172a,#334155)',
+    descricao: 'Soluções de comunicação visual para valorizar sua marca em pontos de venda, eventos e ambientes comerciais.',
+    produtos: [
+      { bg: 'linear-gradient(135deg,#e2e8f0,#334155)', badge: 'Novo', destaque: true,
+        paginaProduto: true,
+        semArte: true,
+        nome: 'Quadro Iluminado LED Branco 310x425mm',
+        spec: 'Estrutura de alumínio, vidro e LED branco · 310x425mm aprox. · produto sem personalização',
+        descricao: 'O quadro com LED branco é ideal para quem busca uma solução moderna e elegante para destacar informações, imagens e campanhas. A iluminação uniforme valoriza a comunicação visual e cria maior destaque em ambientes comerciais, eventos e pontos de venda. Prático e versátil, pode ser utilizado com folhas personalizadas vendidas separadamente, permitindo atualizar a mensagem sempre que necessário. Invista em um quadro iluminado para valorizar sua marca.',
+        detalhes: [
+          'Matéria-prima: alumínio, vidro e LED branco.',
+          'Tamanho final aproximado: 310x425mm.',
+          'Tipo de impressão: produto sem personalização.',
+          'Não acompanha a folha personalizada (vendida separadamente).',
+          'Fonte Bivolt — deve ficar conectado diretamente na energia.',
+        ],
+        variacoes: [
+          { label: '1 un', preco: 350.00 },
         ] },
     ],
   },
