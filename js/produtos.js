@@ -4,7 +4,7 @@
 /* Versão do catálogo: aumente em 1 sempre que alterar este arquivo.
    Edições salvas pelo painel admin em versões antigas são descartadas
    automaticamente, para que as novidades daqui sempre apareçam. */
-const CATALOGO_VERSAO = 34;
+const CATALOGO_VERSAO = 35;
 
 /* Produtos que aparecem em mais de uma categoria são definidos uma única
    vez aqui e referenciados nas categorias — sem duplicar dados. */
@@ -914,6 +914,16 @@ const CATALOGO = {
             { label: '1.000 un', preco: 3258.90 },
           ],
         } },
+      { bg: 'linear-gradient(135deg,#fef3c7,#b45309)', badge: 'Novo', destaque: true,
+        imagem: 'img/sacola-alca-cordao.png',
+        nome: 'Sacola de Papel com Alça de Cordão',
+        spec: 'Papel personalizado · 29 x 25 x 8 cm · alça de cordão · pedido mínimo 10 unidades',
+        unidade: 'sacola', unidadePlural: 'sacolas',
+        minimoTotal: 10,
+        opcoesCombinacao: [
+          { nome: 'Alça Branca', faixas: [{ min: 1, preco: 6.50 }] },
+          { nome: 'Alça Colorida (conforme identidade visual)', faixas: [{ min: 1, preco: 7.00 }] },
+        ] },
     ],
   },
 

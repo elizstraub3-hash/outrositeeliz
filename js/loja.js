@@ -502,11 +502,12 @@ function abrirCombinacoes(p) {
     const chk = modal.querySelector('#modalAdicional');
     const comAdicional = !!(chk && chk.checked);
     if (comAdicional) valorTotal += p.adicional.preco;
+    const minTotal = p.minimoTotal || 0;
     modal.querySelector('#modalTotal').textContent = `R$ ${formatarPreco(valorTotal)}`;
     modal.querySelector('#modalResumo').textContent = total === 0
       ? `Nenhum ${un} selecionado`
-      : `${total} ${total > 1 ? unp : un} no total`;
-    modal.querySelector('.modal__add').disabled = total === 0;
+      : `${total} ${total > 1 ? unp : un} no total${minTotal && total < minTotal ? ` · mínimo ${minTotal}` : ''}`;
+    modal.querySelector('.modal__add').disabled = total === 0 || total < minTotal;
     return { qtds, total, valorTotal, comAdicional };
   }
 
