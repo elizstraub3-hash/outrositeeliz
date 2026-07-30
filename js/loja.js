@@ -340,7 +340,7 @@ function abrirTamanhos(p) {
     </div>
     ${p.furos ? `
     <label class="modal__adicional">
-      <input type="checkbox" id="modalFuro"> Furar as tags (+ <span id="modalFuroPreco"></span>)
+      <input type="checkbox" id="modalFuro"> Furo 3mm (+ <span id="modalFuroPreco"></span>)
     </label>` : ''}
     ${blocoArte(p)}
     <div class="modal__foot">
