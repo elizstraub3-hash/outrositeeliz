@@ -4,7 +4,7 @@
 /* Versão do catálogo: aumente em 1 sempre que alterar este arquivo.
    Edições salvas pelo painel admin em versões antigas são descartadas
    automaticamente, para que as novidades daqui sempre apareçam. */
-const CATALOGO_VERSAO = 37;
+const CATALOGO_VERSAO = 38;
 
 /* Produtos que aparecem em mais de uma categoria são definidos uma única
    vez aqui e referenciados nas categorias — sem duplicar dados. */
@@ -972,6 +972,7 @@ const CATALOGO = {
       { bg: 'linear-gradient(135deg,#e2e8f0,#334155)', badge: 'Novo', destaque: true,
         paginaProduto: true,
         semArte: true,
+        imagem: 'img/quadro-iluminado.png',
         nome: 'Quadro Iluminado LED Branco 310x425mm',
         spec: 'Estrutura de alumínio, vidro e LED branco · 310x425mm aprox. · produto sem personalização',
         descricao: 'O quadro com LED branco é ideal para quem busca uma solução moderna e elegante para destacar informações, imagens e campanhas. A iluminação uniforme valoriza a comunicação visual e cria maior destaque em ambientes comerciais, eventos e pontos de venda. Prático e versátil, pode ser utilizado com folhas personalizadas vendidas separadamente, permitindo atualizar a mensagem sempre que necessário. Invista em um quadro iluminado para valorizar sua marca.',
@@ -980,7 +981,7 @@ const CATALOGO = {
           'Tamanho final aproximado: 310x425mm.',
           'Tipo de impressão: produto sem personalização.',
           'Não acompanha a folha personalizada (vendida separadamente).',
-          'Fonte Bivolt — deve ficar conectado diretamente na energia.',
+          'Fonte Bivolt inclusa — deve ficar conectada diretamente na energia.',
         ],
         variacoes: [
           { label: '1 un', preco: 350.00 },
@@ -1074,6 +1075,7 @@ const CATALOGO = {
         } },
       { bg: 'linear-gradient(135deg,#e2e8f0,#475569)', badge: 'Novo', destaque: true,
         paginaProduto: true,
+        imagem: 'img/cartao-dois-cantos.png',
         nome: 'Cartão de Visita Dois Cantos Arredondados 300g',
         spec: 'Couchê 300g · laminação fosca · dois cantos arredondados · 8,8 × 5,08 cm · escolha a impressão e a quantidade',
         prazoTexto: 'de 3 a 5 dias úteis',
