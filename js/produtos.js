@@ -4,7 +4,7 @@
 /* Versão do catálogo: aumente em 1 sempre que alterar este arquivo.
    Edições salvas pelo painel admin em versões antigas são descartadas
    automaticamente, para que as novidades daqui sempre apareçam. */
-const CATALOGO_VERSAO = 33;
+const CATALOGO_VERSAO = 34;
 
 /* Produtos que aparecem em mais de uma categoria são definidos uma única
    vez aqui e referenciados nas categorias — sem duplicar dados. */
@@ -929,7 +929,7 @@ const CATALOGO = {
         prazoTexto: 'de 1 a 3 dias úteis',
         arteNota: 'Criação da arte da apostila: R$ 65,00.',
         unidade: 'folha', unidadePlural: 'folhas',
-        adicional: { label: 'Capa e Contra Capa', preco: 5.00 },
+        adicional: { label: 'Capa e Contra Capa', preco: 10.00 },
         opcoesCombinacao: [
           { nome: 'Folha Preta — Matte 170g', faixas: [{ min: 1, preco: 2.00 }] },
           { nome: 'Folha Colorida — Sulfite 75g', faixas: [{ min: 1, preco: 1.50 }] },
