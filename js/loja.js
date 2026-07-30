@@ -473,6 +473,10 @@ function abrirCombinacoes(p) {
           <div class="comb-row__subtotal">R$ 0,00</div>
         </div>`).join('')}
     </div>
+    ${p.adicional ? `
+    <label class="modal__adicional">
+      <input type="checkbox" id="modalAdicional"> ${p.adicional.label} (+ R$ ${formatarPreco(p.adicional.preco)})
+    </label>` : ''}
     ${blocoArte(p)}
     <div class="modal__foot">
       <div class="modal__total">
@@ -495,13 +499,19 @@ function abrirCombinacoes(p) {
       linha.querySelector('.comb-row__unit').textContent = `R$ ${formatarPreco(unitario)}/un`;
       linha.querySelector('.comb-row__subtotal').textContent = `R$ ${formatarPreco(subtotal)}`;
     });
+    const chk = modal.querySelector('#modalAdicional');
+    const comAdicional = !!(chk && chk.checked);
+    if (comAdicional) valorTotal += p.adicional.preco;
     modal.querySelector('#modalTotal').textContent = `R$ ${formatarPreco(valorTotal)}`;
     modal.querySelector('#modalResumo').textContent = total === 0
       ? `Nenhum ${un} selecionado`
       : `${total} ${total > 1 ? unp : un} no total`;
     modal.querySelector('.modal__add').disabled = total === 0;
-    return { qtds, total, valorTotal };
+    return { qtds, total, valorTotal, comAdicional };
   }
+
+  const chkAdicional = modal.querySelector('#modalAdicional');
+  if (chkAdicional) chkAdicional.addEventListener('change', recalcular);
 
   linhas.forEach((linha) => {
     const input = linha.querySelector('.comb-row__qtd');
@@ -517,12 +527,13 @@ function abrirCombinacoes(p) {
   });
 
   modal.querySelector('.modal__add').addEventListener('click', () => {
-    const { qtds, total, valorTotal } = recalcular();
+    const { qtds, total, valorTotal, comAdicional } = recalcular();
     if (total === 0) return;
-    const resumo = p.opcoesCombinacao
+    let resumo = p.opcoesCombinacao
       .map((o, i) => (qtds[i] > 0 ? `${qtds[i]}× ${o.nome}` : null))
       .filter(Boolean)
       .join(' + ');
+    if (comAdicional) resumo += ` + ${p.adicional.label}`;
     const arte = arteEscolhida(modal);
     const arquivo = arquivoArte(modal);
     adicionarItemCarrinho({ nome: p.nome, detalhe: resumo, qtd: total, total: valorTotal, arte, arquivo });
