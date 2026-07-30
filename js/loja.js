@@ -338,6 +338,10 @@ function abrirTamanhos(p) {
       <label class="modal__label" for="modalQtdOpcao">${opcaoLabel}:</label>
       <select class="modal__select" id="modalQtdOpcao"></select>
     </div>
+    ${p.furos ? `
+    <label class="modal__adicional">
+      <input type="checkbox" id="modalFuro"> Furar as tags (+ <span id="modalFuroPreco"></span>)
+    </label>` : ''}
     ${blocoArte(p)}
     <div class="modal__foot">
       <div class="modal__total">
@@ -350,14 +354,30 @@ function abrirTamanhos(p) {
   const selTamanho = modal.querySelector('#modalTamanho');
   const selOpcao = modal.querySelector('#modalQtdOpcao');
   const selCorSacola = modal.querySelector('#modalCorSacola');
+  const chkFuro = modal.querySelector('#modalFuro');
 
   function opcaoAtual() {
     return p.tamanhos[selTamanho.value][Number(selOpcao.value) || 0];
   }
+  function qtdNumerica() {
+    return parseInt(String(opcaoAtual().label).replace(/\D/g, ''), 10) || 0;
+  }
+  function furoPrecoParaQtd() {
+    if (!p.furos) return 0;
+    const q = qtdNumerica();
+    const faixa = p.furos.find((f) => q <= f.ate) || p.furos[p.furos.length - 1];
+    return faixa ? faixa.preco : 0;
+  }
+  function furoSelecionado() {
+    return !!(chkFuro && chkFuro.checked) ? furoPrecoParaQtd() : 0;
+  }
   function atualizarTotal() {
     const v = opcaoAtual();
-    modal.querySelector('#modalResumo').textContent = `${selTamanho.value} · ${v.label}`;
-    modal.querySelector('#modalTotal').textContent = precoLabel(v.preco);
+    if (p.furos) modal.querySelector('#modalFuroPreco').textContent = `R$ ${formatarPreco(furoPrecoParaQtd())}`;
+    const furo = furoSelecionado();
+    const total = v.preco == null ? null : v.preco + furo;
+    modal.querySelector('#modalResumo').textContent = `${selTamanho.value} · ${v.label}${furo ? ' · com furos' : ''}`;
+    modal.querySelector('#modalTotal').textContent = precoLabel(total);
   }
   function preencherCoresSacola() {
     if (!selCorSacola) return;
@@ -373,21 +393,25 @@ function abrirTamanhos(p) {
   }
   selTamanho.addEventListener('change', preencherOpcoes);
   selOpcao.addEventListener('change', atualizarTotal);
+  if (chkFuro) chkFuro.addEventListener('change', atualizarTotal);
   preencherOpcoes();
 
   modal.querySelector('.modal__add').addEventListener('click', () => {
     const v = opcaoAtual();
     const extraSel = modal.querySelector('#modalExtra');
     const corEstampaSel = modal.querySelector('#modalCorEstampa');
+    const furo = furoSelecionado();
     const partes = [];
     if (extraSel) partes.push(extraSel.value);
     partes.push(selTamanho.value, v.label);
     if (selCorSacola && selCorSacola.value) partes.push(`Sacola: ${selCorSacola.value}`);
     if (corEstampaSel) partes.push(`Estampa: ${corEstampaSel.value}`);
+    if (furo) partes.push('Com furos');
     const detalhe = partes.join(' · ');
     const arte = arteEscolhida(modal);
     const arquivo = arquivoArte(modal);
-    adicionarItemCarrinho({ nome: p.nome, detalhe, qtd: 1, total: v.preco, arte, arquivo });
+    const total = v.preco == null ? null : v.preco + furo;
+    adicionarItemCarrinho({ nome: p.nome, detalhe, qtd: 1, total, arte, arquivo });
     fechar();
     mostrarToast(`${p.nome} (${detalhe}) · ${arte}${arquivo ? ` (${arquivo})` : ''} — adicionado ao carrinho!`);
   });

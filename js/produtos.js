@@ -4,7 +4,7 @@
 /* Versão do catálogo: aumente em 1 sempre que alterar este arquivo.
    Edições salvas pelo painel admin em versões antigas são descartadas
    automaticamente, para que as novidades daqui sempre apareçam. */
-const CATALOGO_VERSAO = 36;
+const CATALOGO_VERSAO = 37;
 
 /* Produtos que aparecem em mais de uma categoria são definidos uma única
    vez aqui e referenciados nas categorias — sem duplicar dados. */
@@ -1072,12 +1072,39 @@ const CATALOGO = {
             { label: '1.000 un', preco: 1137.90 },
           ],
         } },
-      { bg: 'linear-gradient(135deg,#e2e8f0,#475569)', badge: 'Novo', prazo: 25,
+      { bg: 'linear-gradient(135deg,#e2e8f0,#475569)', badge: 'Novo', destaque: true,
+        paginaProduto: true,
         nome: 'Cartão de Visita Dois Cantos Arredondados 300g',
-        spec: 'Couchê 300g · colorido frente e verso · laminação fosca · dois cantos arredondados · 8,8x5,08 cm',
-        variacoes: [
-          { label: '1.000 un · com furos', preco: 345.90 },
-          { label: '1.000 un · sem furos', preco: 300.90 },
+        spec: 'Couchê 300g · laminação fosca · dois cantos arredondados · 8,8 × 5,08 cm · escolha a impressão e a quantidade',
+        prazoTexto: 'de 3 a 5 dias úteis',
+        grupoLabel: 'Impressão', opcaoLabel: 'Quantidade',
+        furos: [
+          { ate: 1000, preco: 30.00 },
+          { ate: 2500, preco: 50.00 },
+          { ate: 5000, preco: 80.00 },
+        ],
+        tamanhos: {
+          'Colorido frente e verso (4x4)': [
+            { label: '500 un', preco: 211.90 },
+            { label: '1.000 un', preco: 289.90 },
+            { label: '3.000 un', preco: 783.90 },
+          ],
+          'Colorido só frente': [
+            { label: '500 un', preco: 204.90 },
+            { label: '1.000 un', preco: 273.90 },
+            { label: '3.000 un', preco: 727.90 },
+            { label: '5.000 un', preco: 1211.90 },
+          ],
+        },
+        descricao: 'Cartão de visita com dois cantos arredondados, em Couchê 300g com laminação fosca. Elegante, resistente e com toque suave — ótimo também como tag, com opção de furo para cordão.',
+        detalhes: [
+          'Categoria: Dois Cantos Arredondados',
+          'Material: Couchê 300g',
+          'Impressão: 4x4 (frente e verso coloridos) ou colorido só frente',
+          'Cobertura: Laminação Fosca',
+          'Tamanho: 8,8 × 5,08 cm',
+          'Acabamento Incluso: Dois Cantos Arredondados',
+          'Furo opcional para tags: até 1.000 un R$ 30,00 · até 2.500 un R$ 50,00 · até 5.000 un R$ 80,00.',
         ] },
     ],
   },
