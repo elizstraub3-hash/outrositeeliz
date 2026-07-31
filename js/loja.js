@@ -483,12 +483,14 @@ function abrirCores(p) {
 function abrirCombinacoes(p) {
   const un = p.unidade || 'copo';
   const unp = p.unidadePlural || 'copos';
+  const temFaixasMultiplas = p.opcoesCombinacao.some((o) => o.faixas.length > 1);
   const { modal, fechar } = criarModal(`Combinações de ${p.nome}`, `
     ${cabecalhoModal(p)}
+    ${temFaixasMultiplas ? `
     <div class="modal__faixas">
       ${p.opcoesCombinacao.map((o) => `<p><strong>${o.nome}:</strong> ${resumoFaixas(o.faixas)}</p>`).join('')}
       <small>* O preço por unidade considera a quantidade total de ${unp} da combinação.</small>
-    </div>
+    </div>` : ''}
     <div class="modal__rows">
       ${p.opcoesCombinacao.map((o, i) => `
         <div class="comb-row" data-idx="${i}">
