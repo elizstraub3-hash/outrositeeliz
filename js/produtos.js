@@ -4,7 +4,7 @@
 /* Versão do catálogo: aumente em 1 sempre que alterar este arquivo.
    Edições salvas pelo painel admin em versões antigas são descartadas
    automaticamente, para que as novidades daqui sempre apareçam. */
-const CATALOGO_VERSAO = 39;
+const CATALOGO_VERSAO = 40;
 
 /* Produtos que aparecem em mais de uma categoria são definidos uma única
    vez aqui e referenciados nas categorias — sem duplicar dados. */
@@ -1516,6 +1516,18 @@ const CATALOGO = {
     banner: 'linear-gradient(120deg,#9d174d,#ec4899)',
     descricao: 'Ecobags, cordões, camisetas e outros itens em tecido personalizados.',
     produtos: [
+      { bg: 'linear-gradient(135deg,#fbcfe8,#db2777)', badge: 'Novo', destaque: true,
+        nome: 'Chinelo Personalizado',
+        spec: 'Borracha + EVA · impressão colorida só frente (4x0) · 26x34 cm · distribua a quantidade entre os tamanhos',
+        unidade: 'chinelo', unidadePlural: 'chinelos',
+        opcoesCombinacao: [
+          { nome: 'Tam. 33/34', faixas: [{ min: 1, preco: 29.90 }] },
+          { nome: 'Tam. 35/36', faixas: [{ min: 1, preco: 29.90 }] },
+          { nome: 'Tam. 37/38', faixas: [{ min: 1, preco: 29.90 }] },
+          { nome: 'Tam. 39/40', faixas: [{ min: 1, preco: 29.90 }] },
+          { nome: 'Tam. 41/42', faixas: [{ min: 1, preco: 29.90 }] },
+          { nome: 'Tam. 43/44', faixas: [{ min: 1, preco: 29.90 }] },
+        ] },
       jaquetaMisty,
       camisaAmericana,
       camisaCiclismo,
