@@ -4,7 +4,7 @@
 /* Versão do catálogo: aumente em 1 sempre que alterar este arquivo.
    Edições salvas pelo painel admin em versões antigas são descartadas
    automaticamente, para que as novidades daqui sempre apareçam. */
-const CATALOGO_VERSAO = 42;
+const CATALOGO_VERSAO = 43;
 
 /* Produtos que aparecem em mais de uma categoria são definidos uma única
    vez aqui e referenciados nas categorias — sem duplicar dados. */
@@ -1010,7 +1010,7 @@ const CATALOGO = {
           ],
           'Colorido frente e verso': [
             { label: '500 un', preco: 100.90 },
-            { label: '1.000 un', preco: 114.90 },
+            { label: '1.000 un', preco: 125.00 },
             { label: '3.000 un', preco: 336.90 },
             { label: '5.000 un', preco: 546.90 },
             { label: '10.000 un', preco: 1090.90 },
