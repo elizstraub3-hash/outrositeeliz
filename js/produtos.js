@@ -11,18 +11,18 @@ const CATALOGO_VERSAO = 38;
 
 const copoCuia = {
   emoji: '🧉', bg: 'linear-gradient(135deg,#e2e8f0,#94a3b8)', badge: 'Novo',
-  imagem: 'img/copo-cuia-laser.png',
+  imagem: 'img/copo-cuia-laser.webp',
   nome: 'Copo Cuia com Tampa em Acrílico 360ml',
   spec: 'Metal · tampa acrílica · gravação a laser 4x0 (4x4 cm) ou estampa em DTF',
   /* Produto com lista de combinações: o cliente escolhe a quantidade de
      cada personalização. O preço unitário segue a faixa da quantidade
      total de copos ("min" = a partir de quantas unidades vale o preço). */
   opcoesCombinacao: [
-    { nome: 'Gravação a Laser', imagem: 'img/copo-cuia-laser.png', faixas: [
+    { nome: 'Gravação a Laser', imagem: 'img/copo-cuia-laser.webp', faixas: [
       { min: 1, preco: 59.90 },
       { min: 5, preco: 55.90 },
     ] },
-    { nome: 'Estampa em DTF', imagem: 'img/copo-cuia-dtf.png', faixas: [
+    { nome: 'Estampa em DTF', imagem: 'img/copo-cuia-dtf.webp', faixas: [
       { min: 1, preco: 55.90 },
     ] },
   ],
@@ -39,7 +39,7 @@ const copoTermico = {
 
 const copoInoxColorido = {
   emoji: '🥛', bg: 'linear-gradient(135deg,#f1f5f9,#94a3b8)', badge: 'Novo',
-  imagem: 'img/copo-termico-inox.png',
+  imagem: 'img/copo-termico-inox.webp',
   nome: 'Copo Térmico Aço Inox',
   spec: 'Aço inox · gravação a laser 4x0 (4x10 cm) · 10 cores',
   precoUnitario: 49.90,
@@ -49,7 +49,7 @@ const copoInoxColorido = {
 
 const garrafaInox750 = {
   emoji: '🍶', bg: 'linear-gradient(135deg,#fed7aa,#ea580c)', badge: 'Novo',
-  imagem: 'img/garrafa-inox-750.png',
+  imagem: 'img/garrafa-inox-750.webp',
   nome: 'Garrafa de Inox 750ml Opus',
   spec: 'Aço inox · gravação a laser 4x0 (4x10 cm) · 7 cores',
   precoUnitario: 69.90,
@@ -68,7 +68,7 @@ const squeezeFosca = {
 
 const kitChurrasco = {
   bg: 'linear-gradient(135deg,#fca5a5,#7f1d1d)', badge: 'Novo',
-  imagem: 'img/kit-churrasco.png',
+  imagem: 'img/kit-churrasco.webp',
   nome: 'Kit Churrasco',
   spec: 'Estojo nylon + talheres aço inox · gravação a laser + DTF rígido',
   variacoes: [
@@ -89,7 +89,7 @@ const camisetaDtf = {
 
 const ecobagPersonalizada = {
   bg: 'linear-gradient(135deg,#d9f99d,#4d7c0f)', badge: 'Novo',
-  imagem: 'img/ecobag-personalizada.png',
+  imagem: 'img/ecobag-personalizada.webp',
   nome: 'Ecobag Personalizada',
   spec: 'Tecido microfibra · colorido só frente · 30x30 cm · com ou sem velcro',
   variacoes: [
@@ -108,7 +108,7 @@ const ecobagPersonalizada = {
 
 const toalhaBanho = {
   bg: 'linear-gradient(135deg,#bae6fd,#0284c7)', badge: 'Novo',
-  imagem: 'img/toalha-banho.png',
+  imagem: 'img/toalha-banho.webp',
   nome: 'Toalha de Banho Personalizada',
   spec: 'Atoalhado poliéster · colorido só frente',
   variacoes: [
@@ -143,7 +143,7 @@ const toalhaRosto = {
 
 const bolsaHaste = {
   bg: 'linear-gradient(135deg,#fde68a,#d97706)', badge: 'Novo',
-  imagem: 'img/bandeira.png',
+  imagem: 'img/bandeira.webp',
   nome: 'Bandeira',
   spec: 'Tecido gabardine · colorido só frente · sem verniz · 70x100 cm',
   variacoes: [
@@ -153,7 +153,7 @@ const bolsaHaste = {
 
 const cordaoPersonalizado = {
   bg: 'linear-gradient(135deg,#fbcfe8,#9d174d)', badge: 'Novo',
-  imagem: 'img/cordao.png',
+  imagem: 'img/cordao.webp',
   nome: 'Cordão Personalizado',
   spec: 'Poliéster acetinado 20mm · colorido frente e verso · sem verniz · 39x2 cm · escolha o acabamento',
   variacoes: [
@@ -166,12 +166,12 @@ const cordaoPersonalizado = {
 
 const camisetaDryMasc = {
   bg: 'linear-gradient(135deg,#e0f2fe,#0369a1)', badge: 'Novo',
-  imagem: 'img/camiseta-masc.png',
+  imagem: 'img/camiseta-masc.webp',
   nome: 'Camiseta Dry Fit Masculina',
   spec: 'Dry Fit · poliéster (rústico, sem elasticidade) · estampa personalizada · do P ao XL4',
   prazo: 10,
   paginaProduto: true,
-  medidas: 'img/camiseta-masc-medidas.png',
+  medidas: 'img/camiseta-masc-medidas.webp',
   descricao: 'Camiseta Dry Fit em poliéster, com toque rústico e sem elasticidade — ideal para esportes, corridas, times, eventos e uso no dia a dia. Estampa personalizada com a sua arte. Disponível do tamanho P ao XL4.',
   detalhes: ['Material: poliéster, tecido rústico e sem elasticidade. Modelagem do P ao XL4 (medidas podem variar 2 cm para mais ou para menos).'],
   grupoLabel: 'Tamanho', opcaoLabel: 'Quantidade',
@@ -229,12 +229,12 @@ const camisetaDryMasc = {
 
 const camisetaDryFem = {
   bg: 'linear-gradient(135deg,#e0f2fe,#0369a1)', badge: 'Novo',
-  imagem: 'img/camiseta-fem.png',
+  imagem: 'img/camiseta-fem.webp',
   nome: 'Camiseta Dry Fit Feminina',
   spec: 'Dry Fit · poliéster (rústico, sem elasticidade) · estampa personalizada · do P ao XL4',
   prazo: 10,
   paginaProduto: true,
-  medidas: 'img/camiseta-fem-medidas.png',
+  medidas: 'img/camiseta-fem-medidas.webp',
   descricao: 'Camiseta Dry Fit em poliéster, com toque rústico e sem elasticidade — ideal para esportes, corridas, times, eventos e uso no dia a dia. Estampa personalizada com a sua arte. Disponível do tamanho P ao XL4.',
   detalhes: ['Material: poliéster, tecido rústico e sem elasticidade. Modelagem do P ao XL4 (medidas podem variar 2 cm para mais ou para menos).'],
   grupoLabel: 'Tamanho', opcaoLabel: 'Quantidade',
@@ -292,12 +292,12 @@ const camisetaDryFem = {
 
 const camisaPesca = {
   bg: 'linear-gradient(135deg,#a5f3fc,#0e7490)', badge: 'Novo',
-  imagem: 'img/camisa-pesca.png',
+  imagem: 'img/camisa-pesca.webp',
   nome: 'Camisa de Pesca Personalizada',
   spec: 'Manga longa · gola média com zíper · Active Ice UV 50+ · impressão Ultra HD Sublimática · do P ao XL4',
   prazo: 10,
   paginaProduto: true,
-  medidas: 'img/camisa-pesca-medidas.png',
+  medidas: 'img/camisa-pesca-medidas.webp',
   descricao: 'Você gosta de pescaria? Então chegou ao lugar certo! A Print House traz uma camisa de pesca personalizada para quem curte relaxar com estilo — ideal para aquele fim de semana, feriado prolongado ou férias, na hora sagrada de descansar e se concentrar. Personalização em impressão Ultra HD Sublimática, com cores nítidas e vibrantes.',
   detalhes: [
     'Modelo e caimento: camisa de manga longa, gola média e com zíper, com caimento confortável para os movimentos da pesca. Tamanhos do P ao XL4 (confira a tabela de medidas). Perfeita para pesca esportiva, amadora ou profissional, torneios e competições — e ótima como presente para quem ama pescar.',
@@ -392,12 +392,12 @@ const camisaPesca = {
 
 const moletomCanguru = {
   bg: 'linear-gradient(135deg,#cbd5e1,#334155)', badge: 'Novo',
-  imagem: 'img/moletom.png',
+  imagem: 'img/moletom.webp',
   nome: 'Moletom Canguru Personalizado',
   spec: 'Moletom flanelado 100% poliéster · unissex · capuz e bolso canguru · impressão Ultra HD Sublimática · do P ao XL4',
   prazo: 10,
   paginaProduto: true,
-  medidas: 'img/moletom-medidas.png',
+  medidas: 'img/moletom-medidas.webp',
   descricao: 'Encontre o moletom canguru perfeito para o seu estilo! Conforto, elegância e personalidade em uma peça casual que combina com qualquer look. A Print House traz o moletom canguru personalizado com a sua estampa, em impressão Ultra HD Sublimática, com cores nítidas e vibrantes que não desbotam.',
   detalhes: [
     'O que é: o moletom canguru tem o clássico bolso costurado na frente, que acomoda as mãos e aquece com o tecido flanelado. Modelo com capuz, ideal para o friozinho do outono/inverno e para regiões mais frias.',
@@ -492,12 +492,12 @@ const moletomCanguru = {
 
 const camisaAmericana = {
   bg: 'linear-gradient(135deg,#fde68a,#334155)', badge: 'Novo',
-  imagem: 'img/camisa-americana.png',
+  imagem: 'img/camisa-americana.webp',
   nome: 'Camisa Futebol Americano Titan',
   spec: 'Masculino · impressão Ultra HD Sublimática · do P ao XL4',
   prazo: 10,
   paginaProduto: true,
-  medidas: 'img/camisa-americana-medidas.png',
+  medidas: 'img/camisa-americana-medidas.webp',
   descricao: 'Faça passes como um quarterback, receba como um wide receiver ou corra para o touchdown com a Camisa de Futebol Americano Titan! Uma peça leve, resistente e cheia de estilo para praticar, torcer ou colecionar, com personalização em impressão Ultra HD Sublimática.',
   detalhes: [
     'Modelagem: inspirada nas camisas oficiais, com recortes nos ombros e mangas largas e confortáveis. Modelagem maior, que veste com folga. Masculino, do P ao XL4 (confira a tabela de medidas).',
@@ -596,12 +596,12 @@ const camisaAmericana = {
 
 const camisaCiclismo = {
   bg: 'linear-gradient(135deg,#fde68a,#334155)', badge: 'Novo',
-  imagem: 'img/camisa-ciclismo.png',
+  imagem: 'img/camisa-ciclismo.webp',
   nome: 'Camisa de Ciclismo Fast',
   spec: 'Masculino · impressão Ultra HD Sublimática · do P ao XL4',
   prazo: 10,
   paginaProduto: true,
-  medidas: 'img/camisa-ciclismo-medidas.png',
+  medidas: 'img/camisa-ciclismo-medidas.webp',
   descricao: 'Camisa de Ciclismo Fast com tecido leve e respirável, ideal para alta performance. Conforto, ajuste anatômico e acabamento premium — disponível em manga curta ou manga longa, com personalização em impressão Ultra HD Sublimática.',
   detalhes: [
     'Modelos: manga curta ou manga longa, com ajuste anatômico que acompanha o corpo. Masculino, do P ao XL4 (confira a tabela de medidas).',
@@ -698,11 +698,11 @@ const jaquetaMisty = {
   bg: 'linear-gradient(135deg,#e2e8f0,#334155)', badge: 'Novo',
   nome: 'Jaqueta Corta Vento Misty',
   spec: 'Tactel (92% poliéster · 8% elastano) · unissex · capuz e zíper 80 cm · do P ao XL4 · a partir de 1 un',
-  imagem: 'img/jaqueta.png',
+  imagem: 'img/jaqueta.webp',
   paginaProduto: true,
   prazo: 7,
   arteRestrita: true,
-  medidas: 'img/jaqueta-medidas.png',
+  medidas: 'img/jaqueta-medidas.webp',
   descricao: 'Buscando uma jaqueta para meia estação, que possa ser usada na academia, no pilates, no futebol de domingo ou em outros momentos do seu dia a dia? Você acabou de encontrar! Desenvolvida em tecido tactel (92% poliéster e 8% elastano) não respirável, a Jaqueta Corta Vento Misty da Print House é a opção perfeita para quem procura um casaco que proteja contra o vento e mantenha o corpo aquecido.',
   detalhes: ['A jaqueta leve corta vento tem zíper dentado jacaré de 80 cm e capuz, além de bolso frontal com forro, 8 recortes na frente, recorte em V nas costas e 3 recortes por manga. A costura é feita em máquina overloque, reta e à mão, garantindo um acabamento limpo, resistente e uniforme.', 'Uma jaqueta urbana corta vento da linha Premium, funcional para andar de moto, sair cedo pra academia ou fazer um cooper. Ideal para as mais variadas atividades físicas e do dia a dia, a Jaqueta Corta Vento Misty da Print House pode ser adquirida a partir de 1 unidade, do tamanho P ao XL4 — esse é o nosso grande diferencial. Fale com um dos nossos especialistas e faça seu orçamento!'],
   faq: [
@@ -822,14 +822,14 @@ const CATALOGO = {
     descricao: 'Kits personalizados prontos para presentear, divulgar sua marca ou compor brindes corporativos.',
     produtos: [
       { bg: 'linear-gradient(135deg,#ede9fe,#7c3aed)', badge: 'Novo', destaque: true,
-        imagem: 'img/kit-basico-3.png',
+        imagem: 'img/kit-basico-3.webp',
         nome: 'Kit Básico – 3 Itens',
         spec: '01 sacola P (papel offset fosco 180g · ~19x15x6 cm) + 01 bloquinho de anotações P (capa dura · 8x11 cm) + 01 caneta Slim Touch personalizada com gravação a laser · Consultar as cores das canetas e dos copos.',
         variacoes: [
           { label: 'Kit completo', preco: 55.90 },
         ] },
       { bg: 'linear-gradient(135deg,#fce7f3,#db2777)', badge: 'Novo', destaque: true,
-        imagem: 'img/kit-basico-plus.png',
+        imagem: 'img/kit-basico-plus.webp',
         nome: 'Kit Básico Plus – 4 Itens',
         spec: '01 sacola P (papel offset fosco 180g · ~19x15x6 cm) + 01 bloquinho de anotações P (capa dura · 8x11 cm) + 01 caneta Slim Touch personalizada com gravação a laser + 01 certificado (papel fosco 180g) · Consultar as cores das canetas e dos copos.',
         arteNota: 'A arte do certificado é enviada pelo cliente.',
@@ -838,7 +838,7 @@ const CATALOGO = {
           { label: 'Sem laço', preco: 65.00 },
         ] },
       { bg: 'linear-gradient(135deg,#fef9c3,#ca8a04)', badge: 'Novo', destaque: true,
-        imagem: 'img/kit-luxo.png',
+        imagem: 'img/kit-luxo.webp',
         nome: 'Kit Luxo – 4 Itens',
         spec: '01 sacola personalizada M (papel offset fosco 180g · ~24x17x10 cm) + 01 bloquinho de anotações P (capa dura · 8x11 cm) + 01 caneta Slim Touch com gravação a laser + 01 taça de gin · Consultar as cores das canetas e dos copos.',
         variacoes: [
@@ -855,7 +855,7 @@ const CATALOGO = {
     descricao: 'Sacolas de papel personalizadas para valorizar a entrega da sua marca.',
     produtos: [
       { bg: 'linear-gradient(135deg,#fbcfe8,#be185d)', badge: 'Novo', destaque: true,
-        imagem: 'img/sacola-silk.png',
+        imagem: 'img/sacola-silk.webp',
         nome: 'Sacola em Papel Silk Premium',
         spec: 'Papel offset 150g · impressão silk 1 cor só frente · alça de gorgurão · escolha o tamanho, a cor da sacola, a cor da estampa e a quantidade',
         prazo: 20,
@@ -880,7 +880,7 @@ const CATALOGO = {
           ],
         } },
       { bg: 'linear-gradient(135deg,#bfdbfe,#1d4ed8)', badge: 'Novo', destaque: true,
-        imagem: 'img/sacola-plastica.png',
+        imagem: 'img/sacola-plastica.webp',
         nome: 'Sacola Plástica com Alça Vazada',
         spec: 'Plástico resistente · alça vazada · impressão personalizada · escolha o tamanho, a cor da sacola, a cor da impressão e a quantidade',
         prazoTexto: 'de 3 a 7 dias úteis',
@@ -915,7 +915,7 @@ const CATALOGO = {
           ],
         } },
       { bg: 'linear-gradient(135deg,#fef3c7,#b45309)', badge: 'Novo', destaque: true,
-        imagem: 'img/sacola-alca-cordao.png',
+        imagem: 'img/sacola-alca-cordao.webp',
         nome: 'Sacola de Papel com Alça de Cordão',
         spec: 'Papel personalizado · 29 x 25 x 8 cm · alça de cordão · pedido mínimo 10 unidades',
         unidade: 'sacola', unidadePlural: 'sacolas',
@@ -972,7 +972,7 @@ const CATALOGO = {
       { bg: 'linear-gradient(135deg,#e2e8f0,#334155)', badge: 'Novo', destaque: true,
         paginaProduto: true,
         semArte: true,
-        imagem: 'img/quadro-iluminado.png',
+        imagem: 'img/quadro-iluminado.webp',
         nome: 'Quadro Iluminado LED Branco 310x425mm',
         spec: 'Estrutura de alumínio, vidro e LED branco · 310x425mm aprox. · produto sem personalização',
         descricao: 'O quadro com LED branco é ideal para quem busca uma solução moderna e elegante para destacar informações, imagens e campanhas. A iluminação uniforme valoriza a comunicação visual e cria maior destaque em ambientes comerciais, eventos e pontos de venda. Prático e versátil, pode ser utilizado com folhas personalizadas vendidas separadamente, permitindo atualizar a mensagem sempre que necessário. Invista em um quadro iluminado para valorizar sua marca.',
@@ -996,7 +996,7 @@ const CATALOGO = {
     descricao: 'Cause uma ótima primeira impressão com cartões de alta qualidade.',
     produtos: [
       { bg: 'linear-gradient(135deg,#fef08a,#ca8a04)', badge: 'Novo', prazo: 3, destaque: true,
-        imagem: 'img/cartao-visita.png',
+        imagem: 'img/cartao-visita.webp',
         nome: 'Cartão de Visita Couchê 250g',
         spec: 'Couchê 250g · UV total frente · 8,8x4,8 cm · escolha a cor e a quantidade',
         grupoLabel: 'Cor', opcaoLabel: 'Quantidade',
@@ -1024,7 +1024,7 @@ const CATALOGO = {
           ],
         } },
       { bg: 'linear-gradient(135deg,#fbcfe8,#be185d)', badge: 'Novo',
-        imagem: 'img/postal.png',
+        imagem: 'img/postal.webp',
         nome: 'Postal Couchê 250g',
         spec: 'Couchê 250g · UV total frente · 8,8x9,94 cm · escolha a cor e a quantidade',
         grupoLabel: 'Cor', opcaoLabel: 'Quantidade',
@@ -1043,7 +1043,7 @@ const CATALOGO = {
           ],
         } },
       { bg: 'linear-gradient(135deg,#ddd6fe,#6d28d9)', badge: 'Novo',
-        imagem: 'img/solapa.png',
+        imagem: 'img/solapa.webp',
         nome: 'Solapa para Embalagem',
         spec: 'Cabeçalho de embalagem (solapa) · colorido só frente · escolha o tamanho e a quantidade',
         tamanhos: {
@@ -1075,7 +1075,7 @@ const CATALOGO = {
         } },
       { bg: 'linear-gradient(135deg,#e2e8f0,#475569)', badge: 'Novo', destaque: true,
         paginaProduto: true,
-        imagem: 'img/cartao-dois-cantos.png',
+        imagem: 'img/cartao-dois-cantos.webp',
         nome: 'Cartão de Visita Dois Cantos Arredondados 300g',
         spec: 'Couchê 300g · laminação fosca · dois cantos arredondados · 8,8 × 5,08 cm · escolha a impressão e a quantidade',
         prazoTexto: 'de 3 a 5 dias úteis',
@@ -1118,7 +1118,7 @@ const CATALOGO = {
     descricao: 'Flyers em couchê 80g para divulgar promoções e serviços — escolha o tamanho, a cor e a quantidade.',
     produtos: [
       { bg: 'linear-gradient(135deg,#bfdbfe,#2563eb)', badge: 'Novo', destaque: true,
-        imagem: 'img/flyer.png',
+        imagem: 'img/flyer.webp',
         nome: 'Flyer Couchê 80g',
         spec: 'Couchê 80g · sem verniz · escolha o tamanho, a cor e a quantidade',
         /* Produto com tamanhos: o cliente escolhe o tamanho e a opção em dropdowns */
@@ -1181,7 +1181,7 @@ const CATALOGO = {
     descricao: 'Adesivos e rótulos em vinil resistente, com recorte no formato que você quiser.',
     produtos: [
       { bg: 'linear-gradient(135deg,#bbf7d0,#22c55e)', badge: 'Novo', destaque: true,
-        imagem: 'img/adesivos.png',
+        imagem: 'img/adesivos.webp',
         nome: 'Adesivos Personalizados',
         spec: 'Redondos e quadrados · impressão colorida em alta qualidade · corte especial · escolha o tamanho e a quantidade',
         grupoLabel: 'Tamanho', opcaoLabel: 'Quantidade',
@@ -1369,7 +1369,7 @@ const CATALOGO = {
     descricao: 'Banners, displays e materiais de PDV para destacar sua marca onde a venda acontece.',
     produtos: [
       { emoji: '🪧', bg: 'linear-gradient(135deg,#a5f3fc,#06b6d4)', badge: 'Novo', destaque: true,
-        imagem: 'img/banner-lona.png',
+        imagem: 'img/banner-lona.webp',
         nome: 'Banner Lona Brilho 440g',
         spec: 'Lona brilho 440g · colorido só frente · já com bastão e corda · escolha o formato',
         variacoes: [
@@ -1471,7 +1471,7 @@ const CATALOGO = {
           { label: 'Combo 10 un', preco: 98.90 },
         ] },
       { bg: 'linear-gradient(135deg,#e2e8f0,#64748b)', badge: 'Novo',
-        imagem: 'img/caneta-slim-touch.png',
+        imagem: 'img/caneta-slim-touch.webp',
         nome: 'Caneta de Metal Slim Touch',
         spec: 'Metal slim · ponta touch · gravação a laser 4x0 (4x0,4 cm) · 5 cores · Consultar as cores disponíveis.',
         variacoes: [
@@ -1484,7 +1484,7 @@ const CATALOGO = {
           { label: '1.000 un', preco: 7949.90 },
         ] },
       { emoji: '🍾', bg: 'linear-gradient(135deg,#d1d5db,#4b5563)', badge: 'Novo',
-        imagem: 'img/chaveiro-abridor.png',
+        imagem: 'img/chaveiro-abridor.webp',
         nome: 'Chaveiro Abridor de Metal — Garrafa',
         spec: 'Metal · abridor de garrafa · gravação a laser 4x0 (3,8x0,7 cm)',
         precoUnitario: 2.50,
