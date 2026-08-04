@@ -4,7 +4,7 @@
 /* Versão do catálogo: aumente em 1 sempre que alterar este arquivo.
    Edições salvas pelo painel admin em versões antigas são descartadas
    automaticamente, para que as novidades daqui sempre apareçam. */
-const CATALOGO_VERSAO = 40;
+const CATALOGO_VERSAO = 41;
 
 /* Produtos que aparecem em mais de uma categoria são definidos uma única
    vez aqui e referenciados nas categorias — sem duplicar dados. */
@@ -1517,6 +1517,7 @@ const CATALOGO = {
     descricao: 'Ecobags, cordões, camisetas e outros itens em tecido personalizados.',
     produtos: [
       { bg: 'linear-gradient(135deg,#fbcfe8,#db2777)', badge: 'Novo', destaque: true,
+        imagem: 'img/chinelo-personalizado.webp',
         nome: 'Chinelo Personalizado',
         spec: 'Borracha + EVA · impressão colorida só frente (4x0) · 26x34 cm · distribua a quantidade entre os tamanhos',
         unidade: 'chinelo', unidadePlural: 'chinelos',
