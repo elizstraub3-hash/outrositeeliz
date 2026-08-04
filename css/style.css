@@ -1004,6 +1004,7 @@ button { font-family: inherit; cursor: pointer; }
 .arte-link--pagina { display: inline-block; margin-top: .8rem; font-size: .82rem; }
 .modal--arte { z-index: 400; }
 .arte-titulo { font-size: 1.05rem; font-weight: 700; margin-bottom: .9rem; padding-right: 2rem; }
+.meus-dados__intro { font-size: .82rem; color: var(--gray); margin-bottom: 1rem; }
 .arte-regras { display: grid; gap: .55rem; }
 .arte-regras li {
   font-size: .82rem;

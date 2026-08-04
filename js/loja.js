@@ -653,6 +653,12 @@ function abrirCarrinho() {
   const btnFinalizar = modal.querySelector('.cart-finalizar');
   if (btnFinalizar) btnFinalizar.addEventListener('click', () => {
     const msg = ['Olá! Gostaria de fazer um pedido na Print House:', ''];
+    const cliente = lerDadosCliente();
+    const dadosCliente = [];
+    if (cliente.nome) dadosCliente.push(`Cliente: ${cliente.nome}`);
+    if (cliente.telefone) dadosCliente.push(`Tel: ${cliente.telefone}`);
+    if (cliente.email) dadosCliente.push(`E-mail: ${cliente.email}`);
+    if (dadosCliente.length) msg.push(dadosCliente.join(' | '), '');
     carrinho.forEach((item, i) => {
       msg.push(`${i + 1}) ${item.nome} — ${item.detalhe} — ${item.total == null ? 'valor a combinar' : 'R$ ' + formatarPreco(item.total)} — ${item.arte}${item.arquivo ? ` (arquivo: ${item.arquivo})` : ''}`);
     });
@@ -665,6 +671,63 @@ function abrirCarrinho() {
     mostrarToast('Pedido aberto no WhatsApp!');
   });
 }
+
+/* ---------- Meus dados (salvos neste navegador) ---------- */
+const DADOS_CLIENTE_KEY = 'printhouse_cliente';
+function lerDadosCliente() {
+  try { return JSON.parse(localStorage.getItem(DADOS_CLIENTE_KEY)) || {}; }
+  catch (err) { return {}; }
+}
+function salvarDadosCliente(d) {
+  localStorage.setItem(DADOS_CLIENTE_KEY, JSON.stringify(d));
+}
+function escaparAttr(v) {
+  return String(v || '').replace(/"/g, '&quot;');
+}
+function abrirMeusDados() {
+  const d = lerDadosCliente();
+  const { modal, fechar } = criarModal('Meus dados', `
+    <h3 class="arte-titulo">Meus dados</h3>
+    <p class="meus-dados__intro">Preencha uma vez e o site guarda os seus dados para agilizar o pedido no WhatsApp. As informações ficam salvas <strong>só neste navegador</strong>.</p>
+    <div class="modal__opcao">
+      <label class="modal__label" for="mdNome">Nome ou empresa</label>
+      <input class="modal__select" id="mdNome" type="text" value="${escaparAttr(d.nome)}" placeholder="Seu nome ou empresa">
+    </div>
+    <div class="modal__opcao">
+      <label class="modal__label" for="mdTel">WhatsApp / Telefone</label>
+      <input class="modal__select" id="mdTel" type="tel" value="${escaparAttr(d.telefone)}" placeholder="(41) 90000-0000">
+    </div>
+    <div class="modal__opcao">
+      <label class="modal__label" for="mdEmail">E-mail</label>
+      <input class="modal__select" id="mdEmail" type="email" value="${escaparAttr(d.email)}" placeholder="voce@email.com">
+    </div>
+    <div class="modal__foot">
+      <div class="cart-acoes">
+        <button type="button" class="btn btn--claro" id="mdLimpar">Apagar dados</button>
+        <button type="button" class="btn btn--primary" id="mdSalvar">Salvar meus dados</button>
+      </div>
+    </div>`);
+
+  modal.querySelector('#mdSalvar').addEventListener('click', () => {
+    salvarDadosCliente({
+      nome: modal.querySelector('#mdNome').value.trim(),
+      telefone: modal.querySelector('#mdTel').value.trim(),
+      email: modal.querySelector('#mdEmail').value.trim(),
+    });
+    fechar();
+    mostrarToast('Seus dados foram salvos neste navegador!');
+  });
+  modal.querySelector('#mdLimpar').addEventListener('click', () => {
+    localStorage.removeItem(DADOS_CLIENTE_KEY);
+    fechar();
+    mostrarToast('Seus dados foram apagados.');
+  });
+}
+
+/* Ícone "Meus dados" do topo abre a janela em qualquer página */
+document.querySelectorAll('.header__action--conta').forEach((el) => {
+  el.addEventListener('click', (e) => { e.preventDefault(); abrirMeusDados(); });
+});
 
 /* Ícone do carrinho abre a janela em qualquer página */
 document.querySelectorAll('.header__cart').forEach((el) => {
