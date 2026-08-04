@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tema | Print House</title>
+  <title>Busca | Print House</title>
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Print House">
-  <meta property="og:title" content="Tema | Print House">
+  <meta property="og:title" content="Busca | Print House">
   <meta property="og:description" content="Gráfica em Colombo (PR) com qualidade profissional, entrega rápida e preços justos. Cartões, sacolas, kits, brindes, apostilas, comunicação visual e muito mais.">
   <meta property="og:image" content="img/kit-churrasco.webp">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Tema | Print House">
+  <meta name="twitter:title" content="Busca | Print House">
   <meta name="twitter:description" content="Gráfica em Colombo (PR) com qualidade profissional, entrega rápida e preços justos. Cartões, sacolas, kits, brindes, apostilas, comunicação visual e muito mais.">
   <meta name="twitter:image" content="img/kit-churrasco.webp">
   <meta name="description" content="Produtos personalizados com a melhor qualidade e entrega rápida.">
@@ -89,17 +89,33 @@
     </nav>
   </header>
 
-  <!-- Banner -->
-  <section class="cat-hero" id="temaHero">
+  <!-- Banner da categoria -->
+  <section class="cat-hero" id="catHero">
     <div class="container">
-      <p class="cat-hero__breadcrumb"><a href="index.html">Início</a> / <a id="temaVoltar" href="#">Temas</a> / <span id="temaBreadcrumb">Tema</span></p>
-      <h1 id="temaTitulo">Tema</h1>
+      <p class="cat-hero__breadcrumb"><a href="index.html">Início</a> / <span id="catBreadcrumb">Categoria</span></p>
+      <h1 id="catTitulo">Categoria</h1>
+      <p class="cat-hero__desc" id="catDescricao"></p>
     </div>
   </section>
 
-  <!-- Conteúdo (produtos ou "em breve") -->
+  <!-- Produtos da categoria -->
   <section class="section">
-    <div class="container" id="temaConteudo"></div>
+    <div class="container">
+      <div class="section__head">
+        <h2 id="catSubtitulo">Produtos</h2>
+      </div>
+      <div class="products" id="catProdutos"></div>
+    </div>
+  </section>
+
+  <!-- Outras categorias -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section__head">
+        <h2>Veja também</h2>
+      </div>
+      <div class="categories" id="outrasCategorias"></div>
+    </div>
   </section>
 
   <!-- Rodapé -->
@@ -162,9 +178,9 @@
 
   <div class="toast" id="toast"></div>
 
-  <script src="js/temas.js"></script>
   <script src="js/produtos.js"></script>
+  <script src="js/temas.js"></script>
   <script src="js/loja.js"></script>
-  <script src="js/tema.js"></script>
+  <script src="js/busca.js"></script>
 </body>
 </html>

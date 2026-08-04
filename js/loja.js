@@ -709,6 +709,14 @@ function assinarNewsletter(e) {
   e.target.reset();
 }
 
+/* ---------- Busca ---------- */
+function irParaBusca(e) {
+  e.preventDefault();
+  const input = e.target.querySelector('.search__input');
+  const q = (input && input.value || '').trim();
+  if (q) window.location.href = 'busca.html?q=' + encodeURIComponent(q);
+}
+
 /* ---------- Toast ---------- */
 let toastTimer;
 function mostrarToast(msg) {
