@@ -4,7 +4,7 @@
 /* Versão do catálogo: aumente em 1 sempre que alterar este arquivo.
    Edições salvas pelo painel admin em versões antigas são descartadas
    automaticamente, para que as novidades daqui sempre apareçam. */
-const CATALOGO_VERSAO = 43;
+const CATALOGO_VERSAO = 44;
 
 /* Produtos que aparecem em mais de uma categoria são definidos uma única
    vez aqui e referenciados nas categorias — sem duplicar dados. */
@@ -985,6 +985,23 @@ const CATALOGO = {
         ],
         variacoes: [
           { label: '1 un', preco: 350.00 },
+        ] },
+    ],
+  },
+
+  'servicos-digitais': {
+    nome: 'Serviços Digitais',
+    emoji: '💻',
+    banner: 'linear-gradient(120deg,#4c1d95,#7c3aed)',
+    descricao: 'Criação de materiais digitais pela nossa equipe, entregues em arquivo — sem impressão.',
+    produtos: [
+      { bg: 'linear-gradient(135deg,#ede9fe,#6d28d9)', badge: 'Novo', destaque: true,
+        nome: 'Elaboração de Apostila ou Catálogo',
+        spec: 'Criação da arte pela nossa equipe · entregue em PDF de alta resolução · escolha o número de páginas',
+        semArte: 'Serviço de criação: nossa equipe elabora a sua apostila ou catálogo. Após a compra, envie o conteúdo (textos e imagens) pelo WhatsApp. Entregamos o arquivo final em <strong>PDF de alta resolução</strong>.',
+        variacoes: [
+          { label: 'Até 15 páginas', preco: 120.00 },
+          { label: 'Até 20 páginas', preco: 145.00 },
         ] },
     ],
   },

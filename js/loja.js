@@ -160,12 +160,15 @@ function criarModal(rotulo, conteudo) {
 
 /* Bloco "sobre a arte" exibido em todas as janelas de compra */
 function blocoArte(p) {
-  // Produtos sem personalização: não requerem arte
+  // Produtos sem personalização (ou serviços): mostra um aviso no lugar do envio de arte
   if (p && p.semArte) {
+    const txt = typeof p.semArte === 'string'
+      ? p.semArte
+      : 'Este produto é vendido <strong>sem personalização</strong> — não é necessário enviar arte.';
     return `
     <div class="modal__arte">
       <label class="modal__label">Sobre a arte:</label>
-      <p class="arte-restrita">Este produto é vendido <strong>sem personalização</strong> — não é necessário enviar arte.</p>
+      <p class="arte-restrita">${txt}</p>
     </div>`;
   }
   // Produtos com arte restrita: a arte é desenvolvida pela gráfica (detalhes técnicos)
