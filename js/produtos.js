@@ -4,7 +4,7 @@
 /* Versão do catálogo: aumente em 1 sempre que alterar este arquivo.
    Edições salvas pelo painel admin em versões antigas são descartadas
    automaticamente, para que as novidades daqui sempre apareçam. */
-const CATALOGO_VERSAO = 41;
+const CATALOGO_VERSAO = 42;
 
 /* Produtos que aparecem em mais de uma categoria são definidos uma única
    vez aqui e referenciados nas categorias — sem duplicar dados. */
@@ -1124,12 +1124,12 @@ const CATALOGO = {
         /* Produto com tamanhos: o cliente escolhe o tamanho e a opção em dropdowns */
         tamanhos: {
           '7x10 cm': [
+            { label: '2.000 un · Colorido só frente', preco: 208.90 },
+            { label: '5.000 un · Colorido só frente', preco: 297.90 },
+            { label: '10.000 un · Colorido só frente', preco: 478.90 },
             { label: '2.000 un · Colorido frente e verso', preco: 237.90 },
             { label: '5.000 un · Colorido frente e verso', preco: 358.90 },
             { label: '10.000 un · Colorido frente e verso', preco: 493.90 },
-            { label: '2.500 un · Colorido só frente', preco: 1559.90 },
-            { label: '5.000 un · Colorido só frente', preco: 2850.90 },
-            { label: '10.000 un · Colorido só frente', preco: 5553.90 },
           ],
           '14x10 cm': [
             { label: '1.000 un · Colorido só frente', preco: 139.90 },
@@ -1169,6 +1169,16 @@ const CATALOGO = {
             { label: '2.500 un · Colorido frente e verso', preco: 601.90 },
             { label: '5.000 un · Colorido frente e verso', preco: 897.90 },
             { label: '10.000 un · Colorido frente e verso', preco: 1756.90 },
+          ],
+          '20x21 cm': [
+            { label: '1.000 un · Colorido só frente', preco: 417.90 },
+            { label: '2.500 un · Colorido só frente', preco: 774.90 },
+            { label: '5.000 un · Colorido só frente', preco: 1414.90 },
+            { label: '10.000 un · Colorido só frente', preco: 2826.90 },
+            { label: '1.000 un · Colorido frente e verso', preco: 511.90 },
+            { label: '2.500 un · Colorido frente e verso', preco: 892.90 },
+            { label: '5.000 un · Colorido frente e verso', preco: 1615.90 },
+            { label: '10.000 un · Colorido frente e verso', preco: 3228.90 },
           ],
         } },
     ],
