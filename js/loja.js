@@ -696,6 +696,42 @@ document.addEventListener('click', (e) => {
   else abrirVariacoes(produto);
 });
 
+/* ---------- Lightbox: ampliar a imagem do produto ---------- */
+function abrirLightbox(src, alt) {
+  let lb = document.getElementById('lightbox');
+  if (!lb) {
+    lb = document.createElement('div');
+    lb.id = 'lightbox';
+    lb.className = 'lightbox';
+    lb.innerHTML = '<button class="lightbox__close" aria-label="Fechar">&times;</button><img class="lightbox__img" alt="">';
+    document.body.appendChild(lb);
+    lb.addEventListener('click', (e) => {
+      if (e.target === lb || e.target.closest('.lightbox__close')) fecharLightbox();
+    });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') fecharLightbox(); });
+  }
+  const img = lb.querySelector('.lightbox__img');
+  img.src = src;
+  img.alt = alt || '';
+  lb.classList.add('is-open');
+  document.body.style.overflow = 'hidden';
+}
+function fecharLightbox() {
+  const lb = document.getElementById('lightbox');
+  if (lb) lb.classList.remove('is-open');
+  document.body.style.overflow = '';
+}
+
+/* Clicar na foto do card abre o lightbox (quando há foto de verdade) */
+document.addEventListener('click', (e) => {
+  const area = e.target.closest('.product-card__img');
+  if (!area) return;
+  const img = area.querySelector('img');
+  if (!img) return; // cards com ícone (sem foto) seguem o link normalmente
+  e.preventDefault();
+  abrirLightbox(img.src, img.alt);
+});
+
 /* ---------- Cupom ---------- */
 function copiarCupom() {
   if (navigator.clipboard) navigator.clipboard.writeText('BEMVINDO10');

@@ -22,6 +22,10 @@ if (!prod) {
   const foto = document.getElementById('prodFoto');
   foto.style.background = prod.bg;
   foto.innerHTML = prod.imagem ? `<img src="${prod.imagem}" alt="${prod.nome}">` : ICONE_PRODUTO;
+  if (prod.imagem) {
+    foto.style.cursor = 'zoom-in';
+    foto.addEventListener('click', () => abrirLightbox(prod.imagem, prod.nome));
+  }
 
   document.getElementById('prodNome').textContent = prod.nome;
   document.getElementById('prodSpec').textContent = prod.spec;
