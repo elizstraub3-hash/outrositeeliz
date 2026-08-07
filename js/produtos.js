@@ -4,7 +4,7 @@
 /* Versão do catálogo: aumente em 1 sempre que alterar este arquivo.
    Edições salvas pelo painel admin em versões antigas são descartadas
    automaticamente, para que as novidades daqui sempre apareçam. */
-const CATALOGO_VERSAO = 50;
+const CATALOGO_VERSAO = 51;
 
 /* Produtos que aparecem em mais de uma categoria são definidos uma única
    vez aqui e referenciados nas categorias — sem duplicar dados. */
@@ -827,6 +827,98 @@ const forminhasDoces = {
   ],
 };
 
+/* Caixinha Milk — aparece em Festas e em Embalagens */
+const caixinhaMilk = {
+  bg: 'linear-gradient(135deg,#fbcfe8,#c026d3)', badge: 'Novo', destaque: true,
+  nome: 'Caixinha Milk Personalizada',
+  spec: 'Caixinha Milk personalizada · pedido mínimo 10 unidades · produção: 50 un em 5 dias úteis · 100 un em 8 dias úteis',
+  prazoTexto: 'de 5 a 8 dias úteis',
+  unidade: 'caixinha', unidadePlural: 'caixinhas',
+  minimoTotal: 10,
+  opcoesCombinacao: [
+    { nome: 'Sem laço', faixas: [{ min: 1, preco: 4.50 }] },
+    { nome: 'Com laço', faixas: [{ min: 1, preco: 5.00 }] },
+  ],
+};
+
+/* Sacolas — aparecem na categoria Sacolas e também em Embalagens */
+const sacolaSilk = {
+  bg: 'linear-gradient(135deg,#fbcfe8,#be185d)', badge: 'Novo', destaque: true,
+  imagem: 'img/sacola-silk.webp',
+  nome: 'Sacola em Papel Silk Premium',
+  spec: 'Papel offset 150g · impressão silk 1 cor só frente · alça de gorgurão · escolha o tamanho, a cor da sacola, a cor da estampa e a quantidade',
+  prazo: 20,
+  grupoLabel: 'Tamanho', opcaoLabel: 'Quantidade',
+  coresEstampa: ['Azul', 'Branco', 'Kraft/Dourado', 'Prata/Cinza', 'Rosa', 'Verde', 'Vermelho'],
+  coresPorTamanho: {
+    'P (15x8x14 cm)': ['Lilás', 'Creme', 'Branco', 'Preto', 'Azul'],
+    'M (34x9x23 cm)': ['Creme', 'Azul', 'Branco', 'Preto'],
+  },
+  tamanhos: {
+    'P (15x8x14 cm)': [
+      { label: '10 un', preco: 274.90 },
+      { label: '25 un', preco: 412.90 },
+      { label: '50 un', preco: 645.90 },
+      { label: '100 un', preco: 1105.90 },
+    ],
+    'M (34x9x23 cm)': [
+      { label: '10 un', preco: 361.90 },
+      { label: '25 un', preco: 603.90 },
+      { label: '50 un', preco: 1077.90 },
+      { label: '100 un', preco: 1939.90 },
+    ],
+  },
+};
+const sacolaPlastica = {
+  bg: 'linear-gradient(135deg,#bfdbfe,#1d4ed8)', badge: 'Novo', destaque: true,
+  imagem: 'img/sacola-plastica.webp',
+  nome: 'Sacola Plástica com Alça Vazada',
+  spec: 'Plástico resistente · alça vazada · impressão personalizada · escolha o tamanho, a cor da sacola, a cor da impressão e a quantidade',
+  prazoTexto: 'de 3 a 7 dias úteis',
+  grupoLabel: 'Tamanho', opcaoLabel: 'Quantidade',
+  coresEstampa: ['Azul Claro', 'Branco', 'Dourado', 'Cinza', 'Preto', 'Rosa Pink', 'Verde', 'Vermelho'],
+  coresPorTamanho: {
+    'P': CORES_SACOLA_PLASTICA,
+    'M': CORES_SACOLA_PLASTICA,
+    'G': CORES_SACOLA_PLASTICA,
+  },
+  tamanhos: {
+    'P': [
+      { label: '50 un', preco: 192.90 },
+      { label: '100 un', preco: 237.90 },
+      { label: '250 un', preco: 379.90 },
+      { label: '500 un', preco: 613.90 },
+      { label: '1.000 un', preco: 1110.90 },
+    ],
+    'M': [
+      { label: '50 un', preco: 210.90 },
+      { label: '100 un', preco: 283.90 },
+      { label: '250 un', preco: 508.90 },
+      { label: '500 un', preco: 880.90 },
+      { label: '1.000 un', preco: 1645.90 },
+    ],
+    'G': [
+      { label: '50 un', preco: 294.90 },
+      { label: '100 un', preco: 433.90 },
+      { label: '250 un', preco: 885.90 },
+      { label: '500 un', preco: 1645.90 },
+      { label: '1.000 un', preco: 3258.90 },
+    ],
+  },
+};
+const sacolaCordao = {
+  bg: 'linear-gradient(135deg,#fef3c7,#b45309)', badge: 'Novo', destaque: true,
+  imagem: 'img/sacola-alca-cordao.webp',
+  nome: 'Sacola de Papel com Alça de Cordão',
+  spec: 'Papel personalizado · 29 x 25 x 8 cm · alça de cordão · pedido mínimo 10 unidades',
+  unidade: 'sacola', unidadePlural: 'sacolas',
+  minimoTotal: 10,
+  opcoesCombinacao: [
+    { nome: 'Alça Branca', faixas: [{ min: 1, preco: 6.50 }] },
+    { nome: 'Alça Colorida (conforme identidade visual)', faixas: [{ min: 1, preco: 7.00 }] },
+  ],
+};
+
 const CATALOGO = {
   'kits': {
     nome: 'Kits',
@@ -867,76 +959,9 @@ const CATALOGO = {
     banner: 'linear-gradient(120deg,#9d174d,#f472b6)',
     descricao: 'Sacolas de papel personalizadas para valorizar a entrega da sua marca.',
     produtos: [
-      { bg: 'linear-gradient(135deg,#fbcfe8,#be185d)', badge: 'Novo', destaque: true,
-        imagem: 'img/sacola-silk.webp',
-        nome: 'Sacola em Papel Silk Premium',
-        spec: 'Papel offset 150g · impressão silk 1 cor só frente · alça de gorgurão · escolha o tamanho, a cor da sacola, a cor da estampa e a quantidade',
-        prazo: 20,
-        grupoLabel: 'Tamanho', opcaoLabel: 'Quantidade',
-        coresEstampa: ['Azul', 'Branco', 'Kraft/Dourado', 'Prata/Cinza', 'Rosa', 'Verde', 'Vermelho'],
-        coresPorTamanho: {
-          'P (15x8x14 cm)': ['Lilás', 'Creme', 'Branco', 'Preto', 'Azul'],
-          'M (34x9x23 cm)': ['Creme', 'Azul', 'Branco', 'Preto'],
-        },
-        tamanhos: {
-          'P (15x8x14 cm)': [
-            { label: '10 un', preco: 274.90 },
-            { label: '25 un', preco: 412.90 },
-            { label: '50 un', preco: 645.90 },
-            { label: '100 un', preco: 1105.90 },
-          ],
-          'M (34x9x23 cm)': [
-            { label: '10 un', preco: 361.90 },
-            { label: '25 un', preco: 603.90 },
-            { label: '50 un', preco: 1077.90 },
-            { label: '100 un', preco: 1939.90 },
-          ],
-        } },
-      { bg: 'linear-gradient(135deg,#bfdbfe,#1d4ed8)', badge: 'Novo', destaque: true,
-        imagem: 'img/sacola-plastica.webp',
-        nome: 'Sacola Plástica com Alça Vazada',
-        spec: 'Plástico resistente · alça vazada · impressão personalizada · escolha o tamanho, a cor da sacola, a cor da impressão e a quantidade',
-        prazoTexto: 'de 3 a 7 dias úteis',
-        grupoLabel: 'Tamanho', opcaoLabel: 'Quantidade',
-        coresEstampa: ['Azul Claro', 'Branco', 'Dourado', 'Cinza', 'Preto', 'Rosa Pink', 'Verde', 'Vermelho'],
-        coresPorTamanho: {
-          'P': CORES_SACOLA_PLASTICA,
-          'M': CORES_SACOLA_PLASTICA,
-          'G': CORES_SACOLA_PLASTICA,
-        },
-        tamanhos: {
-          'P': [
-            { label: '50 un', preco: 192.90 },
-            { label: '100 un', preco: 237.90 },
-            { label: '250 un', preco: 379.90 },
-            { label: '500 un', preco: 613.90 },
-            { label: '1.000 un', preco: 1110.90 },
-          ],
-          'M': [
-            { label: '50 un', preco: 210.90 },
-            { label: '100 un', preco: 283.90 },
-            { label: '250 un', preco: 508.90 },
-            { label: '500 un', preco: 880.90 },
-            { label: '1.000 un', preco: 1645.90 },
-          ],
-          'G': [
-            { label: '50 un', preco: 294.90 },
-            { label: '100 un', preco: 433.90 },
-            { label: '250 un', preco: 885.90 },
-            { label: '500 un', preco: 1645.90 },
-            { label: '1.000 un', preco: 3258.90 },
-          ],
-        } },
-      { bg: 'linear-gradient(135deg,#fef3c7,#b45309)', badge: 'Novo', destaque: true,
-        imagem: 'img/sacola-alca-cordao.webp',
-        nome: 'Sacola de Papel com Alça de Cordão',
-        spec: 'Papel personalizado · 29 x 25 x 8 cm · alça de cordão · pedido mínimo 10 unidades',
-        unidade: 'sacola', unidadePlural: 'sacolas',
-        minimoTotal: 10,
-        opcoesCombinacao: [
-          { nome: 'Alça Branca', faixas: [{ min: 1, preco: 6.50 }] },
-          { nome: 'Alça Colorida (conforme identidade visual)', faixas: [{ min: 1, preco: 7.00 }] },
-        ] },
+      sacolaSilk,
+      sacolaPlastica,
+      sacolaCordao,
     ],
   },
 
@@ -1037,16 +1062,7 @@ const CATALOGO = {
           { label: 'Elaborado em 3D', preco: 55.90 },
         ] },
       forminhasDoces,
-      { bg: 'linear-gradient(135deg,#fbcfe8,#c026d3)', badge: 'Novo', destaque: true,
-        nome: 'Caixinha Milk Personalizada',
-        spec: 'Caixinha Milk personalizada · pedido mínimo 10 unidades · produção: 50 un em 5 dias úteis · 100 un em 8 dias úteis',
-        prazoTexto: 'de 5 a 8 dias úteis',
-        unidade: 'caixinha', unidadePlural: 'caixinhas',
-        minimoTotal: 10,
-        opcoesCombinacao: [
-          { nome: 'Sem laço', faixas: [{ min: 1, preco: 4.50 }] },
-          { nome: 'Com laço', faixas: [{ min: 1, preco: 5.00 }] },
-        ] },
+      caixinhaMilk,
     ],
   },
 
@@ -1359,6 +1375,10 @@ const CATALOGO = {
     descricao: 'Embalagens personalizadas que valorizam seu produto do delivery à prateleira.',
     produtos: [
       forminhasDoces,
+      caixinhaMilk,
+      sacolaSilk,
+      sacolaPlastica,
+      sacolaCordao,
       { emoji: '🛍️', bg: 'linear-gradient(135deg,#ffedd5,#fb923c)',
         nome: 'Sacola de Papel', spec: 'Alça torcida · impressão 4x0',
         variacoes: [
