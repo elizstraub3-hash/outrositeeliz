@@ -63,7 +63,7 @@ const EVENTOS = [
 const PRODUTOS_TEMA = {
   'dia-dos-pais': ['Kit Churrasco', 'Jaqueta Corta Vento Misty'],
   'educacao': ['Kit Básico – 3 Itens', 'Kit Básico Plus – 4 Itens'],
-  'aniversario-infantil': ['Topo de Bolo Personalizado'],
+  'aniversario-infantil': ['Topo de Bolo Personalizado', 'Forminhas para Doces (100 un)'],
 };
 
 // anexa a lista de produtos ao item do tema correspondente
