@@ -4,7 +4,7 @@
 /* Versão do catálogo: aumente em 1 sempre que alterar este arquivo.
    Edições salvas pelo painel admin em versões antigas são descartadas
    automaticamente, para que as novidades daqui sempre apareçam. */
-const CATALOGO_VERSAO = 52;
+const CATALOGO_VERSAO = 53;
 
 /* Produtos que aparecem em mais de uma categoria são definidos uma única
    vez aqui e referenciados nas categorias — sem duplicar dados. */
@@ -945,10 +945,10 @@ const CATALOGO = {
       { bg: 'linear-gradient(135deg,#fef9c3,#ca8a04)', badge: 'Novo', destaque: true,
         imagem: 'img/kit-luxo.webp',
         nome: 'Kit Luxo – 4 Itens',
-        spec: '01 sacola personalizada M (papel offset fosco 180g · ~24x17x10 cm) + 01 bloquinho de anotações P (capa dura · 8x11 cm) + 01 caneta Slim Touch com gravação a laser + 01 taça de gin · Consultar as cores das canetas e dos copos.',
+        spec: '01 sacola personalizada M (papel offset fosco 180g · ~24x17x10 cm) + 01 bloquinho de anotações P (capa dura · 8x11 cm) + 01 caneta Slim Touch com gravação a laser + 01 taça de gin (com ou sem laço) · Consultar as cores das canetas e dos copos.',
         variacoes: [
-          { label: 'Com laço', preco: null },
-          { label: 'Sem laço', preco: null },
+          { label: 'All Black', preco: 145.00 },
+          { label: 'Colorido', preco: 135.00 },
         ] },
     ],
   },
