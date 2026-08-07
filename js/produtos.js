@@ -4,7 +4,7 @@
 /* Versão do catálogo: aumente em 1 sempre que alterar este arquivo.
    Edições salvas pelo painel admin em versões antigas são descartadas
    automaticamente, para que as novidades daqui sempre apareçam. */
-const CATALOGO_VERSAO = 51;
+const CATALOGO_VERSAO = 52;
 
 /* Produtos que aparecem em mais de uma categoria são definidos uma única
    vez aqui e referenciados nas categorias — sem duplicar dados. */
@@ -928,7 +928,7 @@ const CATALOGO = {
     produtos: [
       { bg: 'linear-gradient(135deg,#ede9fe,#7c3aed)', badge: 'Novo', destaque: true,
         imagem: 'img/kit-basico-3.webp',
-        nome: 'Kit Básico – 3 Itens',
+        nome: 'Kit All Black – 3 Itens',
         spec: '01 sacola P (papel offset fosco 180g · ~19x15x6 cm) + 01 bloquinho de anotações P (capa dura · 8x11 cm) + 01 caneta Slim Touch personalizada com gravação a laser · Consultar as cores das canetas e dos copos.',
         variacoes: [
           { label: 'Kit completo', preco: 55.90 },
