@@ -4,7 +4,7 @@
 /* Versão do catálogo: aumente em 1 sempre que alterar este arquivo.
    Edições salvas pelo painel admin em versões antigas são descartadas
    automaticamente, para que as novidades daqui sempre apareçam. */
-const CATALOGO_VERSAO = 47;
+const CATALOGO_VERSAO = 48;
 
 /* Produtos que aparecem em mais de uma categoria são definidos uma única
    vez aqui e referenciados nas categorias — sem duplicar dados. */
@@ -1013,6 +1013,7 @@ const CATALOGO = {
     descricao: 'Topos de bolo e itens personalizados para deixar a sua festa com a sua cara.',
     produtos: [
       { bg: 'linear-gradient(135deg,#fbcfe8,#db2777)', badge: 'Novo', destaque: true,
+        imagem: 'img/topo-bolo.webp',
         nome: 'Topo de Bolo Personalizado',
         spec: 'Recorte em lamicote com canudo transparente · folha 21x39 cm (recorte o que quiser) · escolha o modelo',
         prazoTexto: 'de 1 a 5 dias úteis',
@@ -1023,6 +1024,7 @@ const CATALOGO = {
           { label: 'Elaborado em 3D', preco: 55.90 },
         ] },
       { bg: 'linear-gradient(135deg,#fde68a,#f59e0b)', badge: 'Novo', destaque: true,
+        imagem: 'img/forminhas-doces.webp',
         nome: 'Forminhas para Doces (100 un)',
         spec: 'Forminhas personalizadas para doces · kit com 100 unidades · escolha o modelo',
         prazoTexto: 'de 2 a 5 dias úteis',
