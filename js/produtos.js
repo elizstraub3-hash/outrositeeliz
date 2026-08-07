@@ -4,7 +4,7 @@
 /* Versão do catálogo: aumente em 1 sempre que alterar este arquivo.
    Edições salvas pelo painel admin em versões antigas são descartadas
    automaticamente, para que as novidades daqui sempre apareçam. */
-const CATALOGO_VERSAO = 45;
+const CATALOGO_VERSAO = 46;
 
 /* Produtos que aparecem em mais de uma categoria são definidos uma única
    vez aqui e referenciados nas categorias — sem duplicar dados. */
@@ -1021,6 +1021,14 @@ const CATALOGO = {
           { label: 'Em 3D com fundo', preco: 25.90 },
           { label: 'Elaborado com várias peças de um tema', preco: 49.90 },
           { label: 'Elaborado em 3D', preco: 55.90 },
+        ] },
+      { bg: 'linear-gradient(135deg,#fde68a,#f59e0b)', badge: 'Novo', destaque: true,
+        nome: 'Forminhas para Doces (100 un)',
+        spec: 'Forminhas personalizadas para doces · kit com 100 unidades · escolha o modelo',
+        prazoTexto: 'de 2 a 5 dias úteis',
+        variacoes: [
+          { label: '100 un · Simples', preco: 29.90 },
+          { label: '100 un · Em 3D', preco: 55.90 },
         ] },
     ],
   },
