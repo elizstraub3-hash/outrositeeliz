@@ -246,6 +246,7 @@ button { font-family: inherit; cursor: pointer; }
 .hero__slide--2 { background: linear-gradient(120deg, #0f2d5c 0%, #1d5fd1 60%, #4aa3ff 100%); }
 .hero__slide--3 { background: linear-gradient(120deg, #14532d 0%, #16a34a 60%, #6ee7a0 100%); }
 .hero__slide--4 { background: linear-gradient(120deg, #4a044e 0%, #a21caf 55%, #e879f9 100%); }
+.hero__slide--5 { background: linear-gradient(120deg, #0f172a 0%, #334155 55%, #94a3b8 100%); }
 
 .hero__content { max-width: 640px; }
 .hero__tag {
