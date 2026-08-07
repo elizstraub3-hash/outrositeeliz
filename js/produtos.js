@@ -4,7 +4,7 @@
 /* Versão do catálogo: aumente em 1 sempre que alterar este arquivo.
    Edições salvas pelo painel admin em versões antigas são descartadas
    automaticamente, para que as novidades daqui sempre apareçam. */
-const CATALOGO_VERSAO = 44;
+const CATALOGO_VERSAO = 45;
 
 /* Produtos que aparecem em mais de uma categoria são definidos uma única
    vez aqui e referenciados nas categorias — sem duplicar dados. */
@@ -1002,6 +1002,25 @@ const CATALOGO = {
         variacoes: [
           { label: 'Até 15 páginas', preco: 120.00 },
           { label: 'Até 20 páginas', preco: 145.00 },
+        ] },
+    ],
+  },
+
+  'festas': {
+    nome: 'Festas',
+    emoji: '🎉',
+    banner: 'linear-gradient(120deg,#be123c,#fb7185)',
+    descricao: 'Topos de bolo e itens personalizados para deixar a sua festa com a sua cara.',
+    produtos: [
+      { bg: 'linear-gradient(135deg,#fbcfe8,#db2777)', badge: 'Novo', destaque: true,
+        nome: 'Topo de Bolo Personalizado',
+        spec: 'Recorte em lamicote com canudo transparente · folha 21x39 cm (recorte o que quiser) · escolha o modelo',
+        prazoTexto: 'de 1 a 5 dias úteis',
+        variacoes: [
+          { label: 'Simples (recorte em lamicote)', preco: 15.90 },
+          { label: 'Em 3D com fundo', preco: 25.90 },
+          { label: 'Elaborado com várias peças de um tema', preco: 49.90 },
+          { label: 'Elaborado em 3D', preco: 55.90 },
         ] },
     ],
   },
