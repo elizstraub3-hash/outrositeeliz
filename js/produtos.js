@@ -4,7 +4,7 @@
 /* Versão do catálogo: aumente em 1 sempre que alterar este arquivo.
    Edições salvas pelo painel admin em versões antigas são descartadas
    automaticamente, para que as novidades daqui sempre apareçam. */
-const CATALOGO_VERSAO = 53;
+const CATALOGO_VERSAO = 54;
 
 /* Produtos que aparecem em mais de uma categoria são definidos uma única
    vez aqui e referenciados nas categorias — sem duplicar dados. */
@@ -1489,11 +1489,23 @@ const CATALOGO = {
           { label: '250 un', preco: 199.90 },
         ] },
       { bg: 'linear-gradient(135deg,#a7f3d0,#059669)', badge: 'Novo',
-        nome: 'Display Pix em Acrílico',
-        spec: 'Acrílico cristal 2mm · colorido só frente · UV direta · 15x10 cm horizontal · arte única',
-        variacoes: [
-          { label: '1 un', preco: 39.90 },
-        ] },
+        nome: 'Display em Acrílico (Arte Única)',
+        spec: 'Acrílico cristal 2mm · colorido só frente · UV direta · arte única · escolha a orientação e a quantidade',
+        grupoLabel: 'Orientação', opcaoLabel: 'Quantidade',
+        tamanhos: {
+          '15x10 cm horizontal': [
+            { label: '1 un', preco: 32.90 },
+            { label: '5 un', preco: 142.90 },
+            { label: '10 un', preco: 269.90 },
+            { label: '25 un', preco: 599.90 },
+          ],
+          '10x15 cm vertical': [
+            { label: '1 un', preco: 32.90 },
+            { label: '5 un', preco: 142.90 },
+            { label: '10 un', preco: 269.90 },
+            { label: '25 un', preco: 599.90 },
+          ],
+        } },
       { bg: 'linear-gradient(135deg,#fde68a,#b45309)', badge: 'Novo',
         nome: 'Cubo de Papel',
         spec: 'Couchê 300g · colorido só frente · UV total · 8x8 cm',
