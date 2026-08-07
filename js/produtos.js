@@ -4,7 +4,7 @@
 /* Versão do catálogo: aumente em 1 sempre que alterar este arquivo.
    Edições salvas pelo painel admin em versões antigas são descartadas
    automaticamente, para que as novidades daqui sempre apareçam. */
-const CATALOGO_VERSAO = 48;
+const CATALOGO_VERSAO = 50;
 
 /* Produtos que aparecem em mais de uma categoria são definidos uma única
    vez aqui e referenciados nas categorias — sem duplicar dados. */
@@ -814,6 +814,19 @@ const canetaPersonalizada = {
 /* Cores das sacolas plásticas com alça vazada (mesmas cores para todos os tamanhos) */
 const CORES_SACOLA_PLASTICA = ['Amarelo', 'Azul', 'Azul Royal Transparente', 'Branco', 'Cobre', 'Laranja', 'Pink', 'Prata', 'Preto', 'Roxo', 'Transparente', 'Verde', 'Vermelho', 'Verde Tiffany'];
 
+/* Forminhas para doces — aparece em Festas e em Embalagens */
+const forminhasDoces = {
+  bg: 'linear-gradient(135deg,#fde68a,#f59e0b)', badge: 'Novo', destaque: true,
+  imagem: 'img/forminhas-doces.webp',
+  nome: 'Forminhas para Doces (100 un)',
+  spec: 'Forminhas personalizadas para doces · kit com 100 unidades · escolha o modelo',
+  prazoTexto: 'de 2 a 5 dias úteis',
+  variacoes: [
+    { label: '100 un · Simples', preco: 29.90 },
+    { label: '100 un · Em 3D', preco: 55.90 },
+  ],
+};
+
 const CATALOGO = {
   'kits': {
     nome: 'Kits',
@@ -1023,15 +1036,7 @@ const CATALOGO = {
           { label: 'Elaborado com várias peças de um tema', preco: 49.90 },
           { label: 'Elaborado em 3D', preco: 55.90 },
         ] },
-      { bg: 'linear-gradient(135deg,#fde68a,#f59e0b)', badge: 'Novo', destaque: true,
-        imagem: 'img/forminhas-doces.webp',
-        nome: 'Forminhas para Doces (100 un)',
-        spec: 'Forminhas personalizadas para doces · kit com 100 unidades · escolha o modelo',
-        prazoTexto: 'de 2 a 5 dias úteis',
-        variacoes: [
-          { label: '100 un · Simples', preco: 29.90 },
-          { label: '100 un · Em 3D', preco: 55.90 },
-        ] },
+      forminhasDoces,
       { bg: 'linear-gradient(135deg,#fbcfe8,#c026d3)', badge: 'Novo', destaque: true,
         nome: 'Caixinha Milk Personalizada',
         spec: 'Caixinha Milk personalizada · pedido mínimo 10 unidades · produção: 50 un em 5 dias úteis · 100 un em 8 dias úteis',
@@ -1353,6 +1358,7 @@ const CATALOGO = {
     banner: 'linear-gradient(120deg,#9a3412,#f97316)',
     descricao: 'Embalagens personalizadas que valorizam seu produto do delivery à prateleira.',
     produtos: [
+      forminhasDoces,
       { emoji: '🛍️', bg: 'linear-gradient(135deg,#ffedd5,#fb923c)',
         nome: 'Sacola de Papel', spec: 'Alça torcida · impressão 4x0',
         variacoes: [
