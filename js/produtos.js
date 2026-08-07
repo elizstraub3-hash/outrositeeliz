@@ -4,7 +4,7 @@
 /* Versão do catálogo: aumente em 1 sempre que alterar este arquivo.
    Edições salvas pelo painel admin em versões antigas são descartadas
    automaticamente, para que as novidades daqui sempre apareçam. */
-const CATALOGO_VERSAO = 46;
+const CATALOGO_VERSAO = 47;
 
 /* Produtos que aparecem em mais de uma categoria são definidos uma única
    vez aqui e referenciados nas categorias — sem duplicar dados. */
@@ -1029,6 +1029,16 @@ const CATALOGO = {
         variacoes: [
           { label: '100 un · Simples', preco: 29.90 },
           { label: '100 un · Em 3D', preco: 55.90 },
+        ] },
+      { bg: 'linear-gradient(135deg,#fbcfe8,#c026d3)', badge: 'Novo', destaque: true,
+        nome: 'Caixinha Milk Personalizada',
+        spec: 'Caixinha Milk personalizada · pedido mínimo 10 unidades · produção: 50 un em 5 dias úteis · 100 un em 8 dias úteis',
+        prazoTexto: 'de 5 a 8 dias úteis',
+        unidade: 'caixinha', unidadePlural: 'caixinhas',
+        minimoTotal: 10,
+        opcoesCombinacao: [
+          { nome: 'Sem laço', faixas: [{ min: 1, preco: 4.50 }] },
+          { nome: 'Com laço', faixas: [{ min: 1, preco: 5.00 }] },
         ] },
     ],
   },
