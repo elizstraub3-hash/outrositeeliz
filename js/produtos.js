@@ -4,7 +4,7 @@
 /* Versão do catálogo: aumente em 1 sempre que alterar este arquivo.
    Edições salvas pelo painel admin em versões antigas são descartadas
    automaticamente, para que as novidades daqui sempre apareçam. */
-const CATALOGO_VERSAO = 55;
+const CATALOGO_VERSAO = 56;
 
 /* Produtos que aparecem em mais de uma categoria são definidos uma única
    vez aqui e referenciados nas categorias — sem duplicar dados. */
@@ -1535,6 +1535,35 @@ const CATALOGO = {
     ],
   },
 
+  'wind-banner': {
+    nome: 'Wind Banner',
+    emoji: '🚩',
+    banner: 'linear-gradient(120deg,#0369a1,#38bdf8)',
+    descricao: 'Wind banners (bandeiras de vento) para divulgar sua marca em eventos, lojas e calçadas. Escolha a base e o tamanho.',
+    produtos: [
+      { emoji: '🚩', bg: 'linear-gradient(135deg,#bae6fd,#0284c7)', badge: 'Novo', destaque: true,
+        nome: 'Wind Banner Personalizado',
+        spec: 'Tecido com impressão colorida · kit completo com mastro · escolha a base e o tamanho',
+        grupoLabel: 'Base', opcaoLabel: 'Tamanho',
+        tamanhos: {
+          'Com base plástica': [
+            { label: '1,50 × 0,50 m', preco: 184.85 },
+            { label: '2,00 × 0,75 m', preco: 207.35 },
+            { label: '2,20 × 0,75 m', preco: 214.85 },
+            { label: '2,50 × 0,75 m', preco: 222.35 },
+            { label: '3,00 × 0,75 m', preco: 237.35 },
+          ],
+          'Com base de concreto': [
+            { label: '1,50 × 0,50 m', preco: 139.85 },
+            { label: '2,00 × 0,75 m', preco: 162.35 },
+            { label: '2,20 × 0,75 m', preco: 169.85 },
+            { label: '2,50 × 0,75 m', preco: 177.35 },
+            { label: '3,00 × 0,75 m', preco: 192.35 },
+          ],
+        } },
+    ],
+  },
+
   'copos': {
     nome: 'Copos',
     emoji: '🥤',
@@ -1562,6 +1591,7 @@ const CATALOGO = {
       copoCuia,
       kitChurrasco,
       { bg: 'linear-gradient(135deg,#d6d3d1,#78716c)', badge: 'Novo', destaque: true,
+        imagem: 'img/gravacao-mdf.webp',
         nome: 'Gravação a Laser em MDF (item do cliente)',
         spec: 'Gravação a laser 4x0 em item de MDF trazido pelo cliente · até 30 cm · 10+ itens R$ 15,90/un · menos de 10 itens R$ 25,00/un',
         prazoTexto: 'de 3 a 5 dias úteis',
