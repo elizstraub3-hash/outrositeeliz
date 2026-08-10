@@ -4,7 +4,7 @@
 /* Versão do catálogo: aumente em 1 sempre que alterar este arquivo.
    Edições salvas pelo painel admin em versões antigas são descartadas
    automaticamente, para que as novidades daqui sempre apareçam. */
-const CATALOGO_VERSAO = 54;
+const CATALOGO_VERSAO = 55;
 
 /* Produtos que aparecem em mais de uma categoria são definidos uma única
    vez aqui e referenciados nas categorias — sem duplicar dados. */
@@ -830,6 +830,7 @@ const forminhasDoces = {
 /* Caixinha Milk — aparece em Festas e em Embalagens */
 const caixinhaMilk = {
   bg: 'linear-gradient(135deg,#fbcfe8,#c026d3)', badge: 'Novo', destaque: true,
+  imagem: 'img/caixinha-milk.webp',
   nome: 'Caixinha Milk Personalizada',
   spec: 'Caixinha Milk personalizada · pedido mínimo 10 unidades · produção: 50 un em 5 dias úteis · 100 un em 8 dias úteis',
   prazoTexto: 'de 5 a 8 dias úteis',
@@ -972,6 +973,7 @@ const CATALOGO = {
     descricao: 'Apostilas e materiais didáticos personalizados para cursos, treinamentos e escolas.',
     produtos: [
       { bg: 'linear-gradient(135deg,#dbeafe,#1d4ed8)', badge: 'Novo', destaque: true,
+        imagem: 'img/apostila.webp',
         nome: 'Apostila Personalizada',
         spec: 'Monte a sua apostila folha a folha: escolha o tipo de folha, a quantidade e some capa e contra capa se quiser',
         prazoTexto: 'de 1 a 3 dias úteis',
@@ -1034,6 +1036,7 @@ const CATALOGO = {
     descricao: 'Criação de materiais digitais pela nossa equipe, entregues em arquivo — sem impressão.',
     produtos: [
       { bg: 'linear-gradient(135deg,#ede9fe,#6d28d9)', badge: 'Novo', destaque: true,
+        imagem: 'img/servico-design.webp',
         nome: 'Elaboração de Apostila ou Catálogo',
         spec: 'Criação da arte pela nossa equipe · entregue em PDF de alta resolução · escolha o número de páginas',
         semArte: 'Serviço de criação: nossa equipe elabora a sua apostila ou catálogo. Após a compra, envie o conteúdo (textos e imagens) pelo WhatsApp. Entregamos o arquivo final em <strong>PDF de alta resolução</strong>.',
@@ -1489,6 +1492,7 @@ const CATALOGO = {
           { label: '250 un', preco: 199.90 },
         ] },
       { bg: 'linear-gradient(135deg,#a7f3d0,#059669)', badge: 'Novo',
+        imagem: 'img/display-acrilico.webp',
         nome: 'Display em Acrílico (Arte Única)',
         spec: 'Acrílico cristal 2mm · colorido só frente · UV direta · arte única · escolha a orientação e a quantidade',
         grupoLabel: 'Orientação', opcaoLabel: 'Quantidade',
