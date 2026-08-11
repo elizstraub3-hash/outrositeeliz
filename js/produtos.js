@@ -4,7 +4,7 @@
 /* Versão do catálogo: aumente em 1 sempre que alterar este arquivo.
    Edições salvas pelo painel admin em versões antigas são descartadas
    automaticamente, para que as novidades daqui sempre apareçam. */
-const CATALOGO_VERSAO = 58;
+const CATALOGO_VERSAO = 59;
 
 /* Produtos que aparecem em mais de uma categoria são definidos uma única
    vez aqui e referenciados nas categorias — sem duplicar dados. */
@@ -814,6 +814,23 @@ const canetaPersonalizada = {
 /* Cores das sacolas plásticas com alça vazada (mesmas cores para todos os tamanhos) */
 const CORES_SACOLA_PLASTICA = ['Amarelo', 'Azul', 'Azul Royal Transparente', 'Branco', 'Cobre', 'Laranja', 'Pink', 'Prata', 'Preto', 'Roxo', 'Transparente', 'Verde', 'Vermelho', 'Verde Tiffany'];
 
+/* Chinelo personalizado — vai em Brindes (calçado/lembrancinha) */
+const chineloPersonalizado = {
+  bg: 'linear-gradient(135deg,#fbcfe8,#db2777)', badge: 'Novo', destaque: true,
+  imagem: 'img/chinelo-personalizado.webp',
+  nome: 'Chinelo Personalizado',
+  spec: 'Borracha + EVA · impressão colorida só frente (4x0) · 26x34 cm · distribua a quantidade entre os tamanhos',
+  unidade: 'chinelo', unidadePlural: 'chinelos',
+  opcoesCombinacao: [
+    { nome: 'Tam. 33/34', faixas: [{ min: 1, preco: 29.90 }] },
+    { nome: 'Tam. 35/36', faixas: [{ min: 1, preco: 29.90 }] },
+    { nome: 'Tam. 37/38', faixas: [{ min: 1, preco: 29.90 }] },
+    { nome: 'Tam. 39/40', faixas: [{ min: 1, preco: 29.90 }] },
+    { nome: 'Tam. 41/42', faixas: [{ min: 1, preco: 29.90 }] },
+    { nome: 'Tam. 43/44', faixas: [{ min: 1, preco: 29.90 }] },
+  ],
+};
+
 /* Forminhas para doces — aparece em Festas e em Embalagens */
 const forminhasDoces = {
   bg: 'linear-gradient(135deg,#fde68a,#f59e0b)', badge: 'Novo', destaque: true,
@@ -1397,6 +1414,7 @@ const CATALOGO = {
     banner: 'linear-gradient(120deg,#be185d,#ec4899)',
     descricao: 'Brindes personalizados que mantêm sua marca na memória (e na mão) dos clientes.',
     produtos: [
+      chineloPersonalizado,
       copoCuia,
       canetaPersonalizada,
       { emoji: '🔑', bg: 'linear-gradient(135deg,#fecdd3,#fb7185)',
@@ -1577,6 +1595,7 @@ const CATALOGO = {
           { label: '500 un', preco: 457.90 },
           { label: '1.000 un', preco: 622.90 },
         ] },
+      bolsaHaste,
     ],
   },
 
@@ -1697,21 +1716,8 @@ const CATALOGO = {
     nome: 'Linha Têxtil',
     emoji: '👕',
     banner: 'linear-gradient(120deg,#9d174d,#ec4899)',
-    descricao: 'Ecobags, cordões, camisetas e outros itens em tecido personalizados.',
+    descricao: 'Camisetas, moletons, ecobags, toalhas e outros itens em tecido personalizados.',
     produtos: [
-      { bg: 'linear-gradient(135deg,#fbcfe8,#db2777)', badge: 'Novo', destaque: true,
-        imagem: 'img/chinelo-personalizado.webp',
-        nome: 'Chinelo Personalizado',
-        spec: 'Borracha + EVA · impressão colorida só frente (4x0) · 26x34 cm · distribua a quantidade entre os tamanhos',
-        unidade: 'chinelo', unidadePlural: 'chinelos',
-        opcoesCombinacao: [
-          { nome: 'Tam. 33/34', faixas: [{ min: 1, preco: 29.90 }] },
-          { nome: 'Tam. 35/36', faixas: [{ min: 1, preco: 29.90 }] },
-          { nome: 'Tam. 37/38', faixas: [{ min: 1, preco: 29.90 }] },
-          { nome: 'Tam. 39/40', faixas: [{ min: 1, preco: 29.90 }] },
-          { nome: 'Tam. 41/42', faixas: [{ min: 1, preco: 29.90 }] },
-          { nome: 'Tam. 43/44', faixas: [{ min: 1, preco: 29.90 }] },
-        ] },
       jaquetaMisty,
       camisaAmericana,
       camisaCiclismo,
@@ -1719,12 +1725,11 @@ const CATALOGO = {
       camisaPesca,
       camisetaDryMasc,
       camisetaDryFem,
+      camisetaDtf,
       ecobagPersonalizada,
       cordaoPersonalizado,
       toalhaBanho,
       toalhaRosto,
-      bolsaHaste,
-      camisetaDtf,
     ],
   },
 
