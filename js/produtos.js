@@ -4,7 +4,7 @@
 /* Versão do catálogo: aumente em 1 sempre que alterar este arquivo.
    Edições salvas pelo painel admin em versões antigas são descartadas
    automaticamente, para que as novidades daqui sempre apareçam. */
-const CATALOGO_VERSAO = 57;
+const CATALOGO_VERSAO = 58;
 
 /* Produtos que aparecem em mais de uma categoria são definidos uma única
    vez aqui e referenciados nas categorias — sem duplicar dados. */
@@ -1362,6 +1362,7 @@ const CATALOGO = {
           { p: 'Onde posso aplicar os adesivos DTF UV?', r: 'Eles podem ser aplicados em brindes, embalagens, copos, papelaria criativa e diversos produtos personalizados.' },
         ] },
       { bg: 'linear-gradient(135deg,#bbf7d0,#16a34a)', badge: 'Novo',
+        imagem: 'img/adesivo-brilha-escuro.webp',
         nome: 'Adesivo Brilha no Escuro',
         spec: 'Adesivo que brilha no escuro · escolha o formato ou a cartela',
         prazo: 7,
@@ -1374,6 +1375,7 @@ const CATALOGO = {
           { label: '5 cartelas · 434x279 mm', preco: 135.00 },
         ] },
       { bg: 'linear-gradient(135deg,#a7f3d0,#059669)', badge: 'Novo',
+        imagem: 'img/adesivo-cartao-credito.webp',
         nome: 'Adesivo para Cartão de Crédito',
         spec: 'Adesivo personalizado para cartão/máquina · preço menor no atacado',
         prazo: 2,
