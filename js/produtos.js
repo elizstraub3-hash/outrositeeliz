@@ -4,7 +4,7 @@
 /* Versão do catálogo: aumente em 1 sempre que alterar este arquivo.
    Edições salvas pelo painel admin em versões antigas são descartadas
    automaticamente, para que as novidades daqui sempre apareçam. */
-const CATALOGO_VERSAO = 56;
+const CATALOGO_VERSAO = 57;
 
 /* Produtos que aparecem em mais de uma categoria são definidos uma única
    vez aqui e referenciados nas categorias — sem duplicar dados. */
@@ -1343,6 +1343,49 @@ const CATALOGO = {
             { label: 'A combinar', preco: null },
           ],
         } },
+      { bg: 'linear-gradient(135deg,#d9f99d,#65a30d)', badge: 'Novo', destaque: true,
+        paginaProduto: true,
+        nome: 'Adesivo DTF UV',
+        spec: 'Adesivo em DTF UV · alta definição, brilho e acabamento premium · escolha o tamanho',
+        prazoTexto: 'de 2 a 3 dias úteis',
+        descricao: 'Adesivo personalizado produzido com tecnologia DTF UV, que oferece alta definição, brilho e acabamento premium. Ideal para brindes, embalagens, copos, papelaria criativa e diversos produtos personalizados.',
+        variacoes: [
+          { label: 'Na medida 40x29 cm (folha com adesivos)', preco: 98.00 },
+          { label: 'Cartela A4 · 29x20 cm', preco: 55.00 },
+          { label: 'Cartela A3 · 29x40 cm', preco: 85.00 },
+          { label: 'Meio metro', preco: 110.00 },
+          { label: '1 metro', preco: 135.00 },
+        ],
+        faq: [
+          { p: 'O que é o Adesivo DTF UV?', r: 'É um adesivo personalizado produzido com tecnologia DTF UV, que oferece alta definição, brilho e acabamento premium.' },
+          { p: 'Quais tamanhos estão disponíveis?', r: 'Trabalhamos com cartelas nos tamanhos A4 e A3.' },
+          { p: 'Onde posso aplicar os adesivos DTF UV?', r: 'Eles podem ser aplicados em brindes, embalagens, copos, papelaria criativa e diversos produtos personalizados.' },
+        ] },
+      { bg: 'linear-gradient(135deg,#bbf7d0,#16a34a)', badge: 'Novo',
+        nome: 'Adesivo Brilha no Escuro',
+        spec: 'Adesivo que brilha no escuro · escolha o formato ou a cartela',
+        prazo: 7,
+        variacoes: [
+          { label: '204x184 mm', preco: 35.00 },
+          { label: '279x204 mm', preco: 45.00 },
+          { label: '434x279 mm', preco: 55.00 },
+          { label: '5 cartelas · 20,4x18,4 cm', preco: 80.00 },
+          { label: '5 cartelas · 279x204 mm', preco: 105.00 },
+          { label: '5 cartelas · 434x279 mm', preco: 135.00 },
+        ] },
+      { bg: 'linear-gradient(135deg,#a7f3d0,#059669)', badge: 'Novo',
+        nome: 'Adesivo para Cartão de Crédito',
+        spec: 'Adesivo personalizado para cartão/máquina · preço menor no atacado',
+        prazo: 2,
+        variacoes: [
+          { label: '1 un', preco: 25.90 },
+          { label: '5 un', preco: 21.99 },
+          { label: '10 un', preco: 23.99 },
+          { label: '20 un', preco: 31.99 },
+          { label: '30 un', preco: 36.99 },
+          { label: '50 un', preco: 47.99 },
+          { label: '100 un', preco: 72.99 },
+        ] },
     ],
   },
 
