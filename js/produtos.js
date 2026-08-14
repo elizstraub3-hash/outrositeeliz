@@ -4,7 +4,7 @@
 /* Versão do catálogo: aumente em 1 sempre que alterar este arquivo.
    Edições salvas pelo painel admin em versões antigas são descartadas
    automaticamente, para que as novidades daqui sempre apareçam. */
-const CATALOGO_VERSAO = 61;
+const CATALOGO_VERSAO = 62;
 
 /* Produtos que aparecem em mais de uma categoria são definidos uma única
    vez aqui e referenciados nas categorias — sem duplicar dados. */
@@ -78,14 +78,28 @@ const kitChurrasco = {
 };
 
 const camisetaDtf = {
-  bg: 'linear-gradient(135deg,#ddd6fe,#8b5cf6)', badge: 'Novo',
+  bg: 'linear-gradient(135deg,#ddd6fe,#8b5cf6)', badge: 'Promoção',
   imagem: 'img/camiseta-dtf.webp',
-  nome: 'Camiseta DTF UV', spec: 'Algodão premium · cores vibrantes',
-  variacoes: [
-    { label: '10 un', preco: 349.90 },
-    { label: '25 un', preco: 824.90 },
-    { label: '50 un', preco: 1549.90 },
-  ],
+  nome: 'Camiseta DTF UV',
+  spec: 'Algodão · estampa DTF UV · feminina ou masculina · tamanhos P ao GG · cores conforme disponibilidade em estoque',
+  grupoLabel: 'Impressão', opcaoLabel: 'Tamanho',
+  extra: { label: 'Modelo', opcoes: ['Feminino', 'Masculino'] },
+  coresLabel: 'Cor',
+  coresEstampa: ['Preta', 'Branca', 'Vermelha', 'Azul Marinho', 'Amarelo'],
+  tamanhos: {
+    'Colorido só frente': [
+      { label: 'P', preco: 39.90 },
+      { label: 'M', preco: 39.90 },
+      { label: 'G', preco: 39.90 },
+      { label: 'GG', preco: 39.90 },
+    ],
+    'Colorido frente e verso (promoção)': [
+      { label: 'P', preco: 49.90 },
+      { label: 'M', preco: 49.90 },
+      { label: 'G', preco: 49.90 },
+      { label: 'GG', preco: 49.90 },
+    ],
+  },
 };
 
 const ecobagPersonalizada = {

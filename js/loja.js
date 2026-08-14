@@ -332,7 +332,7 @@ function abrirTamanhos(p) {
     </div>` : ''}
     ${p.coresEstampa ? `
     <div class="modal__opcao">
-      <label class="modal__label" for="modalCorEstampa">Cor da estampa:</label>
+      <label class="modal__label" for="modalCorEstampa">${p.coresLabel || 'Cor da estampa'}:</label>
       <select class="modal__select" id="modalCorEstampa">
         ${p.coresEstampa.map((c) => `<option>${c}</option>`).join('')}
       </select>
@@ -408,7 +408,7 @@ function abrirTamanhos(p) {
     if (extraSel) partes.push(extraSel.value);
     partes.push(selTamanho.value, v.label);
     if (selCorSacola && selCorSacola.value) partes.push(`Sacola: ${selCorSacola.value}`);
-    if (corEstampaSel) partes.push(`Estampa: ${corEstampaSel.value}`);
+    if (corEstampaSel) partes.push(`${p.coresLabel || 'Estampa'}: ${corEstampaSel.value}`);
     if (furo) partes.push('Com furos');
     const detalhe = partes.join(' · ');
     const arte = arteEscolhida(modal);
