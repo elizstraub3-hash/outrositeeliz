@@ -4,7 +4,7 @@
 /* Versão do catálogo: aumente em 1 sempre que alterar este arquivo.
    Edições salvas pelo painel admin em versões antigas são descartadas
    automaticamente, para que as novidades daqui sempre apareçam. */
-const CATALOGO_VERSAO = 60;
+const CATALOGO_VERSAO = 61;
 
 /* Produtos que aparecem em mais de uma categoria são definidos uma única
    vez aqui e referenciados nas categorias — sem duplicar dados. */
@@ -860,6 +860,19 @@ const caixinhaMilk = {
   ],
 };
 
+/* Caixa de presente cartonada — aparece em Embalagens */
+const caixaPresente = {
+  bg: 'linear-gradient(135deg,#1f2937,#f59e0b)', badge: 'Novo', destaque: true,
+  imagem: 'img/caixa-presente.webp',
+  nome: 'Caixa de Presente Personalizada',
+  spec: 'Caixa cartonada · acabamento vinil · logo ou escrita em dourado no topo · forro interno à sua escolha',
+  prazoTexto: 'de 5 dias úteis',
+  variacoes: [
+    { label: 'Com laço', preco: 12.90 },
+    { label: 'Toda preta com correntinha dourada', preco: 55.90 },
+  ],
+};
+
 /* Sacolas — aparecem na categoria Sacolas e também em Embalagens */
 const sacolaSilk = {
   bg: 'linear-gradient(135deg,#fbcfe8,#be185d)', badge: 'Novo', destaque: true,
@@ -1441,6 +1454,7 @@ const CATALOGO = {
     banner: 'linear-gradient(120deg,#9a3412,#f97316)',
     descricao: 'Embalagens personalizadas que valorizam seu produto do delivery à prateleira.',
     produtos: [
+      caixaPresente,
       forminhasDoces,
       caixinhaMilk,
       sacolaSilk,
