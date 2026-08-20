@@ -4,7 +4,7 @@
 /* Versão do catálogo: aumente em 1 sempre que alterar este arquivo.
    Edições salvas pelo painel admin em versões antigas são descartadas
    automaticamente, para que as novidades daqui sempre apareçam. */
-const CATALOGO_VERSAO = 64;
+const CATALOGO_VERSAO = 65;
 
 /* Produtos que aparecem em mais de uma categoria são definidos uma única
    vez aqui e referenciados nas categorias — sem duplicar dados. */
@@ -99,6 +99,35 @@ const camisetaDtf = {
       { label: 'G', preco: 49.90 },
       { label: 'GG', preco: 49.90 },
     ],
+  },
+};
+
+/* Camisa Copa (mesmas faixas de preço para todos os tamanhos) */
+const FAIXAS_CAMISA_COPA = [
+  { label: '1 un', preco: 169.90 },
+  { label: '5 un', preco: 838.90 },
+  { label: '10 un', preco: 1660.90 },
+  { label: '20 un', preco: 3291.90 },
+  { label: '30 un', preco: 4890.90 },
+  { label: '40 un', preco: 6457.90 },
+  { label: '50 un', preco: 7995.90 },
+  { label: '100 un', preco: 15837.90 },
+];
+const camisaCopa = {
+  bg: 'linear-gradient(135deg,#fde047,#16a34a)', badge: 'Novo', destaque: true,
+  nome: 'Camisa Copa Personalizada',
+  spec: 'Tecido Profit · leve, confortável e resistente · tamanhos P ao XL4 · escolha o tamanho e a quantidade',
+  prazo: 7,
+  grupoLabel: 'Tamanho', opcaoLabel: 'Quantidade',
+  tamanhos: {
+    'P': FAIXAS_CAMISA_COPA,
+    'M': FAIXAS_CAMISA_COPA,
+    'G': FAIXAS_CAMISA_COPA,
+    'GG': FAIXAS_CAMISA_COPA,
+    'XL1': FAIXAS_CAMISA_COPA,
+    'XL2': FAIXAS_CAMISA_COPA,
+    'XL3': FAIXAS_CAMISA_COPA,
+    'XL4': FAIXAS_CAMISA_COPA,
   },
 };
 
@@ -1772,6 +1801,7 @@ const CATALOGO = {
     descricao: 'Camisetas, moletons, ecobags, toalhas e outros itens em tecido personalizados.',
     produtos: [
       jaquetaMisty,
+      camisaCopa,
       camisaAmericana,
       camisaCiclismo,
       moletomCanguru,
