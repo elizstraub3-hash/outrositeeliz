@@ -17,6 +17,10 @@ if (nomesPais.length) {
   secaoPais.remove();
 }
 
+/* ---------- Vitrine "Impressão Rápida" ---------- */
+const secaoImpressao = document.getElementById('produtosImpressaoRapida');
+if (secaoImpressao) secaoImpressao.innerHTML = cardsPorNomes(['Impressão Rápida (por folha)']);
+
 /* ---------- Grade de categorias (cada uma abre sua própria página) ---------- */
 document.getElementById('categorias').innerHTML =
   Object.entries(CATALOGO)

@@ -4,7 +4,7 @@
 /* Versão do catálogo: aumente em 1 sempre que alterar este arquivo.
    Edições salvas pelo painel admin em versões antigas são descartadas
    automaticamente, para que as novidades daqui sempre apareçam. */
-const CATALOGO_VERSAO = 62;
+const CATALOGO_VERSAO = 63;
 
 /* Produtos que aparecem em mais de uma categoria são definidos uma única
    vez aqui e referenciados nas categorias — sem duplicar dados. */
@@ -1029,6 +1029,28 @@ const CATALOGO = {
           { nome: 'Folha Preta — Matte 170g', faixas: [{ min: 1, preco: 2.00 }] },
           { nome: 'Folha Colorida — Sulfite 75g', faixas: [{ min: 1, preco: 1.50 }] },
           { nome: 'Folha Preto e Branco — Sulfite 75g', faixas: [{ min: 1, preco: 1.00 }] },
+        ] },
+    ],
+  },
+
+  'impressao-rapida': {
+    nome: 'Impressão Rápida',
+    emoji: '🖨️',
+    banner: 'linear-gradient(120deg,#0f766e,#14b8a6)',
+    descricao: 'Impressão em jato de tinta na hora: escolha o papel e a cor, conte quantas folhas quiser e pronto.',
+    produtos: [
+      { bg: 'linear-gradient(135deg,#ccfbf1,#0d9488)', badge: 'Novo', destaque: true,
+        nome: 'Impressão Rápida (por folha)',
+        spec: 'Impressão em jato de tinta · escolha o papel e a cor e some quantas folhas quiser',
+        prazoTexto: 'na hora / no mesmo dia',
+        unidade: 'folha', unidadePlural: 'folhas',
+        opcoesCombinacao: [
+          { nome: 'Sulfite 75g · Preto e Branco', faixas: [{ min: 1, preco: 0.50 }] },
+          { nome: 'Sulfite 75g · Colorido', faixas: [{ min: 1, preco: 1.00 }] },
+          { nome: 'Sulfite 90g · Colorido', faixas: [{ min: 1, preco: 1.50 }] },
+          { nome: 'Couché 120g · Colorido', faixas: [{ min: 1, preco: 2.00 }] },
+          { nome: 'Couché 180g · Colorido', faixas: [{ min: 1, preco: 2.50 }] },
+          { nome: 'Couché 250g · Colorido', faixas: [{ min: 1, preco: 3.00 }] },
         ] },
     ],
   },

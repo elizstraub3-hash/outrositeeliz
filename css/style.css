@@ -339,6 +339,7 @@ button { font-family: inherit; cursor: pointer; }
 .section__head h2 { font-size: clamp(1.4rem, 3vw, 1.9rem); font-weight: 700; }
 .section__link { color: var(--primary); font-weight: 600; font-size: .9rem; }
 .section__link:hover { text-decoration: underline; }
+.section__sub { color: var(--gray); font-size: .95rem; margin: -1rem 0 1.6rem; max-width: 60ch; }
 
 /* ============ Produtos ============ */
 .products {
