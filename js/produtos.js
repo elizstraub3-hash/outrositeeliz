@@ -4,7 +4,7 @@
 /* Versão do catálogo: aumente em 1 sempre que alterar este arquivo.
    Edições salvas pelo painel admin em versões antigas são descartadas
    automaticamente, para que as novidades daqui sempre apareçam. */
-const CATALOGO_VERSAO = 68;
+const CATALOGO_VERSAO = 69;
 
 /* Produtos que aparecem em mais de uma categoria são definidos uma única
    vez aqui e referenciados nas categorias — sem duplicar dados. */
@@ -226,10 +226,11 @@ const camisetaDryMasc = {
   prazo: 7,
   paginaProduto: true,
   medidas: 'img/camiseta-masc-medidas.webp',
-  descricao: 'Camiseta tipo Dry Fit — conforto e estilo em um único produto! Feita com uma malha especial que absorve o suor, mantendo você seco e confortável mesmo em dias quentes ou após uma atividade física. Personalizável com a sua arte e com 3 opções de gola: Brasil, redonda e V.',
+  descricao: 'Camiseta tipo Dry Fit — conforto e estilo em um único produto! Feita com uma malha especial que absorve o suor, mantendo você seco e confortável mesmo em dias quentes ou após uma atividade física. Importante: a malha é rústica e NÃO é elástica. Personalizável com a sua arte e com 3 opções de gola: Brasil, redonda e V.',
   detalhes: [
     'Composição: 100% poliéster com tecnologia Dry Fit.',
-    'Vantagens: leve, respirável, elástico e durável, com propriedades que ajudam a controlar odores.',
+    'A malha é rústica e não é elástica (não estica).',
+    'Vantagens: leve, respirável e durável, com propriedades que ajudam a controlar odores.',
     'Golas disponíveis: Brasil, redonda e V.',
     'Usos: uniformes de empresa, times esportivos, festas e eventos, identificação de equipes e funcionários, brindes de fim de ano e muito mais.',
     'Cuidados: lave em água fria, evite amaciante em excesso e não seque em altas temperaturas.',
@@ -237,13 +238,18 @@ const camisetaDryMasc = {
   faq: [
     { p: 'O que é Dry Fit?', r: 'Um sistema de malha que absorve a umidade do corpo e evita que ela se acumule na pele, trazendo sensação de frescor e leveza mesmo em dias quentes ou após atividade física intensa.' },
     { p: 'Qual a composição da camisa?', r: 'É confeccionada em tecido 100% poliéster com tecnologia Dry Fit, deixando o usuário seco e confortável.' },
-    { p: 'Quais são as vantagens do Dry Fit?', r: 'É leve, respirável, elástico e durável. Também pode ter propriedades antimicrobianas que ajudam a controlar odores.' },
+    { p: 'Quais são as vantagens do Dry Fit?', r: 'É leve, respirável e durável, e pode ter propriedades antimicrobianas que ajudam a controlar odores. Obs.: a malha é rústica e não é elástica.' },
     { p: 'Posso usar só para atividades físicas?', r: 'Não! Serve para uniformes de empresa, times esportivos, festas e eventos, identificação de equipes e funcionários, brindes de fim de ano e muito mais.' },
     { p: 'Como cuidar da camiseta?', r: 'Verifique as indicações de lavagem na etiqueta. Evite o uso intenso de amaciantes, lave em água fria e evite secar em altas temperaturas.' },
     { p: 'Posso personalizar do jeito que eu quiser?', r: 'Sim! Confira o gabarito da área de personalização e solte a criatividade — nosso objetivo é entregar a qualidade de sempre.' },
   ],
   grupoLabel: 'Tamanho', opcaoLabel: 'Quantidade',
   extra: { label: 'Gola', opcoes: ['Gola Brasil', 'Gola Redonda', 'Gola V'] },
+  extraImagens: {
+    'Gola Brasil': 'img/camiseta-masc-gola-brasil.webp',
+    'Gola Redonda': 'img/camiseta-masc.webp',
+    'Gola V': 'img/camiseta-masc-gola-v.webp',
+  },
   tamanhos: {
     'P': FAIXAS_DRYFIT_MASC,
     'M': FAIXAS_DRYFIT_MASC,

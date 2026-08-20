@@ -257,7 +257,7 @@ function abrirRegulamentoArte() {
 function cabecalhoModal(p) {
   return `
     <div class="modal__head">
-      <div class="modal__thumb" style="background:${p.bg}">${p.imagem ? `<img src="${p.imagem}" alt="${p.nome}">` : ''}</div>
+      <div class="modal__thumb" style="background:${p.bg}">${p.imagem ? `<img id="modalThumbImg" src="${p.imagem}" alt="${p.nome}">` : ''}</div>
       <div>
         <h3>${p.nome}</h3>
         <p>${p.spec}</p>
@@ -397,6 +397,17 @@ function abrirTamanhos(p) {
   selTamanho.addEventListener('change', preencherOpcoes);
   selOpcao.addEventListener('change', atualizarTotal);
   if (chkFuro) chkFuro.addEventListener('change', atualizarTotal);
+
+  // Troca a foto do produto conforme a opção extra (ex.: gola da camiseta)
+  const selExtraImg = modal.querySelector('#modalExtra');
+  const thumbImg = modal.querySelector('#modalThumbImg');
+  if (selExtraImg && thumbImg && p.extraImagens) {
+    selExtraImg.addEventListener('change', () => {
+      const nova = p.extraImagens[selExtraImg.value];
+      if (nova) thumbImg.src = nova;
+    });
+  }
+
   preencherOpcoes();
 
   modal.querySelector('.modal__add').addEventListener('click', () => {
