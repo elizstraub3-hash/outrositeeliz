@@ -4,7 +4,7 @@
 /* Versão do catálogo: aumente em 1 sempre que alterar este arquivo.
    Edições salvas pelo painel admin em versões antigas são descartadas
    automaticamente, para que as novidades daqui sempre apareçam. */
-const CATALOGO_VERSAO = 72;
+const CATALOGO_VERSAO = 73;
 
 /* Produtos que aparecem em mais de uma categoria são definidos uma única
    vez aqui e referenciados nas categorias — sem duplicar dados. */
@@ -1142,6 +1142,13 @@ const CATALOGO = {
         variacoes: [
           { label: 'Até 15 páginas', preco: 120.00 },
           { label: 'Até 20 páginas', preco: 145.00 },
+        ] },
+      { bg: 'linear-gradient(135deg,#c7d2fe,#4338ca)', badge: 'Promoção', destaque: true,
+        nome: 'Mini Site (até 50 itens)',
+        spec: 'Mini site profissional com até 50 itens · de R$ 480,00 por R$ 250,00 na promoção',
+        semArte: 'Mini site profissional com até 50 itens. Valor promocional de R$ 250,00 (normalmente R$ 480,00). O <strong>domínio (endereço do site) fica por conta do cliente</strong> — valores a partir de R$ 11,00 (consultar com a gráfica). Após a compra, envie o seu conteúdo (textos, imagens e itens) pelo WhatsApp.',
+        variacoes: [
+          { label: 'Até 50 itens (promoção)', preco: 250.00 },
         ] },
     ],
   },
