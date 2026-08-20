@@ -4,7 +4,7 @@
 /* Versão do catálogo: aumente em 1 sempre que alterar este arquivo.
    Edições salvas pelo painel admin em versões antigas são descartadas
    automaticamente, para que as novidades daqui sempre apareçam. */
-const CATALOGO_VERSAO = 67;
+const CATALOGO_VERSAO = 68;
 
 /* Produtos que aparecem em mais de uma categoria são definidos uma única
    vez aqui e referenciados nas categorias — sem duplicar dados. */
@@ -209,7 +209,7 @@ const cordaoPersonalizado = {
 };
 
 const FAIXAS_DRYFIT_MASC = [
-  { label: '1 un', preco: 54.90 },
+  { label: '1 un', preco: 99.90 },
   { label: '5 un', preco: 268.90 },
   { label: '10 un', preco: 534.90 },
   { label: '20 un', preco: 1065.90 },
