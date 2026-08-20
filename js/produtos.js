@@ -4,7 +4,7 @@
 /* Versão do catálogo: aumente em 1 sempre que alterar este arquivo.
    Edições salvas pelo painel admin em versões antigas são descartadas
    automaticamente, para que as novidades daqui sempre apareçam. */
-const CATALOGO_VERSAO = 66;
+const CATALOGO_VERSAO = 67;
 
 /* Produtos que aparecem em mais de uma categoria são definidos uma única
    vez aqui e referenciados nas categorias — sem duplicar dados. */
@@ -208,66 +208,51 @@ const cordaoPersonalizado = {
   ],
 };
 
+const FAIXAS_DRYFIT_MASC = [
+  { label: '1 un', preco: 54.90 },
+  { label: '5 un', preco: 268.90 },
+  { label: '10 un', preco: 534.90 },
+  { label: '20 un', preco: 1065.90 },
+  { label: '30 un', preco: 1591.90 },
+  { label: '40 un', preco: 2116.90 },
+  { label: '50 un', preco: 2637.90 },
+  { label: '100 un', preco: 5259.90 },
+];
 const camisetaDryMasc = {
   bg: 'linear-gradient(135deg,#e0f2fe,#0369a1)', badge: 'Novo',
   imagem: 'img/camiseta-masc.webp',
   nome: 'Camiseta Dry Fit Masculina',
-  spec: 'Dry Fit · poliéster (rústico, sem elasticidade) · estampa personalizada · do P ao XL4',
-  prazo: 10,
+  spec: 'Tipo Dry Fit · 100% poliéster · malha que absorve o suor · 3 golas (Brasil, redonda e V) · do P ao XL4',
+  prazo: 7,
   paginaProduto: true,
   medidas: 'img/camiseta-masc-medidas.webp',
-  descricao: 'Camiseta Dry Fit em poliéster, com toque rústico e sem elasticidade — ideal para esportes, corridas, times, eventos e uso no dia a dia. Estampa personalizada com a sua arte. Disponível do tamanho P ao XL4.',
-  detalhes: ['Material: poliéster, tecido rústico e sem elasticidade. Modelagem do P ao XL4 (medidas podem variar 2 cm para mais ou para menos).'],
+  descricao: 'Camiseta tipo Dry Fit — conforto e estilo em um único produto! Feita com uma malha especial que absorve o suor, mantendo você seco e confortável mesmo em dias quentes ou após uma atividade física. Personalizável com a sua arte e com 3 opções de gola: Brasil, redonda e V.',
+  detalhes: [
+    'Composição: 100% poliéster com tecnologia Dry Fit.',
+    'Vantagens: leve, respirável, elástico e durável, com propriedades que ajudam a controlar odores.',
+    'Golas disponíveis: Brasil, redonda e V.',
+    'Usos: uniformes de empresa, times esportivos, festas e eventos, identificação de equipes e funcionários, brindes de fim de ano e muito mais.',
+    'Cuidados: lave em água fria, evite amaciante em excesso e não seque em altas temperaturas.',
+  ],
+  faq: [
+    { p: 'O que é Dry Fit?', r: 'Um sistema de malha que absorve a umidade do corpo e evita que ela se acumule na pele, trazendo sensação de frescor e leveza mesmo em dias quentes ou após atividade física intensa.' },
+    { p: 'Qual a composição da camisa?', r: 'É confeccionada em tecido 100% poliéster com tecnologia Dry Fit, deixando o usuário seco e confortável.' },
+    { p: 'Quais são as vantagens do Dry Fit?', r: 'É leve, respirável, elástico e durável. Também pode ter propriedades antimicrobianas que ajudam a controlar odores.' },
+    { p: 'Posso usar só para atividades físicas?', r: 'Não! Serve para uniformes de empresa, times esportivos, festas e eventos, identificação de equipes e funcionários, brindes de fim de ano e muito mais.' },
+    { p: 'Como cuidar da camiseta?', r: 'Verifique as indicações de lavagem na etiqueta. Evite o uso intenso de amaciantes, lave em água fria e evite secar em altas temperaturas.' },
+    { p: 'Posso personalizar do jeito que eu quiser?', r: 'Sim! Confira o gabarito da área de personalização e solte a criatividade — nosso objetivo é entregar a qualidade de sempre.' },
+  ],
   grupoLabel: 'Tamanho', opcaoLabel: 'Quantidade',
+  extra: { label: 'Gola', opcoes: ['Gola Brasil', 'Gola Redonda', 'Gola V'] },
   tamanhos: {
-          'P': [
-            { label: '1 un', preco: 75.90 },
-            { label: '5 un', preco: 299.90 },
-            { label: '10 un', preco: 575.90 },
-            { label: '20 un', preco: 1120.90 },
-          ],
-          'M': [
-            { label: '1 un', preco: 75.90 },
-            { label: '5 un', preco: 299.90 },
-            { label: '10 un', preco: 575.90 },
-            { label: '20 un', preco: 1120.90 },
-          ],
-          'G': [
-            { label: '1 un', preco: 75.90 },
-            { label: '5 un', preco: 299.90 },
-            { label: '10 un', preco: 575.90 },
-            { label: '20 un', preco: 1120.90 },
-          ],
-          'GG': [
-            { label: '1 un', preco: 75.90 },
-            { label: '5 un', preco: 299.90 },
-            { label: '10 un', preco: 575.90 },
-            { label: '20 un', preco: 1120.90 },
-          ],
-          'XL1': [
-            { label: '1 un', preco: 75.90 },
-            { label: '5 un', preco: 299.90 },
-            { label: '10 un', preco: 575.90 },
-            { label: '20 un', preco: 1120.90 },
-          ],
-          'XL2': [
-            { label: '1 un', preco: 75.90 },
-            { label: '5 un', preco: 299.90 },
-            { label: '10 un', preco: 575.90 },
-            { label: '20 un', preco: 1120.90 },
-          ],
-          'XL3': [
-            { label: '1 un', preco: 75.90 },
-            { label: '5 un', preco: 299.90 },
-            { label: '10 un', preco: 575.90 },
-            { label: '20 un', preco: 1120.90 },
-          ],
-          'XL4': [
-            { label: '1 un', preco: 75.90 },
-            { label: '5 un', preco: 299.90 },
-            { label: '10 un', preco: 575.90 },
-            { label: '20 un', preco: 1120.90 },
-          ],
+    'P': FAIXAS_DRYFIT_MASC,
+    'M': FAIXAS_DRYFIT_MASC,
+    'G': FAIXAS_DRYFIT_MASC,
+    'GG': FAIXAS_DRYFIT_MASC,
+    'XL1': FAIXAS_DRYFIT_MASC,
+    'XL2': FAIXAS_DRYFIT_MASC,
+    'XL3': FAIXAS_DRYFIT_MASC,
+    'XL4': FAIXAS_DRYFIT_MASC,
   },
 };
 
