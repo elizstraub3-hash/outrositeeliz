@@ -72,12 +72,27 @@ function cardProduto(p, slugCategoria) {
   const destino = `categoria.html?cat=${slugCategoria}`;
   const acao = `<button class="product-card__btn">Comprar</button>`;
 
+  // Galeria: quando o produto tem várias imagens, o card vira um mini carrossel com bolinhas
+  const galeria = (p.imagens && p.imagens.length) ? p.imagens : (p.imagem ? [p.imagem] : []);
+  const badge = p.badge ? `<span class="product-card__badge ${p.badge === 'Novo' ? 'product-card__badge--new' : ''}">${p.badge}</span>` : '';
+  const imgArea = galeria.length > 1
+    ? `<div class="product-card__img product-card__img--galeria" style="background:${p.bg}">
+        ${badge}
+        <div class="product-card__slider">
+          ${galeria.map((src) => `<img src="${src}" alt="${p.nome}" loading="lazy">`).join('')}
+        </div>
+        <div class="product-card__dots">
+          ${galeria.map((_, i) => `<button type="button" class="product-card__dot${i === 0 ? ' is-active' : ''}" data-i="${i}" aria-label="Imagem ${i + 1}"></button>`).join('')}
+        </div>
+      </div>`
+    : `<a class="product-card__img" style="background:${p.bg}" href="${destino}" title="Ver categoria ${CATALOGO[slugCategoria].nome}">
+        ${badge}
+        ${galeria.length ? `<img src="${galeria[0]}" alt="${p.nome}" loading="lazy">` : ICONE_PRODUTO}
+      </a>`;
+
   return `
     <article class="product-card">
-      <a class="product-card__img" style="background:${p.bg}" href="${destino}" title="${p.paginaProduto ? 'Ver ' + p.nome : 'Ver categoria ' + CATALOGO[slugCategoria].nome}">
-        ${p.badge ? `<span class="product-card__badge ${p.badge === 'Novo' ? 'product-card__badge--new' : ''}">${p.badge}</span>` : ''}
-        ${p.imagem ? `<img src="${p.imagem}" alt="${p.nome}" loading="lazy">` : ICONE_PRODUTO}
-      </a>
+      ${imgArea}
       <div class="product-card__body">
         <h3 class="product-card__title">${p.nome}</h3>
         <p class="product-card__spec">${p.spec}</p>
@@ -815,13 +830,33 @@ function fecharLightbox() {
 
 /* Clicar na foto do card abre o lightbox (quando há foto de verdade) */
 document.addEventListener('click', (e) => {
+  // Bolinhas do carrossel: rolam a galeria até a imagem escolhida
+  const dot = e.target.closest('.product-card__dot');
+  if (dot) {
+    e.preventDefault();
+    const galeria = dot.closest('.product-card__img--galeria');
+    const slider = galeria && galeria.querySelector('.product-card__slider');
+    if (slider) slider.scrollTo({ left: slider.clientWidth * Number(dot.dataset.i), behavior: 'smooth' });
+    return;
+  }
   const area = e.target.closest('.product-card__img');
   if (!area) return;
-  const img = area.querySelector('img');
+  const img = e.target.tagName === 'IMG' ? e.target : area.querySelector('img');
   if (!img) return; // cards com ícone (sem foto) seguem o link normalmente
   e.preventDefault();
   abrirLightbox(img.src, img.alt);
 });
+
+/* Atualiza a bolinha ativa conforme o carrossel do card é arrastado/rolado */
+document.addEventListener('scroll', (e) => {
+  const slider = e.target.closest && e.target.closest('.product-card__slider');
+  if (!slider) return;
+  const galeria = slider.closest('.product-card__img--galeria');
+  const dots = galeria ? [...galeria.querySelectorAll('.product-card__dot')] : [];
+  if (!dots.length) return;
+  const atual = Math.round(slider.scrollLeft / slider.clientWidth);
+  dots.forEach((d, i) => d.classList.toggle('is-active', i === atual));
+}, true);
 
 /* ---------- Cupom ---------- */
 function copiarCupom() {

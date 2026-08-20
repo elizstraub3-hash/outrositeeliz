@@ -4,7 +4,7 @@
 /* Versão do catálogo: aumente em 1 sempre que alterar este arquivo.
    Edições salvas pelo painel admin em versões antigas são descartadas
    automaticamente, para que as novidades daqui sempre apareçam. */
-const CATALOGO_VERSAO = 70;
+const CATALOGO_VERSAO = 71;
 
 /* Produtos que aparecem em mais de uma categoria são definidos uma única
    vez aqui e referenciados nas categorias — sem duplicar dados. */
@@ -80,6 +80,7 @@ const kitChurrasco = {
 const camisetaDtf = {
   bg: 'linear-gradient(135deg,#ddd6fe,#8b5cf6)', badge: 'Promoção',
   imagem: 'img/camiseta-dtf.webp',
+  imagens: ['img/camiseta-dtf.webp', 'img/camiseta-dtf-costas.webp'],
   nome: 'Camiseta DTF UV',
   spec: 'Algodão · estampa DTF UV · feminina ou masculina · tamanhos P ao GG · cores conforme disponibilidade em estoque',
   grupoLabel: 'Impressão', opcaoLabel: 'Tamanho',
@@ -221,6 +222,7 @@ const FAIXAS_DRYFIT_MASC = [
 const camisetaDryMasc = {
   bg: 'linear-gradient(135deg,#e0f2fe,#0369a1)', badge: 'Novo',
   imagem: 'img/camiseta-masc.webp',
+  imagens: ['img/camiseta-masc.webp', 'img/camiseta-masc-gola-brasil.webp', 'img/camiseta-masc-gola-v.webp', 'img/camiseta-masc-2.webp'],
   nome: 'Camiseta Dry Fit Masculina',
   spec: 'Tipo Dry Fit · 100% poliéster · malha que absorve o suor · 3 golas (Brasil, redonda e V) · do P ao XL4',
   prazo: 7,
@@ -883,6 +885,7 @@ const forminhasDoces = {
 const caixinhaMilk = {
   bg: 'linear-gradient(135deg,#fbcfe8,#c026d3)', badge: 'Novo', destaque: true,
   imagem: 'img/caixinha-milk.webp',
+  imagens: ['img/caixinha-milk.webp', 'img/caixinha-milk-casamento.webp', 'img/caixinha-milk-dino.webp', 'img/caixinha-milk-super.webp'],
   nome: 'Caixinha Milk Personalizada',
   spec: 'Caixinha Milk personalizada · pedido mínimo 10 unidades · produção: 50 un em 5 dias úteis · 100 un em 8 dias úteis',
   prazoTexto: 'de 5 a 8 dias úteis',
