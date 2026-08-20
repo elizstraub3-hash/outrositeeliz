@@ -46,7 +46,8 @@ if (!prod) {
 
   // botão comprar abre a janela certa
   document.getElementById('prodComprar').addEventListener('click', () => {
-    if (prod.opcoesCombinacao) abrirCombinacoes(prod);
+    if (prod.distribuirTamanhos) abrirTamanhosDistribuir(prod);
+    else if (prod.opcoesCombinacao) abrirCombinacoes(prod);
     else if (prod.tamanhos) abrirTamanhos(prod);
     else if (prod.cores) abrirCores(prod);
     else abrirVariacoes(prod);

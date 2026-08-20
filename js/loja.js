@@ -460,6 +460,104 @@ function abrirTamanhos(p) {
   });
 }
 
+/* ---------- Janela de distribuição por tamanho (ex.: 3 G + 2 P) ---------- */
+/* Para camisas, moletons e afins: o cliente informa a quantidade de cada
+   tamanho e o preço por unidade segue a faixa da quantidade total. */
+function abrirTamanhosDistribuir(p) {
+  const sizes = Object.keys(p.tamanhos);
+  const un = p.unidade || 'peça';
+  const unp = p.unidadePlural || 'peças';
+  const tiers = (sizes.length ? p.tamanhos[sizes[0]] : []).map((v) => {
+    const min = parseInt(String(v.label).replace(/\D/g, ''), 10) || 1;
+    return { min, precoUnit: v.preco / min };
+  }).sort((a, b) => a.min - b.min);
+  if (!tiers.length) tiers.push({ min: 1, precoUnit: 0 });
+
+  function unitPara(total) {
+    let pu = tiers[0].precoUnit;
+    tiers.forEach((t) => { if (total >= t.min) pu = t.precoUnit; });
+    return pu;
+  }
+  const resumoTiers = tiers.map((t, i) => {
+    const prox = tiers[i + 1];
+    const faixa = prox ? (t.min === prox.min - 1 ? `${t.min} un` : `${t.min} a ${prox.min - 1} un`) : `${t.min}+ un`;
+    return `${faixa}: R$ ${formatarPreco(t.precoUnit)}/un`;
+  }).join(' · ');
+
+  const { modal, fechar } = criarModal(`Opções de ${p.nome}`, `
+    ${cabecalhoModal(p)}
+    ${p.extra ? `
+    <div class="modal__opcao">
+      <label class="modal__label" for="modalExtra">${p.extra.label}:</label>
+      <select class="modal__select" id="modalExtra">${p.extra.opcoes.map((o) => `<option>${o}</option>`).join('')}</select>
+    </div>` : ''}
+    ${p.coresEstampa ? `
+    <div class="modal__opcao">
+      <label class="modal__label" for="modalCorEstampa">${p.coresLabel || 'Cor'}:</label>
+      <select class="modal__select" id="modalCorEstampa">${p.coresEstampa.map((c) => `<option>${c}</option>`).join('')}</select>
+    </div>` : ''}
+    <div class="modal__faixas">
+      <p><strong>Quantidade por tamanho</strong> — informe quantas de cada:</p>
+      <small>* O preço por unidade segue a quantidade total: ${resumoTiers}</small>
+    </div>
+    <div class="modal__rows">
+      ${sizes.map((s) => `
+        <div class="comb-row" data-tam="${s}">
+          <div class="comb-row__nome"><strong>${s}</strong></div>
+          <div class="comb-row__stepper">
+            <button type="button" class="comb-row__menos" aria-label="Diminuir">−</button>
+            <input type="number" class="comb-row__qtd" min="0" value="0" inputmode="numeric" aria-label="Quantidade tamanho ${s}">
+            <button type="button" class="comb-row__mais" aria-label="Aumentar">+</button>
+          </div>
+          <div class="comb-row__subtotal">0 un</div>
+        </div>`).join('')}
+    </div>
+    ${blocoArte(p)}
+    <div class="modal__foot">
+      <div class="modal__total">
+        <small id="modalResumo">Nenhuma ${un} selecionada</small>
+        <strong id="modalTotal">R$ 0,00</strong> <span class="pix">no Pix</span>
+      </div>
+      <button class="btn btn--primary modal__add" disabled>Adicionar ao carrinho</button>
+    </div>`);
+
+  const linhas = [...modal.querySelectorAll('.comb-row')];
+  function recalcular() {
+    const qtds = linhas.map((l) => Math.max(0, parseInt(l.querySelector('.comb-row__qtd').value, 10) || 0));
+    const total = qtds.reduce((a, b) => a + b, 0);
+    const unit = unitPara(Math.max(total, 1));
+    linhas.forEach((l, i) => { l.querySelector('.comb-row__subtotal').textContent = `${qtds[i]} un`; });
+    modal.querySelector('#modalTotal').textContent = `R$ ${formatarPreco(total * unit)}`;
+    modal.querySelector('#modalResumo').textContent = total === 0
+      ? `Nenhuma ${un} selecionada`
+      : `${total} ${total > 1 ? unp : un} · R$ ${formatarPreco(unit)}/un`;
+    modal.querySelector('.modal__add').disabled = total === 0;
+    return { qtds, total, unit };
+  }
+  linhas.forEach((linha) => {
+    const input = linha.querySelector('.comb-row__qtd');
+    linha.querySelector('.comb-row__menos').addEventListener('click', () => { input.value = Math.max(0, (parseInt(input.value, 10) || 0) - 1); recalcular(); });
+    linha.querySelector('.comb-row__mais').addEventListener('click', () => { input.value = (parseInt(input.value, 10) || 0) + 1; recalcular(); });
+    input.addEventListener('input', recalcular);
+  });
+  modal.querySelector('.modal__add').addEventListener('click', () => {
+    const { qtds, total, unit } = recalcular();
+    if (total === 0) return;
+    const extraSel = modal.querySelector('#modalExtra');
+    const corSel = modal.querySelector('#modalCorEstampa');
+    const partes = [];
+    if (extraSel) partes.push(extraSel.value);
+    if (corSel) partes.push(`${p.coresLabel || 'Cor'}: ${corSel.value}`);
+    partes.push(sizes.map((s, i) => (qtds[i] > 0 ? `${qtds[i]}× ${s}` : null)).filter(Boolean).join(' + '));
+    const detalhe = partes.join(' · ');
+    const arte = arteEscolhida(modal);
+    const arquivo = arquivoArte(modal);
+    adicionarItemCarrinho({ nome: p.nome, detalhe, qtd: total, total: total * unit, arte, arquivo });
+    fechar();
+    mostrarToast(`${p.nome} (${detalhe}) · ${arte}${arquivo ? ` (${arquivo})` : ''} — R$ ${formatarPreco(total * unit)} adicionado ao carrinho!`);
+  });
+}
+
 /* ---------- Janela de cores + quantidade (preço unitário e pedido mínimo) ---------- */
 function abrirCores(p) {
   const min = p.minimo || 1;
@@ -796,7 +894,8 @@ document.addEventListener('click', (e) => {
   const produto = encontrarProduto(nome);
   if (!produto) return;
 
-  if (produto.opcoesCombinacao) abrirCombinacoes(produto);
+  if (produto.distribuirTamanhos) abrirTamanhosDistribuir(produto);
+  else if (produto.opcoesCombinacao) abrirCombinacoes(produto);
   else if (produto.tamanhos) abrirTamanhos(produto);
   else if (produto.cores) abrirCores(produto);
   else abrirVariacoes(produto);

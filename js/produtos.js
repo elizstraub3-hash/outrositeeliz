@@ -4,7 +4,7 @@
 /* Versão do catálogo: aumente em 1 sempre que alterar este arquivo.
    Edições salvas pelo painel admin em versões antigas são descartadas
    automaticamente, para que as novidades daqui sempre apareçam. */
-const CATALOGO_VERSAO = 71;
+const CATALOGO_VERSAO = 72;
 
 /* Produtos que aparecem em mais de uma categoria são definidos uma única
    vez aqui e referenciados nas categorias — sem duplicar dados. */
@@ -117,6 +117,7 @@ const FAIXAS_CAMISA_COPA = [
 const camisaCopa = {
   bg: 'linear-gradient(135deg,#fde047,#16a34a)', badge: 'Novo', destaque: true,
   nome: 'Camisa Copa Personalizada',
+  distribuirTamanhos: true, unidade: 'camisa', unidadePlural: 'camisas',
   spec: 'Tecido Profit · leve, confortável e resistente · tamanhos P ao XL4 · escolha o tamanho e a quantidade',
   prazo: 7,
   grupoLabel: 'Tamanho', opcaoLabel: 'Quantidade',
@@ -224,6 +225,7 @@ const camisetaDryMasc = {
   imagem: 'img/camiseta-masc.webp',
   imagens: ['img/camiseta-masc.webp', 'img/camiseta-masc-gola-brasil.webp', 'img/camiseta-masc-gola-v.webp', 'img/camiseta-masc-2.webp'],
   nome: 'Camiseta Dry Fit Masculina',
+  distribuirTamanhos: true, unidade: 'camiseta', unidadePlural: 'camisetas',
   spec: 'Tipo Dry Fit · 100% poliéster · malha que absorve o suor · 3 golas (Brasil, redonda e V) · do P ao XL4',
   prazo: 7,
   paginaProduto: true,
@@ -268,6 +270,7 @@ const camisetaDryFem = {
   bg: 'linear-gradient(135deg,#e0f2fe,#0369a1)', badge: 'Novo',
   imagem: 'img/camiseta-fem.webp',
   nome: 'Camiseta Dry Fit Feminina',
+  distribuirTamanhos: true, unidade: 'camiseta', unidadePlural: 'camisetas',
   spec: 'Dry Fit · poliéster (rústico, sem elasticidade) · estampa personalizada · do P ao XL4',
   prazo: 10,
   paginaProduto: true,
@@ -331,6 +334,7 @@ const camisaPesca = {
   bg: 'linear-gradient(135deg,#a5f3fc,#0e7490)', badge: 'Novo',
   imagem: 'img/camisa-pesca.webp',
   nome: 'Camisa de Pesca Personalizada',
+  distribuirTamanhos: true, unidade: 'camisa', unidadePlural: 'camisas',
   spec: 'Manga longa · gola média com zíper · Active Ice UV 50+ · impressão Ultra HD Sublimática · do P ao XL4',
   prazo: 10,
   paginaProduto: true,
@@ -431,6 +435,7 @@ const moletomCanguru = {
   bg: 'linear-gradient(135deg,#cbd5e1,#334155)', badge: 'Novo',
   imagem: 'img/moletom.webp',
   nome: 'Moletom Canguru Personalizado',
+  distribuirTamanhos: true, unidade: 'moletom', unidadePlural: 'moletons',
   spec: 'Moletom flanelado 100% poliéster · unissex · capuz e bolso canguru · impressão Ultra HD Sublimática · do P ao XL4',
   prazo: 10,
   paginaProduto: true,
@@ -531,6 +536,7 @@ const camisaAmericana = {
   bg: 'linear-gradient(135deg,#fde68a,#334155)', badge: 'Novo',
   imagem: 'img/camisa-americana.webp',
   nome: 'Camisa Futebol Americano Titan',
+  distribuirTamanhos: true, unidade: 'camisa', unidadePlural: 'camisas',
   spec: 'Masculino · impressão Ultra HD Sublimática · do P ao XL4',
   prazo: 10,
   paginaProduto: true,
@@ -635,6 +641,7 @@ const camisaCiclismo = {
   bg: 'linear-gradient(135deg,#fde68a,#334155)', badge: 'Novo',
   imagem: 'img/camisa-ciclismo.webp',
   nome: 'Camisa de Ciclismo Fast',
+  distribuirTamanhos: true, unidade: 'camisa', unidadePlural: 'camisas',
   spec: 'Masculino · impressão Ultra HD Sublimática · do P ao XL4',
   prazo: 10,
   paginaProduto: true,
@@ -734,6 +741,7 @@ const camisaCiclismo = {
 const jaquetaMisty = {
   bg: 'linear-gradient(135deg,#e2e8f0,#334155)', badge: 'Novo',
   nome: 'Jaqueta Corta Vento Misty',
+  distribuirTamanhos: true, unidade: 'jaqueta', unidadePlural: 'jaquetas',
   spec: 'Tactel (92% poliéster · 8% elastano) · unissex · capuz e zíper 80 cm · do P ao XL4 · a partir de 1 un',
   imagem: 'img/jaqueta.webp',
   paginaProduto: true,
