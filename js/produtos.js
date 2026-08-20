@@ -4,7 +4,7 @@
 /* Versão do catálogo: aumente em 1 sempre que alterar este arquivo.
    Edições salvas pelo painel admin em versões antigas são descartadas
    automaticamente, para que as novidades daqui sempre apareçam. */
-const CATALOGO_VERSAO = 65;
+const CATALOGO_VERSAO = 66;
 
 /* Produtos que aparecem em mais de uma categoria são definidos uma única
    vez aqui e referenciados nas categorias — sem duplicar dados. */
@@ -1677,6 +1677,18 @@ const CATALOGO = {
           { label: '1.000 un', preco: 622.90 },
         ] },
       bolsaHaste,
+      { bg: 'linear-gradient(135deg,#f9a8d4,#be185d)', badge: 'Novo', destaque: true,
+        imagem: 'img/backdrop.webp',
+        nome: 'Backdrop em Lona Brilho Frontlight 440g',
+        spec: 'Lona brilho frontlight 440g · acabamento em ilhós · escolha o tamanho',
+        variacoes: [
+          { label: '2,00 x 2,00 m', preco: 190.00 },
+          { label: '1,80 x 2,50 m', preco: 220.00 },
+          { label: '1,80 x 3,00 m', preco: 266.00 },
+          { label: '2,50 x 2,50 m', preco: 298.00 },
+          { label: '3,00 x 3,00 m', preco: 498.00 },
+          { label: 'Outra medida', preco: null },
+        ] },
     ],
   },
 
