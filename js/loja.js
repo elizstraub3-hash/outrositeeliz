@@ -68,11 +68,9 @@ function cardProduto(p, slugCategoria) {
     precoValor = v0.preco;
   }
 
-  // Produtos com página própria: card compra como os outros (modal) e ganha
-  // um link "Saber mais" para a página de detalhe; a foto também leva ao detalhe
-  const destino = p.paginaProduto ? `produto.html?id=${slugProduto(p.nome)}` : `categoria.html?cat=${slugCategoria}`;
-  const acao = `<button class="product-card__btn">Comprar</button>`
-    + (p.paginaProduto ? `<a class="product-card__saibamais" href="produto.html?id=${slugProduto(p.nome)}">Saber mais sobre o produto</a>` : '');
+  // As informações completas do produto agora abrem dentro do modal de compra.
+  const destino = `categoria.html?cat=${slugCategoria}`;
+  const acao = `<button class="product-card__btn">Comprar</button>`;
 
   return `
     <article class="product-card">
@@ -262,7 +260,23 @@ function cabecalhoModal(p) {
         <h3>${p.nome}</h3>
         <p>${p.spec}</p>
       </div>
-    </div>`;
+    </div>
+    ${infoProduto(p)}`;
+}
+
+/* Bloco "Mais informações sobre o produto" — abre um card com descrição, detalhes e FAQ */
+function infoProduto(p) {
+  const temInfo = p.descricao || (p.detalhes && p.detalhes.length) || (p.faq && p.faq.length);
+  if (!temInfo) return '';
+  let corpo = '';
+  if (p.descricao) corpo += `<p>${p.descricao}</p>`;
+  if (p.detalhes && p.detalhes.length) corpo += `<ul>${p.detalhes.map((d) => `<li>${d}</li>`).join('')}</ul>`;
+  if (p.faq && p.faq.length) corpo += p.faq.map((f) => `<div class="modal__info-faq"><strong>${f.p}</strong><p>${f.r}</p></div>`).join('');
+  return `
+    <details class="modal__info">
+      <summary>Mais informações sobre o produto</summary>
+      <div class="modal__info-body">${corpo}</div>
+    </details>`;
 }
 
 /* ---------- Janela de variações (pacotes fixos) ---------- */

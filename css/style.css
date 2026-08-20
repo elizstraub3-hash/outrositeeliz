@@ -838,6 +838,37 @@ button { font-family: inherit; cursor: pointer; }
 }
 .lightbox__close:hover { background: rgba(255, 255, 255, .32); }
 
+/* "Mais informações sobre o produto" dentro do modal */
+.modal__info {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  overflow: hidden;
+}
+.modal__info > summary {
+  cursor: pointer;
+  padding: .7rem .9rem;
+  font-weight: 600;
+  font-size: .88rem;
+  color: var(--primary);
+  list-style: none;
+}
+.modal__info > summary::-webkit-details-marker { display: none; }
+.modal__info > summary::after { content: ' ▾'; }
+.modal__info[open] > summary::after { content: ' ▴'; }
+.modal__info-body {
+  padding: 0 .9rem .9rem;
+  font-size: .84rem;
+  color: var(--gray);
+  max-height: 45vh;
+  overflow-y: auto;
+}
+.modal__info-body p { margin-bottom: .6rem; }
+.modal__info-body ul { margin: 0 0 .6rem 1.1rem; }
+.modal__info-body li { margin-bottom: .3rem; }
+.modal__info-faq { margin-bottom: .7rem; }
+.modal__info-faq strong { display: block; color: var(--dark); font-size: .85rem; }
+
 .modal__rows { display: grid; gap: .6rem; margin-bottom: 1rem; }
 .modal__adicional {
   display: flex;
