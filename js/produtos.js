@@ -4,7 +4,7 @@
 /* Versão do catálogo: aumente em 1 sempre que alterar este arquivo.
    Edições salvas pelo painel admin em versões antigas são descartadas
    automaticamente, para que as novidades daqui sempre apareçam. */
-const CATALOGO_VERSAO = 69;
+const CATALOGO_VERSAO = 70;
 
 /* Produtos que aparecem em mais de uma categoria são definidos uma única
    vez aqui e referenciados nas categorias — sem duplicar dados. */
@@ -241,7 +241,7 @@ const camisetaDryMasc = {
     { p: 'Quais são as vantagens do Dry Fit?', r: 'É leve, respirável e durável, e pode ter propriedades antimicrobianas que ajudam a controlar odores. Obs.: a malha é rústica e não é elástica.' },
     { p: 'Posso usar só para atividades físicas?', r: 'Não! Serve para uniformes de empresa, times esportivos, festas e eventos, identificação de equipes e funcionários, brindes de fim de ano e muito mais.' },
     { p: 'Como cuidar da camiseta?', r: 'Verifique as indicações de lavagem na etiqueta. Evite o uso intenso de amaciantes, lave em água fria e evite secar em altas temperaturas.' },
-    { p: 'Posso personalizar do jeito que eu quiser?', r: 'Sim! Confira o gabarito da área de personalização e solte a criatividade — nosso objetivo é entregar a qualidade de sempre.' },
+    { p: 'Posso personalizar do jeito que eu quiser?', r: 'Sim! É só nos enviar a sua arte ou nos contar a sua ideia que cuidamos de tudo, com a qualidade de sempre.' },
   ],
   grupoLabel: 'Tamanho', opcaoLabel: 'Quantidade',
   extra: { label: 'Gola', opcoes: ['Gola Brasil', 'Gola Redonda', 'Gola V'] },
