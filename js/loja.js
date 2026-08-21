@@ -501,17 +501,14 @@ function abrirTamanhosDistribuir(p) {
       <p><strong>Quantidade por tamanho</strong> — informe quantas de cada:</p>
       <small>* O preço por unidade segue a quantidade total: ${resumoTiers}</small>
     </div>
-    <div class="modal__rows">
+    <div class="modal__tam-grid">
       ${sizes.map((s) => `
-        <div class="comb-row" data-tam="${s}">
-          <div class="comb-row__nome"><strong>${s}</strong></div>
-          <div class="comb-row__stepper">
-            <button type="button" class="comb-row__menos" aria-label="Diminuir">−</button>
-            <input type="number" class="comb-row__qtd" min="0" value="0" inputmode="numeric" aria-label="Quantidade tamanho ${s}">
-            <button type="button" class="comb-row__mais" aria-label="Aumentar">+</button>
-          </div>
-          <div class="comb-row__subtotal">0 un</div>
-        </div>`).join('')}
+        <label class="modal__tam-item">
+          <span>${s}</span>
+          <select class="modal__select modal__tam-qtd" data-tam="${s}" aria-label="Quantidade tamanho ${s}">
+            ${Array.from({ length: 51 }, (_, n) => `<option value="${n}">${n}</option>`).join('')}
+          </select>
+        </label>`).join('')}
     </div>
     ${blocoArte(p)}
     <div class="modal__foot">
@@ -522,12 +519,11 @@ function abrirTamanhosDistribuir(p) {
       <button class="btn btn--primary modal__add" disabled>Adicionar ao carrinho</button>
     </div>`);
 
-  const linhas = [...modal.querySelectorAll('.comb-row')];
+  const selects = [...modal.querySelectorAll('.modal__tam-qtd')];
   function recalcular() {
-    const qtds = linhas.map((l) => Math.max(0, parseInt(l.querySelector('.comb-row__qtd').value, 10) || 0));
+    const qtds = selects.map((s) => parseInt(s.value, 10) || 0);
     const total = qtds.reduce((a, b) => a + b, 0);
     const unit = unitPara(Math.max(total, 1));
-    linhas.forEach((l, i) => { l.querySelector('.comb-row__subtotal').textContent = `${qtds[i]} un`; });
     modal.querySelector('#modalTotal').textContent = `R$ ${formatarPreco(total * unit)}`;
     modal.querySelector('#modalResumo').textContent = total === 0
       ? `Nenhuma ${un} selecionada`
@@ -535,12 +531,7 @@ function abrirTamanhosDistribuir(p) {
     modal.querySelector('.modal__add').disabled = total === 0;
     return { qtds, total, unit };
   }
-  linhas.forEach((linha) => {
-    const input = linha.querySelector('.comb-row__qtd');
-    linha.querySelector('.comb-row__menos').addEventListener('click', () => { input.value = Math.max(0, (parseInt(input.value, 10) || 0) - 1); recalcular(); });
-    linha.querySelector('.comb-row__mais').addEventListener('click', () => { input.value = (parseInt(input.value, 10) || 0) + 1; recalcular(); });
-    input.addEventListener('input', recalcular);
-  });
+  selects.forEach((s) => s.addEventListener('change', recalcular));
   modal.querySelector('.modal__add').addEventListener('click', () => {
     const { qtds, total, unit } = recalcular();
     if (total === 0) return;
