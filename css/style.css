@@ -327,9 +327,10 @@ button { font-family: inherit; cursor: pointer; }
   place-items: center;
   flex-shrink: 0;
 }
-.benefit strong { display: block; font-size: .92rem; }
-.benefit span { font-size: .78rem; color: var(--gray); }
+.benefit > div > strong { display: block; font-size: .92rem; }
+.benefit span { display: block; font-size: .78rem; color: var(--gray); }
 .benefit__desc { font-size: .78rem; color: var(--gray); line-height: 1.45; margin-top: .35rem; }
+.benefit__desc strong { display: inline; font-weight: 600; font-size: inherit; color: var(--dark); }
 .benefits__dots { display: none; }
 
 /* ============ Seções ============ */
@@ -1235,8 +1236,13 @@ button { font-family: inherit; cursor: pointer; }
   .benefits__grid .benefit {
     flex: 0 0 100%;
     scroll-snap-align: center;
-    padding: .2rem .4rem;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: .6rem;
+    padding: .4rem 1.4rem;
   }
+  .benefits__grid .benefit__desc { max-width: 30ch; margin-left: auto; margin-right: auto; }
   .benefits__dots {
     display: flex;
     justify-content: center;
