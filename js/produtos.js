@@ -4,7 +4,7 @@
 /* Versão do catálogo: aumente em 1 sempre que alterar este arquivo.
    Edições salvas pelo painel admin em versões antigas são descartadas
    automaticamente, para que as novidades daqui sempre apareçam. */
-const CATALOGO_VERSAO = 74;
+const CATALOGO_VERSAO = 75;
 
 /* Produtos que aparecem em mais de uma categoria são definidos uma única
    vez aqui e referenciados nas categorias — sem duplicar dados. */
@@ -1476,6 +1476,12 @@ const CATALOGO = {
     banner: 'linear-gradient(120deg,#be185d,#ec4899)',
     descricao: 'Brindes personalizados que mantêm sua marca na memória (e na mão) dos clientes.',
     produtos: [
+      { bg: 'linear-gradient(135deg,#fecaca,#dc2626)', badge: 'Novo', destaque: true,
+        nome: 'Kit Balde 6L + Copos 350ml',
+        spec: 'Balde de 6 litros + copos de 350ml · impressão colorida só frente (4x0) · personalizado',
+        variacoes: [
+          { label: '1 kit', preco: 89.90 },
+        ] },
       chineloPersonalizado,
       copoCuia,
       canetaPersonalizada,
