@@ -4,7 +4,7 @@
 /* Versão do catálogo: aumente em 1 sempre que alterar este arquivo.
    Edições salvas pelo painel admin em versões antigas são descartadas
    automaticamente, para que as novidades daqui sempre apareçam. */
-const CATALOGO_VERSAO = 75;
+const CATALOGO_VERSAO = 76;
 
 /* Produtos que aparecem em mais de uma categoria são definidos uma única
    vez aqui e referenciados nas categorias — sem duplicar dados. */
@@ -1478,9 +1478,11 @@ const CATALOGO = {
     produtos: [
       { bg: 'linear-gradient(135deg,#fecaca,#dc2626)', badge: 'Novo', destaque: true,
         nome: 'Kit Balde 6L + Copos 350ml',
-        spec: 'Balde de 6 litros + copos de 350ml · impressão colorida só frente (4x0) · personalizado',
-        variacoes: [
-          { label: '1 kit', preco: 89.90 },
+        spec: 'Balde de 6 litros + copos de 350ml · impressão colorida só frente (4x0) · pedido mínimo 5 unidades',
+        unidade: 'kit', unidadePlural: 'kits',
+        minimoTotal: 5,
+        opcoesCombinacao: [
+          { nome: 'Kit Balde + Copos', faixas: [{ min: 1, preco: 59.90 }] },
         ] },
       chineloPersonalizado,
       copoCuia,
