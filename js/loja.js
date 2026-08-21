@@ -281,11 +281,12 @@ function cabecalhoModal(p) {
 
 /* Bloco "Mais informações sobre o produto" — abre um card com descrição, detalhes e FAQ */
 function infoProduto(p) {
-  const temInfo = p.descricao || (p.detalhes && p.detalhes.length) || (p.faq && p.faq.length);
-  if (!temInfo) return '';
-  let corpo = '';
-  if (p.descricao) corpo += `<p>${p.descricao}</p>`;
+  // Aparece em todos os produtos. Quando não há descrição própria, usa o
+  // resumo (spec) e o prazo, para manter a mesma linha em todos os cards.
+  let corpo = `<p>${p.descricao || p.spec}</p>`;
   if (p.detalhes && p.detalhes.length) corpo += `<ul>${p.detalhes.map((d) => `<li>${d}</li>`).join('')}</ul>`;
+  const prazoTxt = p.prazoTexto || `até ${p.prazo || 5} dias úteis`;
+  corpo += `<p><strong>Previsão de produção:</strong> ${prazoTxt}. O prazo de entrega é somado após a finalização.</p>`;
   if (p.faq && p.faq.length) corpo += p.faq.map((f) => `<div class="modal__info-faq"><strong>${f.p}</strong><p>${f.r}</p></div>`).join('');
   return `
     <details class="modal__info">
