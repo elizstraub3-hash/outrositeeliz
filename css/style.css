@@ -317,7 +317,7 @@ button { font-family: inherit; cursor: pointer; }
   gap: 1rem;
   padding: 1.4rem 0;
 }
-.benefit { display: flex; align-items: center; gap: .8rem; }
+.benefit { display: flex; align-items: flex-start; gap: .8rem; }
 .benefit__icon {
   width: 52px; height: 52px;
   background: var(--gray-light);
@@ -327,8 +327,10 @@ button { font-family: inherit; cursor: pointer; }
   place-items: center;
   flex-shrink: 0;
 }
-.benefit strong { display: block; font-size: .9rem; }
+.benefit strong { display: block; font-size: .92rem; }
 .benefit span { font-size: .78rem; color: var(--gray); }
+.benefit__desc { font-size: .78rem; color: var(--gray); line-height: 1.45; margin-top: .35rem; }
+.benefits__dots { display: none; }
 
 /* ============ Seções ============ */
 .section { padding: 3.5rem 0; }
@@ -1216,4 +1218,39 @@ button { font-family: inherit; cursor: pointer; }
   .benefits__grid { grid-template-columns: 1fr; }
   .about__stats { grid-template-columns: 1fr 1fr; }
   .about { padding: 2.5rem 0; }
+}
+
+/* ===== Benefícios: carrossel automático no mobile ===== */
+@media (max-width: 640px) {
+  .benefits__grid {
+    display: flex;
+    grid-template-columns: none;
+    gap: 0;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+  .benefits__grid::-webkit-scrollbar { display: none; }
+  .benefits__grid .benefit {
+    flex: 0 0 100%;
+    scroll-snap-align: center;
+    padding: .2rem .4rem;
+  }
+  .benefits__dots {
+    display: flex;
+    justify-content: center;
+    gap: 7px;
+    padding: .2rem 0 .1rem;
+  }
+  .benefits__dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    border: none;
+    padding: 0;
+    background: var(--border);
+    cursor: pointer;
+    transition: background .15s, transform .15s;
+  }
+  .benefits__dot.is-active { background: var(--primary); transform: scale(1.2); }
 }

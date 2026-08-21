@@ -138,25 +138,44 @@
     <div class="hero__dots" id="heroDots"></div>
   </section>
 
-  <!-- Faixa de benefícios -->
+  <!-- Faixa de benefícios (carrossel automático no mobile) -->
   <section class="benefits">
-    <div class="container benefits__grid">
-      <div class="benefit">
-        <div class="benefit__icon"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M1 7h12v9H1zM13 10h5l3 3v3h-8"/><circle cx="6" cy="18" r="1.8"/><circle cx="17" cy="18" r="1.8"/></svg></div>
-        <div><strong>Entrega rápida</strong><span>Para todo o Brasil</span></div>
+    <div class="container">
+      <div class="benefits__grid" id="benefitsGrid">
+        <div class="benefit">
+          <div class="benefit__icon"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M1 7h12v9H1zM13 10h5l3 3v3h-8"/><circle cx="6" cy="18" r="1.8"/><circle cx="17" cy="18" r="1.8"/></svg></div>
+          <div>
+            <strong>Entrega rápida</strong>
+            <span>Para todo o Brasil</span>
+            <p class="benefit__desc">Enviamos para todo o Brasil — e a entrega é <strong>grátis para Colombo e Curitiba</strong> em pedidos acima de R$ 299.</p>
+          </div>
+        </div>
+        <div class="benefit">
+          <div class="benefit__icon"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg></div>
+          <div>
+            <strong>Pagamento fácil</strong>
+            <span>Pix, cartão e boleto</span>
+            <p class="benefit__desc">Pague no <strong>Pix</strong>, no <strong>cartão</strong> ou no <strong>boleto</strong> — do jeito que for mais prático para você.</p>
+          </div>
+        </div>
+        <div class="benefit">
+          <div class="benefit__icon"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 0 1-10 0zM7 6H4a3 3 0 0 0 3 4M17 6h3a3 3 0 0 1-3 4"/></svg></div>
+          <div>
+            <strong>Qualidade garantida</strong>
+            <span>Ou reimprimimos grátis</span>
+            <p class="benefit__desc">Prezamos por acabamento e cores fiéis. Se houver erro de produção da nossa parte, <strong>reimprimimos sem custo</strong>.</p>
+          </div>
+        </div>
+        <div class="benefit">
+          <div class="benefit__icon"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 12a8 8 0 0 1-8 8H4l2-3a8 8 0 1 1 15-5z"/></svg></div>
+          <div>
+            <strong>Atendimento humano</strong>
+            <span>Especialistas de verdade</span>
+            <p class="benefit__desc">Fale com <strong>especialistas de verdade</strong> pelo WhatsApp — do orçamento à entrega, com atenção em cada detalhe.</p>
+          </div>
+        </div>
       </div>
-      <div class="benefit">
-        <div class="benefit__icon"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg></div>
-        <div><strong>Pagamento fácil</strong><span>Pix, cartão e boleto</span></div>
-      </div>
-      <div class="benefit">
-        <div class="benefit__icon"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 0 1-10 0zM7 6H4a3 3 0 0 0 3 4M17 6h3a3 3 0 0 1-3 4"/></svg></div>
-        <div><strong>Qualidade garantida</strong><span>Ou reimprimimos grátis</span></div>
-      </div>
-      <div class="benefit">
-        <div class="benefit__icon"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 12a8 8 0 0 1-8 8H4l2-3a8 8 0 1 1 15-5z"/></svg></div>
-        <div><strong>Atendimento humano</strong><span>Especialistas de verdade</span></div>
-      </div>
+      <div class="benefits__dots" id="benefitsDots" aria-hidden="true"></div>
     </div>
   </section>
 
