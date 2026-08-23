@@ -8,7 +8,7 @@
    a arte é criada pela designer da gráfica; o cliente não envia arte pronta. */
 const ARTE_SUBLIMACAO = 'A arte é criada por uma <strong>designer profissional da Print House</strong> — você <strong>não precisa enviar arte pronta</strong>. Se quiser, envie apenas a sua <strong>logo ou uma referência</strong> pelo WhatsApp; nós desenvolvemos a arte e você tem direito a até <strong>3 alterações</strong> antes da produção.';
 
-const CATALOGO_VERSAO = 77;
+const CATALOGO_VERSAO = 78;
 
 /* Produtos que aparecem em mais de uma categoria são definidos uma única
    vez aqui e referenciados nas categorias — sem duplicar dados. */
@@ -409,6 +409,35 @@ const camisaPesca = {
             { label: '50 un', preco: 5625.90 },
             { label: '100 un', preco: 10978.90 },
           ],
+  },
+};
+
+const poloBordada = {
+  bg: 'linear-gradient(135deg,#e2e8f0,#94a3b8)', badge: 'Novo',
+  imagem: 'img/polo.webp',
+  nome: 'Polo Bordada Personalizada',
+  distribuirTamanhos: true, unidade: 'polo', unidadePlural: 'polos',
+  spec: 'Bordado personalizado · do P ao GG',
+  prazo: 7,
+  paginaProduto: true,
+  arteNota: 'Criação do layout do bordado no computador: R$ 60,00 (cobrado uma única vez por arte).',
+  descricao: 'Camisa polo com bordado personalizado — a peça ideal para uniformes, empresas e equipes. O bordado dá um acabamento sofisticado e durável, que não desbota com as lavagens. Envie sua logo e nós criamos o layout do bordado no computador para aprovação antes da produção.',
+  detalhes: [
+    'Modelagem: camisa polo com gola e botões, tecido piquê de boa gramatura. Disponível do P ao GG.',
+    'Personalização: bordado computadorizado a partir da sua logo ou referência. O layout do bordado é criado no computador (R$ 60,00 por arte) e enviado para sua aprovação.',
+    'Prazo: 7 dias úteis após a aprovação da arte e confirmação do pagamento.',
+  ],
+  faq: [
+    { p: 'O valor de R$ 60,00 do layout é cobrado por peça?', r: 'Não. A criação do layout do bordado no computador é cobrada uma única vez por arte, independente da quantidade de polos.' },
+    { p: 'Preciso enviar a arte pronta?', r: 'Não. Basta enviar sua logo ou uma referência pelo WhatsApp que a nossa equipe cria o layout do bordado e envia a prévia para aprovação antes de produzir.' },
+    { p: 'Como escolho os tamanhos?', r: 'Você distribui a quantidade por tamanho (do P ao GG) na hora do pedido. Some quantos quiser de cada tamanho.' },
+  ],
+  grupoLabel: 'Tamanho', opcaoLabel: 'Quantidade',
+  tamanhos: {
+    'P':  [{ label: '1 un', preco: 89.90 }],
+    'M':  [{ label: '1 un', preco: 89.90 }],
+    'G':  [{ label: '1 un', preco: 89.90 }],
+    'GG': [{ label: '1 un', preco: 89.90 }],
   },
 };
 
@@ -1816,6 +1845,7 @@ const CATALOGO = {
       camisaCopa,
       camisaAmericana,
       camisaCiclismo,
+      poloBordada,
       moletomCanguru,
       camisaPesca,
       camisetaDryMasc,
@@ -1837,13 +1867,6 @@ const CATALOGO = {
       camisetaDtf,
       kitChurrasco,
       copoTermico,
-      { emoji: '📲', bg: 'linear-gradient(135deg,#c4b5fd,#6d28d9)', badge: 'Novo',
-        nome: 'Cartão de Visita NFC', spec: 'Compartilhe seu contato por aproximação',
-        variacoes: [
-          { label: '1 un', preco: 49.90 },
-          { label: '5 un', preco: 199.90 },
-          { label: '10 un', preco: 349.90 },
-        ] },
     ],
   },
 };
