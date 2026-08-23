@@ -8,7 +8,7 @@
    a arte é criada pela designer da gráfica; o cliente não envia arte pronta. */
 const ARTE_SUBLIMACAO = 'A arte é criada por uma <strong>designer profissional da Print House</strong> — você <strong>não precisa enviar arte pronta</strong>. Se quiser, envie apenas a sua <strong>logo ou uma referência</strong> pelo WhatsApp; nós desenvolvemos a arte e você tem direito a até <strong>3 alterações</strong> antes da produção.';
 
-const CATALOGO_VERSAO = 81;
+const CATALOGO_VERSAO = 82;
 
 /* Produtos que aparecem em mais de uma categoria são definidos uma única
    vez aqui e referenciados nas categorias — sem duplicar dados. */
@@ -1015,6 +1015,49 @@ const sacolaCordao = {
   ],
 };
 
+const sacolaKraft = {
+  bg: 'linear-gradient(135deg,#fde68a,#92400e)', badge: 'Novo', destaque: true,
+  imagem: 'img/sacola-kraft.webp',
+  nome: 'Sacola Kraft com Alça',
+  spec: 'Kraft 80g · impressão silk · 310x375mm aprox. · pedido mínimo 500 unidades · R$ 2,95 cada',
+  unidade: 'sacola', unidadePlural: 'sacolas',
+  prazoTexto: '10 a 15 dias úteis',
+  paginaProduto: true,
+  descricao: 'As novas sacolas kraft com alça são uma opção e tanto para compor a divulgação dos seus clientes. Além de reutilizável, este impresso possui resistência e pode ser usado na entrega de brindes e muito mais! Ofereça sacolas Kraft com alça para diferentes tipos de negócios.',
+  detalhes: [
+    'Matéria-prima: Kraft 80g.',
+    'Tamanho final do produto: 310x375mm aproximadamente.',
+    'Tipo de impressão: SILK.',
+    'Este produto não aceita impressão nas laterais, apenas na frente e no verso (a arte do verso pode ser diferente).',
+    'Suporta até 8Kg.',
+    'Não envie linhas ou contornos com espessura menor que 1mm.',
+    'Impressão frente e verso: acréscimo de R$ 150,00 no pedido.',
+    'Leia o PDF de dicas no gabarito para entender sobre a montagem do material.',
+  ],
+  faq: [
+    { p: 'Qual o pedido mínimo?', r: 'O pedido mínimo é de 500 unidades, a R$ 2,95 cada.' },
+    { p: 'Posso imprimir frente e verso?', r: 'Sim! A impressão frente e verso tem um acréscimo de R$ 150,00 no pedido, e a arte do verso pode ser diferente da frente.' },
+    { p: 'Imprime nas laterais?', r: 'Não. Este produto aceita impressão apenas na frente e no verso.' },
+  ],
+  variacoes: [
+    { label: '500 un · só frente', preco: 1475.00 },
+    { label: '1.000 un · só frente', preco: 2950.00 },
+    { label: '1.500 un · só frente', preco: 4425.00 },
+    { label: '2.000 un · só frente', preco: 5900.00 },
+    { label: '2.500 un · só frente', preco: 7375.00 },
+    { label: '3.000 un · só frente', preco: 8850.00 },
+    { label: '3.500 un · só frente', preco: 10325.00 },
+    { label: '500 un · frente e verso', preco: 1625.00 },
+    { label: '1.000 un · frente e verso', preco: 3100.00 },
+    { label: '1.500 un · frente e verso', preco: 4575.00 },
+    { label: '2.000 un · frente e verso', preco: 6050.00 },
+    { label: '2.500 un · frente e verso', preco: 7525.00 },
+    { label: '3.000 un · frente e verso', preco: 9000.00 },
+    { label: '3.500 un · frente e verso', preco: 10475.00 },
+    { label: 'Outras quantidades', preco: null },
+  ],
+};
+
 const CATALOGO = {
   'kits': {
     nome: 'Kits',
@@ -1055,6 +1098,7 @@ const CATALOGO = {
     banner: 'linear-gradient(120deg,#9d174d,#f472b6)',
     descricao: 'Sacolas de papel personalizadas para valorizar a entrega da sua marca.',
     produtos: [
+      sacolaKraft,
       sacolaSilk,
       sacolaPlastica,
       sacolaCordao,
@@ -1638,6 +1682,7 @@ const CATALOGO = {
       caixaPresente,
       forminhasDoces,
       caixinhaMilk,
+      sacolaKraft,
       sacolaSilk,
       sacolaPlastica,
       sacolaCordao,
