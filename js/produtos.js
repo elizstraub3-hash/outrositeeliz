@@ -8,7 +8,7 @@
    a arte é criada pela designer da gráfica; o cliente não envia arte pronta. */
 const ARTE_SUBLIMACAO = 'A arte é criada por uma <strong>designer profissional da Print House</strong> — você <strong>não precisa enviar arte pronta</strong>. Se quiser, envie apenas a sua <strong>logo ou uma referência</strong> pelo WhatsApp; nós desenvolvemos a arte e você tem direito a até <strong>3 alterações</strong> antes da produção.';
 
-const CATALOGO_VERSAO = 82;
+const CATALOGO_VERSAO = 83;
 
 /* Produtos que aparecem em mais de uma categoria são definidos uma única
    vez aqui e referenciados nas categorias — sem duplicar dados. */
@@ -1019,14 +1019,14 @@ const sacolaKraft = {
   bg: 'linear-gradient(135deg,#fde68a,#92400e)', badge: 'Novo', destaque: true,
   imagem: 'img/sacola-kraft.webp',
   nome: 'Sacola Kraft com Alça',
-  spec: 'Kraft 80g · impressão silk · 310x375mm aprox. · pedido mínimo 500 unidades · R$ 2,95 cada',
+  spec: 'Kraft 80g · impressão silk · Padrão 31x37,5 cm ou GG 29x37 cm · pedido mínimo 500 unidades · a partir de R$ 2,95 cada',
   unidade: 'sacola', unidadePlural: 'sacolas',
   prazoTexto: '10 a 15 dias úteis',
   paginaProduto: true,
   descricao: 'As novas sacolas kraft com alça são uma opção e tanto para compor a divulgação dos seus clientes. Além de reutilizável, este impresso possui resistência e pode ser usado na entrega de brindes e muito mais! Ofereça sacolas Kraft com alça para diferentes tipos de negócios.',
   detalhes: [
     'Matéria-prima: Kraft 80g.',
-    'Tamanho final do produto: 310x375mm aproximadamente.',
+    'Tamanhos: Padrão 310x375mm (31x37,5 cm) ou GG 290x370mm (29x37 cm), aproximadamente.',
     'Tipo de impressão: SILK.',
     'Este produto não aceita impressão nas laterais, apenas na frente e no verso (a arte do verso pode ser diferente).',
     'Suporta até 8Kg.',
@@ -1035,27 +1035,47 @@ const sacolaKraft = {
     'Leia o PDF de dicas no gabarito para entender sobre a montagem do material.',
   ],
   faq: [
-    { p: 'Qual o pedido mínimo?', r: 'O pedido mínimo é de 500 unidades, a R$ 2,95 cada.' },
+    { p: 'Qual o pedido mínimo?', r: 'O pedido mínimo é de 500 unidades. Padrão (31x37,5 cm) a R$ 2,95 cada e GG (29x37 cm) a R$ 3,50 cada.' },
     { p: 'Posso imprimir frente e verso?', r: 'Sim! A impressão frente e verso tem um acréscimo de R$ 150,00 no pedido, e a arte do verso pode ser diferente da frente.' },
     { p: 'Imprime nas laterais?', r: 'Não. Este produto aceita impressão apenas na frente e no verso.' },
   ],
-  variacoes: [
-    { label: '500 un · só frente', preco: 1475.00 },
-    { label: '1.000 un · só frente', preco: 2950.00 },
-    { label: '1.500 un · só frente', preco: 4425.00 },
-    { label: '2.000 un · só frente', preco: 5900.00 },
-    { label: '2.500 un · só frente', preco: 7375.00 },
-    { label: '3.000 un · só frente', preco: 8850.00 },
-    { label: '3.500 un · só frente', preco: 10325.00 },
-    { label: '500 un · frente e verso', preco: 1625.00 },
-    { label: '1.000 un · frente e verso', preco: 3100.00 },
-    { label: '1.500 un · frente e verso', preco: 4575.00 },
-    { label: '2.000 un · frente e verso', preco: 6050.00 },
-    { label: '2.500 un · frente e verso', preco: 7525.00 },
-    { label: '3.000 un · frente e verso', preco: 9000.00 },
-    { label: '3.500 un · frente e verso', preco: 10475.00 },
-    { label: 'Outras quantidades', preco: null },
-  ],
+  grupoLabel: 'Tamanho', opcaoLabel: 'Quantidade e impressão',
+  tamanhos: {
+    'Padrão · 31x37,5 cm': [
+      { label: '500 un · só frente', preco: 1475.00 },
+      { label: '500 un · frente e verso', preco: 1625.00 },
+      { label: '1.000 un · só frente', preco: 2950.00 },
+      { label: '1.000 un · frente e verso', preco: 3100.00 },
+      { label: '1.500 un · só frente', preco: 4425.00 },
+      { label: '1.500 un · frente e verso', preco: 4575.00 },
+      { label: '2.000 un · só frente', preco: 5900.00 },
+      { label: '2.000 un · frente e verso', preco: 6050.00 },
+      { label: '2.500 un · só frente', preco: 7375.00 },
+      { label: '2.500 un · frente e verso', preco: 7525.00 },
+      { label: '3.000 un · só frente', preco: 8850.00 },
+      { label: '3.000 un · frente e verso', preco: 9000.00 },
+      { label: '3.500 un · só frente', preco: 10325.00 },
+      { label: '3.500 un · frente e verso', preco: 10475.00 },
+      { label: 'Outras quantidades', preco: null },
+    ],
+    'GG · 29x37 cm': [
+      { label: '500 un · só frente', preco: 1750.00 },
+      { label: '500 un · frente e verso', preco: 1900.00 },
+      { label: '1.000 un · só frente', preco: 3500.00 },
+      { label: '1.000 un · frente e verso', preco: 3650.00 },
+      { label: '1.500 un · só frente', preco: 5250.00 },
+      { label: '1.500 un · frente e verso', preco: 5400.00 },
+      { label: '2.000 un · só frente', preco: 7000.00 },
+      { label: '2.000 un · frente e verso', preco: 7150.00 },
+      { label: '2.500 un · só frente', preco: 8750.00 },
+      { label: '2.500 un · frente e verso', preco: 8900.00 },
+      { label: '3.000 un · só frente', preco: 10500.00 },
+      { label: '3.000 un · frente e verso', preco: 10650.00 },
+      { label: '3.500 un · só frente', preco: 12250.00 },
+      { label: '3.500 un · frente e verso', preco: 12400.00 },
+      { label: 'Outras quantidades', preco: null },
+    ],
+  },
 };
 
 const CATALOGO = {
