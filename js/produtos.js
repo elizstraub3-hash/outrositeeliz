@@ -8,7 +8,7 @@
    a arte é criada pela designer da gráfica; o cliente não envia arte pronta. */
 const ARTE_SUBLIMACAO = 'A arte é criada por uma <strong>designer profissional da Print House</strong> — você <strong>não precisa enviar arte pronta</strong>. Se quiser, envie apenas a sua <strong>logo ou uma referência</strong> pelo WhatsApp; nós desenvolvemos a arte e você tem direito a até <strong>3 alterações</strong> antes da produção.';
 
-const CATALOGO_VERSAO = 79;
+const CATALOGO_VERSAO = 80;
 
 /* Produtos que aparecem em mais de uma categoria são definidos uma única
    vez aqui e referenciados nas categorias — sem duplicar dados. */
@@ -1112,8 +1112,8 @@ const CATALOGO = {
         unidade: 'folha', unidadePlural: 'folhas',
         semArte: 'Traga o documento na loja, ou envie o arquivo (PDF/foto) pelo <strong>WhatsApp</strong> ou e-mail que imprimimos para você.',
         opcoesCombinacao: [
-          { nome: 'Preto e Branco', faixas: [{ min: 1, preco: 0.50 }, { min: 10, preco: 0.40 }, { min: 50, preco: 0.30 }, { min: 100, preco: 0.25 }] },
-          { nome: 'Colorida', faixas: [{ min: 1, preco: 2.00 }, { min: 10, preco: 1.50 }, { min: 50, preco: 1.20 }, { min: 100, preco: 1.00 }] },
+          { nome: 'Preto e Branco', faixas: [{ min: 1, preco: 0.75 }, { min: 10, preco: 0.60 }, { min: 50, preco: 0.45 }, { min: 100, preco: 0.40 }] },
+          { nome: 'Colorida', faixas: [{ min: 1, preco: 2.00 }, { min: 10, preco: 1.80 }, { min: 50, preco: 1.50 }, { min: 100, preco: 1.20 }] },
         ] },
       { bg: 'linear-gradient(135deg,#e0f2fe,#0369a1)', badge: 'Novo', destaque: true,
         nome: 'Impressão de Documentos (por página)',
@@ -1122,18 +1122,18 @@ const CATALOGO = {
         unidade: 'página', unidadePlural: 'páginas',
         semArte: 'Envie o seu documento em <strong>PDF</strong> pelo <strong>WhatsApp</strong> ou e-mail — imprimimos e você retira na loja ou recebe por motoboy/Uber.',
         opcoesCombinacao: [
-          { nome: 'Preto e Branco · Só frente', faixas: [{ min: 1, preco: 0.50 }, { min: 50, preco: 0.35 }, { min: 100, preco: 0.25 }] },
-          { nome: 'Preto e Branco · Frente e verso', faixas: [{ min: 1, preco: 0.80 }, { min: 50, preco: 0.60 }, { min: 100, preco: 0.45 }] },
-          { nome: 'Colorida · Só frente', faixas: [{ min: 1, preco: 2.00 }, { min: 50, preco: 1.20 }, { min: 100, preco: 1.00 }] },
+          { nome: 'Preto e Branco · Só frente', faixas: [{ min: 1, preco: 0.75 }, { min: 50, preco: 0.50 }, { min: 100, preco: 0.40 }] },
+          { nome: 'Preto e Branco · Frente e verso', faixas: [{ min: 1, preco: 1.00 }, { min: 50, preco: 0.80 }, { min: 100, preco: 0.60 }] },
+          { nome: 'Colorida · Só frente', faixas: [{ min: 1, preco: 2.00 }, { min: 50, preco: 1.50 }, { min: 100, preco: 1.20 }] },
         ] },
       { bg: 'linear-gradient(135deg,#ede9fe,#6d28d9)', badge: 'Novo', destaque: true,
         nome: 'Digitalização / Escaneamento (por página)',
-        spec: 'Escaneamos seus documentos e enviamos em PDF por WhatsApp ou e-mail',
+        spec: 'Escaneamos seus documentos e enviamos em PDF por WhatsApp ou e-mail · mínimo R$ 3,00 por atendimento',
         prazoTexto: 'na hora / no mesmo dia',
         unidade: 'página', unidadePlural: 'páginas',
-        semArte: 'Traga os documentos na loja. Devolvemos o arquivo digitalizado em <strong>PDF</strong> pelo WhatsApp ou e-mail.',
+        semArte: 'Traga os documentos na loja. Devolvemos o arquivo digitalizado em <strong>PDF</strong> pelo WhatsApp ou e-mail. Atendimento mínimo de R$ 3,00.',
         opcoesCombinacao: [
-          { nome: 'Digitalização em PDF', faixas: [{ min: 1, preco: 1.00 }, { min: 20, preco: 0.70 }, { min: 50, preco: 0.50 }] },
+          { nome: 'Digitalização em PDF', faixas: [{ min: 1, preco: 1.50 }, { min: 10, preco: 1.00 }, { min: 50, preco: 0.70 }] },
         ] },
       { bg: 'linear-gradient(135deg,#dcfce7,#15803d)', badge: 'Novo', destaque: true,
         nome: 'Plastificação',
@@ -1143,9 +1143,10 @@ const CATALOGO = {
         semArte: 'Traga o documento na loja ou envie o arquivo pelo <strong>WhatsApp</strong> para imprimirmos e plastificarmos.',
         grupoLabel: 'Tamanho', opcaoLabel: 'Quantidade',
         variacoes: [
-          { label: 'Crachá / Cartão', preco: 3.00 },
-          { label: 'A4', preco: 6.00 },
-          { label: 'A3', preco: 12.00 },
+          { label: 'Crachá / Cartão (RG)', preco: 5.00 },
+          { label: 'Meia folha A4', preco: 6.00 },
+          { label: 'A4', preco: 7.00 },
+          { label: 'A3', preco: 10.00 },
         ] },
       { bg: 'linear-gradient(135deg,#fce7f3,#be185d)', badge: 'Novo', destaque: true,
         nome: 'Encadernação',
@@ -1154,9 +1155,9 @@ const CATALOGO = {
         unidade: 'encadernação', unidadePlural: 'encadernações',
         semArte: 'Traga o material impresso ou envie o arquivo pelo <strong>WhatsApp</strong> — imprimimos e encadernamos para você.',
         opcoesCombinacao: [
-          { nome: 'Espiral · até 50 folhas', faixas: [{ min: 1, preco: 6.00 }] },
-          { nome: 'Espiral · até 100 folhas', faixas: [{ min: 1, preco: 9.00 }] },
-          { nome: 'Espiral · até 200 folhas', faixas: [{ min: 1, preco: 14.00 }] },
+          { nome: 'Espiral · até 50 folhas', faixas: [{ min: 1, preco: 5.00 }] },
+          { nome: 'Espiral · até 100 folhas', faixas: [{ min: 1, preco: 7.00 }] },
+          { nome: 'Espiral · até 200 folhas', faixas: [{ min: 1, preco: 11.00 }] },
           { nome: 'Capa dura (a partir de)', faixas: [{ min: 1, preco: 45.00 }] },
         ] },
       { bg: 'linear-gradient(135deg,#fee2e2,#b91c1c)', badge: 'Novo', destaque: true,
@@ -1167,11 +1168,12 @@ const CATALOGO = {
         semArte: 'Envie as fotos pelo <strong>WhatsApp</strong> ou traga na loja (pen drive/celular). Retire na loja ou receba por motoboy/Uber.',
         grupoLabel: 'Tamanho', opcaoLabel: 'Quantidade',
         variacoes: [
-          { label: 'Foto 3x4 (cartela com 6)', preco: 10.00 },
-          { label: 'Foto 5x7', preco: 5.00 },
-          { label: 'Foto 10x15', preco: 3.00 },
+          { label: 'Foto 3x4 (cartela com 8)', preco: 10.00 },
+          { label: 'Foto 5x7 (cartela com 4)', preco: 10.00 },
+          { label: 'Foto 10x15', preco: 3.50 },
           { label: 'Foto 15x21', preco: 6.00 },
-          { label: 'Pôster A3', preco: 20.00 },
+          { label: 'Foto 20x30', preco: 9.00 },
+          { label: 'Pôster 30x40', preco: 25.00 },
         ] },
     ],
   },
