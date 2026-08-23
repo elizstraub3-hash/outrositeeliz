@@ -8,7 +8,7 @@
    a arte é criada pela designer da gráfica; o cliente não envia arte pronta. */
 const ARTE_SUBLIMACAO = 'A arte é criada por uma <strong>designer profissional da Print House</strong> — você <strong>não precisa enviar arte pronta</strong>. Se quiser, envie apenas a sua <strong>logo ou uma referência</strong> pelo WhatsApp; nós desenvolvemos a arte e você tem direito a até <strong>3 alterações</strong> antes da produção.';
 
-const CATALOGO_VERSAO = 83;
+const CATALOGO_VERSAO = 84;
 
 /* Produtos que aparecem em mais de uma categoria são definidos uma única
    vez aqui e referenciados nas categorias — sem duplicar dados. */
@@ -1018,15 +1018,16 @@ const sacolaCordao = {
 const sacolaKraft = {
   bg: 'linear-gradient(135deg,#fde68a,#92400e)', badge: 'Novo', destaque: true,
   imagem: 'img/sacola-kraft.webp',
+  imagens: ['img/sacola-kraft.webp', 'img/sacola-kraft-cores.webp'],
   nome: 'Sacola Kraft com Alça',
-  spec: 'Kraft 80g · impressão silk · Padrão 31x37,5 cm ou GG 29x37 cm · pedido mínimo 500 unidades · a partir de R$ 2,95 cada',
+  spec: 'Kraft 80g · impressão silk · 24x35, Padrão 31x37,5 ou GG 29x37 cm · pedido mínimo 500 unidades · a partir de R$ 2,80 cada',
   unidade: 'sacola', unidadePlural: 'sacolas',
   prazoTexto: '10 a 15 dias úteis',
   paginaProduto: true,
   descricao: 'As novas sacolas kraft com alça são uma opção e tanto para compor a divulgação dos seus clientes. Além de reutilizável, este impresso possui resistência e pode ser usado na entrega de brindes e muito mais! Ofereça sacolas Kraft com alça para diferentes tipos de negócios.',
   detalhes: [
     'Matéria-prima: Kraft 80g.',
-    'Tamanhos: Padrão 310x375mm (31x37,5 cm) ou GG 290x370mm (29x37 cm), aproximadamente.',
+    'Tamanhos: 24x35 cm, Padrão 31x37,5 cm (310x375mm) ou GG 29x37 cm (290x370mm), aproximadamente.',
     'Tipo de impressão: SILK.',
     'Este produto não aceita impressão nas laterais, apenas na frente e no verso (a arte do verso pode ser diferente).',
     'Suporta até 8Kg.',
@@ -1035,12 +1036,29 @@ const sacolaKraft = {
     'Leia o PDF de dicas no gabarito para entender sobre a montagem do material.',
   ],
   faq: [
-    { p: 'Qual o pedido mínimo?', r: 'O pedido mínimo é de 500 unidades. Padrão (31x37,5 cm) a R$ 2,95 cada e GG (29x37 cm) a R$ 3,50 cada.' },
+    { p: 'Qual o pedido mínimo?', r: 'O pedido mínimo é de 500 unidades. 24x35 cm a R$ 2,80 cada, Padrão (31x37,5 cm) a R$ 2,95 cada e GG (29x37 cm) a R$ 3,50 cada.' },
     { p: 'Posso imprimir frente e verso?', r: 'Sim! A impressão frente e verso tem um acréscimo de R$ 150,00 no pedido, e a arte do verso pode ser diferente da frente.' },
     { p: 'Imprime nas laterais?', r: 'Não. Este produto aceita impressão apenas na frente e no verso.' },
   ],
   grupoLabel: 'Tamanho', opcaoLabel: 'Quantidade e impressão',
   tamanhos: {
+    '24x35 cm': [
+      { label: '500 un · só frente', preco: 1400.00 },
+      { label: '500 un · frente e verso', preco: 1550.00 },
+      { label: '1.000 un · só frente', preco: 2800.00 },
+      { label: '1.000 un · frente e verso', preco: 2950.00 },
+      { label: '1.500 un · só frente', preco: 4200.00 },
+      { label: '1.500 un · frente e verso', preco: 4350.00 },
+      { label: '2.000 un · só frente', preco: 5600.00 },
+      { label: '2.000 un · frente e verso', preco: 5750.00 },
+      { label: '2.500 un · só frente', preco: 7000.00 },
+      { label: '2.500 un · frente e verso', preco: 7150.00 },
+      { label: '3.000 un · só frente', preco: 8400.00 },
+      { label: '3.000 un · frente e verso', preco: 8550.00 },
+      { label: '3.500 un · só frente', preco: 9800.00 },
+      { label: '3.500 un · frente e verso', preco: 9950.00 },
+      { label: 'Outras quantidades', preco: null },
+    ],
     'Padrão · 31x37,5 cm': [
       { label: '500 un · só frente', preco: 1475.00 },
       { label: '500 un · frente e verso', preco: 1625.00 },
