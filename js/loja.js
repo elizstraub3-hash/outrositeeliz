@@ -756,6 +756,18 @@ function abrirCarrinho() {
   const { modal, fechar } = criarModal('Meu carrinho', `
     <h3 class="arte-titulo">Meu carrinho</h3>
     <div class="cart-lista">${linhas}</div>
+    ${carrinho.length ? `
+    <div class="cart-entrega">
+      <span class="cart-entrega__titulo">Como você quer receber?</span>
+      <label class="cart-entrega__opt">
+        <input type="radio" name="entrega" value="Retirar na loja" checked>
+        <span><strong>Retirar na loja</strong><small>Você retira pessoalmente no nosso ponto físico.</small></span>
+      </label>
+      <label class="cart-entrega__opt">
+        <input type="radio" name="entrega" value="Entrega por motoboy / Uber">
+        <span><strong>Entrega por motoboy / Uber</strong><small>Combinamos a taxa de entrega pelo WhatsApp conforme o seu endereço.</small></span>
+      </label>
+    </div>` : ''}
     <div class="modal__foot">
       <div class="modal__total">
         <small>${totalUnidades} unidade${totalUnidades === 1 ? '' : 's'}${temSobConsulta ? ' · + itens a combinar' : ''}</small>
@@ -797,6 +809,8 @@ function abrirCarrinho() {
       msg.push(`${i + 1}) ${item.nome} — ${item.detalhe} — ${item.total == null ? 'valor a combinar' : 'R$ ' + formatarPreco(item.total)} — ${item.arte}${item.arquivo ? ` (arquivo: ${item.arquivo})` : ''}`);
     });
     msg.push('', `Total: R$ ${formatarPreco(totalValor)} no Pix${temSobConsulta ? ' (+ itens com medida personalizada a combinar)' : ''}`);
+    const entregaSel = modal.querySelector('input[name="entrega"]:checked');
+    if (entregaSel) msg.push('', `Entrega: ${entregaSel.value}`);
     if (carrinho.some((item) => item.arte === 'Tenho a arte')) {
       msg.push('', 'Vou enviar o arquivo da arte nesta conversa.');
     }

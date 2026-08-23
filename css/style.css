@@ -1159,6 +1159,16 @@ button { font-family: inherit; cursor: pointer; }
 }
 .cart-item__remover:hover { background: var(--border); }
 .cart-vazio { font-size: .9rem; color: var(--gray); padding: 1rem 0; }
+.cart-entrega { display: grid; gap: .5rem; margin-bottom: 1rem; }
+.cart-entrega__titulo { font-size: .8rem; font-weight: 700; color: var(--dark); }
+.cart-entrega__opt {
+  display: flex; align-items: flex-start; gap: .6rem;
+  border: 1px solid var(--border); border-radius: 10px; padding: .6rem .75rem; cursor: pointer;
+}
+.cart-entrega__opt:has(input:checked) { border-color: var(--primary); background: var(--gray-light); }
+.cart-entrega__opt input { margin-top: .2rem; flex-shrink: 0; }
+.cart-entrega__opt strong { display: block; font-size: .82rem; }
+.cart-entrega__opt small { display: block; font-size: .72rem; color: var(--gray); }
 .cart-acoes { display: flex; gap: .6rem; flex-wrap: wrap; }
 .btn--claro { background: var(--gray-light); color: var(--dark); }
 .btn--claro:hover { background: var(--border); }

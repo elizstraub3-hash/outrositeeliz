@@ -8,7 +8,7 @@
    a arte é criada pela designer da gráfica; o cliente não envia arte pronta. */
 const ARTE_SUBLIMACAO = 'A arte é criada por uma <strong>designer profissional da Print House</strong> — você <strong>não precisa enviar arte pronta</strong>. Se quiser, envie apenas a sua <strong>logo ou uma referência</strong> pelo WhatsApp; nós desenvolvemos a arte e você tem direito a até <strong>3 alterações</strong> antes da produção.';
 
-const CATALOGO_VERSAO = 78;
+const CATALOGO_VERSAO = 79;
 
 /* Produtos que aparecem em mais de uma categoria são definidos uma única
    vez aqui e referenciados nas categorias — sem duplicar dados. */
@@ -999,12 +999,12 @@ const sacolaCordao = {
   bg: 'linear-gradient(135deg,#fef3c7,#b45309)', badge: 'Novo', destaque: true,
   imagem: 'img/sacola-alca-cordao.webp',
   nome: 'Sacola de Papel com Alça de Cordão',
-  spec: 'Papel personalizado · 29 x 25 x 8 cm · alça de cordão · pedido mínimo 10 unidades',
+  spec: 'Papel · 29 x 25 x 8 cm · alça de cordão · pedido mínimo 10 unidades. A sacola não é colorida: apenas a logo da frente é impressa em cor e as laterais recebem um padrão (pattern) da sua logo — sem cores chapadas.',
   unidade: 'sacola', unidadePlural: 'sacolas',
   minimoTotal: 10,
   opcoesCombinacao: [
-    { nome: 'Alça Branca', faixas: [{ min: 1, preco: 6.50 }] },
-    { nome: 'Alça Colorida (conforme identidade visual)', faixas: [{ min: 1, preco: 7.00 }] },
+    { nome: 'Alça de cordão padrão', faixas: [{ min: 1, preco: 9.00 }] },
+    { nome: 'Alça na cor da sua identidade visual', faixas: [{ min: 1, preco: 10.00 }] },
   ],
 };
 
@@ -1095,6 +1095,83 @@ const CATALOGO = {
           { nome: 'Papel Matte Fosco 180g · Colorido', faixas: [{ min: 1, preco: 3.50 }] },
           { nome: 'Papel Glossy 250g · Preto e Branco', faixas: [{ min: 1, preco: 3.00 }] },
           { nome: 'Papel Glossy 250g · Colorido', faixas: [{ min: 1, preco: 3.50 }] },
+        ] },
+    ],
+  },
+
+  'grafica-rapida': {
+    nome: 'Gráfica Rápida (Balcão)',
+    emoji: '⚡',
+    banner: 'linear-gradient(120deg,#b45309,#f59e0b)',
+    descricao: 'Serviços de balcão do dia a dia: escolha aqui, envie o arquivo pelo WhatsApp e retire na loja ou receba por motoboy/Uber.',
+    produtos: [
+      { bg: 'linear-gradient(135deg,#fef3c7,#b45309)', badge: 'Novo', destaque: true,
+        nome: 'Cópias / Xerox (por folha)',
+        spec: 'Cópia P&B ou colorida · A4 · escolha a cor e some quantas folhas quiser',
+        prazoTexto: 'na hora / no mesmo dia',
+        unidade: 'folha', unidadePlural: 'folhas',
+        semArte: 'Traga o documento na loja, ou envie o arquivo (PDF/foto) pelo <strong>WhatsApp</strong> ou e-mail que imprimimos para você.',
+        opcoesCombinacao: [
+          { nome: 'Preto e Branco', faixas: [{ min: 1, preco: 0.50 }, { min: 10, preco: 0.40 }, { min: 50, preco: 0.30 }, { min: 100, preco: 0.25 }] },
+          { nome: 'Colorida', faixas: [{ min: 1, preco: 2.00 }, { min: 10, preco: 1.50 }, { min: 50, preco: 1.20 }, { min: 100, preco: 1.00 }] },
+        ] },
+      { bg: 'linear-gradient(135deg,#e0f2fe,#0369a1)', badge: 'Novo', destaque: true,
+        nome: 'Impressão de Documentos (por página)',
+        spec: 'Envie o PDF pelo WhatsApp ou e-mail · impressão P&B ou colorida · A4 · retire na loja ou receba por motoboy/Uber',
+        prazoTexto: 'na hora / no mesmo dia',
+        unidade: 'página', unidadePlural: 'páginas',
+        semArte: 'Envie o seu documento em <strong>PDF</strong> pelo <strong>WhatsApp</strong> ou e-mail — imprimimos e você retira na loja ou recebe por motoboy/Uber.',
+        opcoesCombinacao: [
+          { nome: 'Preto e Branco · Só frente', faixas: [{ min: 1, preco: 0.50 }, { min: 50, preco: 0.35 }, { min: 100, preco: 0.25 }] },
+          { nome: 'Preto e Branco · Frente e verso', faixas: [{ min: 1, preco: 0.80 }, { min: 50, preco: 0.60 }, { min: 100, preco: 0.45 }] },
+          { nome: 'Colorida · Só frente', faixas: [{ min: 1, preco: 2.00 }, { min: 50, preco: 1.20 }, { min: 100, preco: 1.00 }] },
+        ] },
+      { bg: 'linear-gradient(135deg,#ede9fe,#6d28d9)', badge: 'Novo', destaque: true,
+        nome: 'Digitalização / Escaneamento (por página)',
+        spec: 'Escaneamos seus documentos e enviamos em PDF por WhatsApp ou e-mail',
+        prazoTexto: 'na hora / no mesmo dia',
+        unidade: 'página', unidadePlural: 'páginas',
+        semArte: 'Traga os documentos na loja. Devolvemos o arquivo digitalizado em <strong>PDF</strong> pelo WhatsApp ou e-mail.',
+        opcoesCombinacao: [
+          { nome: 'Digitalização em PDF', faixas: [{ min: 1, preco: 1.00 }, { min: 20, preco: 0.70 }, { min: 50, preco: 0.50 }] },
+        ] },
+      { bg: 'linear-gradient(135deg,#dcfce7,#15803d)', badge: 'Novo', destaque: true,
+        nome: 'Plastificação',
+        spec: 'Plastificação (laminação) de documentos e cartões · escolha o tamanho',
+        prazoTexto: 'na hora / no mesmo dia',
+        unidade: 'plastificação', unidadePlural: 'plastificações',
+        semArte: 'Traga o documento na loja ou envie o arquivo pelo <strong>WhatsApp</strong> para imprimirmos e plastificarmos.',
+        grupoLabel: 'Tamanho', opcaoLabel: 'Quantidade',
+        variacoes: [
+          { label: 'Crachá / Cartão', preco: 3.00 },
+          { label: 'A4', preco: 6.00 },
+          { label: 'A3', preco: 12.00 },
+        ] },
+      { bg: 'linear-gradient(135deg,#fce7f3,#be185d)', badge: 'Novo', destaque: true,
+        nome: 'Encadernação',
+        spec: 'Espiral ou capa dura · escolha pelo número de folhas',
+        prazoTexto: 'na hora / no mesmo dia',
+        unidade: 'encadernação', unidadePlural: 'encadernações',
+        semArte: 'Traga o material impresso ou envie o arquivo pelo <strong>WhatsApp</strong> — imprimimos e encadernamos para você.',
+        opcoesCombinacao: [
+          { nome: 'Espiral · até 50 folhas', faixas: [{ min: 1, preco: 6.00 }] },
+          { nome: 'Espiral · até 100 folhas', faixas: [{ min: 1, preco: 9.00 }] },
+          { nome: 'Espiral · até 200 folhas', faixas: [{ min: 1, preco: 14.00 }] },
+          { nome: 'Capa dura (a partir de)', faixas: [{ min: 1, preco: 45.00 }] },
+        ] },
+      { bg: 'linear-gradient(135deg,#fee2e2,#b91c1c)', badge: 'Novo', destaque: true,
+        nome: 'Impressão de Fotos',
+        spec: 'Impressão de fotos e documentos · escolha o tamanho',
+        prazoTexto: 'na hora / no mesmo dia',
+        unidade: 'foto', unidadePlural: 'fotos',
+        semArte: 'Envie as fotos pelo <strong>WhatsApp</strong> ou traga na loja (pen drive/celular). Retire na loja ou receba por motoboy/Uber.',
+        grupoLabel: 'Tamanho', opcaoLabel: 'Quantidade',
+        variacoes: [
+          { label: 'Foto 3x4 (cartela com 6)', preco: 10.00 },
+          { label: 'Foto 5x7', preco: 5.00 },
+          { label: 'Foto 10x15', preco: 3.00 },
+          { label: 'Foto 15x21', preco: 6.00 },
+          { label: 'Pôster A3', preco: 20.00 },
         ] },
     ],
   },
