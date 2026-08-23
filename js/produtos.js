@@ -8,7 +8,7 @@
    a arte é criada pela designer da gráfica; o cliente não envia arte pronta. */
 const ARTE_SUBLIMACAO = 'A arte é criada por uma <strong>designer profissional da Print House</strong> — você <strong>não precisa enviar arte pronta</strong>. Se quiser, envie apenas a sua <strong>logo ou uma referência</strong> pelo WhatsApp; nós desenvolvemos a arte e você tem direito a até <strong>3 alterações</strong> antes da produção.';
 
-const CATALOGO_VERSAO = 88;
+const CATALOGO_VERSAO = 89;
 
 /* Produtos que aparecem em mais de uma categoria são definidos uma única
    vez aqui e referenciados nas categorias — sem duplicar dados. */
@@ -1201,9 +1201,9 @@ const CATALOGO = {
         prazoTexto: 'na hora / no mesmo dia',
         unidade: 'folha', unidadePlural: 'folhas',
         opcoesCombinacao: [
-          { nome: 'Sulfite 75g · Preto e Branco', faixas: [{ min: 1, preco: 0.50 }] },
-          { nome: 'Sulfite 75g · Colorido', faixas: [{ min: 1, preco: 1.00 }] },
-          { nome: 'Sulfite 90g · Colorido', faixas: [{ min: 1, preco: 1.50 }] },
+          { nome: 'Sulfite 75g · Preto e Branco', faixas: [{ min: 1, preco: 0.75 }] },
+          { nome: 'Sulfite 75g · Colorido', faixas: [{ min: 1, preco: 1.50 }] },
+          { nome: 'Sulfite 90g · Colorido', faixas: [{ min: 1, preco: 2.00 }] },
           { nome: 'Papel Matte Fosco 180g · Preto e Branco', faixas: [{ min: 1, preco: 3.00 }] },
           { nome: 'Papel Matte Fosco 180g · Colorido', faixas: [{ min: 1, preco: 3.50 }] },
           { nome: 'Papel Glossy 250g · Preto e Branco', faixas: [{ min: 1, preco: 3.00 }] },
