@@ -186,12 +186,13 @@ function blocoArte(p) {
   }
   // Produtos com arte restrita: a arte é desenvolvida pela gráfica (detalhes técnicos)
   if (p && p.arteRestrita) {
+    const txt = typeof p.arteRestrita === 'string'
+      ? p.arteRestrita
+      : '🎨 A arte deste produto é desenvolvida pela nossa equipe, pois envolve detalhes técnicos de modelagem e corte que só a gráfica domina. Você <strong>não precisa enviar arquivo</strong> — nós criamos a arte com você e enviamos a prévia para aprovação antes da produção.';
     return `
     <div class="modal__arte">
       <label class="modal__label">Sobre a arte:</label>
-      <p class="arte-restrita">🎨 A arte deste produto é desenvolvida pela nossa equipe, pois envolve
-      detalhes técnicos de modelagem e corte que só a gráfica domina. Você <strong>não precisa enviar
-      arquivo</strong> — nós criamos a arte com você e enviamos a prévia para aprovação antes da produção.</p>
+      <p class="arte-restrita">${txt}</p>
     </div>`;
   }
   return `

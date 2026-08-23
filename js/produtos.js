@@ -4,7 +4,11 @@
 /* Versão do catálogo: aumente em 1 sempre que alterar este arquivo.
    Edições salvas pelo painel admin em versões antigas são descartadas
    automaticamente, para que as novidades daqui sempre apareçam. */
-const CATALOGO_VERSAO = 76;
+/* Aviso de arte para produtos de sublimação completa (uniformes, dry fit etc.):
+   a arte é criada pela designer da gráfica; o cliente não envia arte pronta. */
+const ARTE_SUBLIMACAO = 'A arte é criada por uma <strong>designer profissional da Print House</strong> — você <strong>não precisa enviar arte pronta</strong>. Se quiser, envie apenas a sua <strong>logo ou uma referência</strong> pelo WhatsApp; nós desenvolvemos a arte e você tem direito a até <strong>3 alterações</strong> antes da produção.';
+
+const CATALOGO_VERSAO = 77;
 
 /* Produtos que aparecem em mais de uma categoria são definidos uma única
    vez aqui e referenciados nas categorias — sem duplicar dados. */
@@ -117,6 +121,7 @@ const FAIXAS_CAMISA_COPA = [
 const camisaCopa = {
   bg: 'linear-gradient(135deg,#fde047,#16a34a)', badge: 'Novo', destaque: true,
   nome: 'Camisa Copa Personalizada',
+  arteRestrita: ARTE_SUBLIMACAO,
   distribuirTamanhos: true, unidade: 'camisa', unidadePlural: 'camisas',
   spec: 'Tecido Profit · leve, confortável e resistente · tamanhos P ao XL4 · escolha o tamanho e a quantidade',
   prazo: 7,
@@ -225,6 +230,7 @@ const camisetaDryMasc = {
   imagem: 'img/camiseta-masc.webp',
   imagens: ['img/camiseta-masc.webp', 'img/camiseta-masc-gola-brasil.webp', 'img/camiseta-masc-gola-v.webp', 'img/camiseta-masc-2.webp'],
   nome: 'Camiseta Dry Fit Masculina',
+  arteRestrita: ARTE_SUBLIMACAO,
   distribuirTamanhos: true, unidade: 'camiseta', unidadePlural: 'camisetas',
   spec: 'Tipo Dry Fit · 100% poliéster · malha que absorve o suor · 3 golas (Brasil, redonda e V) · do P ao XL4',
   prazo: 7,
@@ -270,6 +276,7 @@ const camisetaDryFem = {
   bg: 'linear-gradient(135deg,#e0f2fe,#0369a1)', badge: 'Novo',
   imagem: 'img/camiseta-fem.webp',
   nome: 'Camiseta Dry Fit Feminina',
+  arteRestrita: ARTE_SUBLIMACAO,
   distribuirTamanhos: true, unidade: 'camiseta', unidadePlural: 'camisetas',
   spec: 'Tipo Dry Fit · 100% poliéster · malha que absorve o suor · golas redonda e V · do P ao XL4',
   prazo: 7,
@@ -307,6 +314,7 @@ const camisaPesca = {
   bg: 'linear-gradient(135deg,#a5f3fc,#0e7490)', badge: 'Novo',
   imagem: 'img/camisa-pesca.webp',
   nome: 'Camisa de Pesca Personalizada',
+  arteRestrita: ARTE_SUBLIMACAO,
   distribuirTamanhos: true, unidade: 'camisa', unidadePlural: 'camisas',
   spec: 'Manga longa · gola média com zíper · Active Ice UV 50+ · impressão Ultra HD Sublimática · do P ao XL4',
   prazo: 10,
@@ -509,6 +517,7 @@ const camisaAmericana = {
   bg: 'linear-gradient(135deg,#fde68a,#334155)', badge: 'Novo',
   imagem: 'img/camisa-americana.webp',
   nome: 'Camisa Futebol Americano Titan',
+  arteRestrita: ARTE_SUBLIMACAO,
   distribuirTamanhos: true, unidade: 'camisa', unidadePlural: 'camisas',
   spec: 'Masculino · impressão Ultra HD Sublimática · do P ao XL4',
   prazo: 10,
@@ -614,6 +623,7 @@ const camisaCiclismo = {
   bg: 'linear-gradient(135deg,#fde68a,#334155)', badge: 'Novo',
   imagem: 'img/camisa-ciclismo.webp',
   nome: 'Camisa de Ciclismo Fast',
+  arteRestrita: ARTE_SUBLIMACAO,
   distribuirTamanhos: true, unidade: 'camisa', unidadePlural: 'camisas',
   spec: 'Masculino · impressão Ultra HD Sublimática · do P ao XL4',
   prazo: 10,
