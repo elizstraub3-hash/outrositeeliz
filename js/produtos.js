@@ -8,7 +8,7 @@
    a arte é criada pela designer da gráfica; o cliente não envia arte pronta. */
 const ARTE_SUBLIMACAO = 'A arte é criada por uma <strong>designer profissional da Print House</strong> — você <strong>não precisa enviar arte pronta</strong>. Se quiser, envie apenas a sua <strong>logo ou uma referência</strong> pelo WhatsApp; nós desenvolvemos a arte e você tem direito a até <strong>3 alterações</strong> antes da produção.';
 
-const CATALOGO_VERSAO = 85;
+const CATALOGO_VERSAO = 86;
 
 /* Produtos que aparecem em mais de uma categoria são definidos uma única
    vez aqui e referenciados nas categorias — sem duplicar dados. */
@@ -1033,7 +1033,7 @@ const sacolaKraft = {
     'Suporta até 8Kg.',
     'Não envie linhas ou contornos com espessura menor que 1mm.',
     'Impressão frente e verso: acréscimo de R$ 150,00 no pedido.',
-    'Leia o PDF de dicas no gabarito para entender sobre a montagem do material.',
+    'Você não precisa enviar arte pronta: nossos designers profissionais preparam tudo para você.',
   ],
   faq: [
     { p: 'Qual o pedido mínimo?', r: 'O pedido mínimo é de 500 unidades. 28x18 cm a R$ 2,35 cada, 24x35 cm a R$ 2,80 cada, Padrão (31x37,5 cm) a R$ 2,95 cada e GG (29x37 cm) a R$ 3,50 cada.' },
