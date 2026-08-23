@@ -8,7 +8,7 @@
    a arte é criada pela designer da gráfica; o cliente não envia arte pronta. */
 const ARTE_SUBLIMACAO = 'A arte é criada por uma <strong>designer profissional da Print House</strong> — você <strong>não precisa enviar arte pronta</strong>. Se quiser, envie apenas a sua <strong>logo ou uma referência</strong> pelo WhatsApp; nós desenvolvemos a arte e você tem direito a até <strong>3 alterações</strong> antes da produção.';
 
-const CATALOGO_VERSAO = 90;
+const CATALOGO_VERSAO = 91;
 
 /* Produtos que aparecem em mais de uma categoria são definidos uma única
    vez aqui e referenciados nas categorias — sem duplicar dados. */
@@ -929,11 +929,13 @@ const caixaPresente = {
   bg: 'linear-gradient(135deg,#1f2937,#f59e0b)', badge: 'Novo', destaque: true,
   imagem: 'img/caixa-presente.webp',
   nome: 'Caixa de Presente Personalizada',
-  spec: 'Caixa cartonada · acabamento vinil · logo ou escrita em dourado no topo · forro interno à sua escolha',
+  spec: 'Caixa cartonada · acabamento vinil · logo ou escrita em dourado no topo · forro interno à sua escolha · R$ 55,90 (adicionais opcionais: laço +R$ 12,90 e/ou toda preta com correntinha dourada +R$ 12,90)',
   prazoTexto: 'de 5 dias úteis',
   variacoes: [
-    { label: 'Com laço', preco: 12.90 },
-    { label: 'Toda preta com correntinha dourada', preco: 55.90 },
+    { label: 'Sem adicional', preco: 55.90 },
+    { label: 'Com laço (+R$ 12,90)', preco: 68.80 },
+    { label: 'Toda preta com correntinha dourada (+R$ 12,90)', preco: 68.80 },
+    { label: 'Com laço + correntinha dourada (+R$ 25,80)', preco: 81.70 },
   ],
 };
 
