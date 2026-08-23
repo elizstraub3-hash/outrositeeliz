@@ -8,7 +8,7 @@
    a arte é criada pela designer da gráfica; o cliente não envia arte pronta. */
 const ARTE_SUBLIMACAO = 'A arte é criada por uma <strong>designer profissional da Print House</strong> — você <strong>não precisa enviar arte pronta</strong>. Se quiser, envie apenas a sua <strong>logo ou uma referência</strong> pelo WhatsApp; nós desenvolvemos a arte e você tem direito a até <strong>3 alterações</strong> antes da produção.';
 
-const CATALOGO_VERSAO = 80;
+const CATALOGO_VERSAO = 81;
 
 /* Produtos que aparecem em mais de uma categoria são definidos uma única
    vez aqui e referenciados nas categorias — sem duplicar dados. */
@@ -139,21 +139,28 @@ const camisaCopa = {
 };
 
 const ecobagPersonalizada = {
-  bg: 'linear-gradient(135deg,#d9f99d,#4d7c0f)', badge: 'Novo',
-  imagem: 'img/ecobag-personalizada.webp',
+  bg: 'linear-gradient(135deg,#d9f99d,#4d7c0f)', badge: 'Novo', destaque: true,
+  imagem: 'img/ecobag-cru.webp',
   nome: 'Ecobag Personalizada',
-  spec: 'Tecido microfibra · colorido só frente · 30x30 cm · com ou sem velcro',
-  variacoes: [
-    { label: '5 un · sem Velcro', preco: 97.90 },
-    { label: '5 un · com Velcro Total', preco: 132.90 },
-    { label: '10 un · sem Velcro', preco: 179.90 },
-    { label: '10 un · com Velcro Total', preco: 215.90 },
-    { label: '25 un · sem Velcro', preco: 412.90 },
-    { label: '25 un · com Velcro Total', preco: 447.90 },
-    { label: '50 un · sem Velcro', preco: 749.90 },
-    { label: '50 un · com Velcro Total', preco: 785.90 },
-    { label: '100 un · sem Velcro', preco: 1424.90 },
-    { label: '100 un · com Velcro Total', preco: 1460.90 },
+  spec: 'Algodão cru · impressão sublimática · escolha o tamanho e some quantas quiser',
+  prazoTexto: '3 a 7 dias úteis',
+  paginaProduto: true,
+  unidade: 'ecobag', unidadePlural: 'ecobags',
+  descricao: 'Ecobag em algodão cru personalizada com a sua marca em impressão sublimática. Sustentável, resistente e reutilizável — perfeita para lojas, eventos, brindes e o dia a dia dos seus clientes. Envie a sua logo que nós criamos a arte e enviamos a prévia para aprovação.',
+  detalhes: [
+    'Material: algodão cru resistente, com alças reforçadas.',
+    'Personalização: impressão sublimática da sua marca/arte na frente.',
+    'Tamanhos disponíveis: 20x18 cm, 21x26 cm e 21x30 cm (G).',
+    'Prazo: 3 a 7 dias úteis após a aprovação da arte e confirmação do pagamento.',
+  ],
+  faq: [
+    { p: 'Preciso enviar a arte pronta?', r: 'Não. Envie a sua logo ou uma referência pelo WhatsApp que a nossa equipe cria a arte e envia a prévia para aprovação antes de produzir.' },
+    { p: 'Posso misturar tamanhos no mesmo pedido?', r: 'Pode! Adicione cada tamanho ao carrinho com a quantidade que quiser.' },
+  ],
+  opcoesCombinacao: [
+    { nome: 'Tamanho 20x18 cm', faixas: [{ min: 1, preco: 14.90 }] },
+    { nome: 'Tamanho 21x26 cm', faixas: [{ min: 1, preco: 18.90 }] },
+    { nome: 'Tamanho G · 21x30 cm', faixas: [{ min: 1, preco: 22.90 }] },
   ],
 };
 
