@@ -941,16 +941,9 @@ const caixaPresente = {
 const sacolaSilk = {
   bg: 'linear-gradient(135deg,#fbcfe8,#be185d)', badge: 'Novo', destaque: true,
   imagem: 'img/sacola-silk.webp',
-  nome: 'Sacola de Papel Simples',
-  spec: 'Papel offset 180g (material simples, não é premium) · impressão silk 1 cor só frente · alça de gorgurão · escolha o tamanho, a cor da sacola, a cor da estampa e a quantidade',
+  nome: 'Sacola em Papel Silk Premium',
+  spec: 'Papel offset 150g · impressão silk 1 cor só frente · alça de gorgurão · escolha o tamanho, a cor da sacola, a cor da estampa e a quantidade',
   prazo: 20,
-  descricao: 'Sacola de papel simples, feita em papel offset 180g, com impressão silk 1 cor só na frente e alça de gorgurão. É uma sacola simples — não é um material premium. Se tiver dúvida sobre o material ou o acabamento, peça mais fotos pelo WhatsApp antes de fechar o pedido.',
-  detalhes: [
-    'Material: papel offset 180g (material simples, não é premium).',
-    'Impressão: silk, 1 cor, só na frente.',
-    'Alça: gorgurão.',
-    'Na dúvida sobre o material, peça mais fotos pelo WhatsApp antes de comprar.',
-  ],
   grupoLabel: 'Tamanho', opcaoLabel: 'Quantidade',
   coresEstampa: ['Azul', 'Branco', 'Kraft/Dourado', 'Prata/Cinza', 'Rosa', 'Verde', 'Vermelho'],
   coresPorTamanho: {
@@ -1012,10 +1005,17 @@ const sacolaPlastica = {
 const sacolaCordao = {
   bg: 'linear-gradient(135deg,#fef3c7,#b45309)', badge: 'Novo', destaque: true,
   imagem: 'img/sacola-alca-cordao.webp',
-  nome: 'Sacola de Papel com Alça de Cordão',
-  spec: 'Papel · 29 x 25 x 8 cm · alça de cordão · pedido mínimo 10 unidades. A sacola não é colorida: apenas a logo da frente é impressa em cor e as laterais recebem um padrão (pattern) da sua logo — sem cores chapadas.',
+  nome: 'Sacola de Papel Simples com Alça de Cordão',
+  spec: 'Papel offset 180g (material simples, não é premium) · 29 x 25 x 8 cm · alça de cordão · pedido mínimo 10 unidades. A sacola não é colorida: apenas a logo da frente é impressa em cor e as laterais recebem um padrão (pattern) da sua logo — sem cores chapadas.',
   unidade: 'sacola', unidadePlural: 'sacolas',
   minimoTotal: 10,
+  descricao: 'Sacola de papel simples com alça de cordão, feita em papel offset 180g. É uma sacola simples — não é um material premium. A sacola não é colorida: apenas a logo da frente é impressa em cor e as laterais recebem um padrão (pattern) da sua logo, sem cores chapadas. Se tiver dúvida sobre o material ou o acabamento, peça mais fotos pelo WhatsApp antes de fechar o pedido.',
+  detalhes: [
+    'Material: papel offset 180g (material simples, não é premium).',
+    'Tamanho: 29 x 25 x 8 cm · alça de cordão.',
+    'Impressão: logo colorida só na frente + padrão (pattern) da logo nas laterais, sem cores chapadas.',
+    'Na dúvida sobre o material, peça mais fotos pelo WhatsApp antes de comprar.',
+  ],
   opcoesCombinacao: [
     { nome: 'Alça de cordão padrão', faixas: [{ min: 1, preco: 9.00 }] },
     { nome: 'Alça na cor da sua identidade visual', faixas: [{ min: 1, preco: 10.00 }] },
