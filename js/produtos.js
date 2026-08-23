@@ -8,7 +8,7 @@
    a arte é criada pela designer da gráfica; o cliente não envia arte pronta. */
 const ARTE_SUBLIMACAO = 'A arte é criada por uma <strong>designer profissional da Print House</strong> — você <strong>não precisa enviar arte pronta</strong>. Se quiser, envie apenas a sua <strong>logo ou uma referência</strong> pelo WhatsApp; nós desenvolvemos a arte e você tem direito a até <strong>3 alterações</strong> antes da produção.';
 
-const CATALOGO_VERSAO = 87;
+const CATALOGO_VERSAO = 88;
 
 /* Produtos que aparecem em mais de uma categoria são definidos uma única
    vez aqui e referenciados nas categorias — sem duplicar dados. */
@@ -941,9 +941,16 @@ const caixaPresente = {
 const sacolaSilk = {
   bg: 'linear-gradient(135deg,#fbcfe8,#be185d)', badge: 'Novo', destaque: true,
   imagem: 'img/sacola-silk.webp',
-  nome: 'Sacola em Papel Silk Premium',
-  spec: 'Papel offset 150g · impressão silk 1 cor só frente · alça de gorgurão · escolha o tamanho, a cor da sacola, a cor da estampa e a quantidade',
+  nome: 'Sacola de Papel Simples',
+  spec: 'Papel offset 180g (material simples, não é premium) · impressão silk 1 cor só frente · alça de gorgurão · escolha o tamanho, a cor da sacola, a cor da estampa e a quantidade',
   prazo: 20,
+  descricao: 'Sacola de papel simples, feita em papel offset 180g, com impressão silk 1 cor só na frente e alça de gorgurão. É uma sacola simples — não é um material premium. Se tiver dúvida sobre o material ou o acabamento, peça mais fotos pelo WhatsApp antes de fechar o pedido.',
+  detalhes: [
+    'Material: papel offset 180g (material simples, não é premium).',
+    'Impressão: silk, 1 cor, só na frente.',
+    'Alça: gorgurão.',
+    'Na dúvida sobre o material, peça mais fotos pelo WhatsApp antes de comprar.',
+  ],
   grupoLabel: 'Tamanho', opcaoLabel: 'Quantidade',
   coresEstampa: ['Azul', 'Branco', 'Kraft/Dourado', 'Prata/Cinza', 'Rosa', 'Verde', 'Vermelho'],
   coresPorTamanho: {
