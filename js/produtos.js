@@ -8,7 +8,7 @@
    a arte é criada pela designer da gráfica; o cliente não envia arte pronta. */
 const ARTE_SUBLIMACAO = 'A arte é criada por uma <strong>designer profissional da Print House</strong> — você <strong>não precisa enviar arte pronta</strong>. Se quiser, envie apenas a sua <strong>logo ou uma referência</strong> pelo WhatsApp; nós desenvolvemos a arte e você tem direito a até <strong>3 alterações</strong> antes da produção.';
 
-const CATALOGO_VERSAO = 91;
+const CATALOGO_VERSAO = 92;
 
 /* Produtos que aparecem em mais de uma categoria são definidos uma única
    vez aqui e referenciados nas categorias — sem duplicar dados. */
@@ -1659,6 +1659,47 @@ const CATALOGO = {
           ],
           'Medida personalizada': [
             { label: 'A combinar', preco: null },
+          ],
+        } },
+      { bg: 'linear-gradient(135deg,#dbeafe,#1d4ed8)', badge: 'Novo', destaque: true,
+        paginaProduto: true,
+        nome: 'Adesivo Troca de Óleo',
+        spec: 'Vinil eletrostático transparente (não mancha o vidro) · impressão colorida · tamanhos 40x50, 50x80 e 60x60 mm · escolha o tamanho e a quantidade',
+        prazoTexto: '3 dias úteis',
+        arteNota: 'Criação de arte: R$ 45,99. Revisão de arquivo: R$ 16,99.',
+        descricao: 'Adesivo de troca de óleo personalizado para oficinas, auto centers e lava-rápidos. Feito em vinil eletrostático transparente, que cola no vidro sem cola e sai sem manchar — ideal para anotar a data da próxima revisão. Leve a sua marca para dentro do carro do cliente.',
+        detalhes: [
+          'Material: vinil eletrostático transparente 140g (adere ao vidro sem cola e não mancha ao remover).',
+          'Impressão: colorida (5×1 — colorida com branco na frente e preto e branco no verso).',
+          'Tamanhos: 40x50 mm, 50x80 mm e 60x60 mm.',
+          'Prazo: 3 dias úteis + frete.',
+        ],
+        faq: [
+          { p: 'O adesivo mancha o vidro?', r: 'Não. Ele é eletrostático: adere ao vidro sem cola e sai sem deixar marcas.' },
+          { p: 'Posso personalizar com a minha marca?', r: 'Sim! O adesivo é totalmente personalizado com a logo e os dados da sua oficina.' },
+        ],
+        grupoLabel: 'Tamanho', opcaoLabel: 'Quantidade',
+        tamanhos: {
+          '40x50 mm': [
+            { label: '100 un', preco: 125.99 },
+            { label: '250 un', preco: 268.99 },
+            { label: '500 un', preco: 500.99 },
+            { label: '1.000 un', preco: 962.99 },
+            { label: '2.000 un', preco: 1863.99 },
+          ],
+          '50x80 mm': [
+            { label: '100 un', preco: 125.99 },
+            { label: '250 un', preco: 268.99 },
+            { label: '500 un', preco: 500.99 },
+            { label: '1.000 un', preco: 962.99 },
+            { label: '2.000 un', preco: 1863.99 },
+          ],
+          '60x60 mm': [
+            { label: '100 un', preco: 125.99 },
+            { label: '250 un', preco: 268.99 },
+            { label: '500 un', preco: 500.99 },
+            { label: '1.000 un', preco: 962.99 },
+            { label: '2.000 un', preco: 1863.99 },
           ],
         } },
       { bg: 'linear-gradient(135deg,#d9f99d,#65a30d)', badge: 'Novo', destaque: true,
