@@ -8,7 +8,7 @@
    a arte é criada pela designer da gráfica; o cliente não envia arte pronta. */
 const ARTE_SUBLIMACAO = 'A arte é criada por uma <strong>designer profissional da Print House</strong> — você <strong>não precisa enviar arte pronta</strong>. Se quiser, envie apenas a sua <strong>logo ou uma referência</strong> pelo WhatsApp; nós desenvolvemos a arte e você tem direito a até <strong>3 alterações</strong> antes da produção.';
 
-const CATALOGO_VERSAO = 93;
+const CATALOGO_VERSAO = 94;
 
 /* Produtos que aparecem em mais de uma categoria são definidos uma única
    vez aqui e referenciados nas categorias — sem duplicar dados. */
@@ -1672,25 +1672,25 @@ const CATALOGO = {
         grupoLabel: 'Tamanho', opcaoLabel: 'Quantidade',
         tamanhos: {
           '40x50 mm': [
-            { label: '100 un', preco: 125.99 },
-            { label: '250 un', preco: 268.99 },
-            { label: '500 un', preco: 500.99 },
-            { label: '1.000 un', preco: 962.99 },
-            { label: '2.000 un', preco: 1863.99 },
+            { label: '100 un', preco: 189.90 },
+            { label: '250 un', preco: 403.90 },
+            { label: '500 un', preco: 751.90 },
+            { label: '1.000 un', preco: 1444.90 },
+            { label: '2.000 un', preco: 2796.90 },
           ],
           '50x80 mm': [
-            { label: '100 un', preco: 125.99 },
-            { label: '250 un', preco: 268.99 },
-            { label: '500 un', preco: 500.99 },
-            { label: '1.000 un', preco: 962.99 },
-            { label: '2.000 un', preco: 1863.99 },
+            { label: '100 un', preco: 189.90 },
+            { label: '250 un', preco: 403.90 },
+            { label: '500 un', preco: 751.90 },
+            { label: '1.000 un', preco: 1444.90 },
+            { label: '2.000 un', preco: 2796.90 },
           ],
           '60x60 mm': [
-            { label: '100 un', preco: 125.99 },
-            { label: '250 un', preco: 268.99 },
-            { label: '500 un', preco: 500.99 },
-            { label: '1.000 un', preco: 962.99 },
-            { label: '2.000 un', preco: 1863.99 },
+            { label: '100 un', preco: 189.90 },
+            { label: '250 un', preco: 403.90 },
+            { label: '500 un', preco: 751.90 },
+            { label: '1.000 un', preco: 1444.90 },
+            { label: '2.000 un', preco: 2796.90 },
           ],
         } },
       { bg: 'linear-gradient(135deg,#d9f99d,#65a30d)', badge: 'Novo', destaque: true,
