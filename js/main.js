@@ -21,6 +21,7 @@ if (nomesPais.length) {
 const secaoImpressao = document.getElementById('produtosImpressaoRapida');
 if (secaoImpressao && CATALOGO['grafica-rapida']) {
   secaoImpressao.innerHTML = CATALOGO['grafica-rapida'].produtos
+    .slice(0, 4)
     .map((p) => cardProduto(p, 'grafica-rapida')).join('');
 }
 
