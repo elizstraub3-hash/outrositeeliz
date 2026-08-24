@@ -17,9 +17,12 @@ if (nomesPais.length) {
   secaoPais.remove();
 }
 
-/* ---------- Vitrine "Impressão Rápida" ---------- */
+/* ---------- Vitrine "Impressão Rápida & Balcão" ---------- */
 const secaoImpressao = document.getElementById('produtosImpressaoRapida');
-if (secaoImpressao) secaoImpressao.innerHTML = cardsPorNomes(['Impressão Rápida (por folha)']);
+if (secaoImpressao && CATALOGO['grafica-rapida']) {
+  secaoImpressao.innerHTML = CATALOGO['grafica-rapida'].produtos
+    .map((p) => cardProduto(p, 'grafica-rapida')).join('');
+}
 
 /* ---------- Grade de categorias (cada uma abre sua própria página) ---------- */
 document.getElementById('categorias').innerHTML =

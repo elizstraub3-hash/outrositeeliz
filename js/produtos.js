@@ -8,7 +8,7 @@
    a arte é criada pela designer da gráfica; o cliente não envia arte pronta. */
 const ARTE_SUBLIMACAO = 'A arte é criada por uma <strong>designer profissional da Print House</strong> — você <strong>não precisa enviar arte pronta</strong>. Se quiser, envie apenas a sua <strong>logo ou uma referência</strong> pelo WhatsApp; nós desenvolvemos a arte e você tem direito a até <strong>3 alterações</strong> antes da produção.';
 
-const CATALOGO_VERSAO = 92;
+const CATALOGO_VERSAO = 93;
 
 /* Produtos que aparecem em mais de uma categoria são definidos uma única
    vez aqui e referenciados nas categorias — sem duplicar dados. */
@@ -1191,11 +1191,11 @@ const CATALOGO = {
     ],
   },
 
-  'impressao-rapida': {
-    nome: 'Impressão Rápida',
-    emoji: '🖨️',
+  'grafica-rapida': {
+    nome: 'Impressão Rápida & Balcão',
+    emoji: '⚡',
     banner: 'linear-gradient(120deg,#0f766e,#14b8a6)',
-    descricao: 'Impressão em jato de tinta na hora: escolha o papel e a cor, conte quantas folhas quiser e pronto.',
+    descricao: 'Impressão rápida e serviços de balcão do dia a dia: escolha aqui, envie o arquivo pelo WhatsApp e retire na loja ou receba por motoboy/Uber.',
     produtos: [
       { bg: 'linear-gradient(135deg,#ccfbf1,#0d9488)', badge: 'Novo', destaque: true,
         nome: 'Impressão Rápida (por folha)',
@@ -1217,15 +1217,6 @@ const CATALOGO = {
           { nome: 'Papel Matte Fosco 180g · Colorido', faixas: [{ min: 1, preco: 3.50 }] },
           { nome: 'Papel Adesivo (Fasson) · Colorido', faixas: [{ min: 1, preco: 4.00 }] },
         ] },
-    ],
-  },
-
-  'grafica-rapida': {
-    nome: 'Gráfica Rápida (Balcão)',
-    emoji: '⚡',
-    banner: 'linear-gradient(120deg,#b45309,#f59e0b)',
-    descricao: 'Serviços de balcão do dia a dia: escolha aqui, envie o arquivo pelo WhatsApp e retire na loja ou receba por motoboy/Uber.',
-    produtos: [
       { bg: 'linear-gradient(135deg,#fef3c7,#b45309)', badge: 'Novo', destaque: true,
         nome: 'Cópias / Xerox (por folha)',
         spec: 'Cópia P&B ou colorida · A4 · escolha a cor e some quantas folhas quiser',
