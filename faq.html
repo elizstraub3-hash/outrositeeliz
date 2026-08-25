@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Central de Ajuda (FAQ) | Print House</title>
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Print House">
+  <meta property="og:title" content="Central de Ajuda (FAQ) | Print House">
+  <meta property="og:description" content="Perguntas frequentes da Print House: prazos, envio de arte, pagamento, entrega, retirada e trocas.">
+  <meta property="og:image" content="img/kit-churrasco.webp">
+  <meta name="description" content="Perguntas frequentes da Print House: prazos, arte, pagamento, entrega, retirada e trocas.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Barra de promoção -->
+  <div class="topbar">
+    <p>Ganhe <strong>10% OFF</strong> na sua primeira compra com o cupom <strong>BEMVINDO10</strong></p>
+    <button class="topbar__btn" onclick="copiarCupom()">Aproveitar</button>
+  </div>
+
+  <!-- Cabeçalho -->
+  <header class="header">
+    <div class="container header__inner">
+      <button class="header__menu-toggle" id="menuToggle" aria-label="Abrir menu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <a href="index.html" class="logo">
+        <span class="logo__icon">P</span>
+        <span class="logo__text">Print<strong>House</strong></span>
+      </a>
+
+      <form class="search" role="search" onsubmit="irParaBusca(event)">
+        <input type="search" class="search__input" placeholder="O que você procura? Ex.: cartão de visita, panfleto...">
+        <button type="submit" class="search__btn" aria-label="Buscar">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+        </button>
+      </form>
+
+      <div class="header__actions">
+        <a href="https://wa.me/5541995282807" target="_blank" rel="noopener" class="header__action" title="Fale conosco no WhatsApp">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2Zm5.4 14.1c-.2.6-1.2 1.2-1.7 1.2-.4.1-1 .1-1.6-.1a13 13 0 0 1-1.5-.5c-2.6-1.1-4.3-3.8-4.4-4-.1-.2-1.1-1.4-1.1-2.7 0-1.3.7-1.9.9-2.2.2-.3.5-.3.7-.3h.5c.2 0 .4-.1.6.4l.9 2.1c.1.2.1.4 0 .6l-.3.5-.5.5c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1.1 2.2 1.4 2.5 1.5.3.1.5.1.7-.1l1-1.2c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.6.3 0 .2 0 .7-.2 1.4Z"/></svg>
+          <span>Atendimento</span>
+        </a>
+        <a href="#" class="header__action header__action--conta" title="Meus dados">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-6 8-6s8 2 8 6"/></svg>
+          <span>Meus<br>dados</span>
+        </a>
+        <a href="#" class="header__action header__cart" title="Meu carrinho">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="20" r="1.5"/><circle cx="18" cy="20" r="1.5"/><path d="M3 3h2l2.4 12.2a1.5 1.5 0 0 0 1.5 1.2h8.6a1.5 1.5 0 0 0 1.5-1.2L21 7H6"/></svg>
+          <span class="cart-badge" id="cartCount">0</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Menu de categorias -->
+    <nav class="nav" id="mainNav">
+      <div class="container">
+        <ul class="nav__list">
+          <li class="dropdown" id="dropdownProdutos">
+            <button class="nav__link nav__link--all dropdown__toggle" id="dropdownToggle" aria-expanded="false" aria-haspopup="true">
+              ☰ Todos os Produtos <span class="dropdown__arrow">▾</span>
+            </button>
+            <ul class="dropdown__menu" id="dropdownMenu"></ul>
+          </li>
+          <li><a href="index.html#produtos" class="nav__link">Mais Vendidos</a></li>
+          <li><a href="categoria.html?cat=lancamentos" class="nav__link nav__link--new">Lançamentos</a></li>
+          <li class="dropdown">
+            <button class="nav__link dropdown__toggle" aria-expanded="false" aria-haspopup="true">Segmentos <span class="dropdown__arrow">▾</span></button>
+            <ul class="dropdown__menu" id="dropdownMenuSegmentos"></ul>
+          </li>
+          <li class="dropdown">
+            <button class="nav__link dropdown__toggle" aria-expanded="false" aria-haspopup="true">Eventos <span class="dropdown__arrow">▾</span></button>
+            <ul class="dropdown__menu" id="dropdownMenuEventos"></ul>
+          </li>
+          <li><a href="index.html#sobre" class="nav__link">Quem Somos</a></li>
+          <li><a href="index.html#contato" class="nav__link">Contato</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Banner -->
+  <section class="cat-hero" style="background: linear-gradient(120deg, #0f766e, #14b8a6);">
+    <div class="container">
+      <p class="cat-hero__breadcrumb"><a href="index.html">Início</a> / <span>Central de ajuda</span></p>
+      <h1>Central de Ajuda (Perguntas Frequentes)</h1>
+      <p class="cat-hero__desc">Tire suas dúvidas sobre pedidos, arte, prazos, pagamento, entrega e trocas.</p>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section">
+    <div class="container regras">
+      <h2>Pedidos e arte</h2>
+      <ul class="arte-regras">
+        <li><strong>Preciso enviar a arte pronta?</strong> Não! Temos <strong>designers profissionais</strong> que criam a sua arte. Envie apenas a sua logo ou uma referência pelo WhatsApp e nós desenvolvemos tudo para você aprovar antes da produção.</li>
+        <li><strong>Posso pedir alterações na arte?</strong> Sim. Você acompanha a prévia e pode solicitar ajustes até aprovar.</li>
+        <li><strong>Como faço um pedido?</strong> Escolha o produto no site, monte as opções e finalize no WhatsApp. Nossa equipe confirma tudo com você.</li>
+      </ul>
+
+      <h2>Prazos e produção</h2>
+      <ul class="arte-regras">
+        <li>O prazo de produção varia por produto (aparece em cada item) e conta a partir da <strong>aprovação da arte</strong> e da confirmação do pagamento.</li>
+        <li>Serviços de <strong>balcão</strong> (cópias, impressão, plastificação, encadernação, fotos) costumam sair <strong>na hora ou no mesmo dia</strong>.</li>
+        <li>O prazo de produção <strong>não inclui</strong> o tempo de entrega, que é somado depois.</li>
+      </ul>
+
+      <h2>Pagamento</h2>
+      <ul class="arte-regras">
+        <li>Aceitamos <strong>Pix, cartão (Visa, Master, Elo) e boleto</strong>.</li>
+        <li>A produção começa após a <strong>confirmação do pagamento</strong> e a aprovação da arte.</li>
+      </ul>
+
+      <h2>Entrega e retirada</h2>
+      <ul class="arte-regras">
+        <li>Você escolhe entre <strong>retirar na loja</strong> (nosso ponto físico em Colombo/PR) ou <strong>receber por motoboy/Uber</strong> — a taxa de entrega é combinada pelo WhatsApp conforme o endereço.</li>
+        <li>Também enviamos para <strong>todo o Brasil</strong> por Correios e transportadoras. <strong>Entrega grátis para Colombo e Curitiba</strong> em pedidos acima de R$ 299.</li>
+        <li>Consulte os detalhes nos <a href="regulamento-entrega.html" class="arte-link">Termos de entrega</a>.</li>
+      </ul>
+
+      <h2 id="trocas">Trocas e reimpressões</h2>
+      <ul class="arte-regras">
+        <li>Como cada item é <strong>personalizado</strong>, só reimprimimos em caso de <strong>defeito de produção</strong> ou divergência em relação à arte aprovada.</li>
+        <li>Erros na arte <strong>aprovada pelo cliente</strong> (texto, telefone, cor) não geram reimpressão gratuita — por isso confira bem a prévia antes de aprovar.</li>
+        <li>Encontrou algum problema? Fale com a gente em até <strong>7 dias</strong> após receber, com fotos, que resolvemos rápido.</li>
+      </ul>
+
+      <p class="regras__contato">
+        Não achou sua resposta? <a href="https://wa.me/5541995282807" target="_blank" rel="noopener" class="arte-link">Fale com nossos especialistas no WhatsApp</a>.
+      </p>
+    </div>
+  </section>
+
+  <!-- Rodapé -->
+  <footer class="footer">
+    <div class="container footer__grid">
+      <div class="footer__col footer__col--brand">
+        <a href="index.html" class="logo logo--light">
+          <span class="logo__icon">P</span>
+          <span class="logo__text">Print<strong>House</strong></span>
+        </a>
+        <p>Sua gráfica online parceira. Qualidade, agilidade e confiança em cada impressão.</p>
+        <div class="footer__social">
+          <a href="#" aria-label="Instagram">IG</a>
+          <a href="#" aria-label="Facebook">FB</a>
+          <a href="#" aria-label="YouTube">YT</a>
+          <a href="https://wa.me/5541995282807" target="_blank" rel="noopener" aria-label="WhatsApp">WA</a>
+        </div>
+      </div>
+      <div class="footer__col">
+        <h3>Institucional</h3>
+        <ul>
+          <li><a href="index.html#sobre">Quem somos</a></li>
+          <li><a href="index.html#loja">Nossa loja</a></li>
+          <li><a href="pacotes-logo.html">Pacotes de logotipo</a></li>
+          <li><a href="privacidade.html">Política de privacidade</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h3>Ajuda e suporte</h3>
+        <ul>
+          <li><a href="faq.html">Central de ajuda</a></li>
+          <li><a href="regulamento-arte.html">Termos de arte</a></li>
+          <li><a href="regulamento-entrega.html">Termos de entrega</a></li>
+          <li><a href="faq.html#trocas">Trocas e reimpressões</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h3>Pagamento</h3>
+        <div class="footer__payments">
+          <span>Pix</span><span>Visa</span><span>Master</span><span>Elo</span><span>Boleto</span>
+        </div>
+        <h3 style="margin-top:1.2rem">Segurança</h3>
+        <div class="footer__payments">
+          <span>SSL</span><span>Site seguro</span>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <div class="container">
+        <p>© 2026 Print House — Todos os direitos reservados. CNPJ 63.758.158/0001-45 · Colombo, PR</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Botão flutuante WhatsApp -->
+  <a href="https://wa.me/5541995282807" target="_blank" rel="noopener" class="whats-float" title="Fale conosco no WhatsApp">
+    <svg viewBox="0 0 24 24" width="28" height="28" fill="#fff"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2Zm5.4 14.1c-.2.6-1.2 1.2-1.7 1.2-.4.1-1 .1-1.6-.1a13 13 0 0 1-1.5-.5c-2.6-1.1-4.3-3.8-4.4-4-.1-.2-1.1-1.4-1.1-2.7 0-1.3.7-1.9.9-2.2.2-.3.5-.3.7-.3h.5c.2 0 .4-.1.6.4l.9 2.1c.1.2.1.4 0 .6l-.3.5-.5.5c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1.1 2.2 1.4 2.5 1.5.3.1.5.1.7-.1l1-1.2c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.6.3 0 .2 0 .7-.2 1.4Z"/></svg>
+  </a>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="js/produtos.js"></script>
+  <script src="js/temas.js"></script>
+  <script src="js/loja.js"></script>
+</body>
+</html>

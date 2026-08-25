@@ -1290,3 +1290,45 @@ button { font-family: inherit; cursor: pointer; }
   }
   .benefits__dot.is-active { background: var(--primary); transform: scale(1.2); }
 }
+
+/* ===== Nossa loja física ===== */
+.loja__grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 1.5rem; align-items: stretch; }
+.loja__info { display: grid; gap: 1rem; align-content: start; }
+.loja__linha { display: flex; gap: .7rem; align-items: flex-start; font-size: .95rem; line-height: 1.4; }
+.loja__linha strong { font-size: .9rem; }
+.loja__ic { font-size: 1.3rem; line-height: 1; flex-shrink: 0; }
+.loja__nota { color: var(--gray); font-size: .8rem; }
+.loja__acoes { margin-top: .3rem; }
+.loja__mapa {
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: .6rem;
+  border-radius: 16px; text-decoration: none; min-height: 240px;
+  background: linear-gradient(135deg, #d1fae5, #99f6e4);
+  color: #0f766e; font-weight: 700; border: 1px solid var(--border);
+  transition: transform .15s, box-shadow .15s;
+}
+.loja__mapa:hover { transform: translateY(-2px); box-shadow: 0 10px 24px rgba(15,118,110,.18); }
+.loja__mapa-emoji { font-size: 3rem; }
+.loja__mapa-txt { font-size: 1rem; }
+
+/* ===== Depoimentos ===== */
+.depoimentos { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.1rem; }
+.depoimento {
+  margin: 0; padding: 1.4rem; border: 1px solid var(--border); border-radius: 14px;
+  background: var(--white); display: grid; gap: .6rem;
+}
+.depoimento__estrelas { color: #f59e0b; letter-spacing: 2px; font-size: 1rem; }
+.depoimento blockquote { margin: 0; font-size: .95rem; line-height: 1.5; color: var(--dark); }
+.depoimento figcaption { font-size: .85rem; font-weight: 700; color: var(--gray); }
+.orcamento-cta {
+  margin-top: 1.6rem; padding: 1.6rem; border-radius: 16px;
+  background: linear-gradient(120deg, #0f172a, #334155); color: #fff;
+  display: flex; align-items: center; justify-content: space-between; gap: 1.2rem; flex-wrap: wrap;
+}
+.orcamento-cta h3 { margin: 0 0 .2rem; font-size: 1.15rem; }
+.orcamento-cta p { margin: 0; font-size: .9rem; opacity: .85; }
+.orcamento-cta .btn { flex-shrink: 0; }
+
+@media (max-width: 860px) {
+  .loja__grid { grid-template-columns: 1fr; }
+  .depoimentos { grid-template-columns: 1fr; }
+}
