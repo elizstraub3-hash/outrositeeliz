@@ -970,6 +970,35 @@ function copiarCupom() {
   mostrarToast('Cupom BEMVINDO10 copiado!');
 }
 
+function copiarInauguracao() {
+  if (navigator.clipboard) navigator.clipboard.writeText('INAUGURA5');
+  mostrarToast('Cupom INAUGURA5 (5% OFF) copiado!');
+}
+
+/* ---------- Verificação de entrega por CEP ----------
+   Site estático: identifica se o CEP é de Colombo/Curitiba (região com
+   motoboy e frete grátis acima de R$ 299). Demais regiões: frete a combinar. */
+function calcularFrete() {
+  const input = document.getElementById('freteCep');
+  const saida = document.getElementById('freteResultado');
+  if (!input || !saida) return;
+  const cep = (input.value || '').replace(/\D/g, '');
+  if (cep.length !== 8) {
+    saida.className = 'frete__result frete__result--erro';
+    saida.textContent = 'Digite um CEP válido com 8 números.';
+    return;
+  }
+  const n = parseInt(cep, 10);
+  const curitiba = n >= 80000000 && n <= 82999999;
+  const colombo = n >= 83400000 && n <= 83420999;
+  saida.className = 'frete__result frete__result--ok';
+  if (curitiba || colombo) {
+    saida.innerHTML = '🎉 Sua região tem <strong>entrega por motoboy</strong> e <strong>frete grátis</strong> em pedidos acima de R$ 299! O valor exato é combinado no WhatsApp.';
+  } else {
+    saida.innerHTML = '📦 Enviamos para o seu CEP por Correios/transportadora. O frete é calculado no fechamento — é só fazer o pedido que combinamos pelo WhatsApp.';
+  }
+}
+
 /* ---------- Newsletter ---------- */
 function assinarNewsletter(e) {
   e.preventDefault();

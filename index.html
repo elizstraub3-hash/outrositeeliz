@@ -187,6 +187,26 @@
     </div>
   </section>
 
+  <!-- Destaques: arte grátis + cupom de inauguração -->
+  <section class="destaques">
+    <div class="container destaques__grid">
+      <div class="destaque destaque--arte">
+        <span class="destaque__emoji">🎨</span>
+        <div>
+          <strong>A arte é por nossa conta</strong>
+          <p>Você <strong>não precisa enviar arte pronta</strong> — nossos designers criam tudo pra você aprovar. É só mandar a sua logo ou uma ideia.</p>
+        </div>
+      </div>
+      <div class="destaque destaque--cupom">
+        <span class="destaque__emoji">🎉</span>
+        <div>
+          <strong>Loja em inauguração!</strong>
+          <p>Ganhe <strong>5% OFF</strong> no seu pedido com o cupom <button type="button" class="cupom-btn" onclick="copiarInauguracao()">INAUGURA5</button></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Mais vendidos -->
   <section class="section" id="produtos">
     <div class="container">
@@ -264,6 +284,27 @@
     </div>
   </section>
 
+  <!-- Trabalhos realizados (portfólio) -->
+  <section class="section" id="portfolio">
+    <div class="container">
+      <div class="section__head">
+        <h2>📸 Trabalhos realizados</h2>
+        <a href="https://wa.me/5541995282807" target="_blank" rel="noopener" class="section__link">Quero um igual →</a>
+      </div>
+      <p class="section__sub">Alguns dos impressos e personalizados que já produzimos. Quer ver mais? Acompanhe a gente e mande a sua ideia pelo WhatsApp.</p>
+      <div class="galeria">
+        <div class="galeria__item"><img src="img/camiseta-dtf.webp" alt="Camiseta personalizada" loading="lazy"></div>
+        <div class="galeria__item"><img src="img/kit-churrasco.webp" alt="Kit churrasco personalizado" loading="lazy"></div>
+        <div class="galeria__item"><img src="img/sacola-kraft.webp" alt="Sacola kraft personalizada" loading="lazy"></div>
+        <div class="galeria__item"><img src="img/caixa-presente.webp" alt="Caixa de presente personalizada" loading="lazy"></div>
+        <div class="galeria__item"><img src="img/adesivos.webp" alt="Adesivos personalizados" loading="lazy"></div>
+        <div class="galeria__item"><img src="img/copo-cuia-dtf.webp" alt="Copo e cuia personalizados" loading="lazy"></div>
+        <div class="galeria__item"><img src="img/banner-lona.webp" alt="Banner em lona" loading="lazy"></div>
+        <div class="galeria__item"><img src="img/cartao-visita.webp" alt="Cartão de visita" loading="lazy"></div>
+      </div>
+    </div>
+  </section>
+
   <!-- Nossa loja física -->
   <section class="section section--alt" id="loja">
     <div class="container">
@@ -275,11 +316,19 @@
       <div class="loja__grid">
         <div class="loja__info">
           <p class="loja__linha"><span class="loja__ic">📌</span> <span><strong>Endereço</strong><br>Colombo — Paraná <em class="loja__nota">(endereço completo em breve)</em></span></p>
-          <p class="loja__linha"><span class="loja__ic">🕒</span> <span><strong>Horário de atendimento</strong><br>Segunda a sexta, das 9h às 18h · Sábado, das 9h às 13h</span></p>
+          <p class="loja__linha"><span class="loja__ic">🕒</span> <span><strong>Horário de atendimento</strong><br>Segunda a sexta, das 8h às 18h30 · Sábado, das 9h às 13h</span></p>
           <p class="loja__linha"><span class="loja__ic">💬</span> <span><strong>WhatsApp</strong><br>(41) 99528-2807</span></p>
           <p class="loja__linha"><span class="loja__ic">🛵</span> <span><strong>Como receber</strong><br>Retirada na loja (sem custo) ou entrega por motoboy/Uber</span></p>
+          <div class="frete">
+            <label for="freteCep">Ver entrega pelo seu CEP:</label>
+            <div class="frete__row">
+              <input type="text" id="freteCep" inputmode="numeric" maxlength="9" placeholder="00000-000">
+              <button type="button" class="btn btn--primary" onclick="calcularFrete()">Verificar</button>
+            </div>
+            <p id="freteResultado" class="frete__result"></p>
+          </div>
           <div class="loja__acoes">
-            <a href="https://www.google.com/maps/search/?api=1&query=Print+House+Colombo+PR" target="_blank" rel="noopener" class="btn btn--primary">Como chegar</a>
+            <a href="https://www.google.com/maps/search/?api=1&query=Print+House+Colombo+PR" target="_blank" rel="noopener" class="btn btn--light">Como chegar</a>
           </div>
         </div>
         <a href="https://www.google.com/maps/search/?api=1&query=Print+House+Colombo+PR" target="_blank" rel="noopener" class="loja__mapa" aria-label="Abrir no Google Maps">
@@ -295,6 +344,7 @@
     <div class="container">
       <div class="section__head">
         <h2>💬 O que dizem nossos clientes</h2>
+        <a href="https://www.google.com/search?q=Print+House+Colombo+PR+avalia%C3%A7%C3%B5es" target="_blank" rel="noopener" class="section__link">⭐ Avaliações no Google →</a>
       </div>
       <div class="depoimentos">
         <figure class="depoimento">

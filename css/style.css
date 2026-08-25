@@ -1332,3 +1332,45 @@ button { font-family: inherit; cursor: pointer; }
   .loja__grid { grid-template-columns: 1fr; }
   .depoimentos { grid-template-columns: 1fr; }
 }
+
+/* ===== Destaques: arte grátis + cupom de inauguração ===== */
+.destaques { padding: 1.4rem 0; }
+.destaques__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.destaque {
+  display: flex; align-items: center; gap: .9rem;
+  padding: 1.1rem 1.3rem; border-radius: 14px; border: 1px solid var(--border);
+}
+.destaque--arte { background: linear-gradient(120deg, #ede9fe, #ddd6fe); }
+.destaque--cupom { background: linear-gradient(120deg, #fef3c7, #fde68a); }
+.destaque__emoji { font-size: 2rem; line-height: 1; flex-shrink: 0; }
+.destaque strong { display: block; font-size: 1rem; margin-bottom: .15rem; }
+.destaque p { margin: 0; font-size: .85rem; line-height: 1.4; color: var(--dark); }
+.cupom-btn {
+  border: 1px dashed #b45309; background: #fff; color: #b45309;
+  font-weight: 800; border-radius: 6px; padding: .1rem .4rem; cursor: pointer; font-size: .85rem;
+}
+.cupom-btn:hover { background: #b45309; color: #fff; }
+
+/* ===== Galeria / portfólio ===== */
+.galeria { display: grid; grid-template-columns: repeat(4, 1fr); gap: .8rem; }
+.galeria__item { border-radius: 12px; overflow: hidden; aspect-ratio: 1 / 1; background: var(--gray-light); }
+.galeria__item img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .3s; }
+.galeria__item:hover img { transform: scale(1.06); }
+
+/* ===== Verificação de frete por CEP ===== */
+.frete { border-top: 1px solid var(--border); padding-top: .9rem; }
+.frete label { display: block; font-size: .85rem; font-weight: 700; margin-bottom: .4rem; }
+.frete__row { display: flex; gap: .5rem; }
+.frete__row input {
+  flex: 1; min-width: 0; border: 1px solid var(--border); border-radius: 8px;
+  padding: .6rem .7rem; font: inherit;
+}
+.frete__row .btn { flex-shrink: 0; }
+.frete__result { margin: .6rem 0 0; font-size: .85rem; line-height: 1.4; }
+.frete__result--ok { color: #0f766e; }
+.frete__result--erro { color: #b91c1c; }
+
+@media (max-width: 860px) {
+  .destaques__grid { grid-template-columns: 1fr; }
+  .galeria { grid-template-columns: repeat(2, 1fr); }
+}
