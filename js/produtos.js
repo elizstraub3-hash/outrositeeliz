@@ -8,7 +8,7 @@
    a arte é criada pela designer da gráfica; o cliente não envia arte pronta. */
 const ARTE_SUBLIMACAO = 'A arte é criada por uma <strong>designer profissional da Print House</strong> — você <strong>não precisa enviar arte pronta</strong>. Se quiser, envie apenas a sua <strong>logo ou uma referência</strong> pelo WhatsApp; nós desenvolvemos a arte e você tem direito a até <strong>3 alterações</strong> antes da produção.';
 
-const CATALOGO_VERSAO = 98;
+const CATALOGO_VERSAO = 99;
 
 /* Produtos que aparecem em mais de uma categoria são definidos uma única
    vez aqui e referenciados nas categorias — sem duplicar dados. */
@@ -1296,6 +1296,30 @@ const CATALOGO = {
     banner: 'linear-gradient(120deg,#4338ca,#818cf8)',
     descricao: 'Cadernos, blocos e itens de papelaria personalizados para a sua marca.',
     produtos: [
+      { bg: 'linear-gradient(135deg,#c7d2fe,#4338ca)', badge: 'Novo', destaque: true,
+        paginaProduto: true,
+        nome: 'Agenda Diária 2027',
+        spec: 'Capa dura personalizada · wire-o · 148x210mm · miolo sulfite 63g · laminação (brilho, fosca ou holográfica) · escolha a quantidade',
+        prazoTexto: '4 dias úteis',
+        arteNota: 'Criação de arte: R$ 45,99. Revisão de arquivo: R$ 16,99.',
+        descricao: 'Agenda diária personalizada para 2027, com capa dura, acabamento wire-o e laminação. Perfeita para presentear clientes e divulgar a sua marca o ano inteiro. A arte é criada pela nossa equipe.',
+        detalhes: [
+          'Capa: capa dura personalizada com laminação (brilho, fosca ou holográfica — informe na hora do pedido).',
+          'Miolo: sulfite 63g, formato 148x210mm.',
+          'Impressão da capa: 4x0 (colorida só na frente).',
+          'Acabamento: wire-o branco.',
+          'Prazo: 4 dias úteis + frete.',
+        ],
+        variacoes: [
+          { label: '1 un', preco: 49.99 },
+          { label: '5 un', preco: 170.99 },
+          { label: '10 un', preco: 312.99 },
+          { label: '25 un', preco: 738.99 },
+          { label: '50 un', preco: 1447.99 },
+          { label: '100 un', preco: 2866.99 },
+          { label: '250 un', preco: 7123.99 },
+          { label: '500 un', preco: 14218.99 },
+        ] },
       { bg: 'linear-gradient(135deg,#e0e7ff,#4338ca)', badge: 'Novo', destaque: true,
         nome: 'Caderninho 7x10 cm',
         spec: 'Capa personalizada (só a capa) · 64 folhas · 7x10 cm · Mais quantidades: consultar valor no atacado.',
