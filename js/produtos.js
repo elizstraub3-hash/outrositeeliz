@@ -8,7 +8,7 @@
    a arte é criada pela designer da gráfica; o cliente não envia arte pronta. */
 const ARTE_SUBLIMACAO = 'A arte é criada por uma <strong>designer profissional da Print House</strong> — você <strong>não precisa enviar arte pronta</strong>. Se quiser, envie apenas a sua <strong>logo ou uma referência</strong> pelo WhatsApp; nós desenvolvemos a arte e você tem direito a até <strong>3 alterações</strong> antes da produção.';
 
-const CATALOGO_VERSAO = 97;
+const CATALOGO_VERSAO = 98;
 
 /* Produtos que aparecem em mais de uma categoria são definidos uma única
    vez aqui e referenciados nas categorias — sem duplicar dados. */
@@ -1428,6 +1428,7 @@ const CATALOGO = {
         variacoes: [
           { label: '1.000 un', preco: 210.00 },
           { label: '3.000 un', preco: 546.00 },
+          { label: '5.000 un', preco: 876.00 },
         ] },
       { bg: 'linear-gradient(135deg,#fbcfe8,#be185d)', badge: 'Novo',
         imagem: 'img/postal.webp',
