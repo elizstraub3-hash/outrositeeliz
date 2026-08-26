@@ -8,7 +8,7 @@
    a arte é criada pela designer da gráfica; o cliente não envia arte pronta. */
 const ARTE_SUBLIMACAO = 'A arte é criada por uma <strong>designer profissional da Print House</strong> — você <strong>não precisa enviar arte pronta</strong>. Se quiser, envie apenas a sua <strong>logo ou uma referência</strong> pelo WhatsApp; nós desenvolvemos a arte e você tem direito a até <strong>3 alterações</strong> antes da produção.';
 
-const CATALOGO_VERSAO = 94;
+const CATALOGO_VERSAO = 95;
 
 /* Produtos que aparecem em mais de uma categoria são definidos uma única
    vez aqui e referenciados nas categorias — sem duplicar dados. */
@@ -1412,6 +1412,33 @@ const CATALOGO = {
             { label: '10.000 un', preco: 955.90 },
           ],
         } },
+      { bg: 'linear-gradient(135deg,#fde68a,#b45309)', badge: 'Novo', prazo: 5, destaque: true,
+        imagem: 'img/cartao-visita.webp',
+        paginaProduto: true,
+        nome: 'Cartão de Visita Couché 250g — Corte Especial',
+        spec: 'Couché 250g · 4x4 UV total frente · corte especial · 8,8x4,8 cm · escolha a quantidade',
+        descricao: 'Cartão de visita em papel couché 250g com impressão colorida frente e verso (4x4), UV total na frente e acabamento em corte especial (formato diferenciado). Um cartão que se destaca e valoriza a sua marca. A arte é criada pela nossa equipe.',
+        detalhes: [
+          'Papel: couché 250g.',
+          'Impressão: 4x4 (colorida frente e verso), UV total na frente.',
+          'Acabamento: corte especial (formato diferenciado).',
+          'Tamanho: 8,8 x 4,8 cm.',
+          'Prazo: 5 dias úteis.',
+        ],
+        variacoes: [
+          { label: '100 un', preco: 67.90 },
+          { label: '250 un', preco: 73.90 },
+          { label: '500 un', preco: 100.90 },
+          { label: '1.000 un', preco: 114.90 },
+          { label: '3.000 un', preco: 336.90 },
+          { label: '5.000 un', preco: 546.90 },
+          { label: '10.000 un', preco: 1090.90 },
+          { label: '50.000 un', preco: 5445.90 },
+          { label: '100.000 un', preco: 10888.90 },
+          { label: '250.000 un', preco: 27220.90 },
+          { label: '500.000 un', preco: 54438.90 },
+          { label: '1.000.000 un', preco: 108876.90 },
+        ] },
       { bg: 'linear-gradient(135deg,#fbcfe8,#be185d)', badge: 'Novo',
         imagem: 'img/postal.webp',
         nome: 'Postal Couchê 250g',
