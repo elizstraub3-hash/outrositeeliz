@@ -1374,3 +1374,51 @@ button { font-family: inherit; cursor: pointer; }
   .destaques__grid { grid-template-columns: 1fr; }
   .galeria { grid-template-columns: repeat(2, 1fr); }
 }
+
+/* ===== Efeitos: aparecer ao rolar ===== */
+.reveal { opacity: 0; transform: translateY(22px); transition: opacity .55s ease, transform .55s ease; will-change: opacity, transform; }
+.reveal.is-visible { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  .reveal, .reveal.is-visible { opacity: 1 !important; transform: none !important; transition: none !important; }
+}
+
+/* ===== Efeito gráfica: barra CMYK no topo ===== */
+.cmyk-bar {
+  height: 4px; width: 100%;
+  background: linear-gradient(90deg,
+    #00aeef 0 25%, #ec008c 25% 50%, #fff200 50% 75%, #1a1a1a 75% 100%);
+}
+
+/* ===== Efeito gráfica: padrão de meio-tom (halftone) ===== */
+.about { position: relative; overflow: hidden; }
+.about::before {
+  content: ''; position: absolute; top: -30px; right: -30px; width: 220px; height: 220px;
+  background-image: radial-gradient(rgba(255,255,255,.14) 2px, transparent 2.5px);
+  background-size: 14px 14px; opacity: .6; pointer-events: none; transform: rotate(8deg);
+}
+.destaque--arte, .destaque--cupom { position: relative; overflow: hidden; }
+.destaque--arte::after, .destaque--cupom::after {
+  content: ''; position: absolute; bottom: -20px; right: -10px; width: 120px; height: 90px;
+  background-image: radial-gradient(rgba(0,0,0,.08) 2px, transparent 2.5px);
+  background-size: 12px 12px; pointer-events: none;
+}
+
+/* ===== Efeito no hero: brilho em movimento ===== */
+.hero::after {
+  content: ''; position: absolute; inset: 0; z-index: 1; pointer-events: none;
+  background: linear-gradient(115deg, transparent 35%, rgba(255,255,255,.10) 50%, transparent 65%);
+  background-size: 250% 100%; animation: heroSheen 7s ease-in-out infinite;
+}
+.hero__content, .hero__arrow, .hero__dots { position: relative; z-index: 2; }
+@keyframes heroSheen {
+  0% { background-position: 120% 0; }
+  100% { background-position: -120% 0; }
+}
+@media (prefers-reduced-motion: reduce) { .hero::after { animation: none; } }
+
+/* ===== Brilho extra em botões e cards ===== */
+.btn--primary:hover { box-shadow: 0 10px 24px rgba(232,56,13,.32); filter: brightness(1.03); }
+.product-card:hover { box-shadow: 0 16px 34px rgba(0,0,0,.14); }
+.product-card__img, .product-card figure { overflow: hidden; }
+.product-card:hover .product-card__slider img, .product-card:hover .product-card__img img { transform: scale(1.05); }
+.product-card__slider img, .product-card__img img { transition: transform .35s ease; }
