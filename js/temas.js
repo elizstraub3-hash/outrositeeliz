@@ -61,6 +61,7 @@ const EVENTOS = [
 /* Produtos associados a um segmento/evento (por slug). Quem não estiver
    aqui exibe "Em breve, mais conteúdos". Use os nomes exatos dos produtos. */
 const PRODUTOS_TEMA = {
+  'casamento': ['Carta Elaborada em Papéis Premium'],
   'dia-dos-pais': ['Kit Churrasco', 'Jaqueta Corta Vento Misty'],
   'educacao': ['Kit All Black – 3 Itens', 'Kit Básico Plus – 4 Itens'],
   'aniversario-infantil': ['Topo de Bolo Personalizado', 'Forminhas para Doces (100 un)', 'Caixinha Milk Personalizada'],

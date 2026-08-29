@@ -8,7 +8,7 @@
    a arte é criada pela designer da gráfica; o cliente não envia arte pronta. */
 const ARTE_SUBLIMACAO = 'A arte é criada por uma <strong>designer profissional da Print House</strong> — você <strong>não precisa enviar arte pronta</strong>. Se quiser, envie apenas a sua <strong>logo ou uma referência</strong> pelo WhatsApp; nós desenvolvemos a arte e você tem direito a até <strong>3 alterações</strong> antes da produção.';
 
-const CATALOGO_VERSAO = 99;
+const CATALOGO_VERSAO = 100;
 
 /* Produtos que aparecem em mais de uma categoria são definidos uma única
    vez aqui e referenciados nas categorias — sem duplicar dados. */
@@ -1386,6 +1386,24 @@ const CATALOGO = {
     banner: 'linear-gradient(120deg,#be123c,#fb7185)',
     descricao: 'Topos de bolo e itens personalizados para deixar a sua festa com a sua cara.',
     produtos: [
+      { bg: 'linear-gradient(135deg,#fef3c7,#b45309)', badge: 'Novo', destaque: true,
+        imagem: 'img/carta-premium.webp',
+        paginaProduto: true,
+        nome: 'Carta Elaborada em Papéis Premium',
+        spec: '3 papéis premium · recorte especial · iniciais em lamicote dourado · fita de cetim · serve também como convite · sem pedido mínimo',
+        prazoTexto: '1 a 2 dias úteis',
+        unidade: 'carta', unidadePlural: 'cartas',
+        descricao: 'Carta elaborada em papéis premium, perfeita para casamentos e ocasiões especiais — e que também serve como convite. Feita com 3 tipos de papéis premium, recorte especial, iniciais em lamicote dourado e fita de cetim. Uma lembrança sofisticada e cheia de significado. A arte é criada pela nossa equipe.',
+        detalhes: [
+          'Composição: 3 tipos de papéis premium.',
+          'Acabamento: recorte especial, iniciais em lamicote dourado e fita de cetim.',
+          'Sem pedido mínimo.',
+          'Serve também como convite.',
+          'Prazo: 1 a 2 dias úteis (conforme a quantidade).',
+        ],
+        opcoesCombinacao: [
+          { nome: 'Carta em papéis premium', faixas: [{ min: 1, preco: 17.50 }] },
+        ] },
       { bg: 'linear-gradient(135deg,#fbcfe8,#db2777)', badge: 'Novo', destaque: true,
         imagem: 'img/topo-bolo.webp',
         nome: 'Topo de Bolo Personalizado',
