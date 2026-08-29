@@ -17,7 +17,8 @@
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; overflow-x: hidden; }
+html, body { max-width: 100%; }
 
 body {
   font-family: var(--font);
@@ -59,12 +60,26 @@ button { font-family: inherit; cursor: pointer; }
   color: var(--white);
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 1rem;
+  gap: .75rem;
   padding: .5rem 1rem;
   font-size: .85rem;
-  flex-wrap: wrap;
-  text-align: center;
+  overflow: hidden;
+}
+.topbar__marquee { flex: 1 1 auto; min-width: 0; overflow: hidden; }
+.topbar__track {
+  display: inline-flex;
+  white-space: nowrap;
+  will-change: transform;
+  animation: topbarMarquee 22s linear infinite;
+}
+.topbar__track span { padding-right: 4rem; }
+.topbar:hover .topbar__track { animation-play-state: paused; }
+@keyframes topbarMarquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .topbar__track { animation: none; white-space: normal; }
 }
 .topbar strong { color: #ffd166; }
 .topbar__btn {
@@ -75,6 +90,9 @@ button { font-family: inherit; cursor: pointer; }
   border-radius: 999px;
   font-size: .8rem;
   font-weight: 600;
+  flex-shrink: 0;
+  white-space: nowrap;
+  cursor: pointer;
 }
 .topbar__btn:hover { background: var(--gray-light); }
 
@@ -1292,8 +1310,10 @@ button { font-family: inherit; cursor: pointer; }
 }
 
 /* ===== Nossa loja física ===== */
-.loja__grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 1.5rem; align-items: stretch; }
-.loja__info { display: grid; gap: 1rem; align-content: start; }
+.loja__grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 1.5rem; align-items: stretch; max-width: 100%; }
+.loja__info { display: grid; gap: 1rem; align-content: start; min-width: 0; max-width: 100%; }
+.loja__mapa { min-width: 0; max-width: 100%; }
+.loja__info * { min-width: 0; }
 .loja__linha { display: flex; gap: .7rem; align-items: flex-start; font-size: .95rem; line-height: 1.4; }
 .loja__linha strong { font-size: .9rem; }
 .loja__ic { font-size: 1.3rem; line-height: 1; flex-shrink: 0; }
