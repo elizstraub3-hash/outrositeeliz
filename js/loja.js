@@ -758,14 +758,28 @@ function abrirCarrinho() {
     <div class="cart-lista">${linhas}</div>
     ${carrinho.length ? `
     <div class="cart-entrega">
-      <span class="cart-entrega__titulo">Como você quer receber?</span>
+      <span class="cart-entrega__titulo">Confira a forma de entrega</span>
       <label class="cart-entrega__opt">
         <input type="radio" name="entrega" value="Retirar na loja" checked>
-        <span><strong>Retirar na loja</strong><small>Você retira pessoalmente no nosso ponto físico.</small></span>
+        <span class="cart-entrega__ic" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 10.5 12 4l9 6.5"/><path d="M5 9.5V20h14V9.5"/><path d="M9.5 20v-5h5v5"/></svg>
+        </span>
+        <span class="cart-entrega__txt">
+          <strong>Retirar na loja</strong>
+          <small>Você retira pessoalmente no nosso ponto físico em Colombo/PR.</small>
+        </span>
+        <span class="cart-entrega__tag cart-entrega__tag--free">Grátis</span>
       </label>
       <label class="cart-entrega__opt">
-        <input type="radio" name="entrega" value="Entrega por motoboy / Uber">
-        <span><strong>Entrega por motoboy / Uber</strong><small>Combinamos a taxa de entrega pelo WhatsApp conforme o seu endereço.</small></span>
+        <input type="radio" name="entrega" value="Enviar por Uber (por conta do cliente)">
+        <span class="cart-entrega__ic" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 13l2-5a2 2 0 0 1 1.9-1.3h10.2A2 2 0 0 1 19 8l2 5"/><path d="M3 13h18v4H3z"/><circle cx="7" cy="17.5" r="1.6"/><circle cx="17" cy="17.5" r="1.6"/></svg>
+        </span>
+        <span class="cart-entrega__txt">
+          <strong>Enviar por Uber</strong>
+          <small>Você chama o Uber e nós entregamos o pedido ao motorista após confirmar o <strong>nome</strong> e a <strong>placa</strong>. A corrida é por conta do cliente.</small>
+        </span>
+        <span class="cart-entrega__tag">Por sua conta</span>
       </label>
     </div>` : ''}
     <div class="modal__foot">
@@ -810,7 +824,13 @@ function abrirCarrinho() {
     });
     msg.push('', `Total: R$ ${formatarPreco(totalValor)} no Pix${temSobConsulta ? ' (+ itens com medida personalizada a combinar)' : ''}`);
     const entregaSel = modal.querySelector('input[name="entrega"]:checked');
-    if (entregaSel) msg.push('', `Entrega: ${entregaSel.value}`);
+    if (entregaSel) {
+      if (/uber/i.test(entregaSel.value)) {
+        msg.push('', 'Entrega: Enviar por Uber (por conta do cliente). Vou chamar o Uber e vocês entregam o pedido ao motorista após confirmar o nome e a placa.');
+      } else {
+        msg.push('', `Entrega: ${entregaSel.value}`);
+      }
+    }
     if (carrinho.some((item) => item.arte === 'Tenho a arte')) {
       msg.push('', 'Vou enviar o arquivo da arte nesta conversa.');
     }

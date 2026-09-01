@@ -1178,16 +1178,31 @@ button { font-family: inherit; cursor: pointer; }
 }
 .cart-item__remover:hover { background: var(--border); }
 .cart-vazio { font-size: .9rem; color: var(--gray); padding: 1rem 0; }
-.cart-entrega { display: grid; gap: .5rem; margin-bottom: 1rem; }
-.cart-entrega__titulo { font-size: .8rem; font-weight: 700; color: var(--dark); }
+.cart-entrega { display: grid; gap: .6rem; margin-bottom: 1rem; }
+.cart-entrega__titulo { font-size: .95rem; font-weight: 700; color: var(--dark); }
 .cart-entrega__opt {
-  display: flex; align-items: flex-start; gap: .6rem;
-  border: 1px solid var(--border); border-radius: 10px; padding: .6rem .75rem; cursor: pointer;
+  display: flex; align-items: center; gap: .7rem;
+  border: 1.5px solid var(--border); border-radius: 12px; padding: .75rem .85rem; cursor: pointer;
+  transition: border-color .15s, background .15s, box-shadow .15s;
 }
-.cart-entrega__opt:has(input:checked) { border-color: var(--primary); background: var(--gray-light); }
-.cart-entrega__opt input { margin-top: .2rem; flex-shrink: 0; }
-.cart-entrega__opt strong { display: block; font-size: .82rem; }
-.cart-entrega__opt small { display: block; font-size: .72rem; color: var(--gray); }
+.cart-entrega__opt:has(input:checked) {
+  border-color: var(--primary); background: color-mix(in srgb, var(--primary) 6%, transparent);
+  box-shadow: 0 4px 14px rgba(0,0,0,.06);
+}
+.cart-entrega__opt input { flex-shrink: 0; accent-color: var(--primary); width: 18px; height: 18px; }
+.cart-entrega__ic {
+  flex-shrink: 0; width: 38px; height: 38px; border-radius: 10px;
+  display: grid; place-items: center; background: var(--gray-light); color: var(--dark);
+}
+.cart-entrega__opt:has(input:checked) .cart-entrega__ic { background: var(--primary); color: #fff; }
+.cart-entrega__txt { flex: 1; min-width: 0; }
+.cart-entrega__txt strong { display: block; font-size: .9rem; }
+.cart-entrega__txt small { display: block; font-size: .74rem; color: var(--gray); line-height: 1.35; margin-top: .1rem; }
+.cart-entrega__tag {
+  flex-shrink: 0; align-self: flex-start; font-size: .68rem; font-weight: 700;
+  padding: .18rem .5rem; border-radius: 999px; background: var(--gray-light); color: var(--gray); white-space: nowrap;
+}
+.cart-entrega__tag--free { background: #dcfce7; color: #15803d; }
 .cart-acoes { display: flex; gap: .6rem; flex-wrap: wrap; }
 .btn--claro { background: var(--gray-light); color: var(--dark); }
 .btn--claro:hover { background: var(--border); }
