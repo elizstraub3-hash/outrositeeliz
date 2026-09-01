@@ -759,8 +759,20 @@ function abrirCarrinho() {
     ${carrinho.length ? `
     <div class="cart-entrega">
       <span class="cart-entrega__titulo">Confira a forma de entrega</span>
+      ${totalValor >= 299 ? `
       <label class="cart-entrega__opt">
-        <input type="radio" name="entrega" value="Retirar na loja" checked>
+        <input type="radio" name="entrega" value="Entrega grátis (Colombo e Curitiba)" checked>
+        <span class="cart-entrega__ic" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 13l2-5a2 2 0 0 1 1.9-1.3h10.2A2 2 0 0 1 19 8l2 5"/><path d="M3 13h18v4H3z"/><circle cx="7" cy="17.5" r="1.6"/><circle cx="17" cy="17.5" r="1.6"/></svg>
+        </span>
+        <span class="cart-entrega__txt">
+          <strong>Entrega grátis — Colombo e Curitiba</strong>
+          <small>Seu pedido passou de R$ 299! A entrega é <strong>por nossa conta</strong> na região. Combinamos o endereço pelo WhatsApp.</small>
+        </span>
+        <span class="cart-entrega__tag cart-entrega__tag--free">Grátis</span>
+      </label>` : ''}
+      <label class="cart-entrega__opt">
+        <input type="radio" name="entrega" value="Retirar na loja" ${totalValor >= 299 ? '' : 'checked'}>
         <span class="cart-entrega__ic" aria-hidden="true">
           <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 10.5 12 4l9 6.5"/><path d="M5 9.5V20h14V9.5"/><path d="M9.5 20v-5h5v5"/></svg>
         </span>
@@ -781,6 +793,7 @@ function abrirCarrinho() {
         </span>
         <span class="cart-entrega__tag">Por sua conta</span>
       </label>
+      <p class="cart-entrega__nota">📦 Pedidos acima de <strong>R$ 299</strong> têm <strong>entrega grátis</strong> em Colombo e Curitiba.</p>
     </div>` : ''}
     <div class="modal__foot">
       <div class="modal__total">
