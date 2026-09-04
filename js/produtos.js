@@ -8,7 +8,7 @@
    a arte é criada pela designer da gráfica; o cliente não envia arte pronta. */
 const ARTE_SUBLIMACAO = 'A arte é criada por uma <strong>designer profissional da Print House</strong> — você <strong>não precisa enviar arte pronta</strong>. Se quiser, envie apenas a sua <strong>logo ou uma referência</strong> pelo WhatsApp; nós desenvolvemos a arte e você tem direito a até <strong>3 alterações</strong> antes da produção.';
 
-const CATALOGO_VERSAO = 102;
+const CATALOGO_VERSAO = 103;
 
 /* Produtos que aparecem em mais de uma categoria são definidos uma única
    vez aqui e referenciados nas categorias — sem duplicar dados. */
@@ -1730,6 +1730,23 @@ const CATALOGO = {
         ],
         variacoes: [
           { label: '50 unidades', preco: 49.90 },
+        ] },
+      { bg: 'linear-gradient(135deg,#dcfce7,#16a34a)', badge: 'Novo', destaque: true,
+        paginaProduto: true,
+        imagem: 'img/adesivo-refrigerante-safari.webp',
+        nome: 'Adesivo para Refrigerante 200 ml',
+        spec: 'Vinil impermeável · para garrafinha de refrigerante 200 ml · impressão alta resolução · todos os temas',
+        prazoTexto: 'de 2 a 3 dias úteis',
+        unidade: 'adesivo', unidadePlural: 'adesivos',
+        descricao: 'Adesivos personalizados em vinil à prova d\'água, ideais para as garrafinhas de refrigerante de 200 ml — o toque especial para festas e lembrancinhas. Impressão em alta resolução, disponível em todos os temas. A arte é criada pela nossa equipe.',
+        detalhes: [
+          'Material: vinil impermeável (à prova d\'água).',
+          'Compatível com garrafinhas de refrigerante de 200 ml.',
+          'Impressão em alta resolução, acabamento profissional.',
+          'Personalização em todos os temas — é só destacar e colar.',
+        ],
+        variacoes: [
+          { label: '50 adesivos', preco: 45.00 },
         ] },
       { bg: 'linear-gradient(135deg,#dbeafe,#1d4ed8)', badge: 'Novo', destaque: true,
         paginaProduto: true,
