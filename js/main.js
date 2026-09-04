@@ -25,14 +25,32 @@ if (secaoImpressao && CATALOGO['grafica-rapida']) {
     .map((p) => cardProduto(p, 'grafica-rapida')).join('');
 }
 
-/* ---------- Grade de categorias (cada uma abre sua própria página) ---------- */
-document.getElementById('categorias').innerHTML =
-  Object.entries(CATALOGO)
-    .filter(([slug]) => slug !== 'lancamentos')
-    .map(([slug, cat]) => `
-      <a class="category-card" href="categoria.html?cat=${slug}">
-        <div class="category-card__name">${cat.nome}</div>
-      </a>`).join('');
+/* ---------- Categorias em dropdown (cada uma abre sua própria página) ---------- */
+(function () {
+  const wrap = document.getElementById('categorias');
+  if (!wrap) return;
+  const cats = Object.entries(CATALOGO).filter(([slug]) => slug !== 'lancamentos');
+  wrap.innerHTML = `
+    <div class="cat-dd" id="catDd">
+      <button type="button" class="cat-dd__btn" aria-expanded="false" aria-haspopup="true">
+        <span>Escolha uma categoria</span>
+        <span class="cat-dd__arrow">▾</span>
+      </button>
+      <div class="cat-dd__menu">
+        ${cats.map(([slug, cat]) => `<a class="cat-dd__item" href="categoria.html?cat=${slug}">${cat.emoji ? cat.emoji + ' ' : ''}${cat.nome}</a>`).join('')}
+      </div>
+    </div>`;
+  const dd = wrap.querySelector('#catDd');
+  const btn = dd.querySelector('.cat-dd__btn');
+  btn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const aberto = dd.classList.toggle('open');
+    btn.setAttribute('aria-expanded', aberto ? 'true' : 'false');
+  });
+  document.addEventListener('click', (e) => {
+    if (!dd.contains(e.target)) { dd.classList.remove('open'); btn.setAttribute('aria-expanded', 'false'); }
+  });
+})();
 
 /* ---------- Carrossel do hero ---------- */
 const track = document.getElementById('heroTrack');
