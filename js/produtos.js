@@ -8,7 +8,7 @@
    a arte é criada pela designer da gráfica; o cliente não envia arte pronta. */
 const ARTE_SUBLIMACAO = 'A arte é criada por uma <strong>designer profissional da Print House</strong> — você <strong>não precisa enviar arte pronta</strong>. Se quiser, envie apenas a sua <strong>logo ou uma referência</strong> pelo WhatsApp; nós desenvolvemos a arte e você tem direito a até <strong>3 alterações</strong> antes da produção.';
 
-const CATALOGO_VERSAO = 103;
+const CATALOGO_VERSAO = 104;
 
 /* Produtos que aparecem em mais de uma categoria são definidos uma única
    vez aqui e referenciados nas categorias — sem duplicar dados. */
@@ -223,14 +223,14 @@ const cordaoPersonalizado = {
 };
 
 const FAIXAS_DRYFIT = [
-  { label: '1 un', preco: 54.90 },
-  { label: '5 un', preco: 268.90 },
-  { label: '10 un', preco: 534.90 },
-  { label: '20 un', preco: 1065.90 },
-  { label: '30 un', preco: 1591.90 },
-  { label: '40 un', preco: 2116.90 },
-  { label: '50 un', preco: 2637.90 },
-  { label: '100 un', preco: 5259.90 },
+  { label: '1 un', preco: 90.00 },
+  { label: '5 un', preco: 279.50 },
+  { label: '10 un', preco: 499.00 },
+  { label: '20 un', preco: 998.00 },
+  { label: '30 un', preco: 1497.00 },
+  { label: '40 un', preco: 1996.00 },
+  { label: '50 un', preco: 2495.00 },
+  { label: '100 un', preco: 4990.00 },
 ];
 const camisetaDryMasc = {
   bg: 'linear-gradient(135deg,#e0f2fe,#0369a1)', badge: 'Novo',
