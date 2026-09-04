@@ -9,6 +9,11 @@
   --border: #e5e7eb;
   --white: #ffffff;
   --green: #16a34a;
+  /* Cores da logo (CMYK) — usadas nos detalhes */
+  --cyan: #00aeef;
+  --magenta: #ec008c;
+  --yellow: #f5c400;
+  --preto: #1a1a1a;
   --radius: 12px;
   --shadow: 0 2px 12px rgba(0, 0, 0, .07);
   --shadow-hover: 0 8px 24px rgba(0, 0, 0, .12);
@@ -352,6 +357,11 @@ button { font-family: inherit; cursor: pointer; }
   place-items: center;
   flex-shrink: 0;
 }
+/* Ícones dos benefícios nas cores da logo (CMYK) */
+.benefits__grid .benefit:nth-child(1) .benefit__icon { background: rgba(0,174,239,.12); color: var(--cyan); }
+.benefits__grid .benefit:nth-child(2) .benefit__icon { background: rgba(236,0,140,.12); color: var(--magenta); }
+.benefits__grid .benefit:nth-child(3) .benefit__icon { background: rgba(245,196,0,.18); color: #b8860b; }
+.benefits__grid .benefit:nth-child(4) .benefit__icon { background: rgba(26,26,26,.10); color: var(--preto); }
 .benefit > div > strong { display: block; font-size: .92rem; }
 .benefit span { display: block; font-size: .78rem; color: var(--gray); }
 .benefit__desc { font-size: .78rem; color: var(--gray); line-height: 1.45; margin-top: .35rem; }
@@ -367,7 +377,11 @@ button { font-family: inherit; cursor: pointer; }
   justify-content: space-between;
   margin-bottom: 1.8rem;
 }
-.section__head h2 { font-size: clamp(1.4rem, 3vw, 1.9rem); font-weight: 700; }
+.section__head h2 { font-size: clamp(1.4rem, 3vw, 1.9rem); font-weight: 700; position: relative; padding-bottom: .55rem; }
+.section__head h2::after {
+  content: ''; position: absolute; left: 0; bottom: 0; width: 54px; height: 4px; border-radius: 2px;
+  background: linear-gradient(90deg, var(--cyan) 0 25%, var(--magenta) 25% 50%, var(--yellow) 50% 75%, var(--preto) 75% 100%);
+}
 .section__link { color: var(--primary); font-weight: 600; font-size: .9rem; }
 .section__link:hover { text-decoration: underline; }
 .section__sub { color: var(--gray); font-size: .95rem; margin: -1rem 0 1.6rem; max-width: 60ch; }
@@ -539,8 +553,12 @@ button { font-family: inherit; cursor: pointer; }
   box-shadow: var(--shadow);
   transition: transform .2s ease, box-shadow .2s ease;
   cursor: pointer;
+  border-top: 3px solid transparent;
 }
-.category-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-hover); }
+.category-card:hover {
+  transform: translateY(-5px); box-shadow: var(--shadow-hover);
+  border-image: linear-gradient(90deg, var(--cyan) 0 25%, var(--magenta) 25% 50%, var(--yellow) 50% 75%, var(--preto) 75% 100%) 1;
+}
 .category-card__icon { font-size: 2.4rem; margin-bottom: .6rem; }
 .category-card__name { font-size: .85rem; font-weight: 600; }
 .category-card__tag {
