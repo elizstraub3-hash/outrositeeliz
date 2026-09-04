@@ -8,7 +8,7 @@
    a arte é criada pela designer da gráfica; o cliente não envia arte pronta. */
 const ARTE_SUBLIMACAO = 'A arte é criada por uma <strong>designer profissional da Print House</strong> — você <strong>não precisa enviar arte pronta</strong>. Se quiser, envie apenas a sua <strong>logo ou uma referência</strong> pelo WhatsApp; nós desenvolvemos a arte e você tem direito a até <strong>3 alterações</strong> antes da produção.';
 
-const CATALOGO_VERSAO = 101;
+const CATALOGO_VERSAO = 102;
 
 /* Produtos que aparecem em mais de uma categoria são definidos uma única
    vez aqui e referenciados nas categorias — sem duplicar dados. */
@@ -1714,6 +1714,8 @@ const CATALOGO = {
         } },
       { bg: 'linear-gradient(135deg,#cffafe,#0891b2)', badge: 'Novo', destaque: true,
         paginaProduto: true,
+        imagem: 'img/rotulo-agua-aniversario.webp',
+        imagens: ['img/rotulo-agua-aniversario.webp', 'img/rotulo-agua-casamento.webp'],
         nome: 'Rótulo Adesivo para Água 500 ml',
         spec: 'Vinil 135g/m² impermeável (à prova d\'água) · 20 x 4 cm · impressão alta resolução · todos os temas',
         prazoTexto: 'de 2 a 3 dias úteis',
