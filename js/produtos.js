@@ -8,7 +8,7 @@
    a arte é criada pela designer da gráfica; o cliente não envia arte pronta. */
 const ARTE_SUBLIMACAO = 'A arte é criada por uma <strong>designer profissional da Print House</strong> — você <strong>não precisa enviar arte pronta</strong>. Se quiser, envie apenas a sua <strong>logo ou uma referência</strong> pelo WhatsApp; nós desenvolvemos a arte e você tem direito a até <strong>3 alterações</strong> antes da produção.';
 
-const CATALOGO_VERSAO = 100;
+const CATALOGO_VERSAO = 101;
 
 /* Produtos que aparecem em mais de uma categoria são definidos uma única
    vez aqui e referenciados nas categorias — sem duplicar dados. */
@@ -1712,6 +1712,23 @@ const CATALOGO = {
             { label: 'A combinar', preco: null },
           ],
         } },
+      { bg: 'linear-gradient(135deg,#cffafe,#0891b2)', badge: 'Novo', destaque: true,
+        paginaProduto: true,
+        nome: 'Rótulo Adesivo para Água 500 ml',
+        spec: 'Vinil 135g/m² impermeável (à prova d\'água) · 20 x 4 cm · impressão alta resolução · todos os temas',
+        prazoTexto: 'de 2 a 3 dias úteis',
+        unidade: 'rótulo', unidadePlural: 'rótulos',
+        descricao: 'Adesivos personalizados em vinil à prova d\'água, com impressão em alta resolução e acabamento profissional — ideais para festas, eventos corporativos e brindes. Compatível com garrafas de 500 ml; aplicação simples: destaque e cole. Disponível em todos os temas. A arte é criada pela nossa equipe.',
+        detalhes: [
+          'Material: vinil 135 g/m², impermeável (à prova d\'água).',
+          'Tamanho: 20 x 4 cm (por unidade).',
+          'Impressão em alta resolução, acabamento profissional.',
+          'Compatível com garrafas de 500 ml — é só destacar e colar.',
+          'Personalização em todos os temas.',
+        ],
+        variacoes: [
+          { label: '50 unidades', preco: 49.90 },
+        ] },
       { bg: 'linear-gradient(135deg,#dbeafe,#1d4ed8)', badge: 'Novo', destaque: true,
         paginaProduto: true,
         nome: 'Adesivo Troca de Óleo',
