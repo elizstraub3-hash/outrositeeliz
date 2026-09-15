@@ -8,7 +8,7 @@
    a arte é criada pela designer da gráfica; o cliente não envia arte pronta. */
 const ARTE_SUBLIMACAO = 'A arte é criada por uma <strong>designer profissional da Print House</strong> — você <strong>não precisa enviar arte pronta</strong>. Se quiser, envie apenas a sua <strong>logo ou uma referência</strong> pelo WhatsApp; nós desenvolvemos a arte e você tem direito a até <strong>3 alterações</strong> antes da produção.';
 
-const CATALOGO_VERSAO = 104;
+const CATALOGO_VERSAO = 106;
 
 /* Produtos que aparecem em mais de uma categoria são definidos uma única
    vez aqui e referenciados nas categorias — sem duplicar dados. */
@@ -1163,6 +1163,23 @@ const CATALOGO = {
     descricao: 'Sacolas de papel personalizadas para valorizar a entrega da sua marca.',
     produtos: [
       sacolaKraft,
+      { bg: 'linear-gradient(135deg,#e0f2fe,#0891b2)', badge: 'Novo', destaque: true,
+        nome: 'Sacola Plástica Boca de Palhaço Personalizada',
+        spec: 'Plástico resistente · alça boca de palhaço · impressão personalizada · pacote com 100 unidades · escolha o tamanho',
+        unidade: 'sacola', unidadePlural: 'sacolas',
+        descricao: 'Sacola plástica personalizada com alça boca de palhaço, resistente e prática para a entrega da sua marca. Impressão personalizada com a sua arte. Pacote com 100 unidades.',
+        detalhes: [
+          'Material: plástico resistente.',
+          'Alça: boca de palhaço.',
+          'Impressão personalizada com a sua arte.',
+          'Pacote com 100 unidades.',
+        ],
+        variacoes: [
+          { label: '16 x 20 cm · 100 un', preco: 121.13 },
+          { label: '20 x 30 cm · 100 un', preco: 133.88 },
+          { label: '30 x 40 cm · 100 un', preco: 191.25 },
+          { label: '40 x 50 cm · 100 un', preco: 280.50 },
+        ] },
       sacolaSilk,
       sacolaPlastica,
       sacolaCordao,
@@ -1376,6 +1393,41 @@ const CATALOGO = {
         semArte: 'Mini site profissional com até 50 itens. Valor promocional de R$ 250,00 (normalmente R$ 480,00). O <strong>domínio (endereço do site) fica por conta do cliente</strong> — valores a partir de R$ 11,00 (consultar com a gráfica). Após a compra, envie o seu conteúdo (textos, imagens e itens) pelo WhatsApp.',
         variacoes: [
           { label: 'Até 50 itens (promoção)', preco: 250.00 },
+        ] },
+    ],
+  },
+
+  'servicos-online': {
+    nome: 'Serviços Online',
+    emoji: '📱',
+    banner: 'linear-gradient(120deg,#0891b2,#ec008c)',
+    descricao: 'Serviços 100% online, entregues por link — sem impressão e sem frete. Perfeitos para eventos e festas.',
+    produtos: [
+      { bg: 'linear-gradient(135deg,#cffafe,#ec4899)', badge: 'Novo', destaque: true,
+        nome: 'Convite Digital Interativo',
+        spec: 'Convite online entregue por link · música, mural de fotos, localização, confirmação de presença e muito mais',
+        prazoTexto: 'de 2 a 4 dias úteis',
+        semArte: 'Serviço <strong>100% online</strong>: nossa equipe monta o seu convite digital e você recebe um <strong>link personalizado</strong> para compartilhar no WhatsApp. Sem impressão e sem frete. Após a compra, envie as informações do evento e as fotos pelo WhatsApp.',
+        descricao: 'Convite digital interativo, moderno e personalizado — entregue por um link para você compartilhar no WhatsApp e nas redes. Ideal para casamentos, aniversários, chás e eventos corporativos. Nossa equipe monta tudo com a sua cara.',
+        detalhes: [
+          '🎵 Música de fundo à sua escolha.',
+          '⏳ Contagem regressiva até a data do evento.',
+          '🖼️ Mural / galeria de fotos.',
+          '📍 Localização com mapa (Google Maps) e botão "como chegar".',
+          '✅ Confirmação de presença (RSVP) dos convidados.',
+          '💬 Espaço para recados dos convidados.',
+          '🗓️ Programação / cronograma do evento.',
+          '🎁 Lista de presentes e/ou chave Pix para presentear.',
+          '🔗 Link personalizado para compartilhar no WhatsApp e redes.',
+          '🎨 Tema e cores personalizados com a sua identidade.',
+        ],
+        faq: [
+          { p: 'Como recebo o convite?', r: 'Você recebe um link único e personalizado para compartilhar com os convidados pelo WhatsApp, Instagram ou onde quiser. Não tem impressão nem frete.' },
+          { p: 'Posso escolher o que vai no convite?', r: 'Sim! Você escolhe as seções (música, fotos, localização, recados, presentes, etc.). É só combinar com a gente pelo WhatsApp.' },
+          { p: 'Consigo alterar depois de pronto?', r: 'Sim, você acompanha a prévia e pode pedir ajustes antes de aprovar.' },
+        ],
+        variacoes: [
+          { label: 'Convite digital completo', preco: 95.00 },
         ] },
     ],
   },
