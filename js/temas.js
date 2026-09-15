@@ -62,6 +62,7 @@ const EVENTOS = [
    aqui exibe "Em breve, mais conteúdos". Use os nomes exatos dos produtos. */
 const PRODUTOS_TEMA = {
   'casamento': ['Carta Elaborada em Papéis Premium'],
+  'brindes-e-kit-boas-vindas': ['Kit Básico Plus – 4 Itens', 'Kit Luxo – 4 Itens', 'Kit All Black – 3 Itens', 'Caneta Personalizada', 'Caneta de Metal Touch', 'Chaveiro Acrílico', 'Copo Térmico Inox 500ml', 'Garrafa de Inox 750ml Opus', 'Squeeze Fosca 600ml', 'Ecobag Personalizada', 'Cordão Personalizado', 'Caderninho 7x10 cm'],
   'dia-dos-pais': ['Kit Churrasco', 'Jaqueta Corta Vento Misty'],
   'educacao': ['Kit All Black – 3 Itens', 'Kit Básico Plus – 4 Itens'],
   'aniversario-infantil': ['Convite Digital Interativo', 'Topo de Bolo Personalizado', 'Forminhas para Doces (100 un)', 'Caixinha Milk Personalizada'],
