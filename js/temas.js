@@ -64,7 +64,7 @@ const PRODUTOS_TEMA = {
   'casamento': ['Carta Elaborada em Papéis Premium'],
   'dia-dos-pais': ['Kit Churrasco', 'Jaqueta Corta Vento Misty'],
   'educacao': ['Kit All Black – 3 Itens', 'Kit Básico Plus – 4 Itens'],
-  'aniversario-infantil': ['Topo de Bolo Personalizado', 'Forminhas para Doces (100 un)', 'Caixinha Milk Personalizada'],
+  'aniversario-infantil': ['Convite Digital Interativo', 'Topo de Bolo Personalizado', 'Forminhas para Doces (100 un)', 'Caixinha Milk Personalizada'],
 };
 
 // anexa a lista de produtos ao item do tema correspondente
