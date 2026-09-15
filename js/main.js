@@ -8,15 +8,6 @@ document.getElementById('maisVendidos').innerHTML = cardsPorNomes(nomesMaisVendi
 document.getElementById('produtosLancamentos').innerHTML =
   CATALOGO['lancamentos'].produtos.map((p) => cardProduto(p, 'lancamentos')).join('');
 
-/* ---------- Vitrine "Especial Dia dos Pais" ---------- */
-const secaoPais = document.getElementById('dia-dos-pais');
-const nomesPais = (typeof PRODUTOS_TEMA !== 'undefined' && PRODUTOS_TEMA['dia-dos-pais']) || [];
-if (nomesPais.length) {
-  document.getElementById('produtosDiaDosPais').innerHTML = cardsPorNomes(nomesPais);
-} else if (secaoPais) {
-  secaoPais.remove();
-}
-
 /* ---------- Vitrine "Impressão Rápida & Balcão" ---------- */
 const secaoImpressao = document.getElementById('produtosImpressaoRapida');
 if (secaoImpressao && CATALOGO['grafica-rapida']) {
