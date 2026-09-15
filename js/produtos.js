@@ -8,7 +8,7 @@
    a arte é criada pela designer da gráfica; o cliente não envia arte pronta. */
 const ARTE_SUBLIMACAO = 'A arte é criada por uma <strong>designer profissional da Print House</strong> — você <strong>não precisa enviar arte pronta</strong>. Se quiser, envie apenas a sua <strong>logo ou uma referência</strong> pelo WhatsApp; nós desenvolvemos a arte e você tem direito a até <strong>3 alterações</strong> antes da produção.';
 
-const CATALOGO_VERSAO = 108;
+const CATALOGO_VERSAO = 109;
 
 /* Produtos que aparecem em mais de uma categoria são definidos uma única
    vez aqui e referenciados nas categorias — sem duplicar dados. */
@@ -1407,26 +1407,25 @@ const CATALOGO = {
         imagem: 'img/convite-stitch.webp',
         imagens: ['img/convite-stitch.webp', 'img/convite-dino.webp'],
         nome: 'Convite Digital Interativo',
-        spec: 'Convite online interativo (abre ao tocar) · entregue por link · 3 planos · música, mural de fotos, localização, RSVP e muito mais',
+        spec: 'Convite digital · tema em PDF/imagem (Básico) ou completo interativo (Elaborado) · para casamentos, aniversários e eventos',
         prazoTexto: 'de 2 a 5 dias úteis',
-        semArte: 'Serviço <strong>100% online</strong>: nossa equipe monta o seu convite digital e você recebe um <strong>link personalizado</strong> para compartilhar no WhatsApp. Sem impressão e sem frete. Após a compra, envie as informações do evento e as fotos pelo WhatsApp.',
-        descricao: 'Convite digital interativo, moderno e personalizado — entregue por um link para você compartilhar no WhatsApp e nas redes. As imagens mostram apenas a <strong>capa (tela de abertura)</strong> do convite: ele é <strong>interativo</strong>, ou seja, ao tocar em "Clique para descobrir" o convite se abre e revela todo o conteúdo. Ideal para casamentos, aniversários, chás e eventos corporativos. Escolha o plano ideal; nossa equipe monta tudo com a sua cara.',
+        semArte: 'Serviço <strong>100% online</strong>: nossa equipe monta o seu convite digital. No plano Básico você recebe a arte em <strong>PDF ou imagem</strong>; no Elaborado, um <strong>link interativo</strong> para compartilhar no WhatsApp. Sem impressão e sem frete. Após a compra, envie as informações do evento e as fotos pelo WhatsApp.',
+        descricao: 'Convite digital personalizado, moderno e com a sua cara — para casamentos, aniversários, chás e eventos. No plano <strong>Básico</strong> você recebe um tema personalizado em <strong>PDF ou imagem</strong>. No <strong>Elaborado</strong>, um convite <strong>interativo</strong> entregue por link: as imagens mostram apenas a <strong>capa (tela de abertura)</strong> — ao tocar em "Clique para descobrir", o convite se abre e revela todo o conteúdo.',
         detalhes: [
-          '🖼️ As imagens mostram apenas a CAPA (tela de abertura) do convite — ao tocar, ele se abre e revela todo o conteúdo (convite interativo).',
-          '📋 Plano Básico (R$ 69): convite personalizado + localização com mapa + confirmação de presença (RSVP).',
-          '⭐ Plano Completo (R$ 119): tudo do Básico + música de fundo + mural/galeria de fotos + espaço para recados + contagem regressiva.',
-          '👑 Plano Premium (R$ 179): tudo do Completo + lista de presentes e chave Pix + cronograma do evento + tema exclusivo + link personalizado.',
-          '🔗 Entregue por link para compartilhar no WhatsApp e redes — sem impressão e sem frete.',
+          '📄 Plano Básico (R$ 45,90): tema personalizado entregue em PDF ou imagem — perfeito para enviar direto no WhatsApp.',
+          '👑 Plano Elaborado (R$ 95,90): convite completo e interativo (abre ao tocar), com música, mural de fotos, localização com mapa, confirmação de presença (RSVP), espaço para recados, contagem regressiva, lista de presentes/Pix, cronograma e link personalizado.',
+          '🖼️ As imagens mostram apenas a capa (tela de abertura) do convite — no plano Elaborado ele se abre e revela todo o conteúdo (interativo).',
+          '💍 Serve para casamentos, aniversários, chás e eventos — as imagens de exemplo são de aniversário, mas criamos qualquer tema.',
         ],
         faq: [
-          { p: 'Como recebo o convite?', r: 'Você recebe um link único e personalizado para compartilhar com os convidados pelo WhatsApp, Instagram ou onde quiser. Não tem impressão nem frete.' },
-          { p: 'Qual plano escolher?', r: 'O Básico é ideal para eventos simples; o Completo tem música, fotos e recados; e o Premium é o mais completo, com lista de presentes, cronograma e tema exclusivo.' },
+          { p: 'Como recebo o convite?', r: 'No plano Básico você recebe a arte em PDF ou imagem para enviar no WhatsApp. No Elaborado, um link interativo único para compartilhar com os convidados. Sem impressão nem frete.' },
+          { p: 'Qual plano escolher?', r: 'O Básico é uma arte estática (PDF/imagem) para eventos simples; o Elaborado é o convite interativo completo, com música, fotos, RSVP, presentes e muito mais.' },
+          { p: 'Serve para casamento?', r: 'Sim! Serve para casamentos, aniversários, chás e eventos. As imagens de exemplo são de aniversário, mas criamos o tema que você quiser.' },
           { p: 'Consigo alterar depois de pronto?', r: 'Sim, você acompanha a prévia e pode pedir ajustes antes de aprovar.' },
         ],
         variacoes: [
-          { label: 'Básico — localização + confirmação de presença (RSVP)', preco: 69.00 },
-          { label: 'Completo — + música, mural de fotos, recados e contagem regressiva', preco: 119.00 },
-          { label: 'Premium — + lista de presentes/Pix, cronograma, tema exclusivo e link personalizado', preco: 179.00 },
+          { label: 'Básico — tema personalizado em PDF ou imagem', preco: 45.90 },
+          { label: 'Elaborado — completo e interativo (todos os recursos)', preco: 95.90 },
         ] },
     ],
   },
