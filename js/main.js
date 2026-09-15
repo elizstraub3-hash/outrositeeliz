@@ -8,6 +8,14 @@ document.getElementById('maisVendidos').innerHTML = cardsPorNomes(nomesMaisVendi
 document.getElementById('produtosLancamentos').innerHTML =
   CATALOGO['lancamentos'].produtos.map((p) => cardProduto(p, 'lancamentos')).join('');
 
+/* ---------- Vitrine "Serviços Digitais & Online" ---------- */
+const secaoDigitais = document.getElementById('produtosDigitais');
+if (secaoDigitais) {
+  const online = (CATALOGO['servicos-online'] && CATALOGO['servicos-online'].produtos.map((p) => [p, 'servicos-online'])) || [];
+  const digitais = (CATALOGO['servicos-digitais'] && CATALOGO['servicos-digitais'].produtos.map((p) => [p, 'servicos-digitais'])) || [];
+  secaoDigitais.innerHTML = [...online, ...digitais].slice(0, 4).map(([p, cat]) => cardProduto(p, cat)).join('');
+}
+
 /* ---------- Vitrine "Impressão Rápida & Balcão" ---------- */
 const secaoImpressao = document.getElementById('produtosImpressaoRapida');
 if (secaoImpressao && CATALOGO['grafica-rapida']) {
