@@ -8,7 +8,7 @@
    a arte é criada pela designer da gráfica; o cliente não envia arte pronta. */
 const ARTE_SUBLIMACAO = 'A arte é criada por uma <strong>designer profissional da Print House</strong> — você <strong>não precisa enviar arte pronta</strong>. Se quiser, envie apenas a sua <strong>logo ou uma referência</strong> pelo WhatsApp; nós desenvolvemos a arte e você tem direito a até <strong>3 alterações</strong> antes da produção.';
 
-const CATALOGO_VERSAO = 107;
+const CATALOGO_VERSAO = 108;
 
 /* Produtos que aparecem em mais de uma categoria são definidos uma única
    vez aqui e referenciados nas categorias — sem duplicar dados. */
@@ -1404,12 +1404,15 @@ const CATALOGO = {
     descricao: 'Serviços 100% online, entregues por link — sem impressão e sem frete. Perfeitos para eventos e festas.',
     produtos: [
       { bg: 'linear-gradient(135deg,#cffafe,#ec4899)', badge: 'Novo', destaque: true,
+        imagem: 'img/convite-stitch.webp',
+        imagens: ['img/convite-stitch.webp', 'img/convite-dino.webp'],
         nome: 'Convite Digital Interativo',
-        spec: 'Convite online entregue por link · 3 planos (Básico, Completo e Premium) · música, mural de fotos, localização, RSVP e muito mais',
+        spec: 'Convite online interativo (abre ao tocar) · entregue por link · 3 planos · música, mural de fotos, localização, RSVP e muito mais',
         prazoTexto: 'de 2 a 5 dias úteis',
         semArte: 'Serviço <strong>100% online</strong>: nossa equipe monta o seu convite digital e você recebe um <strong>link personalizado</strong> para compartilhar no WhatsApp. Sem impressão e sem frete. Após a compra, envie as informações do evento e as fotos pelo WhatsApp.',
-        descricao: 'Convite digital interativo, moderno e personalizado — entregue por um link para você compartilhar no WhatsApp e nas redes. Ideal para casamentos, aniversários, chás e eventos corporativos. Escolha o plano ideal; nossa equipe monta tudo com a sua cara.',
+        descricao: 'Convite digital interativo, moderno e personalizado — entregue por um link para você compartilhar no WhatsApp e nas redes. As imagens mostram apenas a <strong>capa (tela de abertura)</strong> do convite: ele é <strong>interativo</strong>, ou seja, ao tocar em "Clique para descobrir" o convite se abre e revela todo o conteúdo. Ideal para casamentos, aniversários, chás e eventos corporativos. Escolha o plano ideal; nossa equipe monta tudo com a sua cara.',
         detalhes: [
+          '🖼️ As imagens mostram apenas a CAPA (tela de abertura) do convite — ao tocar, ele se abre e revela todo o conteúdo (convite interativo).',
           '📋 Plano Básico (R$ 69): convite personalizado + localização com mapa + confirmação de presença (RSVP).',
           '⭐ Plano Completo (R$ 119): tudo do Básico + música de fundo + mural/galeria de fotos + espaço para recados + contagem regressiva.',
           '👑 Plano Premium (R$ 179): tudo do Completo + lista de presentes e chave Pix + cronograma do evento + tema exclusivo + link personalizado.',
