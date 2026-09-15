@@ -8,7 +8,7 @@
    a arte é criada pela designer da gráfica; o cliente não envia arte pronta. */
 const ARTE_SUBLIMACAO = 'A arte é criada por uma <strong>designer profissional da Print House</strong> — você <strong>não precisa enviar arte pronta</strong>. Se quiser, envie apenas a sua <strong>logo ou uma referência</strong> pelo WhatsApp; nós desenvolvemos a arte e você tem direito a até <strong>3 alterações</strong> antes da produção.';
 
-const CATALOGO_VERSAO = 109;
+const CATALOGO_VERSAO = 110;
 
 /* Produtos que aparecem em mais de uma categoria são definidos uma única
    vez aqui e referenciados nas categorias — sem duplicar dados. */
@@ -1404,8 +1404,8 @@ const CATALOGO = {
     descricao: 'Serviços 100% online, entregues por link — sem impressão e sem frete. Perfeitos para eventos e festas.',
     produtos: [
       { bg: 'linear-gradient(135deg,#cffafe,#ec4899)', badge: 'Novo', destaque: true,
-        imagem: 'img/convite-stitch.webp',
-        imagens: ['img/convite-stitch.webp', 'img/convite-dino.webp'],
+        imagem: 'img/convite-casamento-1.webp',
+        imagens: ['img/convite-casamento-1.webp', 'img/convite-casamento-2.webp', 'img/convite-casamento-3.webp', 'img/convite-stitch.webp', 'img/convite-dino.webp'],
         nome: 'Convite Digital Interativo',
         spec: 'Convite digital · tema em PDF/imagem (Básico) ou completo interativo (Elaborado) · para casamentos, aniversários e eventos',
         prazoTexto: 'de 2 a 5 dias úteis',
