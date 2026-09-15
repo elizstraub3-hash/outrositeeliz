@@ -8,7 +8,7 @@
    a arte é criada pela designer da gráfica; o cliente não envia arte pronta. */
 const ARTE_SUBLIMACAO = 'A arte é criada por uma <strong>designer profissional da Print House</strong> — você <strong>não precisa enviar arte pronta</strong>. Se quiser, envie apenas a sua <strong>logo ou uma referência</strong> pelo WhatsApp; nós desenvolvemos a arte e você tem direito a até <strong>3 alterações</strong> antes da produção.';
 
-const CATALOGO_VERSAO = 110;
+const CATALOGO_VERSAO = 111;
 
 /* Produtos que aparecem em mais de uma categoria são definidos uma única
    vez aqui e referenciados nas categorias — sem duplicar dados. */
@@ -863,16 +863,6 @@ const jaquetaMisty = {
             { label: '100 un', preco: 15067.90 },
           ],
   },
-};
-
-const canetaPersonalizada = {
-  emoji: '🖊️', bg: 'linear-gradient(135deg,#fce7f3,#f472b6)',
-  nome: 'Caneta Personalizada', spec: 'Gravação a laser 4x0 ou silk',
-  variacoes: [
-    { label: '100 un', preco: 119.90 },
-    { label: '250 un', preco: 249.90 },
-    { label: '500 un', preco: 419.90 },
-  ],
 };
 
 /* Cores das sacolas plásticas com alça vazada (mesmas cores para todos os tamanhos) */
@@ -1903,7 +1893,6 @@ const CATALOGO = {
         ] },
       chineloPersonalizado,
       copoCuia,
-      canetaPersonalizada,
       { emoji: '🔑', bg: 'linear-gradient(135deg,#fecdd3,#fb7185)',
         nome: 'Chaveiro Acrílico', spec: 'Formato personalizado · impressão UV',
         variacoes: [
@@ -2198,7 +2187,6 @@ const CATALOGO = {
       garrafaInox750,
       squeezeFosca,
       copoTermico,
-      canetaPersonalizada,
     ],
   },
 
