@@ -775,6 +775,27 @@ button { font-family: inherit; cursor: pointer; }
 .regras .arte-regras li { font-size: .88rem; }
 .regras__contato { margin-top: 2rem; font-size: .9rem; }
 .regras__contato .arte-link { font-size: .9rem; }
+.passos { list-style: none; counter-reset: passo; display: grid; gap: .7rem; margin: 0 0 1.4rem; padding: 0; }
+.passos li {
+  counter-increment: passo;
+  position: relative;
+  padding: .1rem 0 .1rem 2.6rem;
+  font-size: .9rem;
+  line-height: 1.5;
+  color: var(--gray);
+  min-height: 1.9rem;
+}
+.passos li::before {
+  content: counter(passo);
+  position: absolute;
+  left: 0; top: 0;
+  width: 1.8rem; height: 1.8rem;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--primary); color: #fff;
+  font-weight: 700; font-size: .85rem;
+  border-radius: 50%;
+}
+.passos strong { color: var(--dark); }
 
 /* ============ Página de produto ============ */
 .prod__crumb { color: var(--gray); margin-bottom: 1.4rem; }
