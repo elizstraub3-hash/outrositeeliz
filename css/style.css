@@ -375,6 +375,8 @@ button { font-family: inherit; cursor: pointer; }
 .benefit__desc { font-size: .78rem; color: var(--gray); line-height: 1.45; margin-top: .35rem; }
 .benefit__desc strong { display: inline; font-weight: 600; font-size: inherit; color: var(--dark); }
 .benefits__dots { display: none; }
+.benefit--clone { display: none; } /* cópias só usadas no marquee do mobile */
+@keyframes benefitsMarquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
 /* ============ Seções ============ */
 .section { padding: 3.5rem 0; }
@@ -1384,44 +1386,30 @@ button { font-family: inherit; cursor: pointer; }
   .about { padding: 2.5rem 0; }
 }
 
-/* ===== Benefícios: carrossel automático no mobile ===== */
+/* ===== Benefícios: marquee lateral no mobile (2 por vez, sem bolinhas) ===== */
 @media (max-width: 640px) {
+  .benefits .container { padding-left: 0; padding-right: 0; overflow: hidden; }
   .benefits__grid {
     display: flex;
     grid-template-columns: none;
+    width: max-content;
     gap: 0;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    scrollbar-width: none;
-    -webkit-overflow-scrolling: touch;
+    animation: benefitsMarquee 22s linear infinite;
   }
-  .benefits__grid::-webkit-scrollbar { display: none; }
-  .benefits__grid .benefit {
-    flex: 0 0 100%;
-    scroll-snap-align: center;
+  .benefits__grid .benefit,
+  .benefits__grid .benefit--clone {
+    display: flex;
+    flex: 0 0 50vw;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    gap: .6rem;
-    padding: .4rem 1.4rem;
+    gap: .5rem;
+    padding: .5rem 1rem;
   }
-  .benefits__grid .benefit__desc { max-width: 30ch; margin-left: auto; margin-right: auto; }
-  .benefits__dots {
-    display: flex;
-    justify-content: center;
-    gap: 7px;
-    padding: .2rem 0 .1rem;
-  }
-  .benefits__dot {
-    width: 8px; height: 8px;
-    border-radius: 50%;
-    border: none;
-    padding: 0;
-    background: var(--border);
-    cursor: pointer;
-    transition: background .15s, transform .15s;
-  }
-  .benefits__dot.is-active { background: var(--primary); transform: scale(1.2); }
+  .benefits__dots { display: none; }
+}
+@media (max-width: 640px) and (prefers-reduced-motion: reduce) {
+  .benefits__grid { animation: none; }
 }
 
 /* ===== Nossa loja física ===== */

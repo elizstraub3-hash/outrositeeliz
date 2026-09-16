@@ -11,7 +11,7 @@ const ARTE_SUBLIMACAO = 'A arte é criada por uma <strong>designer profissional 
 /* Vestuário (camisetas, camisas, moletons, jaquetas e afins): a arte é mais elaborada e tem custo fixo. */
 const ARTE_VESTUARIO = 'Arte de vestuário: o desenvolvimento da arte custa <strong>R$ 50,00</strong> (cobrado uma única vez por arte), por envolver uma criação mais elaborada.';
 
-const CATALOGO_VERSAO = 115;
+const CATALOGO_VERSAO = 116;
 
 /* Produtos que aparecem em mais de uma categoria são definidos uma única
    vez aqui e referenciados nas categorias — sem duplicar dados. */
@@ -1234,7 +1234,7 @@ const CATALOGO = {
           { nome: 'Papel Fotográfico (Glossy) · Colorido', faixas: [{ min: 1, preco: 3.50 }] },
           { nome: 'Papel Matte Fosco 180g · Preto e Branco', faixas: [{ min: 1, preco: 3.00 }] },
           { nome: 'Papel Matte Fosco 180g · Colorido', faixas: [{ min: 1, preco: 3.50 }] },
-          { nome: 'Papel Adesivo (Fasson) · Colorido', faixas: [{ min: 1, preco: 4.00 }] },
+          { nome: 'Papel Adesivo (Fasson) · Colorido', faixas: [{ min: 1, preco: 7.00 }] },
         ] },
       { bg: 'linear-gradient(135deg,#fef3c7,#b45309)', badge: 'Novo', destaque: true, imagem: 'img/impressao-rapida.webp',
         nome: 'Cópias / Xerox (por folha)',

@@ -81,35 +81,16 @@ document.getElementById('heroPrev').addEventListener('click', () => irParaSlide(
 document.getElementById('heroNext').addEventListener('click', () => irParaSlide(slideAtual + 1));
 irParaSlide(0);
 
-/* ---------- Carrossel automático dos benefícios (mobile) ---------- */
+/* ---------- Benefícios: marquee lateral no mobile (2 por vez, sem bolinhas) ---------- */
 (function () {
   const grid = document.getElementById('benefitsGrid');
-  const dotsWrap = document.getElementById('benefitsDots');
-  if (!grid || !dotsWrap) return;
-  const itens = [...grid.children];
-  itens.forEach((_, i) => {
-    const dot = document.createElement('button');
-    dot.className = 'benefits__dot' + (i === 0 ? ' is-active' : '');
-    dot.setAttribute('aria-label', `Benefício ${i + 1}`);
-    dot.addEventListener('click', () => grid.scrollTo({ left: grid.clientWidth * i, behavior: 'smooth' }));
-    dotsWrap.appendChild(dot);
+  if (!grid) return;
+  // Duplica os itens uma vez para o loop contínuo do marquee (animação em CSS no mobile).
+  // As cópias ficam ocultas no desktop via .benefit--clone.
+  [...grid.children].forEach((el) => {
+    const clone = el.cloneNode(true);
+    clone.classList.add('benefit--clone');
+    clone.setAttribute('aria-hidden', 'true');
+    grid.appendChild(clone);
   });
-  const dots = [...dotsWrap.children];
-  grid.addEventListener('scroll', () => {
-    const i = Math.round(grid.scrollLeft / grid.clientWidth);
-    dots.forEach((d, idx) => d.classList.toggle('is-active', idx === i));
-  });
-  const mq = window.matchMedia('(max-width: 640px)');
-  let timer;
-  function autoplayBenefits() {
-    clearInterval(timer);
-    if (!mq.matches) return;
-    timer = setInterval(() => {
-      const atual = Math.round(grid.scrollLeft / grid.clientWidth);
-      const prox = (atual + 1) % itens.length;
-      grid.scrollTo({ left: grid.clientWidth * prox, behavior: 'smooth' });
-    }, 4000);
-  }
-  if (mq.addEventListener) mq.addEventListener('change', autoplayBenefits);
-  autoplayBenefits();
 })();
