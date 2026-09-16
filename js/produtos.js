@@ -8,7 +8,10 @@
    a arte é criada pela designer da gráfica; o cliente não envia arte pronta. */
 const ARTE_SUBLIMACAO = 'A arte é criada por uma <strong>designer profissional da Print House</strong> — você <strong>não precisa enviar arte pronta</strong>. Se quiser, envie apenas a sua <strong>logo ou uma referência</strong> pelo WhatsApp; nós desenvolvemos a arte e você tem direito a até <strong>3 alterações</strong> antes da produção.';
 
-const CATALOGO_VERSAO = 114;
+/* Vestuário (camisetas, camisas, moletons, jaquetas e afins): a arte é mais elaborada e tem custo fixo. */
+const ARTE_VESTUARIO = 'Arte de vestuário: o desenvolvimento da arte custa <strong>R$ 50,00</strong> (cobrado uma única vez por arte), por envolver uma criação mais elaborada.';
+
+const CATALOGO_VERSAO = 115;
 
 /* Produtos que aparecem em mais de uma categoria são definidos uma única
    vez aqui e referenciados nas categorias — sem duplicar dados. */
@@ -86,6 +89,7 @@ const camisetaDtf = {
   imagem: 'img/camiseta-dtf.webp',
   imagens: ['img/camiseta-dtf.webp', 'img/camiseta-dtf-costas.webp'],
   nome: 'Camiseta DTF UV',
+  arteNota: ARTE_VESTUARIO,
   spec: 'Algodão · estampa DTF UV · feminina ou masculina · tamanhos P ao GG · cores conforme disponibilidade em estoque',
   grupoLabel: 'Impressão', opcaoLabel: 'Tamanho',
   extra: { label: 'Modelo', opcoes: ['Feminino', 'Masculino'] },
@@ -121,6 +125,7 @@ const FAIXAS_CAMISA_COPA = [
 const camisaCopa = {
   bg: 'linear-gradient(135deg,#fde047,#16a34a)', badge: 'Novo', destaque: true,
   nome: 'Camisa Copa Personalizada',
+  arteNota: ARTE_VESTUARIO,
   arteRestrita: ARTE_SUBLIMACAO,
   distribuirTamanhos: true, unidade: 'camisa', unidadePlural: 'camisas',
   spec: 'Tecido Profit · leve, confortável e resistente · tamanhos P ao XL4 · escolha o tamanho e a quantidade',
@@ -237,6 +242,7 @@ const camisetaDryMasc = {
   imagem: 'img/camiseta-masc.webp',
   imagens: ['img/camiseta-masc.webp', 'img/camiseta-masc-gola-brasil.webp', 'img/camiseta-masc-gola-v.webp', 'img/camiseta-masc-2.webp'],
   nome: 'Camiseta Dry Fit Masculina',
+  arteNota: ARTE_VESTUARIO,
   arteRestrita: ARTE_SUBLIMACAO,
   distribuirTamanhos: true, unidade: 'camiseta', unidadePlural: 'camisetas',
   spec: 'Tipo Dry Fit · 100% poliéster · malha que absorve o suor · 3 golas (Brasil, redonda e V) · do P ao XL4',
@@ -283,6 +289,7 @@ const camisetaDryFem = {
   bg: 'linear-gradient(135deg,#e0f2fe,#0369a1)', badge: 'Novo',
   imagem: 'img/camiseta-fem.webp',
   nome: 'Camiseta Dry Fit Feminina',
+  arteNota: ARTE_VESTUARIO,
   arteRestrita: ARTE_SUBLIMACAO,
   distribuirTamanhos: true, unidade: 'camiseta', unidadePlural: 'camisetas',
   spec: 'Tipo Dry Fit · 100% poliéster · malha que absorve o suor · golas redonda e V · do P ao XL4',
@@ -321,6 +328,7 @@ const camisaPesca = {
   bg: 'linear-gradient(135deg,#a5f3fc,#0e7490)', badge: 'Novo',
   imagem: 'img/camisa-pesca.webp',
   nome: 'Camisa de Pesca Personalizada',
+  arteNota: ARTE_VESTUARIO,
   arteRestrita: ARTE_SUBLIMACAO,
   distribuirTamanhos: true, unidade: 'camisa', unidadePlural: 'camisas',
   spec: 'Manga longa · gola média com zíper · Active Ice UV 50+ · impressão Ultra HD Sublimática · do P ao XL4',
@@ -452,6 +460,7 @@ const moletomCanguru = {
   bg: 'linear-gradient(135deg,#cbd5e1,#334155)', badge: 'Novo',
   imagem: 'img/moletom.webp',
   nome: 'Moletom Canguru Personalizado',
+  arteNota: ARTE_VESTUARIO,
   distribuirTamanhos: true, unidade: 'moletom', unidadePlural: 'moletons',
   spec: 'Moletom flanelado 100% poliéster · unissex · capuz e bolso canguru · impressão Ultra HD Sublimática · do P ao XL4',
   prazo: 10,
@@ -553,6 +562,7 @@ const camisaAmericana = {
   bg: 'linear-gradient(135deg,#fde68a,#334155)', badge: 'Novo',
   imagem: 'img/camisa-americana.webp',
   nome: 'Camisa Futebol Americano Titan',
+  arteNota: ARTE_VESTUARIO,
   arteRestrita: ARTE_SUBLIMACAO,
   distribuirTamanhos: true, unidade: 'camisa', unidadePlural: 'camisas',
   spec: 'Masculino · impressão Ultra HD Sublimática · do P ao XL4',
@@ -659,6 +669,7 @@ const camisaCiclismo = {
   bg: 'linear-gradient(135deg,#fde68a,#334155)', badge: 'Novo',
   imagem: 'img/camisa-ciclismo.webp',
   nome: 'Camisa de Ciclismo Fast',
+  arteNota: ARTE_VESTUARIO,
   arteRestrita: ARTE_SUBLIMACAO,
   distribuirTamanhos: true, unidade: 'camisa', unidadePlural: 'camisas',
   spec: 'Masculino · impressão Ultra HD Sublimática · do P ao XL4',
@@ -760,6 +771,7 @@ const camisaCiclismo = {
 const jaquetaMisty = {
   bg: 'linear-gradient(135deg,#e2e8f0,#334155)', badge: 'Novo',
   nome: 'Jaqueta Corta Vento Misty',
+  arteNota: ARTE_VESTUARIO,
   distribuirTamanhos: true, unidade: 'jaqueta', unidadePlural: 'jaquetas',
   spec: 'Tactel (92% poliéster · 8% elastano) · unissex · capuz e zíper 80 cm · do P ao XL4 · a partir de 1 un',
   imagem: 'img/jaqueta.webp',
