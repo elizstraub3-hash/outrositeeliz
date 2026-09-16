@@ -8,7 +8,7 @@
    a arte é criada pela designer da gráfica; o cliente não envia arte pronta. */
 const ARTE_SUBLIMACAO = 'A arte é criada por uma <strong>designer profissional da Print House</strong> — você <strong>não precisa enviar arte pronta</strong>. Se quiser, envie apenas a sua <strong>logo ou uma referência</strong> pelo WhatsApp; nós desenvolvemos a arte e você tem direito a até <strong>3 alterações</strong> antes da produção.';
 
-const CATALOGO_VERSAO = 113;
+const CATALOGO_VERSAO = 114;
 
 /* Produtos que aparecem em mais de uma categoria são definidos uma única
    vez aqui e referenciados nas categorias — sem duplicar dados. */
@@ -1204,7 +1204,7 @@ const CATALOGO = {
     banner: 'linear-gradient(120deg,#0f766e,#14b8a6)',
     descricao: 'Impressão rápida e serviços de balcão do dia a dia: escolha aqui, envie o arquivo pelo WhatsApp e retire na loja ou receba por motoboy/Uber.',
     produtos: [
-      { bg: 'linear-gradient(135deg,#ccfbf1,#0d9488)', badge: 'Novo', destaque: true,
+      { bg: 'linear-gradient(135deg,#ccfbf1,#0d9488)', badge: 'Novo', destaque: true, imagem: 'img/impressao-rapida.webp',
         nome: 'Impressão Rápida (por folha)',
         spec: 'Impressão em jato de tinta · escolha o papel e a cor e some quantas folhas quiser',
         prazoTexto: 'na hora / no mesmo dia',
@@ -1224,7 +1224,7 @@ const CATALOGO = {
           { nome: 'Papel Matte Fosco 180g · Colorido', faixas: [{ min: 1, preco: 3.50 }] },
           { nome: 'Papel Adesivo (Fasson) · Colorido', faixas: [{ min: 1, preco: 4.00 }] },
         ] },
-      { bg: 'linear-gradient(135deg,#fef3c7,#b45309)', badge: 'Novo', destaque: true,
+      { bg: 'linear-gradient(135deg,#fef3c7,#b45309)', badge: 'Novo', destaque: true, imagem: 'img/impressao-rapida.webp',
         nome: 'Cópias / Xerox (por folha)',
         spec: 'Cópia P&B ou colorida · A4 · escolha a cor e some quantas folhas quiser',
         prazoTexto: 'na hora / no mesmo dia',
@@ -1234,7 +1234,7 @@ const CATALOGO = {
           { nome: 'Preto e Branco', faixas: [{ min: 1, preco: 0.75 }, { min: 10, preco: 0.60 }, { min: 50, preco: 0.45 }, { min: 100, preco: 0.40 }] },
           { nome: 'Colorida', faixas: [{ min: 1, preco: 2.00 }, { min: 10, preco: 1.80 }, { min: 50, preco: 1.50 }, { min: 100, preco: 1.20 }] },
         ] },
-      { bg: 'linear-gradient(135deg,#e0f2fe,#0369a1)', badge: 'Novo', destaque: true,
+      { bg: 'linear-gradient(135deg,#e0f2fe,#0369a1)', badge: 'Novo', destaque: true, imagem: 'img/impressao-rapida.webp',
         nome: 'Impressão de Documentos (por página)',
         spec: 'Envie o PDF pelo WhatsApp ou e-mail · impressão P&B ou colorida · A4 · retire na loja ou receba por motoboy/Uber',
         prazoTexto: 'na hora / no mesmo dia',
@@ -1245,7 +1245,7 @@ const CATALOGO = {
           { nome: 'Preto e Branco · Frente e verso', faixas: [{ min: 1, preco: 1.00 }, { min: 50, preco: 0.80 }, { min: 100, preco: 0.60 }] },
           { nome: 'Colorida · Só frente', faixas: [{ min: 1, preco: 2.00 }, { min: 50, preco: 1.50 }, { min: 100, preco: 1.20 }] },
         ] },
-      { bg: 'linear-gradient(135deg,#ede9fe,#6d28d9)', badge: 'Novo', destaque: true,
+      { bg: 'linear-gradient(135deg,#ede9fe,#6d28d9)', badge: 'Novo', destaque: true, imagem: 'img/impressao-rapida.webp',
         nome: 'Digitalização / Escaneamento (por página)',
         spec: 'Escaneamos seus documentos e enviamos em PDF por WhatsApp ou e-mail · mínimo R$ 3,00 por atendimento',
         prazoTexto: 'na hora / no mesmo dia',
@@ -1254,7 +1254,7 @@ const CATALOGO = {
         opcoesCombinacao: [
           { nome: 'Digitalização em PDF', faixas: [{ min: 1, preco: 1.50 }, { min: 10, preco: 1.00 }, { min: 50, preco: 0.70 }] },
         ] },
-      { bg: 'linear-gradient(135deg,#dcfce7,#15803d)', badge: 'Novo', destaque: true,
+      { bg: 'linear-gradient(135deg,#dcfce7,#15803d)', badge: 'Novo', destaque: true, imagem: 'img/impressao-rapida.webp',
         nome: 'Plastificação',
         spec: 'Plastificação (laminação) de documentos e cartões · escolha o tamanho',
         prazoTexto: 'na hora / no mesmo dia',
@@ -1267,7 +1267,7 @@ const CATALOGO = {
           { label: 'A4', preco: 7.90 },
           { label: 'A3', preco: 10.90 },
         ] },
-      { bg: 'linear-gradient(135deg,#fce7f3,#be185d)', badge: 'Novo', destaque: true,
+      { bg: 'linear-gradient(135deg,#fce7f3,#be185d)', badge: 'Novo', destaque: true, imagem: 'img/impressao-rapida.webp',
         nome: 'Encadernação',
         spec: 'Espiral ou capa dura · escolha pelo número de folhas',
         prazoTexto: 'na hora / no mesmo dia',
@@ -1279,7 +1279,7 @@ const CATALOGO = {
           { nome: 'Espiral · até 200 folhas', faixas: [{ min: 1, preco: 11.90 }] },
           { nome: 'Capa dura (a partir de)', faixas: [{ min: 1, preco: 45.90 }] },
         ] },
-      { bg: 'linear-gradient(135deg,#fee2e2,#b91c1c)', badge: 'Novo', destaque: true,
+      { bg: 'linear-gradient(135deg,#fee2e2,#b91c1c)', badge: 'Novo', destaque: true, imagem: 'img/impressao-rapida.webp',
         nome: 'Impressão de Fotos',
         spec: 'Impressão de fotos e documentos · escolha o tamanho',
         prazoTexto: 'na hora / no mesmo dia',
