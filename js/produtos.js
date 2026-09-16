@@ -8,7 +8,7 @@
    a arte é criada pela designer da gráfica; o cliente não envia arte pronta. */
 const ARTE_SUBLIMACAO = 'A arte é criada por uma <strong>designer profissional da Print House</strong> — você <strong>não precisa enviar arte pronta</strong>. Se quiser, envie apenas a sua <strong>logo ou uma referência</strong> pelo WhatsApp; nós desenvolvemos a arte e você tem direito a até <strong>3 alterações</strong> antes da produção.';
 
-const CATALOGO_VERSAO = 111;
+const CATALOGO_VERSAO = 112;
 
 /* Produtos que aparecem em mais de uma categoria são definidos uma única
    vez aqui e referenciados nas categorias — sem duplicar dados. */
@@ -1155,20 +1155,20 @@ const CATALOGO = {
       sacolaKraft,
       { bg: 'linear-gradient(135deg,#e0f2fe,#0891b2)', badge: 'Novo', destaque: true,
         nome: 'Sacola Plástica Boca de Palhaço Personalizada',
-        spec: 'Plástico resistente · alça boca de palhaço · impressão personalizada · pacote com 100 unidades · escolha o tamanho',
+        spec: 'Plástico resistente · alça boca de palhaço · impressão personalizada · pacote com 50 unidades · escolha o tamanho',
         unidade: 'sacola', unidadePlural: 'sacolas',
-        descricao: 'Sacola plástica personalizada com alça boca de palhaço, resistente e prática para a entrega da sua marca. Impressão personalizada com a sua arte. Pacote com 100 unidades.',
+        descricao: 'Sacola plástica personalizada com alça boca de palhaço, resistente e prática para a entrega da sua marca. Impressão personalizada com a sua arte. Pacote com 50 unidades (quantidade mínima).',
         detalhes: [
           'Material: plástico resistente.',
           'Alça: boca de palhaço.',
           'Impressão personalizada com a sua arte.',
-          'Pacote com 100 unidades.',
+          'Quantidade mínima: 50 unidades.',
         ],
         variacoes: [
-          { label: '16 x 20 cm · 100 un', preco: 121.13 },
-          { label: '20 x 30 cm · 100 un', preco: 133.88 },
-          { label: '30 x 40 cm · 100 un', preco: 191.25 },
-          { label: '40 x 50 cm · 100 un', preco: 280.50 },
+          { label: '16 x 20 cm · 50 un', preco: 76.50 },
+          { label: '20 x 30 cm · 50 un', preco: 89.25 },
+          { label: '30 x 40 cm · 50 un', preco: 114.75 },
+          { label: '40 x 50 cm · 50 un', preco: 165.75 },
         ] },
       sacolaSilk,
       sacolaPlastica,
