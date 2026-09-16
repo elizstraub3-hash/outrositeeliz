@@ -1367,6 +1367,12 @@ button { font-family: inherit; cursor: pointer; }
   .categories { grid-template-columns: repeat(2, 1fr); }
   .hero__slide { min-height: 360px; }
   .hero__arrow { display: none; }
+  /* Slides centralizados no mobile */
+  .hero__content { max-width: 100%; text-align: center; }
+  /* Bolinhas centralizadas e de tamanho fixo (não "trocam de lugar") */
+  .hero__dots { left: 0; right: 0; transform: none; justify-content: center; bottom: .9rem; }
+  .hero__dots button, .hero__dots button.active { width: 9px; height: 9px; border-radius: 50%; }
+  .hero__dots button.active { background: var(--white); }
   .newsletter__inner { flex-direction: column; text-align: center; }
   .footer__grid { grid-template-columns: 1fr; gap: 1.8rem; }
 }
