@@ -11,7 +11,7 @@ const ARTE_SUBLIMACAO = 'A arte é criada por uma <strong>designer profissional 
 /* Vestuário (camisetas, camisas, moletons, jaquetas e afins): a arte é mais elaborada e tem custo fixo. */
 const ARTE_VESTUARIO = 'Arte de vestuário: o desenvolvimento da arte custa <strong>R$ 50,00</strong> (cobrado uma única vez por arte), por envolver uma criação mais elaborada.';
 
-const CATALOGO_VERSAO = 119;
+const CATALOGO_VERSAO = 120;
 
 /* Produtos que aparecem em mais de uma categoria são definidos uma única
    vez aqui e referenciados nas categorias — sem duplicar dados. */
@@ -1163,7 +1163,9 @@ const CATALOGO = {
         imagem: 'img/kit-basico-3.webp',
         nome: 'Kit All Black',
         chamada: 'Um presente elegante e cheio de estilo para encantar quem recebe.',
-        spec: '01 sacola P (papel offset fosco 180g · ~19x15x6 cm) + 01 bloquinho de anotações (capa dura · 7x10 cm · somente capa e contracapa personalizadas) + 01 lápis.',
+        spec: '01 sacola P com laço (papel offset fosco 180g · ~19x15x6 cm) + 01 certificado (papel fosco 180g) + 01 bloquinho personalizado (capa dura · 7x10 cm · somente capa e contracapa) + 01 lápis personalizado.',
+        prazoTexto: 'de 7 dias úteis',
+        arteNota: 'A arte do certificado é enviada pelo cliente.',
         variacoes: [
           { label: 'Kit completo', preco: 55.90 },
         ] },
@@ -1171,20 +1173,23 @@ const CATALOGO = {
         imagem: 'img/kit-basico-plus.webp',
         nome: 'Kit Básico Plus',
         chamada: 'O mimo perfeito para dar as boas-vindas com a sua marca.',
-        spec: '01 sacola P (papel offset fosco 180g · ~19x15x6 cm) + 01 bloquinho de anotações (capa dura · 7x10 cm · somente capa e contracapa personalizadas) + 01 certificado (papel fosco 180g) + 01 lápis.',
+        spec: '01 sacola P com laço (papel offset fosco 180g · ~19x15x6 cm) + 01 certificado (papel fosco 180g) + 01 bloquinho personalizado (capa dura · 7x10 cm · somente capa e contracapa) + 01 lápis personalizado.',
+        prazoTexto: 'de 7 dias úteis',
         arteNota: 'A arte do certificado é enviada pelo cliente.',
         variacoes: [
-          { label: 'Com laço', preco: 65.90 },
-          { label: 'Sem laço', preco: 65.90 },
+          { label: 'Kit completo', preco: 65.90 },
         ] },
       { bg: 'linear-gradient(135deg,#fef9c3,#ca8a04)', badge: 'Novo', destaque: true,
         imagem: 'img/kit-luxo.webp',
         nome: 'Kit Luxo',
         chamada: 'Sofisticação em cada detalhe para presentear de verdade.',
-        spec: '01 sacola personalizada M (papel offset fosco 180g · ~24x17x10 cm) + 01 bloquinho de anotações (capa dura · 7x10 cm · somente capa e contracapa personalizadas) + 01 taça de gin (com ou sem laço) + 01 lápis · Consultar as cores dos copos.',
+        spec: '01 caixa cartonada personalizada (20x21x6 cm) + 01 apostila até 10 páginas colorida (capa e contracapa na identidade visual) + 01 taça de gin ou copo com canudo, com laço (cor na identidade visual) + 01 lápis personalizado + 01 bloco personalizado (7x10 cm) + papel seda na identidade visual.',
+        prazoTexto: 'de 7 dias úteis',
+        adicional: { label: 'Corrente na caixa cartonada', preco: 15.00 },
         variacoes: [
           { label: 'All Black', preco: 145.90 },
           { label: 'Colorido', preco: 135.90 },
+          { label: 'Hotstamping (efeito metalizado)', preco: 185.90 },
         ] },
     ],
   },

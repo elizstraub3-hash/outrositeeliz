@@ -309,6 +309,10 @@ function abrirVariacoes(p) {
           <span class="var-row__preco">${precoLabel(v.preco)}</span>
         </button>`).join('')}
     </div>
+    ${p.adicional ? `
+    <label class="modal__adicional">
+      <input type="checkbox" id="modalAdicional"> ${p.adicional.label} (+ R$ ${formatarPreco(p.adicional.preco)})
+    </label>` : ''}
     ${blocoArte(p)}
     <div class="modal__foot">
       <div class="modal__total">
@@ -319,21 +323,31 @@ function abrirVariacoes(p) {
     </div>`);
 
   let selecionada = 0;
+  const chk = modal.querySelector('#modalAdicional');
+  const precoAtual = () => {
+    const base = p.variacoes[selecionada].preco;
+    if (base == null) return null;
+    return base + (chk && chk.checked ? p.adicional.preco : 0);
+  };
+  const atualizarTotal = () => { modal.querySelector('#modalTotal').textContent = precoLabel(precoAtual()); };
   modal.querySelectorAll('.var-row').forEach((row) => {
     row.addEventListener('click', () => {
       selecionada = Number(row.dataset.i);
       modal.querySelectorAll('.var-row').forEach((r) => r.classList.toggle('var-row--ativa', r === row));
-      modal.querySelector('#modalTotal').textContent = precoLabel(p.variacoes[selecionada].preco);
+      atualizarTotal();
     });
   });
+  if (chk) chk.addEventListener('change', atualizarTotal);
 
   modal.querySelector('.modal__add').addEventListener('click', () => {
     const v = p.variacoes[selecionada];
+    const comAdicional = !!(chk && chk.checked);
+    const detalhe = v.label + (comAdicional ? ` + ${p.adicional.label}` : '');
     const arte = arteEscolhida(modal);
     const arquivo = arquivoArte(modal);
-    adicionarItemCarrinho({ nome: p.nome, detalhe: v.label, qtd: 1, total: v.preco, arte, arquivo });
+    adicionarItemCarrinho({ nome: p.nome, detalhe, qtd: 1, total: precoAtual(), arte, arquivo });
     fechar();
-    mostrarToast(`${p.nome} (${v.label}) · ${arte}${arquivo ? ` (${arquivo})` : ''} — adicionado ao carrinho!`);
+    mostrarToast(`${p.nome} (${detalhe}) · ${arte}${arquivo ? ` (${arquivo})` : ''} — adicionado ao carrinho!`);
   });
 }
 
