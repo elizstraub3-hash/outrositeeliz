@@ -95,7 +95,7 @@ function cardProduto(p, slugCategoria) {
       ${imgArea}
       <div class="product-card__body">
         <h3 class="product-card__title">${p.nome}</h3>
-        <p class="product-card__spec">${p.spec}</p>
+        <p class="product-card__spec">${p.chamada || p.spec}</p>
         ${hint}
         <div class="product-card__price">
           <small>${precoSmall}</small>
@@ -275,7 +275,7 @@ function cabecalhoModal(p) {
       <div class="modal__thumb" style="background:${p.bg}">${p.imagem ? `<img id="modalThumbImg" src="${p.imagem}" alt="${p.nome}">` : ''}</div>
       <div>
         <h3>${p.nome}</h3>
-        <p>${p.spec}</p>
+        <p>${p.chamada || p.spec}</p>
       </div>
     </div>
     ${infoProduto(p)}`;

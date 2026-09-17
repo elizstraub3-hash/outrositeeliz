@@ -11,7 +11,7 @@ const ARTE_SUBLIMACAO = 'A arte é criada por uma <strong>designer profissional 
 /* Vestuário (camisetas, camisas, moletons, jaquetas e afins): a arte é mais elaborada e tem custo fixo. */
 const ARTE_VESTUARIO = 'Arte de vestuário: o desenvolvimento da arte custa <strong>R$ 50,00</strong> (cobrado uma única vez por arte), por envolver uma criação mais elaborada.';
 
-const CATALOGO_VERSAO = 118;
+const CATALOGO_VERSAO = 119;
 
 /* Produtos que aparecem em mais de uma categoria são definidos uma única
    vez aqui e referenciados nas categorias — sem duplicar dados. */
@@ -20,6 +20,7 @@ const copoCuia = {
   emoji: '🧉', bg: 'linear-gradient(135deg,#e2e8f0,#94a3b8)', badge: 'Novo',
   imagem: 'img/copo-cuia-laser.webp',
   nome: 'Copo Cuia com Tampa em Acrílico 360ml',
+  chamada: 'O queridinho do chimarrão com a sua identidade.',
   spec: 'Metal · tampa acrílica · gravação a laser 4x0 (4x4 cm) ou estampa em DTF',
   /* Produto com lista de combinações: o cliente escolhe a quantidade de
      cada personalização. O preço unitário segue a faixa da quantidade
@@ -37,7 +38,7 @@ const copoCuia = {
 
 const copoTermico = {
   emoji: '☕', bg: 'linear-gradient(135deg,#ddd6fe,#7c3aed)', badge: 'Novo',
-  nome: 'Copo Térmico Inox 500ml', spec: 'Gravação a laser 4x0 · mantém a temperatura',
+  nome: 'Copo Térmico Inox 500ml', chamada: 'Estiloso e gelado, pra levar pra todo lugar.', spec: 'Gravação a laser 4x0 · mantém a temperatura',
   variacoes: [
     { label: '25 un', preco: 549.90 },
     { label: '50 un', preco: 999.90 },
@@ -48,6 +49,7 @@ const copoInoxColorido = {
   emoji: '🥛', bg: 'linear-gradient(135deg,#f1f5f9,#94a3b8)', badge: 'Novo',
   imagem: 'img/copo-termico-inox.webp',
   nome: 'Copo Térmico Aço Inox',
+  chamada: 'A sua bebida na temperatura certa por muito mais tempo.',
   spec: 'Aço inox · gravação a laser 4x0 (4x10 cm) · 10 cores',
   precoUnitario: 49.90,
   minimo: 1,
@@ -58,6 +60,7 @@ const garrafaInox750 = {
   emoji: '🍶', bg: 'linear-gradient(135deg,#fed7aa,#ea580c)', badge: 'Novo',
   imagem: 'img/garrafa-inox-750.webp',
   nome: 'Garrafa de Inox 750ml Opus',
+  chamada: 'Hidrate-se com estilo e leve a sua marca junto.',
   spec: 'Aço inox · gravação a laser 4x0 (4x10 cm) · 7 cores',
   precoUnitario: 69.90,
   minimo: 1,
@@ -67,6 +70,7 @@ const garrafaInox750 = {
 const squeezeFosca = {
   emoji: '🧴', bg: 'linear-gradient(135deg,#bae6fd,#0369a1)', badge: 'Novo',
   nome: 'Squeeze Fosca 600ml',
+  chamada: 'A companheira ideal pra academia e pro dia a dia.',
   spec: 'Metal fosco · gravação a laser 4x0 (4x10 cm) · 6 cores',
   precoUnitario: 49.90,
   minimo: 1,
@@ -77,6 +81,7 @@ const kitChurrasco = {
   bg: 'linear-gradient(135deg,#fca5a5,#7f1d1d)', badge: 'Novo',
   imagem: 'img/kit-churrasco.webp',
   nome: 'Kit Churrasco',
+  chamada: 'O presente certo pra quem ama um bom churrasco.',
   spec: 'Estojo nylon + talheres aço inox · gravação a laser + DTF rígido',
   variacoes: [
     { label: '1 kit', preco: 95.90 },
@@ -89,6 +94,7 @@ const camisetaDtf = {
   imagem: 'img/camiseta-dtf.webp',
   imagens: ['img/camiseta-dtf.webp', 'img/camiseta-dtf-costas.webp'],
   nome: 'Camiseta DTF UV',
+  chamada: 'Estampa colorida e durável que veste a sua marca.',
   arteNota: ARTE_VESTUARIO,
   spec: 'Algodão · estampa DTF UV · feminina ou masculina · tamanhos P ao GG · cores conforme disponibilidade em estoque',
   grupoLabel: 'Impressão', opcaoLabel: 'Tamanho',
@@ -125,6 +131,7 @@ const FAIXAS_CAMISA_COPA = [
 const camisaCopa = {
   bg: 'linear-gradient(135deg,#fde047,#16a34a)', badge: 'Novo', destaque: true,
   nome: 'Camisa Copa Personalizada',
+  chamada: 'Vista o time com uma camisa feita sob medida.',
   arteNota: ARTE_VESTUARIO,
   arteRestrita: ARTE_SUBLIMACAO,
   distribuirTamanhos: true, unidade: 'camisa', unidadePlural: 'camisas',
@@ -147,6 +154,7 @@ const ecobagPersonalizada = {
   bg: 'linear-gradient(135deg,#d9f99d,#4d7c0f)', badge: 'Novo', destaque: true,
   imagem: 'img/ecobag-cru.webp',
   nome: 'Ecobag Personalizada',
+  chamada: 'A sacola ecológica que leva a sua marca com consciência.',
   spec: 'Algodão cru · impressão sublimática · escolha o tamanho e some quantas quiser',
   prazoTexto: '3 a 7 dias úteis',
   paginaProduto: true,
@@ -173,6 +181,7 @@ const toalhaBanho = {
   bg: 'linear-gradient(135deg,#bae6fd,#0284c7)', badge: 'Novo',
   imagem: 'img/toalha-banho.webp',
   nome: 'Toalha de Banho Personalizada',
+  chamada: 'Maciez e a sua marca em cada detalhe.',
   spec: 'Atoalhado poliéster · colorido só frente',
   variacoes: [
     { label: '1 un', preco: 52.90 },
@@ -190,6 +199,7 @@ const toalhaBanho = {
 const toalhaRosto = {
   bg: 'linear-gradient(135deg,#a5f3fc,#0891b2)', badge: 'Novo',
   nome: 'Toalha de Rosto Personalizada',
+  chamada: 'Um mimo macio com a sua identidade.',
   spec: 'Atoalhado poliéster 290g · colorido só frente · 40x65 cm',
   variacoes: [
     { label: '1 un', preco: 29.90 },
@@ -208,6 +218,7 @@ const bolsaHaste = {
   bg: 'linear-gradient(135deg,#fde68a,#d97706)', badge: 'Novo',
   imagem: 'img/bandeira.webp',
   nome: 'Bandeira',
+  chamada: 'Marque presença em qualquer evento com estilo.',
   spec: 'Tecido gabardine · colorido só frente · sem verniz · 70x100 cm',
   variacoes: [
     { label: '1 un', preco: 89.90 },
@@ -218,6 +229,7 @@ const cordaoPersonalizado = {
   bg: 'linear-gradient(135deg,#fbcfe8,#9d174d)', badge: 'Novo',
   imagem: 'img/cordao.webp',
   nome: 'Cordão Personalizado',
+  chamada: 'O crachá com estilo pra eventos e empresas.',
   spec: 'Poliéster acetinado 20mm · colorido frente e verso · sem verniz · 39x2 cm · escolha o acabamento',
   variacoes: [
     { label: '10 un · Argola com Jacaré', preco: 174.90 },
@@ -242,6 +254,7 @@ const camisetaDryMasc = {
   imagem: 'img/camiseta-masc.webp',
   imagens: ['img/camiseta-masc.webp', 'img/camiseta-masc-gola-brasil.webp', 'img/camiseta-masc-gola-v.webp', 'img/camiseta-masc-2.webp'],
   nome: 'Camiseta Dry Fit Masculina',
+  chamada: 'Leve e respirável, ideal pra treinos e eventos.',
   arteNota: ARTE_VESTUARIO,
   arteRestrita: ARTE_SUBLIMACAO,
   distribuirTamanhos: true, unidade: 'camiseta', unidadePlural: 'camisetas',
@@ -289,6 +302,7 @@ const camisetaDryFem = {
   bg: 'linear-gradient(135deg,#e0f2fe,#0369a1)', badge: 'Novo',
   imagem: 'img/camiseta-fem.webp',
   nome: 'Camiseta Dry Fit Feminina',
+  chamada: 'Leve e confortável, feita pra se movimentar.',
   arteNota: ARTE_VESTUARIO,
   arteRestrita: ARTE_SUBLIMACAO,
   distribuirTamanhos: true, unidade: 'camiseta', unidadePlural: 'camisetas',
@@ -328,6 +342,7 @@ const camisaPesca = {
   bg: 'linear-gradient(135deg,#a5f3fc,#0e7490)', badge: 'Novo',
   imagem: 'img/camisa-pesca.webp',
   nome: 'Camisa de Pesca Personalizada',
+  chamada: 'Proteção UV e conforto pras suas pescarias.',
   arteNota: ARTE_VESTUARIO,
   arteRestrita: ARTE_SUBLIMACAO,
   distribuirTamanhos: true, unidade: 'camisa', unidadePlural: 'camisas',
@@ -431,6 +446,7 @@ const poloBordada = {
   bg: 'linear-gradient(135deg,#e2e8f0,#94a3b8)', badge: 'Novo',
   imagem: 'img/polo.webp',
   nome: 'Polo Bordada Personalizada',
+  chamada: 'Elegância bordada que valoriza o seu uniforme.',
   distribuirTamanhos: true, unidade: 'polo', unidadePlural: 'polos',
   spec: 'Bordado personalizado · do P ao GG',
   prazo: 7,
@@ -460,6 +476,7 @@ const moletomCanguru = {
   bg: 'linear-gradient(135deg,#cbd5e1,#334155)', badge: 'Novo',
   imagem: 'img/moletom.webp',
   nome: 'Moletom Canguru Personalizado',
+  chamada: 'Conforto quentinho com a identidade do seu time.',
   arteNota: ARTE_VESTUARIO,
   distribuirTamanhos: true, unidade: 'moletom', unidadePlural: 'moletons',
   spec: 'Moletom flanelado 100% poliéster · unissex · capuz e bolso canguru · impressão Ultra HD Sublimática · do P ao XL4',
@@ -562,6 +579,7 @@ const camisaAmericana = {
   bg: 'linear-gradient(135deg,#fde68a,#334155)', badge: 'Novo',
   imagem: 'img/camisa-americana.webp',
   nome: 'Camisa Futebol Americano Titan',
+  chamada: 'Estilo esportivo e resistente pro seu time.',
   arteNota: ARTE_VESTUARIO,
   arteRestrita: ARTE_SUBLIMACAO,
   distribuirTamanhos: true, unidade: 'camisa', unidadePlural: 'camisas',
@@ -669,6 +687,7 @@ const camisaCiclismo = {
   bg: 'linear-gradient(135deg,#fde68a,#334155)', badge: 'Novo',
   imagem: 'img/camisa-ciclismo.webp',
   nome: 'Camisa de Ciclismo Fast',
+  chamada: 'Leveza e conforto pra pedalar com a sua marca.',
   arteNota: ARTE_VESTUARIO,
   arteRestrita: ARTE_SUBLIMACAO,
   distribuirTamanhos: true, unidade: 'camisa', unidadePlural: 'camisas',
@@ -771,6 +790,7 @@ const camisaCiclismo = {
 const jaquetaMisty = {
   bg: 'linear-gradient(135deg,#e2e8f0,#334155)', badge: 'Novo',
   nome: 'Jaqueta Corta Vento Misty',
+  chamada: 'Proteção e estilo com a cara da sua equipe.',
   arteNota: ARTE_VESTUARIO,
   distribuirTamanhos: true, unidade: 'jaqueta', unidadePlural: 'jaquetas',
   spec: 'Tactel (92% poliéster · 8% elastano) · unissex · capuz e zíper 80 cm · do P ao XL4 · a partir de 1 un',
@@ -885,6 +905,7 @@ const chineloPersonalizado = {
   bg: 'linear-gradient(135deg,#fbcfe8,#db2777)', badge: 'Novo', destaque: true,
   imagem: 'img/chinelo-personalizado.webp',
   nome: 'Chinelo Personalizado',
+  chamada: 'Conforto com a sua marca pra levar pra todo lugar.',
   spec: 'Borracha + EVA · impressão colorida só frente (4x0) · 26x34 cm · distribua a quantidade entre os tamanhos',
   unidade: 'chinelo', unidadePlural: 'chinelos',
   opcoesCombinacao: [
@@ -902,6 +923,7 @@ const forminhasDoces = {
   bg: 'linear-gradient(135deg,#fde68a,#f59e0b)', badge: 'Novo', destaque: true,
   imagem: 'img/forminhas-doces.webp',
   nome: 'Forminhas para Doces (100 un)',
+  chamada: 'Docinhos ainda mais lindos na mesa da sua festa.',
   spec: 'Forminhas personalizadas para doces · kit com 100 unidades · escolha o modelo',
   prazoTexto: 'de 2 a 5 dias úteis',
   variacoes: [
@@ -916,6 +938,7 @@ const caixinhaMilk = {
   imagem: 'img/caixinha-milk.webp',
   imagens: ['img/caixinha-milk.webp', 'img/caixinha-milk-casamento.webp', 'img/caixinha-milk-dino.webp', 'img/caixinha-milk-super.webp'],
   nome: 'Caixinha Milk Personalizada',
+  chamada: 'A lembrancinha fofa que combina com qualquer tema.',
   spec: 'Caixinha Milk personalizada · pedido mínimo 10 unidades · produção: 50 un em 5 dias úteis · 100 un em 8 dias úteis',
   prazoTexto: 'de 5 a 8 dias úteis',
   unidade: 'caixinha', unidadePlural: 'caixinhas',
@@ -931,6 +954,7 @@ const caixaPresente = {
   bg: 'linear-gradient(135deg,#1f2937,#f59e0b)', badge: 'Novo', destaque: true,
   imagem: 'img/caixa-presente.webp',
   nome: 'Caixa de Presente Personalizada',
+  chamada: 'A embalagem que transforma qualquer mimo em presente especial.',
   spec: 'Caixa cartonada · acabamento vinil · logo ou escrita em dourado no topo · forro interno à sua escolha · R$ 55,90 (adicionais opcionais: laço +R$ 12,90 e/ou toda preta com correntinha dourada +R$ 12,90)',
   prazoTexto: 'de 5 dias úteis',
   variacoes: [
@@ -946,6 +970,7 @@ const sacolaSilk = {
   bg: 'linear-gradient(135deg,#fbcfe8,#be185d)', badge: 'Novo', destaque: true,
   imagem: 'img/sacola-silk.webp',
   nome: 'Sacola em Papel Silk Premium',
+  chamada: 'Acabamento premium que dá um toque sofisticado à sua loja.',
   spec: 'Papel offset 150g · impressão silk 1 cor só frente · alça de gorgurão · escolha o tamanho, a cor da sacola, a cor da estampa e a quantidade',
   prazo: 20,
   grupoLabel: 'Tamanho', opcaoLabel: 'Quantidade',
@@ -973,6 +998,7 @@ const sacolaPlastica = {
   bg: 'linear-gradient(135deg,#bfdbfe,#1d4ed8)', badge: 'Novo', destaque: true,
   imagem: 'img/sacola-plastica.webp',
   nome: 'Sacola Plástica com Alça Vazada',
+  chamada: 'Leve, resistente e com a cara do seu negócio.',
   spec: 'Plástico resistente · alça vazada · impressão personalizada · escolha o tamanho, a cor da sacola, a cor da impressão e a quantidade',
   prazoTexto: 'de 3 a 7 dias úteis',
   grupoLabel: 'Tamanho', opcaoLabel: 'Quantidade',
@@ -1010,6 +1036,7 @@ const sacolaCordao = {
   bg: 'linear-gradient(135deg,#fef3c7,#b45309)', badge: 'Novo', destaque: true,
   imagem: 'img/sacola-alca-cordao.webp',
   nome: 'Sacola de Papel Simples com Alça de Cordão',
+  chamada: 'Simples, bonita e perfeita para embalar com carinho.',
   spec: 'Papel offset 180g (material simples, não é premium) · 29 x 25 x 8 cm · alça de cordão · pedido mínimo 10 unidades. A sacola não é colorida: apenas a logo da frente é impressa em cor e as laterais recebem um padrão (pattern) da sua logo — sem cores chapadas.',
   unidade: 'sacola', unidadePlural: 'sacolas',
   minimoTotal: 10,
@@ -1031,6 +1058,7 @@ const sacolaKraft = {
   imagem: 'img/sacola-kraft.webp',
   imagens: ['img/sacola-kraft.webp', 'img/sacola-kraft-cores.webp'],
   nome: 'Sacola Kraft com Alça',
+  chamada: 'A embalagem charmosa que valoriza a entrega da sua marca.',
   spec: 'Kraft 80g · impressão silk · tamanhos P, M, G e GG · pedido mínimo 500 unidades · a partir de R$ 2,35 cada',
   unidade: 'sacola', unidadePlural: 'sacolas',
   prazoTexto: '10 a 15 dias úteis',
@@ -1133,15 +1161,17 @@ const CATALOGO = {
     produtos: [
       { bg: 'linear-gradient(135deg,#ede9fe,#7c3aed)', badge: 'Novo', destaque: true,
         imagem: 'img/kit-basico-3.webp',
-        nome: 'Kit All Black – 2 Itens',
-        spec: '01 sacola P (papel offset fosco 180g · ~19x15x6 cm) + 01 bloquinho de anotações P (capa dura · 8x11 cm).',
+        nome: 'Kit All Black',
+        chamada: 'Um presente elegante e cheio de estilo para encantar quem recebe.',
+        spec: '01 sacola P (papel offset fosco 180g · ~19x15x6 cm) + 01 bloquinho de anotações (capa dura · 7x10 cm · somente capa e contracapa personalizadas) + 01 lápis.',
         variacoes: [
           { label: 'Kit completo', preco: 55.90 },
         ] },
       { bg: 'linear-gradient(135deg,#fce7f3,#db2777)', badge: 'Novo', destaque: true,
         imagem: 'img/kit-basico-plus.webp',
-        nome: 'Kit Básico Plus – 3 Itens',
-        spec: '01 sacola P (papel offset fosco 180g · ~19x15x6 cm) + 01 bloquinho de anotações P (capa dura · 8x11 cm) + 01 certificado (papel fosco 180g).',
+        nome: 'Kit Básico Plus',
+        chamada: 'O mimo perfeito para dar as boas-vindas com a sua marca.',
+        spec: '01 sacola P (papel offset fosco 180g · ~19x15x6 cm) + 01 bloquinho de anotações (capa dura · 7x10 cm · somente capa e contracapa personalizadas) + 01 certificado (papel fosco 180g) + 01 lápis.',
         arteNota: 'A arte do certificado é enviada pelo cliente.',
         variacoes: [
           { label: 'Com laço', preco: 65.90 },
@@ -1149,8 +1179,9 @@ const CATALOGO = {
         ] },
       { bg: 'linear-gradient(135deg,#fef9c3,#ca8a04)', badge: 'Novo', destaque: true,
         imagem: 'img/kit-luxo.webp',
-        nome: 'Kit Luxo – 3 Itens',
-        spec: '01 sacola personalizada M (papel offset fosco 180g · ~24x17x10 cm) + 01 bloquinho de anotações P (capa dura · 8x11 cm) + 01 taça de gin (com ou sem laço) · Consultar as cores dos copos.',
+        nome: 'Kit Luxo',
+        chamada: 'Sofisticação em cada detalhe para presentear de verdade.',
+        spec: '01 sacola personalizada M (papel offset fosco 180g · ~24x17x10 cm) + 01 bloquinho de anotações (capa dura · 7x10 cm · somente capa e contracapa personalizadas) + 01 taça de gin (com ou sem laço) + 01 lápis · Consultar as cores dos copos.',
         variacoes: [
           { label: 'All Black', preco: 145.90 },
           { label: 'Colorido', preco: 135.90 },
@@ -1167,6 +1198,7 @@ const CATALOGO = {
       sacolaKraft,
       { bg: 'linear-gradient(135deg,#e0f2fe,#0891b2)', badge: 'Novo', destaque: true,
         nome: 'Sacola Plástica Boca de Palhaço Personalizada',
+        chamada: 'Prática e resistente para levar a sua marca pra todo lugar.',
         spec: 'Plástico resistente · alça boca de palhaço · impressão personalizada · pacote com 50 unidades · escolha o tamanho',
         unidade: 'sacola', unidadePlural: 'sacolas',
         descricao: 'Sacola plástica personalizada com alça boca de palhaço, resistente e prática para a entrega da sua marca. Impressão personalizada com a sua arte. Pacote com 50 unidades (quantidade mínima).',
@@ -1197,6 +1229,7 @@ const CATALOGO = {
       { bg: 'linear-gradient(135deg,#dbeafe,#1d4ed8)', badge: 'Novo', destaque: true,
         imagem: 'img/apostila.webp',
         nome: 'Apostila Personalizada',
+        chamada: 'Material didático com a sua identidade, do jeito profissional.',
         spec: 'Monte a sua apostila folha a folha: escolha o tipo de folha, a quantidade e some capa e contra capa se quiser',
         prazoTexto: 'de 1 a 3 dias úteis',
         arteNota: 'Criação da arte da apostila: R$ 65,00.',
@@ -1218,6 +1251,7 @@ const CATALOGO = {
     produtos: [
       { bg: 'linear-gradient(135deg,#ccfbf1,#0d9488)', badge: 'Novo', destaque: true, imagem: 'img/impressao-rapida.webp',
         nome: 'Impressão Rápida (por folha)',
+        chamada: 'Suas ideias no papel na hora, sem complicação.',
         spec: 'Impressão em jato de tinta · escolha o papel e a cor e some quantas folhas quiser',
         prazoTexto: 'na hora / no mesmo dia',
         unidade: 'folha', unidadePlural: 'folhas',
@@ -1238,6 +1272,7 @@ const CATALOGO = {
         ] },
       { bg: 'linear-gradient(135deg,#fef3c7,#b45309)', badge: 'Novo', destaque: true, imagem: 'img/impressao-rapida.webp',
         nome: 'Cópias / Xerox (por folha)',
+        chamada: 'Aquela cópia do dia a dia, prontinha na hora.',
         spec: 'Cópia P&B ou colorida · A4 · escolha a cor e some quantas folhas quiser',
         prazoTexto: 'na hora / no mesmo dia',
         unidade: 'folha', unidadePlural: 'folhas',
@@ -1248,6 +1283,7 @@ const CATALOGO = {
         ] },
       { bg: 'linear-gradient(135deg,#e0f2fe,#0369a1)', badge: 'Novo', destaque: true, imagem: 'img/impressao-rapida.webp',
         nome: 'Impressão de Documentos (por página)',
+        chamada: 'Mande o arquivo e retire impresso no mesmo dia.',
         spec: 'Envie o PDF pelo WhatsApp ou e-mail · impressão P&B ou colorida · A4 · retire na loja ou receba por motoboy/Uber',
         prazoTexto: 'na hora / no mesmo dia',
         unidade: 'página', unidadePlural: 'páginas',
@@ -1259,6 +1295,7 @@ const CATALOGO = {
         ] },
       { bg: 'linear-gradient(135deg,#ede9fe,#6d28d9)', badge: 'Novo', destaque: true, imagem: 'img/impressao-rapida.webp',
         nome: 'Digitalização / Escaneamento (por página)',
+        chamada: 'Seus documentos em PDF, rapidinho e sem dor de cabeça.',
         spec: 'Escaneamos seus documentos e enviamos em PDF por WhatsApp ou e-mail · mínimo R$ 3,00 por atendimento',
         prazoTexto: 'na hora / no mesmo dia',
         unidade: 'página', unidadePlural: 'páginas',
@@ -1268,6 +1305,7 @@ const CATALOGO = {
         ] },
       { bg: 'linear-gradient(135deg,#dcfce7,#15803d)', badge: 'Novo', destaque: true, imagem: 'img/impressao-rapida.webp',
         nome: 'Plastificação',
+        chamada: 'Proteja seus documentos com um acabamento durável.',
         spec: 'Plastificação (laminação) de documentos e cartões · escolha o tamanho',
         prazoTexto: 'na hora / no mesmo dia',
         unidade: 'plastificação', unidadePlural: 'plastificações',
@@ -1281,6 +1319,7 @@ const CATALOGO = {
         ] },
       { bg: 'linear-gradient(135deg,#fce7f3,#be185d)', badge: 'Novo', destaque: true, imagem: 'img/impressao-rapida.webp',
         nome: 'Encadernação',
+        chamada: 'Deixe o seu trabalho com cara de profissional.',
         spec: 'Espiral ou capa dura · escolha pelo número de folhas',
         prazoTexto: 'na hora / no mesmo dia',
         unidade: 'encadernação', unidadePlural: 'encadernações',
@@ -1293,6 +1332,7 @@ const CATALOGO = {
         ] },
       { bg: 'linear-gradient(135deg,#fee2e2,#b91c1c)', badge: 'Novo', destaque: true, imagem: 'img/impressao-rapida.webp',
         nome: 'Impressão de Fotos',
+        chamada: 'Suas memórias impressas com qualidade pra guardar.',
         spec: 'Impressão de fotos e documentos · escolha o tamanho',
         prazoTexto: 'na hora / no mesmo dia',
         unidade: 'foto', unidadePlural: 'fotos',
@@ -1318,6 +1358,7 @@ const CATALOGO = {
       { bg: 'linear-gradient(135deg,#c7d2fe,#4338ca)', badge: 'Novo', destaque: true,
         paginaProduto: true,
         nome: 'Agenda Diária 2027',
+        chamada: 'Organize o ano com a sua marca em cada página.',
         spec: 'Capa dura personalizada · wire-o · 148x210mm · miolo sulfite 63g · laminação (brilho, fosca ou holográfica) · escolha a quantidade',
         prazoTexto: '4 dias úteis',
         arteNota: 'Criação de arte: R$ 45,99. Revisão de arquivo: R$ 16,99.',
@@ -1341,6 +1382,7 @@ const CATALOGO = {
         ] },
       { bg: 'linear-gradient(135deg,#e0e7ff,#4338ca)', badge: 'Novo', destaque: true,
         nome: 'Caderninho 7x10 cm',
+        chamada: 'Um brinde fofo pra anotar as ideias em qualquer lugar.',
         spec: 'Capa personalizada (só a capa) · 64 folhas · 7x10 cm · Mais quantidades: consultar valor no atacado.',
         variacoes: [
           { label: '1 un', preco: 12.90 },
@@ -1359,6 +1401,7 @@ const CATALOGO = {
         semArte: true,
         imagem: 'img/quadro-iluminado.webp',
         nome: 'Quadro Iluminado LED Branco 310x425mm',
+        chamada: 'Destaque a sua marca com um letreiro que ilumina o ambiente.',
         spec: 'Estrutura de alumínio, vidro e LED branco · 310x425mm aprox. · produto sem personalização',
         descricao: 'O quadro com LED branco é ideal para quem busca uma solução moderna e elegante para destacar informações, imagens e campanhas. A iluminação uniforme valoriza a comunicação visual e cria maior destaque em ambientes comerciais, eventos e pontos de venda. Prático e versátil, pode ser utilizado com folhas personalizadas vendidas separadamente, permitindo atualizar a mensagem sempre que necessário. Invista em um quadro iluminado para valorizar sua marca.',
         detalhes: [
@@ -1383,6 +1426,7 @@ const CATALOGO = {
       { bg: 'linear-gradient(135deg,#ede9fe,#6d28d9)', badge: 'Novo', destaque: true,
         imagem: 'img/servico-design.webp',
         nome: 'Elaboração de Apostila ou Catálogo',
+        chamada: 'A gente monta o seu material do zero, prontinho pra usar.',
         spec: 'Criação da arte pela nossa equipe · entregue em PDF de alta resolução · escolha o número de páginas',
         semArte: 'Serviço de criação: nossa equipe elabora a sua apostila ou catálogo. Após a compra, envie o conteúdo (textos e imagens) pelo WhatsApp. Entregamos o arquivo final em <strong>PDF de alta resolução</strong>.',
         variacoes: [
@@ -1391,6 +1435,7 @@ const CATALOGO = {
         ] },
       { bg: 'linear-gradient(135deg,#c7d2fe,#4338ca)', badge: 'Promoção', destaque: true,
         nome: 'Mini Site (até 50 itens)',
+        chamada: 'A sua vitrine online, simples e do seu jeito.',
         spec: 'Mini site profissional com até 50 itens · de R$ 480,00 por R$ 250,00 na promoção',
         semArte: 'Mini site profissional com até 50 itens. Valor promocional de R$ 250,00 (normalmente R$ 480,00). O <strong>domínio (endereço do site) fica por conta do cliente</strong> — valores a partir de R$ 11,00 (consultar com a gráfica). Após a compra, envie o seu conteúdo (textos, imagens e itens) pelo WhatsApp.',
         variacoes: [
@@ -1409,6 +1454,7 @@ const CATALOGO = {
         imagem: 'img/convite-casamento-1.webp',
         imagens: ['img/convite-casamento-1.webp', 'img/convite-casamento-2.webp', 'img/convite-casamento-3.webp', 'img/convite-stitch.webp', 'img/convite-dino.webp'],
         nome: 'Convite Digital Interativo',
+        chamada: 'Encante os convidados com um convite lindo e interativo.',
         spec: 'Convite digital · tema em PDF/imagem (Básico) ou completo interativo (Elaborado) · para casamentos, aniversários e eventos',
         prazoTexto: 'de 2 a 5 dias úteis',
         semArte: 'Serviço <strong>100% online</strong>: nossa equipe monta o seu convite digital. No plano Básico você recebe a arte em <strong>PDF ou imagem</strong>; no Elaborado, um <strong>link interativo</strong> para compartilhar no WhatsApp. Sem impressão e sem frete. Após a compra, envie as informações do evento e as fotos pelo WhatsApp.',
@@ -1442,6 +1488,7 @@ const CATALOGO = {
         imagem: 'img/carta-premium.webp',
         paginaProduto: true,
         nome: 'Carta Elaborada em Papéis Premium',
+        chamada: 'Uma lembrança sofisticada que também vira convite.',
         spec: '3 papéis premium · recorte especial · iniciais em lamicote dourado · fita de cetim · serve também como convite · sem pedido mínimo',
         prazoTexto: '1 a 2 dias úteis',
         unidade: 'carta', unidadePlural: 'cartas',
@@ -1460,6 +1507,7 @@ const CATALOGO = {
         imagem: 'img/manual-padrinhos.webp',
         paginaProduto: true,
         nome: 'Manual dos Padrinhos',
+        chamada: 'O convite especial para chamar quem faz parte do grande dia.',
         spec: '5 páginas com ilhós dourado + laço na identidade visual do casamento · tamanho 10x13 cm · arte por nossa conta',
         prazoTexto: 'de 2 a 5 dias úteis',
         unidade: 'manual', unidadePlural: 'manuais',
@@ -1477,6 +1525,7 @@ const CATALOGO = {
       { bg: 'linear-gradient(135deg,#fbcfe8,#db2777)', badge: 'Novo', destaque: true,
         imagem: 'img/topo-bolo.webp',
         nome: 'Topo de Bolo Personalizado',
+        chamada: 'O detalhe que deixa o bolo com a cara da festa.',
         spec: 'Recorte em lamicote com canudo transparente · folha 21x39 cm (recorte o que quiser) · escolha o modelo',
         prazoTexto: 'de 1 a 5 dias úteis',
         variacoes: [
@@ -1499,6 +1548,7 @@ const CATALOGO = {
       { bg: 'linear-gradient(135deg,#fef08a,#ca8a04)', badge: 'Novo', prazo: 3, destaque: true,
         imagem: 'img/cartao-visita.webp',
         nome: 'Cartão de Visita Couchê 250g',
+        chamada: 'A primeira impressão da sua marca, com acabamento profissional.',
         spec: 'Couchê 250g · UV total frente · 8,8x4,8 cm · escolha a cor e a quantidade',
         grupoLabel: 'Cor', opcaoLabel: 'Quantidade',
         tamanhos: {
@@ -1528,6 +1578,7 @@ const CATALOGO = {
         imagem: 'img/cartao-corte-especial.webp',
         paginaProduto: true,
         nome: 'Cartão de Visita Couché 250g — Corte Especial',
+        chamada: 'Um cartão diferente que ninguém esquece.',
         spec: 'Couché 250g · 4x4 UV total frente · corte especial · 8,8x4,8 cm · escolha a quantidade',
         descricao: 'Cartão de visita em papel couché 250g com impressão colorida frente e verso (4x4), UV total na frente e acabamento em corte especial (formato diferenciado). Um cartão que se destaca e valoriza a sua marca. A arte é criada pela nossa equipe.',
         detalhes: [
@@ -1545,6 +1596,7 @@ const CATALOGO = {
       { bg: 'linear-gradient(135deg,#fbcfe8,#be185d)', badge: 'Novo',
         imagem: 'img/postal.webp',
         nome: 'Postal Couchê 250g',
+        chamada: 'Mensagens e divulgações com um toque especial.',
         spec: 'Couchê 250g · UV total frente · 8,8x9,94 cm · escolha a cor e a quantidade',
         grupoLabel: 'Cor', opcaoLabel: 'Quantidade',
         tamanhos: {
@@ -1564,6 +1616,7 @@ const CATALOGO = {
       { bg: 'linear-gradient(135deg,#ddd6fe,#6d28d9)', badge: 'Novo',
         imagem: 'img/solapa.webp',
         nome: 'Solapa para Embalagem',
+        chamada: 'O acabamento certo pra apresentar o seu produto.',
         spec: 'Cabeçalho de embalagem (solapa) · colorido só frente · escolha o tamanho e a quantidade',
         tamanhos: {
           'Tamanho padrão': [
@@ -1596,6 +1649,7 @@ const CATALOGO = {
         paginaProduto: true,
         imagem: 'img/cartao-dois-cantos.webp',
         nome: 'Cartão de Visita Dois Cantos Arredondados 300g',
+        chamada: 'Sofisticado e delicado, com cantos arredondados.',
         spec: 'Couchê 300g · laminação fosca · dois cantos arredondados · 8,8 × 5,08 cm · escolha a impressão e a quantidade',
         prazoTexto: 'de 3 a 5 dias úteis',
         grupoLabel: 'Impressão', opcaoLabel: 'Quantidade',
@@ -1639,6 +1693,7 @@ const CATALOGO = {
       { bg: 'linear-gradient(135deg,#bfdbfe,#2563eb)', badge: 'Novo', destaque: true,
         imagem: 'img/flyer.webp',
         nome: 'Flyer Couchê 80g',
+        chamada: 'Divulgue a sua promoção e alcance mais clientes.',
         spec: 'Couchê 80g · sem verniz · escolha o tamanho, a cor e a quantidade',
         /* Produto com tamanhos: o cliente escolhe o tamanho e a opção em dropdowns */
         tamanhos: {
@@ -1712,6 +1767,7 @@ const CATALOGO = {
       { bg: 'linear-gradient(135deg,#bbf7d0,#22c55e)', badge: 'Novo', destaque: true,
         imagem: 'img/adesivos.webp',
         nome: 'Adesivos Personalizados',
+        chamada: 'Cole a sua marca onde quiser, do seu jeitinho.',
         spec: 'Redondos e quadrados · impressão colorida em alta qualidade · corte especial · escolha o tamanho e a quantidade',
         grupoLabel: 'Tamanho', opcaoLabel: 'Quantidade',
         tamanhos: {
@@ -1787,6 +1843,7 @@ const CATALOGO = {
         imagem: 'img/rotulo-agua-aniversario.webp',
         imagens: ['img/rotulo-agua-aniversario.webp', 'img/rotulo-agua-casamento.webp'],
         nome: 'Rótulo Adesivo para Água 500 ml',
+        chamada: 'Garrafinhas com a cara da sua festa ou evento.',
         spec: 'Vinil 135g/m² impermeável (à prova d\'água) · 20 x 4 cm · impressão alta resolução · todos os temas',
         prazoTexto: 'de 2 a 3 dias úteis',
         unidade: 'rótulo', unidadePlural: 'rótulos',
@@ -1805,6 +1862,7 @@ const CATALOGO = {
         paginaProduto: true,
         imagem: 'img/adesivo-refrigerante-safari.webp',
         nome: 'Adesivo para Refrigerante 200 ml',
+        chamada: 'Personalize as bebidas e encante os convidados.',
         spec: 'Vinil impermeável · para garrafinha de refrigerante 200 ml · impressão alta resolução · todos os temas',
         prazoTexto: 'de 2 a 3 dias úteis',
         unidade: 'adesivo', unidadePlural: 'adesivos',
@@ -1821,6 +1879,7 @@ const CATALOGO = {
       { bg: 'linear-gradient(135deg,#dbeafe,#1d4ed8)', badge: 'Novo', destaque: true,
         paginaProduto: true,
         nome: 'Adesivo Troca de Óleo',
+        chamada: 'O lembrete prático que mantém o cliente sempre voltando.',
         spec: 'Vinil eletrostático transparente (não mancha o vidro) · impressão colorida · tamanhos 40x50, 50x80 e 60x60 mm · escolha o tamanho e a quantidade',
         prazoTexto: '3 dias úteis',
         arteNota: 'Criação de arte: R$ 45,99. Revisão de arquivo: R$ 16,99.',
@@ -1862,6 +1921,7 @@ const CATALOGO = {
       { bg: 'linear-gradient(135deg,#d9f99d,#65a30d)', badge: 'Novo', destaque: true,
         paginaProduto: true,
         nome: 'Adesivo DTF UV',
+        chamada: 'Cores vibrantes que grudam em quase tudo.',
         spec: 'Adesivo em DTF UV · alta definição, brilho e acabamento premium · escolha o tamanho',
         prazoTexto: 'de 2 a 3 dias úteis',
         descricao: 'Adesivo personalizado produzido com tecnologia DTF UV, que oferece alta definição, brilho e acabamento premium. Ideal para brindes, embalagens, copos, papelaria criativa e diversos produtos personalizados.',
@@ -1880,6 +1940,7 @@ const CATALOGO = {
       { bg: 'linear-gradient(135deg,#bbf7d0,#16a34a)', badge: 'Novo',
         imagem: 'img/adesivo-brilha-escuro.webp',
         nome: 'Adesivo Brilha no Escuro',
+        chamada: 'Um efeito divertido que brilha quando apaga a luz.',
         spec: 'Adesivo que brilha no escuro · escolha o formato ou a cartela',
         prazo: 7,
         variacoes: [
@@ -1893,6 +1954,7 @@ const CATALOGO = {
       { bg: 'linear-gradient(135deg,#a7f3d0,#059669)', badge: 'Novo',
         imagem: 'img/adesivo-cartao-credito.webp',
         nome: 'Adesivo para Cartão de Crédito',
+        chamada: 'Dê um estilo único ao seu cartão.',
         spec: 'Adesivo personalizado para cartão/máquina · preço menor no atacado',
         prazo: 2,
         variacoes: [
@@ -1915,6 +1977,7 @@ const CATALOGO = {
     produtos: [
       { bg: 'linear-gradient(135deg,#fecaca,#dc2626)', badge: 'Novo', destaque: true,
         nome: 'Kit Balde 6L + Copos 350ml',
+        chamada: 'O combo perfeito pra animar qualquer rolê.',
         spec: 'Balde de 6 litros + copos de 350ml · impressão colorida só frente (4x0) · pedido mínimo 5 unidades',
         unidade: 'kit', unidadePlural: 'kits',
         minimoTotal: 5,
@@ -1924,14 +1987,14 @@ const CATALOGO = {
       chineloPersonalizado,
       copoCuia,
       { emoji: '🔑', bg: 'linear-gradient(135deg,#fecdd3,#fb7185)',
-        nome: 'Chaveiro Acrílico', spec: 'Formato personalizado · impressão UV',
+        nome: 'Chaveiro Acrílico', chamada: 'Um brinde pequeno que leva a sua marca no bolso.', spec: 'Formato personalizado · impressão UV',
         variacoes: [
           { label: '50 un', preco: 89.90 },
           { label: '100 un', preco: 149.90 },
           { label: '200 un', preco: 259.90 },
         ] },
       { emoji: '👜', bg: 'linear-gradient(135deg,#fecaca,#ef4444)',
-        nome: 'Ecobag Algodão', spec: 'Algodão cru · serigrafia 1 cor',
+        nome: 'Ecobag Algodão', chamada: 'Sustentável e estilosa, pra sua marca circular por aí.', spec: 'Algodão cru · serigrafia 1 cor',
         variacoes: [
           { label: '25 un', preco: 169.90 },
           { label: '50 un', preco: 299.90 },
@@ -1954,21 +2017,21 @@ const CATALOGO = {
       sacolaPlastica,
       sacolaCordao,
       { emoji: '🛍️', bg: 'linear-gradient(135deg,#ffedd5,#fb923c)',
-        nome: 'Sacola de Papel', spec: 'Alça torcida · impressão 4x0',
+        nome: 'Sacola de Papel', chamada: 'Embale as suas vendas com charme e praticidade.', spec: 'Alça torcida · impressão 4x0',
         variacoes: [
           { label: '100 un', preco: 249.90 },
           { label: '250 un', preco: 549.90 },
           { label: '500 un', preco: 949.90 },
         ] },
       { emoji: '🥖', bg: 'linear-gradient(135deg,#fde68a,#d97706)',
-        nome: 'Saco Kraft com Janela', spec: 'Ideal para alimentos · visor transparente',
+        nome: 'Saco Kraft com Janela', chamada: 'Mostra o produto com aquele charme artesanal.', spec: 'Ideal para alimentos · visor transparente',
         variacoes: [
           { label: '250 un', preco: 179.90 },
           { label: '500 un', preco: 299.90 },
           { label: '1.000 un', preco: 499.90 },
         ] },
       { emoji: '🎀', bg: 'linear-gradient(135deg,#fef3c7,#f59e0b)',
-        nome: 'Fita Adesiva Personalizada', spec: 'Sua marca em cada pacote',
+        nome: 'Fita Adesiva Personalizada', chamada: 'Lacre as encomendas divulgando a sua marca.', spec: 'Sua marca em cada pacote',
         variacoes: [
           { label: '10 rolos', preco: 129.90 },
           { label: '25 rolos', preco: 279.90 },
@@ -1985,6 +2048,7 @@ const CATALOGO = {
     produtos: [
       { bg: 'linear-gradient(135deg,#fed7aa,#c2410c)', badge: 'Novo', prazo: 3, destaque: true,
         nome: 'Cardápio Mini com Wire-o 14,4x14,4 cm',
+        chamada: 'Um cardápio compacto e charmoso pra encantar a mesa.',
         spec: 'PVC 0,3mm branco · 4x4 brilho/UV total frente e verso · 14,4x14,4 cm · 4 páginas · acabamento wire-o (duplo anel)',
         arteNota: 'Criação da arte do cardápio: R$ 45,00.',
         variacoes: [
@@ -2005,6 +2069,7 @@ const CATALOGO = {
     produtos: [
       { bg: 'linear-gradient(135deg,#fde68a,#92400e)', badge: 'Novo', destaque: true,
         nome: 'Quadro MDF 3mm 20x30 cm',
+        chamada: 'Uma lembrança pra decorar e guardar pra sempre.',
         spec: 'MDF 3mm com adesivo · colorido só frente · laminação fosca · 20x30 cm · escolha a fixação',
         grupoLabel: 'Fixação', opcaoLabel: 'Quantidade',
         tamanhos: {
@@ -2037,6 +2102,7 @@ const CATALOGO = {
       { emoji: '🪧', bg: 'linear-gradient(135deg,#a5f3fc,#06b6d4)', badge: 'Novo', destaque: true,
         imagem: 'img/banner-lona.webp',
         nome: 'Banner Lona Brilho 440g',
+        chamada: 'Chame atenção e destaque a sua marca de longe.',
         spec: 'Lona brilho 440g · colorido só frente · já com bastão e corda · escolha o formato',
         variacoes: [
           { label: '0,45 x 0,65 m', preco: 23.90 },
@@ -2049,14 +2115,14 @@ const CATALOGO = {
           { label: 'Medida personalizada', preco: null },
         ] },
       { emoji: '🖼️', bg: 'linear-gradient(135deg,#bae6fd,#38bdf8)',
-        nome: 'Display de Mesa', spec: 'Papel triplex 350g · faca especial',
+        nome: 'Display de Mesa', chamada: 'Deixe os seus produtos em destaque no balcão.', spec: 'Papel triplex 350g · faca especial',
         variacoes: [
           { label: '10 un', preco: 89.90 },
           { label: '25 un', preco: 169.90 },
           { label: '50 un', preco: 279.90 },
         ] },
       { emoji: '💬', bg: 'linear-gradient(135deg,#a5f3fc,#0ea5e9)',
-        nome: 'Wobbler', spec: 'Chame atenção na gôndola',
+        nome: 'Wobbler', chamada: 'Aquele detalhe que faz o cliente olhar pro seu produto.', spec: 'Chame atenção na gôndola',
         variacoes: [
           { label: '50 un', preco: 69.90 },
           { label: '100 un', preco: 109.90 },
@@ -2065,6 +2131,7 @@ const CATALOGO = {
       { bg: 'linear-gradient(135deg,#a7f3d0,#059669)', badge: 'Novo',
         imagem: 'img/display-acrilico.webp',
         nome: 'Display em Acrílico (Arte Única)',
+        chamada: 'Elegância e destaque pro seu ponto de venda.',
         spec: 'Acrílico cristal 2mm · colorido só frente · UV direta · arte única · escolha a orientação e a quantidade',
         grupoLabel: 'Orientação', opcaoLabel: 'Quantidade',
         tamanhos: {
@@ -2083,6 +2150,7 @@ const CATALOGO = {
         } },
       { bg: 'linear-gradient(135deg,#fde68a,#b45309)', badge: 'Novo',
         nome: 'Cubo de Papel',
+        chamada: 'Um display divertido que dá vida à sua mensagem.',
         spec: 'Couchê 300g · colorido só frente · UV total · 8x8 cm',
         variacoes: [
           { label: '50 un', preco: 867.90 },
@@ -2093,6 +2161,7 @@ const CATALOGO = {
         ] },
       { bg: 'linear-gradient(135deg,#c7d2fe,#4338ca)', badge: 'Novo',
         nome: 'Display de Retrovisor',
+        chamada: 'Divulgação prática que vai junto no carro.',
         spec: 'Couchê 300g · colorido só frente · UV total frente e verso · 8,5x19,88 cm',
         variacoes: [
           { label: '10 un', preco: 68.90 },
@@ -2107,6 +2176,7 @@ const CATALOGO = {
       { bg: 'linear-gradient(135deg,#f9a8d4,#be185d)', badge: 'Novo', destaque: true,
         imagem: 'img/backdrop.webp',
         nome: 'Backdrop em Lona Brilho Frontlight 440g',
+        chamada: 'O fundo perfeito pras fotos do seu evento.',
         spec: 'Lona brilho frontlight 440g · acabamento em ilhós · escolha o tamanho',
         variacoes: [
           { label: '2,00 x 2,00 m', preco: 190.90 },
@@ -2127,6 +2197,7 @@ const CATALOGO = {
     produtos: [
       { emoji: '🚩', bg: 'linear-gradient(135deg,#bae6fd,#0284c7)', badge: 'Novo', destaque: true,
         nome: 'Wind Banner Personalizado',
+        chamada: 'Sua marca em movimento, chamando atenção de longe.',
         spec: 'Tecido com impressão colorida · kit completo com mastro · escolha a base e o tamanho',
         grupoLabel: 'Base', opcaoLabel: 'Tamanho',
         tamanhos: {
@@ -2158,6 +2229,7 @@ const CATALOGO = {
       { bg: 'linear-gradient(135deg,#e0f2fe,#0ea5e9)', badge: 'Novo', destaque: true,
         imagem: 'img/taca-gin.webp',
         nome: 'Taça de Gin Personalizada',
+        chamada: 'Um brinde sofisticado pra celebrar momentos especiais.',
         spec: 'Taça de gin · personalização em DTF UV só frente · Mais quantidades: consultar valor no atacado.',
         variacoes: [
           { label: '1 un', preco: 10.90 },
@@ -2178,6 +2250,7 @@ const CATALOGO = {
       { bg: 'linear-gradient(135deg,#d6d3d1,#78716c)', badge: 'Novo', destaque: true,
         imagem: 'img/gravacao-mdf.webp',
         nome: 'Gravação a Laser em MDF (item do cliente)',
+        chamada: 'Personalize as suas peças com uma gravação impecável.',
         spec: 'Gravação a laser 4x0 em item de MDF trazido pelo cliente · até 30 cm · 10+ itens R$ 15,90/un · menos de 10 itens R$ 25,00/un',
         prazoTexto: 'de 3 a 5 dias úteis',
         unidade: 'item', unidadePlural: 'itens',
@@ -2188,7 +2261,7 @@ const CATALOGO = {
           ] },
         ] },
       { emoji: '🖋️', bg: 'linear-gradient(135deg,#cbd5e1,#475569)', badge: 'Novo',
-        nome: 'Caneta de Metal Touch', spec: 'Metal · ponta touch · gravação a laser 4x0 (0,6x5 cm)',
+        nome: 'Caneta de Metal Touch', chamada: 'Uma caneta elegante que valoriza a sua marca.', spec: 'Metal · ponta touch · gravação a laser 4x0 (0,6x5 cm)',
         variacoes: [
           { label: '1 un', preco: 10.90 },
           { label: 'Combo 10 un', preco: 98.90 },
@@ -2196,6 +2269,7 @@ const CATALOGO = {
       { emoji: '🍾', bg: 'linear-gradient(135deg,#d1d5db,#4b5563)', badge: 'Novo',
         imagem: 'img/chaveiro-abridor.webp',
         nome: 'Chaveiro Abridor de Metal — Garrafa',
+        chamada: 'Prático, útil e com a sua marca sempre à mão.',
         spec: 'Metal · abridor de garrafa · gravação a laser 4x0 (3,8x0,7 cm)',
         precoUnitario: 2.50,
         minimo: 25,
