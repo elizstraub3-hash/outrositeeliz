@@ -11,7 +11,7 @@ const ARTE_SUBLIMACAO = 'A arte é criada por uma <strong>designer profissional 
 /* Vestuário (camisetas, camisas, moletons, jaquetas e afins): a arte é mais elaborada e tem custo fixo. */
 const ARTE_VESTUARIO = 'Arte de vestuário: o desenvolvimento da arte custa <strong>R$ 50,00</strong> (cobrado uma única vez por arte), por envolver uma criação mais elaborada.';
 
-const CATALOGO_VERSAO = 117;
+const CATALOGO_VERSAO = 118;
 
 /* Produtos que aparecem em mais de uma categoria são definidos uma única
    vez aqui e referenciados nas categorias — sem duplicar dados. */
@@ -1133,15 +1133,15 @@ const CATALOGO = {
     produtos: [
       { bg: 'linear-gradient(135deg,#ede9fe,#7c3aed)', badge: 'Novo', destaque: true,
         imagem: 'img/kit-basico-3.webp',
-        nome: 'Kit All Black – 3 Itens',
-        spec: '01 sacola P (papel offset fosco 180g · ~19x15x6 cm) + 01 bloquinho de anotações P (capa dura · 8x11 cm) + 01 caneta Slim Touch personalizada com gravação a laser · Consultar as cores das canetas e dos copos.',
+        nome: 'Kit All Black – 2 Itens',
+        spec: '01 sacola P (papel offset fosco 180g · ~19x15x6 cm) + 01 bloquinho de anotações P (capa dura · 8x11 cm).',
         variacoes: [
           { label: 'Kit completo', preco: 55.90 },
         ] },
       { bg: 'linear-gradient(135deg,#fce7f3,#db2777)', badge: 'Novo', destaque: true,
         imagem: 'img/kit-basico-plus.webp',
-        nome: 'Kit Básico Plus – 4 Itens',
-        spec: '01 sacola P (papel offset fosco 180g · ~19x15x6 cm) + 01 bloquinho de anotações P (capa dura · 8x11 cm) + 01 caneta Slim Touch personalizada com gravação a laser + 01 certificado (papel fosco 180g) · Consultar as cores das canetas e dos copos.',
+        nome: 'Kit Básico Plus – 3 Itens',
+        spec: '01 sacola P (papel offset fosco 180g · ~19x15x6 cm) + 01 bloquinho de anotações P (capa dura · 8x11 cm) + 01 certificado (papel fosco 180g).',
         arteNota: 'A arte do certificado é enviada pelo cliente.',
         variacoes: [
           { label: 'Com laço', preco: 65.90 },
@@ -1149,8 +1149,8 @@ const CATALOGO = {
         ] },
       { bg: 'linear-gradient(135deg,#fef9c3,#ca8a04)', badge: 'Novo', destaque: true,
         imagem: 'img/kit-luxo.webp',
-        nome: 'Kit Luxo – 4 Itens',
-        spec: '01 sacola personalizada M (papel offset fosco 180g · ~24x17x10 cm) + 01 bloquinho de anotações P (capa dura · 8x11 cm) + 01 caneta Slim Touch com gravação a laser + 01 taça de gin (com ou sem laço) · Consultar as cores das canetas e dos copos.',
+        nome: 'Kit Luxo – 3 Itens',
+        spec: '01 sacola personalizada M (papel offset fosco 180g · ~24x17x10 cm) + 01 bloquinho de anotações P (capa dura · 8x11 cm) + 01 taça de gin (com ou sem laço) · Consultar as cores dos copos.',
         variacoes: [
           { label: 'All Black', preco: 145.90 },
           { label: 'Colorido', preco: 135.90 },
@@ -2192,19 +2192,6 @@ const CATALOGO = {
         variacoes: [
           { label: '1 un', preco: 10.90 },
           { label: 'Combo 10 un', preco: 98.90 },
-        ] },
-      { bg: 'linear-gradient(135deg,#e2e8f0,#64748b)', badge: 'Novo',
-        imagem: 'img/caneta-slim-touch.webp',
-        nome: 'Caneta de Metal Slim Touch',
-        spec: 'Metal slim · ponta touch · gravação a laser 4x0 (4x0,4 cm) · 5 cores · Consultar as cores disponíveis.',
-        variacoes: [
-          { label: '10 un', preco: 97.90 },
-          { label: '20 un', preco: 179.90 },
-          { label: '50 un', preco: 412.90 },
-          { label: '100 un', preco: 809.90 },
-          { label: '250 un', preco: 2024.90 },
-          { label: '500 un', preco: 4012.90 },
-          { label: '1.000 un', preco: 7949.90 },
         ] },
       { emoji: '🍾', bg: 'linear-gradient(135deg,#d1d5db,#4b5563)', badge: 'Novo',
         imagem: 'img/chaveiro-abridor.webp',
