@@ -11,7 +11,7 @@ const ARTE_SUBLIMACAO = 'A arte é criada por uma <strong>designer profissional 
 /* Vestuário (camisetas, camisas, moletons, jaquetas e afins): a arte é mais elaborada e tem custo fixo. */
 const ARTE_VESTUARIO = 'Arte de vestuário: o desenvolvimento da arte custa <strong>R$ 50,00</strong> (cobrado uma única vez por arte), por envolver uma criação mais elaborada.';
 
-const CATALOGO_VERSAO = 120;
+const CATALOGO_VERSAO = 121;
 
 /* Produtos que aparecem em mais de uma categoria são definidos uma única
    vez aqui e referenciados nas categorias — sem duplicar dados. */
@@ -1183,7 +1183,7 @@ const CATALOGO = {
         imagem: 'img/kit-luxo.webp',
         nome: 'Kit Luxo',
         chamada: 'Sofisticação em cada detalhe para presentear de verdade.',
-        spec: '01 caixa cartonada personalizada (20x21x6 cm) + 01 apostila até 10 páginas colorida (capa e contracapa na identidade visual) + 01 taça de gin ou copo com canudo, com laço (cor na identidade visual) + 01 lápis personalizado + 01 bloco personalizado (7x10 cm) + papel seda na identidade visual.',
+        spec: '01 caixa cartonada personalizada (20x21x6 cm) + 01 apostila até 10 páginas colorida (capa e contracapa na identidade visual) + 01 taça de gin ou copo twister com canudo, com laço (cor na identidade visual) + 01 lápis personalizado + 01 bloco personalizado (7x10 cm) + papel seda na identidade visual.',
         prazoTexto: 'de 7 dias úteis',
         adicional: { label: 'Corrente na caixa cartonada', preco: 15.00 },
         variacoes: [
