@@ -776,13 +776,13 @@ function abrirCarrinho() {
       <span class="cart-entrega__titulo">Confira a forma de entrega</span>
       ${totalValor >= 299 ? `
       <label class="cart-entrega__opt">
-        <input type="radio" name="entrega" value="Entrega grátis (Colombo e Curitiba)" checked>
+        <input type="radio" name="entrega" value="Entrega grátis às sextas-feiras (Colombo e Curitiba)" checked>
         <span class="cart-entrega__ic" aria-hidden="true">
           <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 13l2-5a2 2 0 0 1 1.9-1.3h10.2A2 2 0 0 1 19 8l2 5"/><path d="M3 13h18v4H3z"/><circle cx="7" cy="17.5" r="1.6"/><circle cx="17" cy="17.5" r="1.6"/></svg>
         </span>
         <span class="cart-entrega__txt">
           <strong>Entrega grátis — Colombo e Curitiba</strong>
-          <small>Seu pedido passou de R$ 299! A entrega é <strong>por nossa conta</strong> na região. Combinamos o endereço pelo WhatsApp.</small>
+          <small>Seu pedido passou de R$ 299! A entrega é <strong>por nossa conta</strong> na região, feita <strong>às sextas-feiras</strong>. Combinamos o endereço pelo WhatsApp.</small>
         </span>
         <span class="cart-entrega__tag cart-entrega__tag--free">Grátis</span>
       </label>` : ''}
@@ -808,7 +808,7 @@ function abrirCarrinho() {
         </span>
         <span class="cart-entrega__tag">Por sua conta</span>
       </label>
-      <p class="cart-entrega__nota">📦 Pedidos acima de <strong>R$ 299</strong> têm <strong>entrega grátis</strong> em Colombo e Curitiba.</p>
+      <p class="cart-entrega__nota">📦 Pedidos acima de <strong>R$ 299</strong> têm <strong>entrega grátis</strong> em Colombo e Curitiba, feita <strong>às sextas-feiras</strong>.</p>
     </div>` : ''}
     <div class="modal__foot">
       <div class="modal__total">
@@ -1041,7 +1041,7 @@ function calcularFrete() {
   const colombo = n >= 83400000 && n <= 83420999;
   saida.className = 'frete__result frete__result--ok';
   if (curitiba || colombo) {
-    saida.innerHTML = '🎉 Sua região tem <strong>entrega por motoboy</strong> e <strong>frete grátis</strong> em pedidos acima de R$ 299! O valor exato é combinado no WhatsApp.';
+    saida.innerHTML = '🎉 Sua região tem <strong>entrega por motoboy</strong> e <strong>frete grátis às sextas-feiras</strong> em pedidos acima de R$ 299! O valor exato é combinado no WhatsApp.';
   } else {
     saida.innerHTML = '📦 Enviamos para o seu CEP por Correios/transportadora. O frete é calculado no fechamento — é só fazer o pedido que combinamos pelo WhatsApp.';
   }
