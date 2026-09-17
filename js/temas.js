@@ -86,7 +86,7 @@ const PRODUTOS_TEMA = {
   'black-friday': ['Banner Lona Brilho 440g', 'Wind Banner Personalizado', 'Wobbler', 'Display de Mesa', 'Flyer Couchê 80g', 'Adesivos Personalizados'],
   'carnaval': ['Camiseta DTF UV', 'Adesivos Personalizados', 'Copo Cuia com Tampa em Acrílico 360ml', 'Bandeira'],
   'campeonato-de-futebol-2026': ['Camisa Copa Personalizada', 'Camisa Futebol Americano Titan', 'Bandeira', 'Camiseta DTF UV', 'Copo Cuia com Tampa em Acrílico 360ml', 'Adesivos Personalizados'],
-  'casamento': ['Convite Digital Interativo', 'Carta Elaborada em Papéis Premium', 'Taça de Gin Personalizada', 'Caixa de Presente Personalizada', 'Topo de Bolo Personalizado', 'Forminhas para Doces (100 un)'],
+  'casamento': ['Convite Digital Interativo', 'Manual dos Padrinhos', 'Carta Elaborada em Papéis Premium', 'Taça de Gin Personalizada', 'Caixa de Presente Personalizada', 'Topo de Bolo Personalizado', 'Forminhas para Doces (100 un)'],
   'congresso-feiras-e-exposicoes': ['Cordão Personalizado', 'Banner Lona Brilho 440g', 'Wind Banner Personalizado', 'Bandeira', 'Backdrop em Lona Brilho Frontlight 440g', 'Ecobag Personalizada', 'Display de Mesa'],
   'dia-da-mulher': ['Ecobag Personalizada', 'Taça de Gin Personalizada', 'Caixa de Presente Personalizada', 'Quadro MDF 3mm 20x30 cm'],
   'dia-das-criancas': ['Camiseta DTF UV', 'Chinelo Personalizado', 'Adesivos Personalizados', 'Chaveiro Acrílico', 'Caixa de Presente Personalizada'],

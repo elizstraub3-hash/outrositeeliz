@@ -11,7 +11,7 @@ const ARTE_SUBLIMACAO = 'A arte é criada por uma <strong>designer profissional 
 /* Vestuário (camisetas, camisas, moletons, jaquetas e afins): a arte é mais elaborada e tem custo fixo. */
 const ARTE_VESTUARIO = 'Arte de vestuário: o desenvolvimento da arte custa <strong>R$ 50,00</strong> (cobrado uma única vez por arte), por envolver uma criação mais elaborada.';
 
-const CATALOGO_VERSAO = 116;
+const CATALOGO_VERSAO = 117;
 
 /* Produtos que aparecem em mais de uma categoria são definidos uma única
    vez aqui e referenciados nas categorias — sem duplicar dados. */
@@ -1455,6 +1455,24 @@ const CATALOGO = {
         ],
         opcoesCombinacao: [
           { nome: 'Carta em papéis premium', faixas: [{ min: 1, preco: 17.90 }] },
+        ] },
+      { bg: 'linear-gradient(135deg,#ecfccb,#65a30d)', badge: 'Novo', destaque: true,
+        imagem: 'img/manual-padrinhos.webp',
+        paginaProduto: true,
+        nome: 'Manual dos Padrinhos',
+        spec: '5 páginas com ilhós dourado + laço na identidade visual do casamento · tamanho 10x13 cm · arte por nossa conta',
+        prazoTexto: 'de 2 a 5 dias úteis',
+        unidade: 'manual', unidadePlural: 'manuais',
+        descricao: 'Manual dos Padrinhos personalizado com a identidade visual do seu casamento. São 5 páginas com ilhós dourado em cada uma e laço combinando com a paleta do casal — uma lembrança elegante para convidar e orientar os padrinhos. Tamanho 10x13 cm. A arte é criada pela nossa equipe.',
+        detalhes: [
+          '5 páginas com ilhós dourado em cada uma.',
+          'Laço de acordo com a identidade visual do casamento.',
+          'Tamanho: 10x13 cm.',
+          'Arte criada pela nossa equipe, de acordo com a paleta do casal.',
+          'Prazo: de 2 a 5 dias úteis (conforme a quantidade).',
+        ],
+        opcoesCombinacao: [
+          { nome: 'Manual dos Padrinhos (10x13 cm)', faixas: [{ min: 1, preco: 13.90 }] },
         ] },
       { bg: 'linear-gradient(135deg,#fbcfe8,#db2777)', badge: 'Novo', destaque: true,
         imagem: 'img/topo-bolo.webp',
