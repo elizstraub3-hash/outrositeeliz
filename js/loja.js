@@ -347,7 +347,7 @@ function abrirVariacoes(p) {
     const arquivo = arquivoArte(modal);
     adicionarItemCarrinho({ nome: p.nome, detalhe, qtd: 1, total: precoAtual(), arte, arquivo });
     fechar();
-    mostrarToast(`${p.nome} (${detalhe}) · ${arte}${arquivo ? ` (${arquivo})` : ''} — adicionado ao carrinho!`);
+    mostrarToast('Adicionado ao carrinho!');
   });
 }
 
@@ -473,7 +473,7 @@ function abrirTamanhos(p) {
     const total = v.preco == null ? null : v.preco + furo;
     adicionarItemCarrinho({ nome: p.nome, detalhe, qtd: 1, total, arte, arquivo });
     fechar();
-    mostrarToast(`${p.nome} (${detalhe}) · ${arte}${arquivo ? ` (${arquivo})` : ''} — adicionado ao carrinho!`);
+    mostrarToast('Adicionado ao carrinho!');
   });
 }
 
@@ -562,7 +562,7 @@ function abrirTamanhosDistribuir(p) {
     const arquivo = arquivoArte(modal);
     adicionarItemCarrinho({ nome: p.nome, detalhe, qtd: total, total: total * unit, arte, arquivo });
     fechar();
-    mostrarToast(`${p.nome} (${detalhe}) · ${arte}${arquivo ? ` (${arquivo})` : ''} — R$ ${formatarPreco(total * unit)} adicionado ao carrinho!`);
+    mostrarToast('Adicionado ao carrinho!');
   });
 }
 
@@ -624,7 +624,7 @@ function abrirCores(p) {
     const arquivo = arquivoArte(modal);
     adicionarItemCarrinho({ nome: p.nome, detalhe: `${qtd} un · ${cor}`, qtd, total: qtd * p.precoUnitario, arte, arquivo });
     fechar();
-    mostrarToast(`${qtd}× ${p.nome} (${cor}) · ${arte}${arquivo ? ` (${arquivo})` : ''} — R$ ${formatarPreco(qtd * p.precoUnitario)} adicionado ao carrinho!`);
+    mostrarToast('Adicionado ao carrinho!');
   });
 }
 
@@ -722,7 +722,7 @@ function abrirCombinacoes(p) {
     const arquivo = arquivoArte(modal);
     adicionarItemCarrinho({ nome: p.nome, detalhe: resumo, qtd: total, total: valorTotal, arte, arquivo });
     fechar();
-    mostrarToast(`${resumo} · ${arte}${arquivo ? ` (${arquivo})` : ''} — R$ ${formatarPreco(valorTotal)} adicionado ao carrinho!`);
+    mostrarToast('Adicionado ao carrinho!');
   });
 }
 
