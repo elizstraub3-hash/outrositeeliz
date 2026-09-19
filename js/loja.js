@@ -751,6 +751,29 @@ function adicionarItemCarrinho(item) {
   salvarCarrinho();
 }
 
+/* ---------- Pix "copia e cola" gerado com o valor do pedido ----------
+   Chave/nome/cidade da conta PicPay (recebedor). O valor é embutido no código. */
+const PIX_CHAVE = '9f18ef5a-9dfb-4b91-87ad-e3dea74560e0';
+const PIX_NOME = 'ELIZANDRA CARDOSO DE LIMA';
+const PIX_CIDADE = 'Sao Paulo';
+function pixCrc16(str) {
+  let crc = 0xFFFF;
+  for (let i = 0; i < str.length; i++) {
+    crc ^= str.charCodeAt(i) << 8;
+    for (let j = 0; j < 8; j++) crc = (crc & 0x8000) ? ((crc << 1) ^ 0x1021) & 0xFFFF : (crc << 1) & 0xFFFF;
+  }
+  return crc.toString(16).toUpperCase().padStart(4, '0');
+}
+function pixCopiaECola(valor) {
+  const f = (id, v) => id + String(v.length).padStart(2, '0') + v;
+  const mai = f('26', f('00', 'br.gov.bcb.pix') + f('01', PIX_CHAVE));
+  let p = f('00', '01') + mai + f('52', '0000') + f('53', '986');
+  if (valor) p += f('54', Number(valor).toFixed(2));
+  p += f('58', 'BR') + f('59', PIX_NOME.slice(0, 25)) + f('60', PIX_CIDADE.slice(0, 15)) + f('62', f('05', '***'));
+  p += '6304';
+  return p + pixCrc16(p);
+}
+
 /* Janela do carrinho: lista, remove, limpa e finaliza no WhatsApp */
 function abrirCarrinho() {
   const totalValor = carrinho.reduce((soma, item) => soma + (item.total || 0), 0);
@@ -810,6 +833,13 @@ function abrirCarrinho() {
       </label>
       <p class="cart-entrega__nota">📦 Pedidos acima de <strong>R$ 299</strong> têm <strong>entrega grátis</strong> em Colombo e Curitiba, feita <strong>às sextas-feiras</strong>.</p>
     </div>` : ''}
+    ${carrinho.length && totalValor > 0 && !temSobConsulta ? `
+    <div class="cart-pix">
+      <span class="cart-pix__titulo">💚 Pague no Pix — R$ ${formatarPreco(totalValor)}</span>
+      <p class="cart-pix__sub">Copie o código abaixo e pague no <strong>PicPay</strong> ou no seu banco (Pix copia e cola). Depois é só mandar o comprovante no WhatsApp.</p>
+      <textarea class="cart-pix__code" readonly rows="3">${pixCopiaECola(totalValor)}</textarea>
+      <button type="button" class="btn btn--primary cart-pix__copiar">Copiar código Pix</button>
+    </div>` : ''}
     <div class="modal__foot">
       <div class="modal__total">
         <small>${totalUnidades} unidade${totalUnidades === 1 ? '' : 's'}${temSobConsulta ? ' · + itens a combinar' : ''}</small>
@@ -828,6 +858,18 @@ function abrirCarrinho() {
       fechar();
       abrirCarrinho();
     });
+  });
+
+  const btnPixCopiar = modal.querySelector('.cart-pix__copiar');
+  if (btnPixCopiar) btnPixCopiar.addEventListener('click', () => {
+    const campo = modal.querySelector('.cart-pix__code');
+    if (navigator.clipboard) {
+      navigator.clipboard.writeText(campo.value).catch(() => {});
+    } else {
+      campo.select();
+      try { document.execCommand('copy'); } catch (err) { /* ignora */ }
+    }
+    mostrarToast('Código Pix copiado! Cole no seu app de pagamento.');
   });
 
   const btnLimpar = modal.querySelector('.cart-limpar');

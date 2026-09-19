@@ -1298,6 +1298,20 @@ button { font-family: inherit; cursor: pointer; }
   background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 10px; padding: .55rem .7rem;
 }
 .cart-entrega__nota strong { color: #15803d; }
+
+.cart-pix {
+  display: grid; gap: .5rem; margin-bottom: 1rem;
+  background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 12px; padding: .8rem;
+}
+.cart-pix__titulo { font-weight: 700; font-size: .95rem; color: #15803d; }
+.cart-pix__sub { margin: 0; font-size: .78rem; line-height: 1.4; color: var(--gray); }
+.cart-pix__sub strong { color: var(--dark); }
+.cart-pix__code {
+  width: 100%; resize: none; font-family: monospace; font-size: .72rem; line-height: 1.35;
+  border: 1px solid var(--border); border-radius: 8px; padding: .5rem .6rem; background: #fff; color: var(--dark);
+  word-break: break-all;
+}
+.cart-pix__copiar { width: 100%; }
 @media (max-width: 430px) {
   .cart-entrega__opt { padding: .65rem .6rem; gap: .55rem; align-items: flex-start; }
   .cart-entrega__ic { width: 34px; height: 34px; }
