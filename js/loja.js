@@ -773,6 +773,18 @@ function pixCopiaECola(valor) {
   p += '6304';
   return p + pixCrc16(p);
 }
+/* Carrega a biblioteca de QR Code sob demanda (só quando o carrinho abre) */
+function carregarQR(cb) {
+  if (window.QRCode) { cb(); return; }
+  let s = document.getElementById('qrlib');
+  if (s) { s.addEventListener('load', cb); return; }
+  s = document.createElement('script');
+  s.id = 'qrlib';
+  s.src = 'js/qrcode.min.js';
+  s.onload = cb;
+  s.onerror = () => {};
+  document.head.appendChild(s);
+}
 
 /* Janela do carrinho: lista, remove, limpa e finaliza no WhatsApp */
 function abrirCarrinho() {
@@ -836,7 +848,8 @@ function abrirCarrinho() {
     ${carrinho.length && totalValor > 0 && !temSobConsulta ? `
     <div class="cart-pix">
       <span class="cart-pix__titulo">💚 Pague no Pix — R$ ${formatarPreco(totalValor)}</span>
-      <p class="cart-pix__sub">Copie o código abaixo e pague no <strong>PicPay</strong> ou no seu banco (Pix copia e cola). Depois é só mandar o comprovante no WhatsApp.</p>
+      <p class="cart-pix__sub">Escaneie o QR Code ou copie o código e pague no <strong>PicPay</strong> ou no seu banco (Pix copia e cola). Depois é só mandar o comprovante no WhatsApp.</p>
+      <div class="cart-pix__qr" id="pixQr" aria-label="QR Code do Pix"></div>
       <textarea class="cart-pix__code" readonly rows="3">${pixCopiaECola(totalValor)}</textarea>
       <button type="button" class="btn btn--primary cart-pix__copiar">Copiar código Pix</button>
     </div>` : ''}
@@ -859,6 +872,18 @@ function abrirCarrinho() {
       abrirCarrinho();
     });
   });
+
+  const qrBox = modal.querySelector('#pixQr');
+  if (qrBox) {
+    const codigoPix = modal.querySelector('.cart-pix__code').value;
+    carregarQR(() => {
+      if (!qrBox.isConnected || !window.QRCode) return;
+      qrBox.innerHTML = '';
+      try {
+        new QRCode(qrBox, { text: codigoPix, width: 168, height: 168, correctLevel: QRCode.CorrectLevel.M });
+      } catch (err) { /* mantém o copia e cola */ }
+    });
+  }
 
   const btnPixCopiar = modal.querySelector('.cart-pix__copiar');
   if (btnPixCopiar) btnPixCopiar.addEventListener('click', () => {

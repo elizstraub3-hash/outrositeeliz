@@ -1311,6 +1311,9 @@ button { font-family: inherit; cursor: pointer; }
   border: 1px solid var(--border); border-radius: 8px; padding: .5rem .6rem; background: #fff; color: var(--dark);
   word-break: break-all;
 }
+.cart-pix__qr { display: flex; justify-content: center; }
+.cart-pix__qr:empty { display: none; }
+.cart-pix__qr img, .cart-pix__qr canvas { background: #fff; padding: 8px; border-radius: 10px; border: 1px solid var(--border); }
 .cart-pix__copiar { width: 100%; }
 @media (max-width: 430px) {
   .cart-entrega__opt { padding: .65rem .6rem; gap: .55rem; align-items: flex-start; }
