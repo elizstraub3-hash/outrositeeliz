@@ -32,11 +32,21 @@ document.getElementById('catProdutos').innerHTML = categoria.produtos.length
        </div>
      </div>`;
 
-/* Outras categorias (todas menos a atual) */
-document.getElementById('outrasCategorias').innerHTML =
-  Object.entries(CATALOGO)
-    .filter(([s]) => s !== slug)
-    .map(([s, cat]) => `
-      <a class="category-card" href="categoria.html?cat=${s}">
-        <div class="category-card__name">${cat.nome}</div>
-      </a>`).join('');
+/* Você pode gostar — produtos que complementam (fora desta categoria) */
+(function () {
+  const wrap = document.getElementById('sugestoesProdutos');
+  if (!wrap) return;
+  const naCategoria = new Set(categoria.produtos.map((p) => p.nome));
+  const nomes = [];
+  const add = (n) => { if (n && !naCategoria.has(n) && !nomes.includes(n)) nomes.push(n); };
+  // 1) mais vendidos (que não estão nesta categoria)
+  if (typeof COLECOES !== 'undefined' && COLECOES['mais-vendidos']) {
+    COLECOES['mais-vendidos'].produtos.forEach(add);
+  }
+  // 2) completa com outros produtos do catálogo
+  for (const c of Object.values(CATALOGO)) {
+    c.produtos.forEach((p) => add(p.nome));
+    if (nomes.length >= 8) break;
+  }
+  wrap.innerHTML = cardsPorNomes(nomes.slice(0, 4));
+})();

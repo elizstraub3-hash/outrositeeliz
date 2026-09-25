@@ -53,13 +53,21 @@ document.getElementById('catProdutos').innerHTML = resultados.length
        </div>
      </div>`;
 
-/* Todas as categorias em "Veja também" */
-document.getElementById('outrasCategorias').innerHTML =
-  Object.entries(CATALOGO)
-    .map(([s, cat]) => `
-      <a class="category-card" href="categoria.html?cat=${s}">
-        <div class="category-card__name">${cat.nome}</div>
-      </a>`).join('');
+/* Você pode gostar — produtos populares */
+(function () {
+  const wrap = document.getElementById('sugestoesProdutos');
+  if (!wrap) return;
+  const nomes = [];
+  const add = (n) => { if (n && !nomes.includes(n)) nomes.push(n); };
+  if (typeof COLECOES !== 'undefined' && COLECOES['mais-vendidos']) {
+    COLECOES['mais-vendidos'].produtos.forEach(add);
+  }
+  for (const c of Object.values(CATALOGO)) {
+    c.produtos.forEach((p) => add(p.nome));
+    if (nomes.length >= 8) break;
+  }
+  wrap.innerHTML = cardsPorNomes(nomes.slice(0, 4));
+})();
 
 /* Preenche a barra de busca com o termo atual */
 document.querySelectorAll('.search__input').forEach((i) => { i.value = termoBruto; });
