@@ -11,7 +11,7 @@ const ARTE_SUBLIMACAO = 'A arte é criada por uma <strong>designer profissional 
 /* Vestuário (camisetas, camisas, moletons, jaquetas e afins): a arte é mais elaborada e tem custo fixo. */
 const ARTE_VESTUARIO = 'Arte de vestuário: o desenvolvimento da arte custa <strong>R$ 50,00</strong> (cobrado uma única vez por arte), por envolver uma criação mais elaborada.';
 
-const CATALOGO_VERSAO = 122;
+const CATALOGO_VERSAO = 123;
 
 /* Produtos que aparecem em mais de uma categoria são definidos uma única
    vez aqui e referenciados nas categorias — sem duplicar dados. */
@@ -997,38 +997,38 @@ const sacolaSilk = {
 const sacolaPlastica = {
   bg: 'linear-gradient(135deg,#bfdbfe,#1d4ed8)', badge: 'Novo', destaque: true,
   imagem: 'img/sacola-plastica.webp',
-  nome: 'Sacola Plástica com Alça Vazada',
-  chamada: 'Leve, resistente e com a cara do seu negócio.',
-  spec: 'Plástico resistente · alça vazada · impressão personalizada · escolha o tamanho, a cor da sacola, a cor da impressão e a quantidade',
+  nome: 'Sacola Plástica Personalizada',
+  chamada: 'Prática e resistente, com a cara da sua marca.',
+  spec: 'Plástico resistente · alça vazada (boca de palhaço) · impressão personalizada · escolha o tamanho, as cores e a quantidade',
   prazoTexto: 'de 3 a 7 dias úteis',
   grupoLabel: 'Tamanho', opcaoLabel: 'Quantidade',
   coresEstampa: ['Azul Claro', 'Branco', 'Dourado', 'Cinza', 'Preto', 'Rosa Pink', 'Verde', 'Vermelho'],
   coresPorTamanho: {
-    'P': CORES_SACOLA_PLASTICA,
-    'M': CORES_SACOLA_PLASTICA,
-    'G': CORES_SACOLA_PLASTICA,
+    '16 x 20 cm': CORES_SACOLA_PLASTICA,
+    '20 x 30 cm': CORES_SACOLA_PLASTICA,
+    '30 x 40 cm': CORES_SACOLA_PLASTICA,
+    '40 x 50 cm': CORES_SACOLA_PLASTICA,
   },
   tamanhos: {
-    'P': [
-      { label: '50 un', preco: 192.90 },
-      { label: '100 un', preco: 237.90 },
-      { label: '250 un', preco: 379.90 },
-      { label: '500 un', preco: 613.90 },
-      { label: '1.000 un', preco: 1110.90 },
+    '16 x 20 cm': [
+      { label: '50 un', preco: 90.90 },
+      { label: '100 un', preco: null },
+      { label: 'Mais quantidades', preco: null },
     ],
-    'M': [
-      { label: '50 un', preco: 210.90 },
-      { label: '100 un', preco: 283.90 },
-      { label: '250 un', preco: 508.90 },
-      { label: '500 un', preco: 880.90 },
-      { label: '1.000 un', preco: 1645.90 },
+    '20 x 30 cm': [
+      { label: '50 un', preco: 105.90 },
+      { label: '100 un', preco: null },
+      { label: 'Mais quantidades', preco: null },
     ],
-    'G': [
-      { label: '50 un', preco: 294.90 },
-      { label: '100 un', preco: 433.90 },
-      { label: '250 un', preco: 885.90 },
-      { label: '500 un', preco: 1645.90 },
-      { label: '1.000 un', preco: 3258.90 },
+    '30 x 40 cm': [
+      { label: '50 un', preco: 135.90 },
+      { label: '100 un', preco: null },
+      { label: 'Mais quantidades', preco: null },
+    ],
+    '40 x 50 cm': [
+      { label: '50 un', preco: 195.90 },
+      { label: '100 un', preco: null },
+      { label: 'Mais quantidades', preco: null },
     ],
   },
 };
@@ -1201,24 +1201,6 @@ const CATALOGO = {
     descricao: 'Sacolas de papel personalizadas para valorizar a entrega da sua marca.',
     produtos: [
       sacolaKraft,
-      { bg: 'linear-gradient(135deg,#e0f2fe,#0891b2)', badge: 'Novo', destaque: true,
-        nome: 'Sacola Plástica Boca de Palhaço Personalizada',
-        chamada: 'Prática e resistente para levar a sua marca pra todo lugar.',
-        spec: 'Plástico resistente · alça boca de palhaço · impressão personalizada · pacote com 50 unidades · escolha o tamanho',
-        unidade: 'sacola', unidadePlural: 'sacolas',
-        descricao: 'Sacola plástica personalizada com alça boca de palhaço, resistente e prática para a entrega da sua marca. Impressão personalizada com a sua arte. Pacote com 50 unidades (quantidade mínima).',
-        detalhes: [
-          'Material: plástico resistente.',
-          'Alça: boca de palhaço.',
-          'Impressão personalizada com a sua arte.',
-          'Quantidade mínima: 50 unidades.',
-        ],
-        variacoes: [
-          { label: '16 x 20 cm · 50 un', preco: 76.90 },
-          { label: '20 x 30 cm · 50 un', preco: 89.90 },
-          { label: '30 x 40 cm · 50 un', preco: 114.90 },
-          { label: '40 x 50 cm · 50 un', preco: 165.90 },
-        ] },
       sacolaSilk,
       sacolaPlastica,
       sacolaCordao,
