@@ -77,4 +77,24 @@ if (!prod) {
         <p>${f.r}</p>
       </details>`).join('');
   }
+
+  // Você pode gostar — produtos que combinam (mesma categoria + mais vendidos)
+  (function () {
+    const wrap = document.getElementById('relacionadosWrap');
+    const grid = document.getElementById('produtosRelacionados');
+    if (!wrap || !grid) return;
+    const nomes = [];
+    const visto = new Set([prod.nome]);
+    const add = (n) => { if (n && !visto.has(n)) { visto.add(n); nomes.push(n); } };
+    // 1) produtos da mesma categoria (os que mais combinam)
+    (CATALOGO[catSlug].produtos || []).forEach((p) => add(p.nome));
+    // 2) completa com os mais vendidos, se faltar
+    if (typeof COLECOES !== 'undefined' && COLECOES['mais-vendidos']) {
+      COLECOES['mais-vendidos'].produtos.forEach(add);
+    }
+    const escolhidos = nomes.slice(0, 4);
+    if (!escolhidos.length) return;
+    grid.innerHTML = cardsPorNomes(escolhidos);
+    wrap.style.display = '';
+  })();
 }
