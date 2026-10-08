@@ -11,7 +11,7 @@ const ARTE_SUBLIMACAO = 'A arte é criada por uma <strong>designer profissional 
 /* Vestuário (camisetas, camisas, moletons, jaquetas e afins): a arte é mais elaborada e tem custo fixo. */
 const ARTE_VESTUARIO = 'Arte de vestuário: o desenvolvimento da arte custa <strong>R$ 50,00</strong> (cobrado uma única vez por arte), por envolver uma criação mais elaborada.';
 
-const CATALOGO_VERSAO = 125;
+const CATALOGO_VERSAO = 126;
 
 /* Produtos que aparecem em mais de uma categoria são definidos uma única
    vez aqui e referenciados nas categorias — sem duplicar dados. */
@@ -2249,6 +2249,24 @@ const CATALOGO = {
         prazoTexto: 'de 1 a 2 dias úteis',
         variacoes: [
           { label: '1 un', preco: 39.90 },
+        ] },
+      { bg: 'linear-gradient(135deg,#fce7f3,#1f2937)', badge: 'Novo', destaque: true,
+        paginaProduto: true,
+        imagem: 'img/caneca-magica.webp',
+        nome: 'Caneca Mágica Personalizada',
+        chamada: 'Com água quente, a arte se revela — surpreenda quem recebe.',
+        spec: 'Caneca mágica em cerâmica · 325 ml · a arte aparece com água quente · impressão da sua arte',
+        prazoTexto: 'de 1 a 3 dias úteis',
+        descricao: 'Caneca mágica personalizada: começa preta e, ao receber água quente, revela a sua arte. Um presente divertido e surpreendente. Feita em cerâmica, com 325 ml de capacidade.',
+        detalhes: [
+          'Contém: 1 caneca + 1 breve descritivo sobre os cuidados com o produto.',
+          'Material de fabricação: cerâmica.',
+          'Tamanho do produto: 9,5 x 11 x 8 cm (A x L x C).',
+          'Capacidade: 325 ml.',
+          'A arte aparece quando a caneca recebe água quente.',
+        ],
+        variacoes: [
+          { label: '1 un', preco: 49.90 },
         ] },
     ],
   },
