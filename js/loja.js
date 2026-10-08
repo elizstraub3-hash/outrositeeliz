@@ -43,6 +43,26 @@ function menorPrecoTamanhos(p) {
   return precos.length ? Math.min(...precos) : null;
 }
 
+/* ---------- Favoritos e vistos recentemente (salvos neste navegador) ---------- */
+const FAVORITOS_KEY = 'printhouse_favoritos';
+const VISTOS_KEY = 'printhouse_vistos';
+function lerLista(chave) { try { return JSON.parse(localStorage.getItem(chave)) || []; } catch (e) { return []; } }
+function salvarLista(chave, lista) { try { localStorage.setItem(chave, JSON.stringify(lista)); } catch (e) { /* ignora */ } }
+function ehFavorito(nome) { return lerLista(FAVORITOS_KEY).includes(nome); }
+function alternarFavorito(nome) {
+  const l = lerLista(FAVORITOS_KEY);
+  const i = l.indexOf(nome);
+  if (i >= 0) l.splice(i, 1); else l.unshift(nome);
+  salvarLista(FAVORITOS_KEY, l);
+  return i < 0;
+}
+function registrarVisto(nome) {
+  let l = lerLista(VISTOS_KEY).filter((n) => n !== nome);
+  l.unshift(nome);
+  salvarLista(VISTOS_KEY, l.slice(0, 8));
+}
+const SVG_CORACAO = '<svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9A5 5 0 0 1 12 6a5 5 0 0 1 9.6 6c-2.1 4.4-9.6 9-9.6 9z"/></svg>';
+
 /* ---------- Card de produto (compacto: opções abrem ao clicar) ---------- */
 function cardProduto(p, slugCategoria) {
   let hint = '';
@@ -75,9 +95,10 @@ function cardProduto(p, slugCategoria) {
   // Galeria: quando o produto tem várias imagens, o card vira um mini carrossel com bolinhas
   const galeria = (p.imagens && p.imagens.length) ? p.imagens : (p.imagem ? [p.imagem] : []);
   const badge = p.badge ? `<span class="product-card__badge ${p.badge === 'Novo' ? 'product-card__badge--new' : ''}">${p.badge}</span>` : '';
+  const fav = `<button type="button" class="product-card__fav${ehFavorito(p.nome) ? ' is-fav' : ''}" data-nome="${encodeURIComponent(p.nome)}" aria-label="Favoritar" title="Favoritar">${SVG_CORACAO}</button>`;
   const imgArea = galeria.length > 1
     ? `<div class="product-card__img product-card__img--galeria" style="background:${p.bg}">
-        ${badge}
+        ${badge}${fav}
         <div class="product-card__slider">
           ${galeria.map((src) => `<img src="${src}" alt="${p.nome}" loading="lazy">`).join('')}
         </div>
@@ -86,7 +107,7 @@ function cardProduto(p, slugCategoria) {
         </div>
       </div>`
     : `<a class="product-card__img" style="background:${p.bg}" href="${destino}" title="Ver categoria ${CATALOGO[slugCategoria].nome}">
-        ${badge}
+        ${badge}${fav}
         ${galeria.length ? `<img src="${galeria[0]}" alt="${p.nome}" loading="lazy">` : ICONE_PRODUTO}
       </a>`;
 
@@ -1009,6 +1030,20 @@ function encontrarProduto(nome) {
 }
 
 /* Botão do card abre a janela certa para o tipo de produto */
+document.addEventListener('click', (e) => {
+  const fav = e.target.closest('.product-card__fav');
+  if (fav) {
+    e.preventDefault();
+    e.stopPropagation();
+    const nome = decodeURIComponent(fav.dataset.nome || '');
+    const agora = alternarFavorito(nome);
+    document.querySelectorAll(`.product-card__fav[data-nome="${fav.dataset.nome}"]`).forEach((b) => b.classList.toggle('is-fav', agora));
+    mostrarToast(agora ? 'Adicionado aos favoritos ❤️' : 'Removido dos favoritos');
+    if (typeof atualizarListasHome === 'function') atualizarListasHome();
+    return;
+  }
+});
+
 document.addEventListener('click', (e) => {
   const btn = e.target.closest('.product-card__btn');
   if (!btn || btn.tagName === 'A') return; // links (Ver produto) navegam normalmente

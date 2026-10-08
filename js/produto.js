@@ -14,6 +14,7 @@ if (!prod) {
   }
 
   document.title = `${prod.nome} | Print House`;
+  if (typeof registrarVisto === 'function') registrarVisto(prod.nome);
   document.getElementById('prodCrumb').textContent = prod.nome;
   const catLink = document.getElementById('prodCatLink');
   catLink.textContent = CATALOGO[catSlug].nome;
@@ -51,6 +52,17 @@ if (!prod) {
     else if (prod.tamanhos) abrirTamanhos(prod);
     else if (prod.cores) abrirCores(prod);
     else abrirVariacoes(prod);
+  });
+
+  // compartilhar o produto (WhatsApp / compartilhamento nativo no celular)
+  const btnShare = document.getElementById('prodShare');
+  if (btnShare) btnShare.addEventListener('click', async () => {
+    const url = 'https://outrositeeliz.vercel.app/produto.html?id=' + idProduto;
+    const texto = `Olha esse produto da Print House: ${prod.nome}`;
+    if (navigator.share) {
+      try { await navigator.share({ title: prod.nome, text: texto, url }); return; } catch (err) { /* cancelou */ }
+    }
+    window.open('https://wa.me/?text=' + encodeURIComponent(`${texto} — ${url}`), '_blank');
   });
 
   // parágrafos de detalhes

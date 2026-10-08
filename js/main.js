@@ -1,5 +1,22 @@
 /* ============ Print House — página inicial ============ */
 
+/* ---------- Favoritos e vistos recentemente (salvos no navegador) ---------- */
+function atualizarListasHome() {
+  const blocos = [
+    { wrap: 'vistosWrap', grid: 'produtosVistos', chave: VISTOS_KEY },
+    { wrap: 'favoritosWrap', grid: 'produtosFavoritos', chave: FAVORITOS_KEY },
+  ];
+  blocos.forEach(({ wrap, grid, chave }) => {
+    const secao = document.getElementById(wrap);
+    const alvo = document.getElementById(grid);
+    if (!secao || !alvo) return;
+    const html = cardsPorNomes(lerLista(chave).slice(0, 4));
+    if (html.trim()) { alvo.innerHTML = html; secao.style.display = ''; }
+    else { secao.style.display = 'none'; }
+  });
+}
+atualizarListasHome();
+
 /* ---------- Vitrine "Os mais vendidos" (mesma lista curada do "Ver todos") ---------- */
 const nomesMaisVendidos = (typeof COLECOES !== 'undefined' && COLECOES['mais-vendidos'].produtos) || [];
 document.getElementById('maisVendidos').innerHTML = cardsPorNomes(nomesMaisVendidos.slice(0, 4));

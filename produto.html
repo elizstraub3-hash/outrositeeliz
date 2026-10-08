@@ -104,7 +104,13 @@
           <p class="prod__spec" id="prodSpec"></p>
           <div class="prod__preco"><small>a partir de</small> <strong id="prodPreco"></strong> <span class="pix">no Pix</span></div>
           <div class="product-card__prazo" id="prodPrazo"></div>
-          <button class="btn btn--primary prod__comprar" id="prodComprar">Comprar</button>
+          <div class="prod__acoes">
+            <button class="btn btn--primary prod__comprar" id="prodComprar">Comprar</button>
+            <button class="btn btn--claro prod__share" id="prodShare" type="button" title="Compartilhar">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2Zm5.4 14.1c-.2.6-1.2 1.2-1.7 1.2-.4.1-1 .1-1.6-.1a13 13 0 0 1-1.5-.5c-2.6-1.1-4.3-3.8-4.4-4-.1-.2-1.1-1.4-1.1-2.7 0-1.3.7-1.9.9-2.2.2-.3.5-.3.7-.3h.5c.2 0 .4-.1.6.4l.9 2.1c.1.2.1.4 0 .6l-.3.5-.5.5c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1.1 2.2 1.4 2.5 1.5.3.1.5.1.7-.1l1-1.2c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.6.3 0 .2 0 .7-.2 1.4Z"/></svg>
+              Compartilhar
+            </button>
+          </div>
           <p id="prodDesc" class="prod__desc"></p>
         </div>
       </div>
