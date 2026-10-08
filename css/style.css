@@ -560,6 +560,24 @@ button { font-family: inherit; cursor: pointer; }
   transition: background .15s;
 }
 .product-card__btn:hover { background: #000; }
+.product-card__share {
+  width: 100%;
+  margin-top: .5rem;
+  border: 1px solid #d1d5db;
+  background: #fff;
+  color: #128c4b;
+  padding: .45rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: .76rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .35rem;
+  transition: background .15s, border-color .15s;
+}
+.product-card__share:hover { background: #f0fdf4; border-color: #86efac; }
 .product-card__saibamais {
   display: block;
   text-align: center;

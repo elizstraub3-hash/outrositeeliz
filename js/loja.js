@@ -62,6 +62,18 @@ function registrarVisto(nome) {
   salvarLista(VISTOS_KEY, l.slice(0, 8));
 }
 const SVG_CORACAO = '<svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9A5 5 0 0 1 12 6a5 5 0 0 1 9.6 6c-2.1 4.4-9.6 9-9.6 9z"/></svg>';
+const SVG_WHATS = '<svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2Zm5.4 14.1c-.2.6-1.2 1.2-1.7 1.2-.4.1-1 .1-1.6-.1a13 13 0 0 1-1.5-.5c-2.6-1.1-4.3-3.8-4.4-4-.1-.2-1.1-1.4-1.1-2.7 0-1.3.7-1.9.9-2.2.2-.3.5-.3.7-.3h.5c.2 0 .4-.1.6.4l.9 2.1c.1.2.1.4 0 .6l-.3.5-.5.5c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1.1 2.2 1.4 2.5 1.5.3.1.5.1.7-.1l1-1.2c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.6.3 0 .2 0 .7-.2 1.4Z"/></svg>';
+
+/* Compartilha um produto (link da página do produto) via WhatsApp / nativo */
+function compartilharProduto(nome) {
+  const url = 'https://outrositeeliz.vercel.app/produto.html?id=' + slugProduto(nome);
+  const texto = `Olha esse produto da Print House: ${nome}`;
+  if (navigator.share) {
+    navigator.share({ title: nome, text: texto, url }).catch(() => {});
+  } else {
+    window.open('https://wa.me/?text=' + encodeURIComponent(`${texto} — ${url}`), '_blank');
+  }
+}
 
 /* ---------- Card de produto (compacto: opções abrem ao clicar) ---------- */
 function cardProduto(p, slugCategoria) {
@@ -127,6 +139,7 @@ function cardProduto(p, slugCategoria) {
           <small>* Prazo informado refere-se apenas à produção. O tempo de entrega será adicionado após a finalização.</small>
         </div>
         ${acao}
+        <button type="button" class="product-card__share" data-nome="${encodeURIComponent(p.nome)}">${SVG_WHATS} Compartilhar</button>
       </div>
     </article>`;
 }
@@ -1040,6 +1053,13 @@ document.addEventListener('click', (e) => {
     document.querySelectorAll(`.product-card__fav[data-nome="${fav.dataset.nome}"]`).forEach((b) => b.classList.toggle('is-fav', agora));
     mostrarToast(agora ? 'Adicionado aos favoritos ❤️' : 'Removido dos favoritos');
     if (typeof atualizarListasHome === 'function') atualizarListasHome();
+    return;
+  }
+  const sh = e.target.closest('.product-card__share');
+  if (sh) {
+    e.preventDefault();
+    e.stopPropagation();
+    compartilharProduto(decodeURIComponent(sh.dataset.nome || ''));
     return;
   }
 });
