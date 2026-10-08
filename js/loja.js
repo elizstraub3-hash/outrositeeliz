@@ -238,10 +238,7 @@ function blocoArte(p) {
         <label class="arte-opcao"><input type="radio" name="arteOpcao" value="Não tenho a arte"> Não tenho a arte</label>
       </div>
       <div class="arte-envio" id="arteEnvio">
-        <label class="modal__label" for="arteArquivo">Envie sua arte em PDF:</label>
-        <input type="file" id="arteArquivo" class="arte-upload" accept=".pdf,.cdr,.ai">
-        <small class="arte-nota">O arquivo deve ter um nome que identifique você ou sua empresa (ex.: minha-empresa-arte.pdf).</small>
-        <small class="arte-nota">Se preferir, envie a arte pelo <a href="${WHATSAPP_GRAFICA}" target="_blank" rel="noopener" class="arte-link">WhatsApp da gráfica</a>.</small>
+        <p class="arte-nota">📎 Você envia a sua arte <strong>pelo WhatsApp</strong>, na mesma conversa do pedido (ao finalizar). Aceitamos PDF, CDR, AI, PNG ou JPG — use um nome que identifique você ou a sua empresa.</p>
       </div>
       <p class="arte-gratis">${p && p.arteNota ? p.arteNota : 'Arte grátis para pedidos acima de R$ 35,00 — nossos designers criam a arte para você aprovar. A criação da arte começa após a confirmação do pagamento.'}</p>
       <button type="button" class="arte-link" onclick="abrirRegulamentoArte()">Dúvidas sobre sua arte? Leia aqui</button>
