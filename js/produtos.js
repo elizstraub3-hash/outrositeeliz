@@ -11,7 +11,7 @@ const ARTE_SUBLIMACAO = 'A arte é criada por uma <strong>designer profissional 
 /* Vestuário (camisetas, camisas, moletons, jaquetas e afins): a arte é mais elaborada e tem custo fixo. */
 const ARTE_VESTUARIO = 'Arte de vestuário: o desenvolvimento da arte custa <strong>R$ 50,00</strong> (cobrado uma única vez por arte), por envolver uma criação mais elaborada.';
 
-const CATALOGO_VERSAO = 126;
+const CATALOGO_VERSAO = 127;
 
 /* Produtos que aparecem em mais de uma categoria são definidos uma única
    vez aqui e referenciados nas categorias — sem duplicar dados. */
@@ -2243,13 +2243,28 @@ const CATALOGO = {
       copoInoxColorido,
       copoTermico,
       { bg: 'linear-gradient(135deg,#fee2e2,#e11d48)', badge: 'Novo', destaque: true,
+        paginaProduto: true,
+        imagem: 'img/caneca-alca-coracao.webp',
         nome: 'Caneca com Alça de Coração',
         chamada: 'Um mimo fofo e cheio de carinho pra presentear.',
-        spec: 'Caneca personalizada com alça em formato de coração · impressão da sua arte.',
-        prazoTexto: 'de 1 a 2 dias úteis',
-        variacoes: [
-          { label: '1 un', preco: 39.90 },
-        ] },
+        spec: 'Cerâmica · alça em formato de coração · 325 ml · escolha a cor · impressão da sua arte',
+        prazoTexto: 'de 1 a 3 dias úteis',
+        descricao: 'Caneca personalizada com alça em formato de coração, em cerâmica, com 325 ml. Escolha a cor da caneca e nós imprimimos a sua arte.',
+        detalhes: [
+          'Material: cerâmica.',
+          'Alça em formato de coração.',
+          'Capacidade: 325 ml.',
+          'Cores disponíveis: preto, amarelo, azul, rosa e vermelho.',
+          'Impressão personalizada com a sua arte.',
+        ],
+        grupoLabel: 'Cor', opcaoLabel: 'Quantidade',
+        tamanhos: {
+          'Preto': [{ label: '1 un', preco: 39.90 }],
+          'Amarelo': [{ label: '1 un', preco: 39.90 }],
+          'Azul': [{ label: '1 un', preco: 39.90 }],
+          'Rosa': [{ label: '1 un', preco: 39.90 }],
+          'Vermelho': [{ label: '1 un', preco: 39.90 }],
+        } },
       { bg: 'linear-gradient(135deg,#fce7f3,#1f2937)', badge: 'Novo', destaque: true,
         paginaProduto: true,
         imagem: 'img/caneca-magica.webp',
