@@ -243,7 +243,7 @@ function blocoArte(p) {
         <small class="arte-nota">O arquivo deve ter um nome que identifique você ou sua empresa (ex.: minha-empresa-arte.pdf).</small>
         <small class="arte-nota">Se preferir, envie a arte pelo <a href="${WHATSAPP_GRAFICA}" target="_blank" rel="noopener" class="arte-link">WhatsApp da gráfica</a>.</small>
       </div>
-      <p class="arte-gratis">${p && p.arteNota ? p.arteNota : 'Arte grátis para pedidos acima de R$ 35,00 — nossos designers criam a arte para você aprovar.'}</p>
+      <p class="arte-gratis">${p && p.arteNota ? p.arteNota : 'Arte grátis para pedidos acima de R$ 35,00 — nossos designers criam a arte para você aprovar. A criação da arte começa após a confirmação do pagamento.'}</p>
       <button type="button" class="arte-link" onclick="abrirRegulamentoArte()">Dúvidas sobre sua arte? Leia aqui</button>
     </div>`;
 }
