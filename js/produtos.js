@@ -11,7 +11,7 @@ const ARTE_SUBLIMACAO = 'A arte é criada por uma <strong>designer profissional 
 /* Vestuário (camisetas, camisas, moletons, jaquetas e afins): a arte é mais elaborada e tem custo fixo. */
 const ARTE_VESTUARIO = 'Arte de vestuário: o desenvolvimento da arte custa <strong>R$ 50,00</strong> (cobrado uma única vez por arte), por envolver uma criação mais elaborada.';
 
-const CATALOGO_VERSAO = 124;
+const CATALOGO_VERSAO = 125;
 
 /* Produtos que aparecem em mais de uma categoria são definidos uma única
    vez aqui e referenciados nas categorias — sem duplicar dados. */
@@ -1408,13 +1408,14 @@ const CATALOGO = {
         chamada: 'Deixe o pagamento por Pix fácil e com a cara da sua loja.',
         spec: 'Display de balcão em MDF · preto e branco · com o QR Code do seu Pix e a sua logo · com base de apoio',
         prazoTexto: 'de 2 a 5 dias úteis',
-        descricao: 'Plaquinha "Pague com Pix" em MDF para o balcão da sua loja. Personalizada com a sua logo e o QR Code do seu Pix, deixa o pagamento mais rápido, prático e profissional. Acabamento em preto e branco, com base de apoio.',
+        descricao: 'Plaquinha "Pague com Pix" em MDF para o balcão da sua loja. Personalizada com a sua logo e o QR Code do seu Pix, deixa o pagamento mais rápido, prático e profissional. Acabamento em preto e branco, com base de apoio. Não tem o QR Code? Sem problema — você envia a sua chave Pix e a gente gera o QR Code pra você.',
         detalhes: [
           'Material: MDF.',
           'Cores: preto e branco.',
           'Personalização: a sua logo + o QR Code do seu Pix.',
           'Acompanha base de apoio para o balcão.',
-          'Envie a sua logo e o QR Code (ou a chave) do seu Pix pelo WhatsApp.',
+          'Não tem o QR Code? É só enviar a sua chave Pix que a gente gera o QR Code pra você.',
+          'Envie a sua logo e a chave (ou o QR Code) do seu Pix pelo WhatsApp.',
         ],
         variacoes: [
           { label: '1 un', preco: 35.90 },
