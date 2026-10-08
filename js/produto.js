@@ -97,4 +97,32 @@ if (!prod) {
     grid.innerHTML = cardsPorNomes(escolhidos);
     wrap.style.display = '';
   })();
+
+  // SEO: dados estruturados do produto (Google Rich Results)
+  (function () {
+    const base = 'https://outrositeeliz.vercel.app/';
+    const url = base + 'produto.html?id=' + idProduto;
+    const ld = {
+      '@context': 'https://schema.org',
+      '@type': 'Product',
+      name: prod.nome,
+      description: (prod.descricao || prod.spec || '').replace(/<[^>]+>/g, ''),
+      brand: { '@type': 'Brand', name: 'Print House' },
+      url: url,
+    };
+    if (prod.imagem) ld.image = base + prod.imagem;
+    if (typeof menor === 'number' && !isNaN(menor)) {
+      ld.offers = {
+        '@type': 'Offer',
+        price: menor.toFixed(2),
+        priceCurrency: 'BRL',
+        availability: 'https://schema.org/InStock',
+        url: url,
+      };
+    }
+    const s = document.createElement('script');
+    s.type = 'application/ld+json';
+    s.textContent = JSON.stringify(ld);
+    document.head.appendChild(s);
+  })();
 }
