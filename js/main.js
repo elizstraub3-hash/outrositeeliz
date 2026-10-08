@@ -25,6 +25,13 @@ document.getElementById('maisVendidos').innerHTML = cardsPorNomes(nomesMaisVendi
 document.getElementById('produtosLancamentos').innerHTML =
   CATALOGO['lancamentos'].produtos.map((p) => cardProduto(p, 'lancamentos')).join('');
 
+/* ---------- Vitrine "Ideais para presentes" (canecas) ---------- */
+(function () {
+  const alvo = document.getElementById('produtosCanecas');
+  if (!alvo) return;
+  alvo.innerHTML = cardsPorNomes(['Caneca com Alça de Coração', 'Caneca Mágica Personalizada']);
+})();
+
 /* ---------- Vitrine "Serviços Digitais & Online" ---------- */
 const secaoDigitais = document.getElementById('produtosDigitais');
 if (secaoDigitais) {

@@ -578,6 +578,25 @@ button { font-family: inherit; cursor: pointer; }
   transition: background .15s, border-color .15s;
 }
 .product-card__share:hover { background: #f0fdf4; border-color: #86efac; }
+
+/* Banner de atacado (abaixo dos produtos) */
+.atacado {
+  margin-top: 1.8rem;
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem;
+  background: linear-gradient(120deg, #1d4ed8, #0ea5e9);
+  color: #fff; border-radius: 14px; padding: 1.1rem 1.4rem;
+}
+.atacado__txt { display: grid; gap: .25rem; min-width: 0; }
+.atacado__txt strong { font-size: 1rem; }
+.atacado__txt span { font-size: .84rem; line-height: 1.45; opacity: .95; max-width: 70ch; }
+.atacado__btn {
+  flex-shrink: 0;
+  background: #fff; color: #1d4ed8; font-weight: 700; font-size: .82rem;
+  padding: .55rem 1rem; border-radius: 999px;
+  display: inline-flex; align-items: center; gap: .4rem; white-space: nowrap;
+  transition: background .15s;
+}
+.atacado__btn:hover { background: #eff6ff; }
 .product-card__saibamais {
   display: block;
   text-align: center;
