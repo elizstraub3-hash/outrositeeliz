@@ -101,7 +101,7 @@ const PRODUTOS_TEMA = {
   'halloween': ['Adesivo Brilha no Escuro', 'Adesivos Personalizados', 'Camiseta DTF UV'],
   'inauguracao-e-lancamento': ['Banner Lona Brilho 440g', 'Wind Banner Personalizado', 'Flyer Couchê 80g', 'Cartão de Visita Couchê 250g', 'Bandeira', 'Backdrop em Lona Brilho Frontlight 440g', 'Adesivos Personalizados'],
   'meio-ambiente': ['Ecobag Personalizada', 'Ecobag Algodão', 'Sacola Kraft com Alça', 'Squeeze Fosca 600ml', 'Garrafa de Inox 750ml Opus'],
-  'natal': ['Caixa de Presente Personalizada', 'Carta Elaborada em Papéis Premium', 'Adesivos Personalizados', 'Quadro MDF 3mm 20x30 cm', 'Taça de Gin Personalizada', 'Sacola em Papel Silk Premium'],
+  'natal': ['Cartão de Agradecimento de Natal', 'Caixa de Presente Personalizada', 'Carta Elaborada em Papéis Premium', 'Adesivos Personalizados', 'Quadro MDF 3mm 20x30 cm', 'Taça de Gin Personalizada', 'Sacola em Papel Silk Premium'],
   'pascoa': ['Caixinha Milk Personalizada', 'Forminhas para Doces (100 un)', 'Adesivos Personalizados', 'Caixa de Presente Personalizada', 'Fita Adesiva Personalizada', 'Sacola Kraft com Alça'],
   'volta-as-aulas': ['Caderninho 7x10 cm', 'Agenda Diária 2027', 'Apostila Personalizada', 'Adesivos Personalizados', 'Ecobag Personalizada'],
 };

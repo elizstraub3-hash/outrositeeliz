@@ -11,7 +11,7 @@ const ARTE_SUBLIMACAO = 'A arte é criada por uma <strong>designer profissional 
 /* Vestuário (camisetas, camisas, moletons, jaquetas e afins): a arte é mais elaborada e tem custo fixo. */
 const ARTE_VESTUARIO = 'Arte de vestuário: o desenvolvimento da arte custa <strong>R$ 50,00</strong> (cobrado uma única vez por arte), por envolver uma criação mais elaborada.';
 
-const CATALOGO_VERSAO = 127;
+const CATALOGO_VERSAO = 128;
 
 /* Produtos que aparecem em mais de uma categoria são definidos uma única
    vez aqui e referenciados nas categorias — sem duplicar dados. */
@@ -1490,6 +1490,22 @@ const CATALOGO = {
     banner: 'linear-gradient(120deg,#be123c,#fb7185)',
     descricao: 'Topos de bolo e itens personalizados para deixar a sua festa com a sua cara.',
     produtos: [
+      { bg: 'linear-gradient(135deg,#fee2e2,#166534)', badge: 'Novo', destaque: true,
+        paginaProduto: true,
+        imagem: 'img/cartao-agradecimento-natal.webp',
+        nome: 'Cartão de Agradecimento de Natal',
+        chamada: 'Agradeça seus clientes com um cartão de Natal cheio de carinho.',
+        spec: 'Cartão de agradecimento natalino · arte elegante "Feliz Natal / Com carinho e gratidão" · personalizável',
+        prazoTexto: 'de 2 a 5 dias úteis',
+        descricao: 'Cartão de agradecimento de Natal para encantar e fidelizar os seus clientes. Arte natalina elegante com as mensagens "Feliz Natal" e "Com carinho e gratidão". Perfeito para acompanhar pedidos e brindes nas festas de fim de ano. A arte é criada pela nossa equipe.',
+        detalhes: [
+          'Cartão de agradecimento com tema natalino.',
+          'Arte criada pela nossa equipe (personalizável).',
+          'Ideal para acompanhar pedidos, brindes e kits de fim de ano.',
+        ],
+        variacoes: [
+          { label: 'Sob consulta', preco: null },
+        ] },
       { bg: 'linear-gradient(135deg,#fef3c7,#b45309)', badge: 'Novo', destaque: true,
         imagem: 'img/carta-premium.webp',
         paginaProduto: true,
