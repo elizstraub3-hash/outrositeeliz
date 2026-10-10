@@ -11,7 +11,7 @@ const ARTE_SUBLIMACAO = 'A arte é criada por uma <strong>designer profissional 
 /* Vestuário (camisetas, camisas, moletons, jaquetas e afins): a arte é mais elaborada e tem custo fixo. */
 const ARTE_VESTUARIO = 'Arte de vestuário: o desenvolvimento da arte custa <strong>R$ 50,00</strong> (cobrado uma única vez por arte), por envolver uma criação mais elaborada.';
 
-const CATALOGO_VERSAO = 132;
+const CATALOGO_VERSAO = 133;
 
 /* Produtos que aparecem em mais de uma categoria são definidos uma única
    vez aqui e referenciados nas categorias — sem duplicar dados. */
@@ -1172,7 +1172,7 @@ const CATALOGO = {
       { bg: 'linear-gradient(135deg,#e5e7eb,#111827)', badge: 'Novo', destaque: true,
         paginaProduto: true,
         imagem: 'img/kit-chanel-1.webp',
-        imagens: ['img/kit-chanel-1.webp', 'img/kit-chanel-2.webp'],
+        imagens: ['img/kit-chanel-1.webp', 'img/kit-chanel-2.webp', 'img/kit-chanel-manual.webp'],
         nome: 'Kit Chanel',
         chamada: 'Um kit de formatura sofisticado, marmorizado em preto e branco.',
         spec: 'Kit marmorizado fosco (preto e branco) · sacola, caixa 20x20 com o nome da aluna, certificado + apostila 30 págs, taça de gin, agenda e lápis personalizado',
