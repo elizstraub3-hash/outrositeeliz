@@ -11,7 +11,7 @@ const ARTE_SUBLIMACAO = 'A arte é criada por uma <strong>designer profissional 
 /* Vestuário (camisetas, camisas, moletons, jaquetas e afins): a arte é mais elaborada e tem custo fixo. */
 const ARTE_VESTUARIO = 'Arte de vestuário: o desenvolvimento da arte custa <strong>R$ 50,00</strong> (cobrado uma única vez por arte), por envolver uma criação mais elaborada.';
 
-const CATALOGO_VERSAO = 128;
+const CATALOGO_VERSAO = 129;
 
 /* Produtos que aparecem em mais de uma categoria são definidos uma única
    vez aqui e referenciados nas categorias — sem duplicar dados. */
@@ -1190,6 +1190,29 @@ const CATALOGO = {
           { label: 'All Black', preco: 145.90 },
           { label: 'Colorido', preco: 135.90 },
           { label: 'Hotstamping (efeito metalizado)', preco: 185.90 },
+        ] },
+      { bg: 'linear-gradient(135deg,#e5e7eb,#111827)', badge: 'Novo', destaque: true,
+        paginaProduto: true,
+        nome: 'Kit Chanel',
+        chamada: 'Um kit de formatura sofisticado, marmorizado em preto e branco.',
+        spec: 'Kit marmorizado fosco (preto e branco) · sacola, caixa 20x20 com o nome da aluna, certificado + apostila 30 págs, taça de gin, agenda e lápis personalizado',
+        prazoTexto: 'de 7 dias úteis',
+        descricao: 'Kit Chanel: um kit de formatura sofisticado, com acabamento marmorizado fosco nas cores preta e branca. Perfeito para presentear e marcar esse momento especial. A arte é criada pela nossa equipe.',
+        detalhes: [
+          'Estilo: marmorizado fosco, nas cores preta e branca.',
+          'Sacola com laço e fitas de cetim, com papel de seda preto.',
+          'Caixa de 20 x 20 cm com o nome da aluna, fita de cetim, corrente dourada e papel de seda preto.',
+          'Certificado + apostila com 30 páginas (capa e contracapa).',
+          'Taça de gin personalizada com laço.',
+          'Agenda 7x10 cm com wire de ferro.',
+          'Lápis personalizado.',
+        ],
+        faq: [
+          { p: 'Como finalizar o kit?', r: 'A caixa e o laço seguem sem fechamento completo. A responsável deverá colocar os itens dentro e dobrar o papel de seda sobre eles, cobrindo-os com cuidado. <strong>Não arranque o papel de seda</strong>: ele está colado no fundo e poderá rasgar. Depois, feche a caixa e faça um laço bonito, com as pontas alinhadas. Pronto, seu kit está finalizado! Os demais materiais seguem fechadinhos.' },
+          { p: 'O certificado precisa de assinatura?', r: 'Sim — o certificado deverá ser assinado pela instrutora e pela aluna.' },
+        ],
+        variacoes: [
+          { label: 'Kit completo', preco: 155.90 },
         ] },
     ],
   },
