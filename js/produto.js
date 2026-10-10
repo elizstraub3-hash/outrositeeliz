@@ -25,7 +25,8 @@ if (!prod) {
   foto.innerHTML = prod.imagem ? `<img src="${prod.imagem}" alt="${prod.nome}">` : ICONE_PRODUTO;
   if (prod.imagem) {
     foto.style.cursor = 'zoom-in';
-    foto.addEventListener('click', () => abrirLightbox(prod.imagem, prod.nome));
+    const galeriaProd = (prod.imagens && prod.imagens.length) ? prod.imagens : [prod.imagem];
+    foto.addEventListener('click', () => abrirLightbox(galeriaProd, 0, prod.nome));
   }
 
   document.getElementById('prodNome').textContent = prod.nome;

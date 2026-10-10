@@ -11,7 +11,7 @@ const ARTE_SUBLIMACAO = 'A arte é criada por uma <strong>designer profissional 
 /* Vestuário (camisetas, camisas, moletons, jaquetas e afins): a arte é mais elaborada e tem custo fixo. */
 const ARTE_VESTUARIO = 'Arte de vestuário: o desenvolvimento da arte custa <strong>R$ 50,00</strong> (cobrado uma única vez por arte), por envolver uma criação mais elaborada.';
 
-const CATALOGO_VERSAO = 131;
+const CATALOGO_VERSAO = 132;
 
 /* Produtos que aparecem em mais de uma categoria são definidos uma única
    vez aqui e referenciados nas categorias — sem duplicar dados. */
@@ -1168,28 +1168,6 @@ const CATALOGO = {
         arteNota: 'A arte do certificado é enviada pelo cliente.',
         variacoes: [
           { label: 'Kit completo', preco: 55.90 },
-        ] },
-      { bg: 'linear-gradient(135deg,#fce7f3,#db2777)', badge: 'Novo', destaque: true,
-        imagem: 'img/kit-basico-plus.webp',
-        nome: 'Kit Básico Plus',
-        chamada: 'O mimo perfeito para dar as boas-vindas com a sua marca.',
-        spec: '01 sacola P com laço (papel offset fosco 180g · ~19x15x6 cm) + 01 certificado (papel fosco 180g) + 01 bloquinho personalizado (capa dura · 7x10 cm · somente capa e contracapa) + 01 lápis personalizado.',
-        prazoTexto: 'de 7 dias úteis',
-        arteNota: 'A arte do certificado é enviada pelo cliente.',
-        variacoes: [
-          { label: 'Kit completo', preco: 65.90 },
-        ] },
-      { bg: 'linear-gradient(135deg,#fef9c3,#ca8a04)', badge: 'Novo', destaque: true,
-        imagem: 'img/kit-luxo.webp',
-        nome: 'Kit Luxo',
-        chamada: 'Sofisticação em cada detalhe para presentear de verdade.',
-        spec: '01 caixa cartonada personalizada (20x21x6 cm) + 01 apostila até 10 páginas colorida (capa e contracapa na identidade visual) + 01 taça de gin ou copo twister com canudo, com laço (cor na identidade visual) + 01 lápis personalizado + 01 bloco personalizado (7x10 cm) + papel seda na identidade visual.',
-        prazoTexto: 'de 7 dias úteis',
-        adicional: { label: 'Corrente na caixa cartonada', preco: 15.00 },
-        variacoes: [
-          { label: 'All Black', preco: 145.90 },
-          { label: 'Colorido', preco: 135.90 },
-          { label: 'Hotstamping (efeito metalizado)', preco: 185.90 },
         ] },
       { bg: 'linear-gradient(135deg,#e5e7eb,#111827)', badge: 'Novo', destaque: true,
         paginaProduto: true,

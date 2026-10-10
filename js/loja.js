@@ -1075,25 +1075,68 @@ document.addEventListener('click', (e) => {
   else abrirVariacoes(produto);
 });
 
-/* ---------- Lightbox: ampliar a imagem do produto ---------- */
-function abrirLightbox(src, alt) {
+/* ---------- Lightbox: ampliar a imagem do produto (com galeria) ---------- */
+let lightboxGaleria = [];
+let lightboxIndice = 0;
+let lightboxAlt = '';
+
+function abrirLightbox(imgs, indice, alt) {
+  lightboxGaleria = (Array.isArray(imgs) ? imgs : [imgs]).filter(Boolean);
+  if (typeof indice === 'string') { alt = indice; indice = 0; } // compat: (src, alt)
+  lightboxIndice = Math.max(0, Math.min(indice || 0, lightboxGaleria.length - 1));
+  lightboxAlt = alt || '';
   let lb = document.getElementById('lightbox');
   if (!lb) {
     lb = document.createElement('div');
     lb.id = 'lightbox';
     lb.className = 'lightbox';
-    lb.innerHTML = '<button class="lightbox__close" aria-label="Fechar">&times;</button><img class="lightbox__img" alt="">';
+    lb.innerHTML = `
+      <button class="lightbox__close" aria-label="Fechar">&times;</button>
+      <button class="lightbox__nav lightbox__nav--prev" aria-label="Imagem anterior">‹</button>
+      <img class="lightbox__img" alt="">
+      <button class="lightbox__nav lightbox__nav--next" aria-label="Próxima imagem">›</button>
+      <div class="lightbox__dots" aria-hidden="true"></div>`;
     document.body.appendChild(lb);
     lb.addEventListener('click', (e) => {
-      if (e.target === lb || e.target.closest('.lightbox__close')) fecharLightbox();
+      if (e.target.closest('.lightbox__close')) { fecharLightbox(); return; }
+      if (e.target.closest('.lightbox__nav--prev')) { navLightbox(-1); return; }
+      if (e.target.closest('.lightbox__nav--next')) { navLightbox(1); return; }
+      const d = e.target.closest('.lightbox__dot');
+      if (d) { lightboxIndice = Number(d.dataset.i); renderLightbox(); return; }
+      if (e.target === lb) fecharLightbox();
     });
-    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') fecharLightbox(); });
+    document.addEventListener('keydown', (e) => {
+      const aberto = document.getElementById('lightbox');
+      if (!aberto || !aberto.classList.contains('is-open')) return;
+      if (e.key === 'Escape') fecharLightbox();
+      else if (e.key === 'ArrowLeft') navLightbox(-1);
+      else if (e.key === 'ArrowRight') navLightbox(1);
+    });
   }
-  const img = lb.querySelector('.lightbox__img');
-  img.src = src;
-  img.alt = alt || '';
+  renderLightbox();
   lb.classList.add('is-open');
   document.body.style.overflow = 'hidden';
+}
+
+function renderLightbox() {
+  const lb = document.getElementById('lightbox');
+  if (!lb) return;
+  const img = lb.querySelector('.lightbox__img');
+  img.src = lightboxGaleria[lightboxIndice];
+  img.alt = lightboxAlt;
+  const multi = lightboxGaleria.length > 1;
+  lb.querySelectorAll('.lightbox__nav').forEach((n) => { n.hidden = !multi; });
+  const dots = lb.querySelector('.lightbox__dots');
+  dots.hidden = !multi;
+  dots.innerHTML = multi
+    ? lightboxGaleria.map((_, i) => `<button type="button" class="lightbox__dot${i === lightboxIndice ? ' is-active' : ''}" data-i="${i}" aria-label="Imagem ${i + 1}"></button>`).join('')
+    : '';
+}
+
+function navLightbox(dir) {
+  if (lightboxGaleria.length < 2) return;
+  lightboxIndice = (lightboxIndice + dir + lightboxGaleria.length) % lightboxGaleria.length;
+  renderLightbox();
 }
 function fecharLightbox() {
   const lb = document.getElementById('lightbox');
@@ -1117,7 +1160,9 @@ document.addEventListener('click', (e) => {
   const img = e.target.tagName === 'IMG' ? e.target : area.querySelector('img');
   if (!img) return; // cards com ícone (sem foto) seguem o link normalmente
   e.preventDefault();
-  abrirLightbox(img.src, img.alt);
+  const imgs = [...area.querySelectorAll('img')].map((i) => i.src);
+  const idx = Math.max(0, imgs.indexOf(img.src));
+  abrirLightbox(imgs.length ? imgs : [img.src], idx, img.alt);
 });
 
 /* Atualiza a bolinha ativa conforme o carrossel do card é arrastado/rolado */
