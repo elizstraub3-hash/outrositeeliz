@@ -45,7 +45,7 @@ document.getElementById('catProdutos').innerHTML = resultados.length
            <svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
          </div>
          <h2>Nenhum produto encontrado</h2>
-         <p>Não achamos resultados${termoBruto ? ` para <strong>${termoBruto}</strong>` : ''}. Tente outro termo ou fale com a gente que a gente te ajuda.</p>
+         <p>Não achamos resultados${termoBruto ? ` para <strong>${escaparHtml(termoBruto)}</strong>` : ''}. Tente outro termo ou fale com a gente que a gente te ajuda.</p>
          <div class="em-breve__acoes">
            <a href="index.html#produtos" class="btn btn--primary">Ver todos os produtos</a>
            <a href="${WHATSAPP_GRAFICA}" target="_blank" rel="noopener" class="btn btn--claro">Falar no WhatsApp</a>

@@ -987,8 +987,18 @@ function lerDadosCliente() {
 function salvarDadosCliente(d) {
   localStorage.setItem(DADOS_CLIENTE_KEY, JSON.stringify(d));
 }
+/* Escapa texto para evitar injeção de HTML/scripts (XSS) ao inserir
+   conteúdo vindo do usuário (ex.: termo de busca, nome do cliente). */
+function escaparHtml(v) {
+  return String(v == null ? '' : v)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
 function escaparAttr(v) {
-  return String(v || '').replace(/"/g, '&quot;');
+  return escaparHtml(v);
 }
 function abrirMeusDados() {
   const d = lerDadosCliente();
