@@ -11,7 +11,7 @@ const ARTE_SUBLIMACAO = 'A arte é criada por uma <strong>designer profissional 
 /* Vestuário (camisetas, camisas, moletons, jaquetas e afins): a arte é mais elaborada e tem custo fixo. */
 const ARTE_VESTUARIO = 'Arte de vestuário: o desenvolvimento da arte custa <strong>R$ 50,00</strong> (cobrado uma única vez por arte), por envolver uma criação mais elaborada.';
 
-const CATALOGO_VERSAO = 136;
+const CATALOGO_VERSAO = 137;
 
 /* Produtos que aparecem em mais de uma categoria são definidos uma única
    vez aqui e referenciados nas categorias — sem duplicar dados. */
@@ -898,7 +898,7 @@ const jaquetaMisty = {
 };
 
 /* Cores das sacolas plásticas com alça vazada (mesmas cores para todos os tamanhos) */
-const CORES_SACOLA_PLASTICA = ['Bege', 'Branco', 'Preto', 'Cinza', 'Verde Tiffany', 'Azul', 'Azul Marinho', 'Roxo', 'Pink', 'Vermelho', 'Laranja', 'Amarelo', 'Verde', 'Marrom'];
+const CORES_SACOLA_PLASTICA = ['Bege', 'Branco', 'Preto', 'Cinza', 'Verde Tiffany', 'Azul', 'Azul Marinho', 'Roxo', 'Rosa Bebê', 'Rosa Pink', 'Vermelho', 'Laranja', 'Amarelo', 'Verde', 'Marrom'];
 
 /* Chinelo personalizado — vai em Brindes (calçado/lembrancinha) */
 const chineloPersonalizado = {
