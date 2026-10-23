@@ -11,7 +11,7 @@ const ARTE_SUBLIMACAO = 'A arte é criada por uma <strong>designer profissional 
 /* Vestuário (camisetas, camisas, moletons, jaquetas e afins): a arte é mais elaborada e tem custo fixo. */
 const ARTE_VESTUARIO = 'Arte de vestuário: o desenvolvimento da arte custa <strong>R$ 50,00</strong> (cobrado uma única vez por arte), por envolver uma criação mais elaborada.';
 
-const CATALOGO_VERSAO = 137;
+const CATALOGO_VERSAO = 138;
 
 /* Produtos que aparecem em mais de uma categoria são definidos uma única
    vez aqui e referenciados nas categorias — sem duplicar dados. */
@@ -1003,7 +1003,8 @@ const sacolaPlastica = {
   prazoTexto: 'de 3 a 7 dias úteis',
   grupoLabel: 'Tamanho', opcaoLabel: 'Quantidade',
   extra: { label: 'Acabamento', opcoes: ['Brilhosa', 'Fosca'] },
-  coresEstampa: ['Azul Claro', 'Branco', 'Dourado', 'Cinza', 'Preto', 'Rosa Pink', 'Verde', 'Vermelho'],
+  coresEstampa: [...CORES_SACOLA_PLASTICA, 'Dourado', 'Rose Gold', 'Prata'],
+  estampaExcluiCorSacola: true,
   coresPorTamanho: {
     '16 x 20 cm': CORES_SACOLA_PLASTICA,
     '20 x 30 cm': CORES_SACOLA_PLASTICA,

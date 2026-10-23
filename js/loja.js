@@ -410,9 +410,7 @@ function abrirTamanhos(p) {
     ${p.coresEstampa ? `
     <div class="modal__opcao">
       <label class="modal__label" for="modalCorEstampa">${p.coresLabel || 'Cor da estampa'}:</label>
-      <select class="modal__select" id="modalCorEstampa">
-        ${p.coresEstampa.map((c) => `<option>${c}</option>`).join('')}
-      </select>
+      <select class="modal__select" id="modalCorEstampa"></select>
     </div>` : ''}
     <div class="modal__opcao">
       <label class="modal__label" for="modalQtdOpcao">${opcaoLabel}:</label>
@@ -434,6 +432,7 @@ function abrirTamanhos(p) {
   const selTamanho = modal.querySelector('#modalTamanho');
   const selOpcao = modal.querySelector('#modalQtdOpcao');
   const selCorSacola = modal.querySelector('#modalCorSacola');
+  const selCorEstampa = modal.querySelector('#modalCorEstampa');
   const chkFuro = modal.querySelector('#modalFuro');
 
   function opcaoAtual() {
@@ -464,14 +463,27 @@ function abrirTamanhos(p) {
     const cores = p.coresPorTamanho[selTamanho.value] || [];
     selCorSacola.innerHTML = cores.map((c) => `<option>${c}</option>`).join('');
   }
+  function preencherCoresEstampa() {
+    if (!selCorEstampa) return;
+    const anterior = selCorEstampa.value;
+    let cores = p.coresEstampa.slice();
+    // A estampa não pode ter a mesma cor da sacola (ex.: sacola branca não leva estampa branca)
+    if (p.estampaExcluiCorSacola && selCorSacola && selCorSacola.value) {
+      cores = cores.filter((c) => c !== selCorSacola.value);
+    }
+    selCorEstampa.innerHTML = cores.map((c) => `<option>${c}</option>`).join('');
+    if (anterior && cores.includes(anterior)) selCorEstampa.value = anterior;
+  }
   function preencherOpcoes() {
     selOpcao.innerHTML = p.tamanhos[selTamanho.value]
       .map((v, i) => `<option value="${i}">${v.label} — ${precoLabel(v.preco)}</option>`)
       .join('');
     preencherCoresSacola();
+    preencherCoresEstampa();
     atualizarTotal();
   }
   selTamanho.addEventListener('change', preencherOpcoes);
+  if (selCorSacola) selCorSacola.addEventListener('change', preencherCoresEstampa);
   selOpcao.addEventListener('change', atualizarTotal);
   if (chkFuro) chkFuro.addEventListener('change', atualizarTotal);
 
