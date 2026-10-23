@@ -11,7 +11,7 @@ const ARTE_SUBLIMACAO = 'A arte é criada por uma <strong>designer profissional 
 /* Vestuário (camisetas, camisas, moletons, jaquetas e afins): a arte é mais elaborada e tem custo fixo. */
 const ARTE_VESTUARIO = 'Arte de vestuário: o desenvolvimento da arte custa <strong>R$ 50,00</strong> (cobrado uma única vez por arte), por envolver uma criação mais elaborada.';
 
-const CATALOGO_VERSAO = 133;
+const CATALOGO_VERSAO = 134;
 
 /* Produtos que aparecem em mais de uma categoria são definidos uma única
    vez aqui e referenciados nas categorias — sem duplicar dados. */
@@ -1012,22 +1012,34 @@ const sacolaPlastica = {
   tamanhos: {
     '16 x 20 cm': [
       { label: '50 un', preco: 90.90 },
-      { label: '100 un', preco: null },
+      { label: '100 un', preco: 121.90 },
+      { label: '200 un', preco: 210.90 },
+      { label: '500 un', preco: 446.90 },
+      { label: '1.000 un', preco: 701.90 },
       { label: 'Mais quantidades', preco: null },
     ],
     '20 x 30 cm': [
       { label: '50 un', preco: 105.90 },
-      { label: '100 un', preco: null },
+      { label: '100 un', preco: 133.90 },
+      { label: '200 un', preco: 235.90 },
+      { label: '500 un', preco: 573.90 },
+      { label: '1.000 un', preco: 828.90 },
       { label: 'Mais quantidades', preco: null },
     ],
     '30 x 40 cm': [
       { label: '50 un', preco: 135.90 },
-      { label: '100 un', preco: null },
+      { label: '100 un', preco: 191.90 },
+      { label: '200 un', preco: 357.90 },
+      { label: '500 un', preco: 701.90 },
+      { label: '1.000 un', preco: 1134.90 },
       { label: 'Mais quantidades', preco: null },
     ],
     '40 x 50 cm': [
       { label: '50 un', preco: 195.90 },
-      { label: '100 un', preco: null },
+      { label: '100 un', preco: 280.90 },
+      { label: '200 un', preco: 522.90 },
+      { label: '500 un', preco: 1083.90 },
+      { label: '1.000 un', preco: 1670.90 },
       { label: 'Mais quantidades', preco: null },
     ],
   },
