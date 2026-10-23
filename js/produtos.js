@@ -11,7 +11,7 @@ const ARTE_SUBLIMACAO = 'A arte é criada por uma <strong>designer profissional 
 /* Vestuário (camisetas, camisas, moletons, jaquetas e afins): a arte é mais elaborada e tem custo fixo. */
 const ARTE_VESTUARIO = 'Arte de vestuário: o desenvolvimento da arte custa <strong>R$ 50,00</strong> (cobrado uma única vez por arte), por envolver uma criação mais elaborada.';
 
-const CATALOGO_VERSAO = 135;
+const CATALOGO_VERSAO = 136;
 
 /* Produtos que aparecem em mais de uma categoria são definidos uma única
    vez aqui e referenciados nas categorias — sem duplicar dados. */
@@ -898,7 +898,7 @@ const jaquetaMisty = {
 };
 
 /* Cores das sacolas plásticas com alça vazada (mesmas cores para todos os tamanhos) */
-const CORES_SACOLA_PLASTICA = ['Amarelo', 'Azul', 'Azul Royal Transparente', 'Branco', 'Cobre', 'Laranja', 'Pink', 'Prata', 'Preto', 'Roxo', 'Transparente', 'Verde', 'Vermelho', 'Verde Tiffany'];
+const CORES_SACOLA_PLASTICA = ['Bege', 'Branco', 'Preto', 'Cinza', 'Verde Tiffany', 'Azul', 'Azul Marinho', 'Roxo', 'Pink', 'Vermelho', 'Laranja', 'Amarelo', 'Verde', 'Marrom'];
 
 /* Chinelo personalizado — vai em Brindes (calçado/lembrancinha) */
 const chineloPersonalizado = {
@@ -999,9 +999,10 @@ const sacolaPlastica = {
   imagem: 'img/sacola-plastica.webp',
   nome: 'Sacola Plástica Personalizada',
   chamada: 'Prática e resistente, com a cara da sua marca.',
-  spec: 'Plástico resistente · alça vazada (boca de palhaço) · impressão personalizada · escolha o tamanho, as cores e a quantidade',
+  spec: 'Plástico resistente · alça vazada (boca de palhaço) · acabamento brilhoso ou fosco · impressão personalizada · escolha o tamanho, o acabamento, as cores e a quantidade',
   prazoTexto: 'de 3 a 7 dias úteis',
   grupoLabel: 'Tamanho', opcaoLabel: 'Quantidade',
+  extra: { label: 'Acabamento', opcoes: ['Brilhosa', 'Fosca'] },
   coresEstampa: ['Azul Claro', 'Branco', 'Dourado', 'Cinza', 'Preto', 'Rosa Pink', 'Verde', 'Vermelho'],
   coresPorTamanho: {
     '16 x 20 cm': CORES_SACOLA_PLASTICA,
