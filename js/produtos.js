@@ -11,7 +11,7 @@ const ARTE_SUBLIMACAO = 'A arte é criada por uma <strong>designer profissional 
 /* Vestuário (camisetas, camisas, moletons, jaquetas e afins): a arte é mais elaborada e tem custo fixo. */
 const ARTE_VESTUARIO = 'Arte de vestuário: o desenvolvimento da arte custa <strong>R$ 50,00</strong> (cobrado uma única vez por arte), por envolver uma criação mais elaborada.';
 
-const CATALOGO_VERSAO = 139;
+const CATALOGO_VERSAO = 140;
 
 /* Produtos que aparecem em mais de uma categoria são definidos uma única
    vez aqui e referenciados nas categorias — sem duplicar dados. */
@@ -1512,6 +1512,23 @@ const CATALOGO = {
     banner: 'linear-gradient(120deg,#be123c,#fb7185)',
     descricao: 'Topos de bolo e itens personalizados para deixar a sua festa com a sua cara.',
     produtos: [
+      { bg: 'linear-gradient(135deg,#fce7f3,#be185d)', badge: 'Novo', destaque: true,
+        paginaProduto: true,
+        nome: 'Lágrimas de Alegria para Casamento',
+        chamada: 'Para os convidados secarem as lágrimas no grande dia.',
+        spec: 'Material premium · personalizado conforme a identidade visual dos noivos · kit com 100 unidades · para outras quantidades, consulte',
+        prazoTexto: 'de 5 a 10 dias úteis',
+        descricao: 'Lágrimas de alegria personalizadas para casamento: um mimo delicado para os convidados se emocionarem na cerimônia. Material premium, personalizado de acordo com a identidade visual dos noivos. A arte é criada pela nossa equipe.',
+        detalhes: [
+          'Material premium.',
+          'Personalização conforme a identidade visual dos noivos.',
+          'Kit com 100 unidades.',
+          'Para outras quantidades, consulte pelo WhatsApp.',
+        ],
+        variacoes: [
+          { label: '100 un', preco: 120.90 },
+          { label: 'Outras quantidades', preco: null },
+        ] },
       { bg: 'linear-gradient(135deg,#fee2e2,#166534)', badge: 'Novo', destaque: true,
         paginaProduto: true,
         imagem: 'img/cartao-agradecimento-natal.webp',
