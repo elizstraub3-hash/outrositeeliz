@@ -11,7 +11,7 @@ const ARTE_SUBLIMACAO = 'A arte é criada por uma <strong>designer profissional 
 /* Vestuário (camisetas, camisas, moletons, jaquetas e afins): a arte é mais elaborada e tem custo fixo. */
 const ARTE_VESTUARIO = 'Arte de vestuário: o desenvolvimento da arte custa <strong>R$ 50,00</strong> (cobrado uma única vez por arte), por envolver uma criação mais elaborada.';
 
-const CATALOGO_VERSAO = 140;
+const CATALOGO_VERSAO = 141;
 
 /* Produtos que aparecem em mais de uma categoria são definidos uma única
    vez aqui e referenciados nas categorias — sem duplicar dados. */
@@ -1512,8 +1512,10 @@ const CATALOGO = {
     banner: 'linear-gradient(120deg,#be123c,#fb7185)',
     descricao: 'Topos de bolo e itens personalizados para deixar a sua festa com a sua cara.',
     produtos: [
-      { bg: 'linear-gradient(135deg,#fce7f3,#be185d)', badge: 'Novo', destaque: true,
+      { bg: 'linear-gradient(135deg,#dbeafe,#1e40af)', badge: 'Novo', destaque: true,
         paginaProduto: true,
+        imagem: 'img/lagrimas-alegria-1.webp',
+        imagens: ['img/lagrimas-alegria-1.webp', 'img/lagrimas-alegria-2.webp', 'img/lagrimas-alegria-3.webp'],
         nome: 'Lágrimas de Alegria para Casamento',
         chamada: 'Para os convidados secarem as lágrimas no grande dia.',
         spec: 'Material premium · personalizado conforme a identidade visual dos noivos · kit com 100 unidades · para outras quantidades, consulte',
