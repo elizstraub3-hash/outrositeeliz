@@ -11,7 +11,7 @@ const ARTE_SUBLIMACAO = 'A arte é criada por uma <strong>designer profissional 
 /* Vestuário (camisetas, camisas, moletons, jaquetas e afins): a arte é mais elaborada e tem custo fixo. */
 const ARTE_VESTUARIO = 'Arte de vestuário: o desenvolvimento da arte custa <strong>R$ 50,00</strong> (cobrado uma única vez por arte), por envolver uma criação mais elaborada.';
 
-const CATALOGO_VERSAO = 141;
+const CATALOGO_VERSAO = 142;
 
 /* Produtos que aparecem em mais de uma categoria são definidos uma única
    vez aqui e referenciados nas categorias — sem duplicar dados. */
@@ -1512,6 +1512,26 @@ const CATALOGO = {
     banner: 'linear-gradient(120deg,#be123c,#fb7185)',
     descricao: 'Topos de bolo e itens personalizados para deixar a sua festa com a sua cara.',
     produtos: [
+      { bg: 'linear-gradient(135deg,#fde68a,#b45309)', badge: 'Novo', destaque: true,
+        paginaProduto: true,
+        imagem: 'img/leque-festa-1.webp',
+        imagens: ['img/leque-festa-1.webp', 'img/leque-festa-2.webp', 'img/leque-festa-3.webp'],
+        nome: 'Leque de Festa Personalizado',
+        chamada: 'Refresca os convidados e deixa a festa com a sua cara.',
+        spec: 'Papel 180g · impressão em alta resolução · com palito · kit com 80 unidades · para outras quantidades, consulte',
+        prazoTexto: 'de 3 dias úteis',
+        descricao: 'Leque de festa personalizado em papel 180g com impressão em alta resolução e palito. Perfeito para casamentos e eventos — refresca os convidados e vira lembrança. A arte é criada pela nossa equipe, conforme a identidade visual do evento.',
+        detalhes: [
+          'Papel 180g com impressão em alta resolução.',
+          'Acompanha palito.',
+          'Kit com 80 unidades.',
+          'Personalizado conforme a identidade visual do evento.',
+          'Para outras quantidades, consulte pelo WhatsApp.',
+        ],
+        variacoes: [
+          { label: '80 un', preco: 95.90 },
+          { label: 'Outras quantidades', preco: null },
+        ] },
       { bg: 'linear-gradient(135deg,#dbeafe,#1e40af)', badge: 'Novo', destaque: true,
         paginaProduto: true,
         imagem: 'img/lagrimas-alegria-1.webp',
