@@ -103,7 +103,7 @@ const camisetaDtf = {
   coresEstampa: ['Preta', 'Branca', 'Vermelha', 'Azul Marinho', 'Amarelo'],
   detalhes: [
     'Estampa UV (só frente): R$ 49,90 por unidade.',
-    'Estampa frente e costas: R$ 69,90 por unidade.',
+    'Estampa frente e costas: R$ 69,90 por unidade (logo nas costas de até 30 cm).',
     'Quer mais unidades? Fale com a gente pelo WhatsApp para um valor especial.',
   ],
   tamanhos: {
@@ -245,7 +245,7 @@ const cordaoPersonalizado = {
 };
 
 const FAIXAS_DRYFIT = [
-  { label: '1 un', preco: 90.90 },
+  { label: '1 un', preco: 95.90 },
   { label: '5 un', preco: 279.90 },
   { label: '10 un', preco: 499.90 },
   { label: '20 un', preco: 998.90 },
@@ -352,7 +352,7 @@ const camisaPesca = {
   arteRestrita: ARTE_SUBLIMACAO,
   distribuirTamanhos: true, unidade: 'camisa', unidadePlural: 'camisas',
   spec: 'Manga longa · gola média com zíper · Active Ice UV 50+ · impressão Ultra HD Sublimática · do P ao XL4',
-  prazo: 10,
+  prazo: 3,
   paginaProduto: true,
   medidas: 'img/camisa-pesca-medidas.webp',
   descricao: 'Você gosta de pescaria? Então chegou ao lugar certo! A Print House traz uma camisa de pesca personalizada para quem curte relaxar com estilo — ideal para aquele fim de semana, feriado prolongado ou férias, na hora sagrada de descansar e se concentrar. Personalização em impressão Ultra HD Sublimática, com cores nítidas e vibrantes.',
@@ -365,7 +365,7 @@ const camisaPesca = {
   grupoLabel: 'Tamanho', opcaoLabel: 'Quantidade',
   tamanhos: {
           'P': [
-            { label: '1 un', preco: 121.90 },
+            { label: '1 un', preco: 120.00 },
             { label: '5 un', preco: 594.90 },
             { label: '10 un', preco: 1168.90 },
             { label: '20 un', preco: 2286.90 },
@@ -375,7 +375,7 @@ const camisaPesca = {
             { label: '100 un', preco: 10978.90 },
           ],
           'M': [
-            { label: '1 un', preco: 121.90 },
+            { label: '1 un', preco: 120.00 },
             { label: '5 un', preco: 594.90 },
             { label: '10 un', preco: 1168.90 },
             { label: '20 un', preco: 2286.90 },
@@ -385,7 +385,7 @@ const camisaPesca = {
             { label: '100 un', preco: 10978.90 },
           ],
           'G': [
-            { label: '1 un', preco: 121.90 },
+            { label: '1 un', preco: 120.00 },
             { label: '5 un', preco: 594.90 },
             { label: '10 un', preco: 1168.90 },
             { label: '20 un', preco: 2286.90 },
@@ -395,7 +395,7 @@ const camisaPesca = {
             { label: '100 un', preco: 10978.90 },
           ],
           'GG': [
-            { label: '1 un', preco: 121.90 },
+            { label: '1 un', preco: 120.00 },
             { label: '5 un', preco: 594.90 },
             { label: '10 un', preco: 1168.90 },
             { label: '20 un', preco: 2286.90 },
@@ -405,7 +405,7 @@ const camisaPesca = {
             { label: '100 un', preco: 10978.90 },
           ],
           'XL1': [
-            { label: '1 un', preco: 121.90 },
+            { label: '1 un', preco: 120.00 },
             { label: '5 un', preco: 594.90 },
             { label: '10 un', preco: 1168.90 },
             { label: '20 un', preco: 2286.90 },
@@ -415,7 +415,7 @@ const camisaPesca = {
             { label: '100 un', preco: 10978.90 },
           ],
           'XL2': [
-            { label: '1 un', preco: 121.90 },
+            { label: '1 un', preco: 120.00 },
             { label: '5 un', preco: 594.90 },
             { label: '10 un', preco: 1168.90 },
             { label: '20 un', preco: 2286.90 },
@@ -425,7 +425,7 @@ const camisaPesca = {
             { label: '100 un', preco: 10978.90 },
           ],
           'XL3': [
-            { label: '1 un', preco: 121.90 },
+            { label: '1 un', preco: 120.00 },
             { label: '5 un', preco: 594.90 },
             { label: '10 un', preco: 1168.90 },
             { label: '20 un', preco: 2286.90 },
@@ -435,7 +435,7 @@ const camisaPesca = {
             { label: '100 un', preco: 10978.90 },
           ],
           'XL4': [
-            { label: '1 un', preco: 121.90 },
+            { label: '1 un', preco: 120.00 },
             { label: '5 un', preco: 594.90 },
             { label: '10 un', preco: 1168.90 },
             { label: '20 un', preco: 2286.90 },
