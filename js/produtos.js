@@ -1637,14 +1637,14 @@ const CATALOGO = {
         tamanhos: {
           'Colorido só frente': [
             { label: '500 un', preco: 70.90 },
-            { label: '1.000 un', preco: 99.90 },
+            { label: '1.000 un', preco: 125.00 },
             { label: '3.000 un', preco: 286.90 },
             { label: '5.000 un', preco: 459.90 },
             { label: '10.000 un', preco: 909.90 },
           ],
           'Colorido frente e verso': [
             { label: '500 un', preco: 100.90 },
-            { label: '1.000 un', preco: 125.90 },
+            { label: '1.000 un', preco: 130.00 },
             { label: '3.000 un', preco: 336.90 },
             { label: '5.000 un', preco: 546.90 },
             { label: '10.000 un', preco: 1090.90 },
