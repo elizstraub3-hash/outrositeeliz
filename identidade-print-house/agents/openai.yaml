@@ -1,0 +1,4 @@
+interface:
+  display_name: "Print House — Identidade e Motion"
+  short_description: "Logo aprovada, identidade visual e peças para motion"
+  default_prompt: "Use $print-house-identidade para criar uma peça com a logo aprovada da Print House."

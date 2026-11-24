@@ -1,0 +1,113 @@
+{
+  "marca": "Print House",
+  "versao": "aprovada-em-conversa-2026-11-23",
+  "canvas": {
+    "width": 1254,
+    "height": 1254
+  },
+  "source": "assets/logo/logo-transparente.png",
+  "source_sha256": "2badb28b5ecfb47815393e2ccd99cb2ab693fb37642602e6405214e144a0b417",
+  "formato": "Raster em camadas; SVG contém PNG incorporado. Não é vetor editável por nós.",
+  "layers": [
+    {
+      "id": "01-p-com-detalhes",
+      "name": "p + detalhes coloridos",
+      "file": "assets/motion/png/01-p-com-detalhes.png",
+      "position": [
+        0,
+        0
+      ]
+    },
+    {
+      "id": "02-r",
+      "name": "r",
+      "file": "assets/motion/png/02-r.png",
+      "position": [
+        0,
+        0
+      ]
+    },
+    {
+      "id": "03-i-caneta",
+      "name": "i — caneta",
+      "file": "assets/motion/png/03-i-caneta.png",
+      "position": [
+        0,
+        0
+      ]
+    },
+    {
+      "id": "04-i-ponto",
+      "name": "i — ponto",
+      "file": "assets/motion/png/04-i-ponto.png",
+      "position": [
+        0,
+        0
+      ]
+    },
+    {
+      "id": "05-n",
+      "name": "n",
+      "file": "assets/motion/png/05-n.png",
+      "position": [
+        0,
+        0
+      ]
+    },
+    {
+      "id": "06-t",
+      "name": "t",
+      "file": "assets/motion/png/06-t.png",
+      "position": [
+        0,
+        0
+      ]
+    },
+    {
+      "id": "07-h",
+      "name": "h",
+      "file": "assets/motion/png/07-h.png",
+      "position": [
+        0,
+        0
+      ]
+    },
+    {
+      "id": "08-o",
+      "name": "o",
+      "file": "assets/motion/png/08-o.png",
+      "position": [
+        0,
+        0
+      ]
+    },
+    {
+      "id": "09-u",
+      "name": "u",
+      "file": "assets/motion/png/09-u.png",
+      "position": [
+        0,
+        0
+      ]
+    },
+    {
+      "id": "10-s",
+      "name": "s",
+      "file": "assets/motion/png/10-s.png",
+      "position": [
+        0,
+        0
+      ]
+    },
+    {
+      "id": "11-e-com-detalhes",
+      "name": "e + detalhes coloridos",
+      "file": "assets/motion/png/11-e-com-detalhes.png",
+      "position": [
+        0,
+        0
+      ]
+    }
+  ],
+  "observacao": "Manter todos os PNGs no mesmo tamanho e posição para recompor a logo. Detalhes coloridos integram p/e."
+}
