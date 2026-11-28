@@ -96,10 +96,10 @@ const agendaHotStamping = {
   imagem: 'img/agenda-hot-stamping.webp',
   nome: 'Agenda Diária Hot Stamping',
   chamada: 'Capa e contracapa em hot stamping, com o brilho que a sua marca merece.',
-  spec: 'Capa e contracapa em hot stamping · wire-o de ferro dourado ou na cor de sua preferência · miolo personalizado com horários de agendamento',
-  descricao: 'Agenda diária com capa e contracapa em hot stamping, wire-o de ferro dourado (ou na cor de sua preferência) e miolo personalizado com horários de agendamento. Ideal para quem atende com hora marcada e para presentear clientes com a sua marca.',
+  spec: 'Capa e contracapa em hot stamping, em diversas cores · wire-o de ferro dourado ou na cor de sua preferência · miolo personalizado com horários de agendamento',
+  descricao: 'Agenda diária com capa e contracapa em hot stamping (em diversas cores), wire-o de ferro dourado (ou na cor de sua preferência) e miolo personalizado com horários de agendamento. Ideal para quem atende com hora marcada e para presentear clientes com a sua marca.',
   detalhes: [
-    'Capa e contracapa em hot stamping.',
+    'Capa e contracapa em hot stamping, em diversas cores.',
     'Wire-o de ferro dourado ou na cor de sua preferência.',
     'Miolo personalizado, com horários de agendamento.',
   ],
