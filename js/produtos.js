@@ -89,9 +89,9 @@ const kitChurrasco = {
   ],
 };
 
-/* Agenda Diária com hot stamping: destaque na página inicial, em Papelaria e em Lançamentos. */
+/* Agenda Diária com hot stamping: produto destaque (banner da página inicial e Papelaria). */
 const agendaHotStamping = {
-  bg: 'linear-gradient(135deg,#3f3a2e,#10110f)', badge: 'Novo', destaque: true,
+  bg: 'linear-gradient(135deg,#3f3a2e,#10110f)', badge: 'Destaque', destaque: true,
   paginaProduto: true,
   imagem: 'img/agenda-hot-stamping.webp',
   nome: 'Agenda Diária Hot Stamping',
@@ -2486,7 +2486,6 @@ const CATALOGO = {
     banner: 'linear-gradient(120deg,#7c3aed,#a78bfa)',
     descricao: 'As novidades que acabaram de chegar na Print House.',
     produtos: [
-      agendaHotStamping,
       camisetaDtf,
       kitChurrasco,
       copoTermico,

@@ -14,6 +14,7 @@ description: Preservar e aplicar a identidade aprovada da Print House Gráfica O
 7. Informar corretamente o formato: o SVG contém uma imagem raster incorporada e recortes em camadas; não é uma logo vetorizada com contornos editáveis. Os detalhes coloridos de p/e estão agrupados com suas letras.
 8. Conferir escrita, posição da caneta, detalhes só em p/e, proporção, contraste, transparência e legibilidade na dimensão final. Para ampliar muito além da resolução original, propor vetorização fiel como trabalho adicional.
 9. Preservar os dados conhecidos da marca e verificar informações comerciais atuais antes de publicar preços, contatos ou promessas de entrega. Não adivinhar telefone, endereço completo ou domínio.
+10. Posicionar a logo sempre no meio, centralizada na horizontal, em posts, stories e demais peças (pedido de Eliz). Sobre fundo escuro, aplicar a logo sem recolorir, dentro de um selo claro (#F7F4EF).
 
 ## Localização dos dados
 
