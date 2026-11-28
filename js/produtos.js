@@ -89,6 +89,25 @@ const kitChurrasco = {
   ],
 };
 
+/* Agenda Diária com hot stamping: destaque na página inicial, em Papelaria e em Lançamentos. */
+const agendaHotStamping = {
+  bg: 'linear-gradient(135deg,#3f3a2e,#10110f)', badge: 'Novo', destaque: true,
+  paginaProduto: true,
+  imagem: 'img/agenda-hot-stamping.webp',
+  nome: 'Agenda Diária Hot Stamping',
+  chamada: 'Capa e contracapa em hot stamping, com o brilho que a sua marca merece.',
+  spec: 'Capa e contracapa em hot stamping · wire-o de ferro dourado ou na cor de sua preferência · miolo personalizado com horários de agendamento',
+  descricao: 'Agenda diária com capa e contracapa em hot stamping, wire-o de ferro dourado (ou na cor de sua preferência) e miolo personalizado com horários de agendamento. Ideal para quem atende com hora marcada e para presentear clientes com a sua marca.',
+  detalhes: [
+    'Capa e contracapa em hot stamping.',
+    'Wire-o de ferro dourado ou na cor de sua preferência.',
+    'Miolo personalizado, com horários de agendamento.',
+  ],
+  variacoes: [
+    { label: '1 un', preco: 89.90 },
+  ],
+};
+
 const camisetaDtf = {
   bg: 'linear-gradient(135deg,#ddd6fe,#8b5cf6)', badge: 'Promoção',
   imagem: 'img/camiseta-dtf.webp',
@@ -1364,6 +1383,7 @@ const CATALOGO = {
     banner: 'linear-gradient(120deg,#4338ca,#818cf8)',
     descricao: 'Cadernos, blocos e itens de papelaria personalizados para a sua marca.',
     produtos: [
+      agendaHotStamping,
       { bg: 'linear-gradient(135deg,#c7d2fe,#4338ca)', badge: 'Novo', destaque: true,
         paginaProduto: true,
         nome: 'Agenda Diária 2027',
@@ -2466,6 +2486,7 @@ const CATALOGO = {
     banner: 'linear-gradient(120deg,#7c3aed,#a78bfa)',
     descricao: 'As novidades que acabaram de chegar na Print House.',
     produtos: [
+      agendaHotStamping,
       camisetaDtf,
       kitChurrasco,
       copoTermico,
